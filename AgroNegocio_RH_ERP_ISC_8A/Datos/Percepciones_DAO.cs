@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Percepciones
+    class Percepciones_DAO
     {
     }
 }
