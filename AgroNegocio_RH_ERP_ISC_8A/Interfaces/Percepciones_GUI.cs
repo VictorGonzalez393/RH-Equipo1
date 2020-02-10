@@ -36,5 +36,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
 
         }
+
+        private void nuevoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
