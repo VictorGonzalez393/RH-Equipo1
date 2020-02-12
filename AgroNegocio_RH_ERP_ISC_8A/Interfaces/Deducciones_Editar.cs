@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    public partial class Form1 : Form
+    public partial class Deducciones_Editar : Form
     {
-        public Form1()
+        public Deducciones_Editar()
         {
             InitializeComponent();
         }
