@@ -117,17 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ciudades2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\ciudades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="inicioToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAALEAAACxAcYtSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAADOUlEQVRIS7WSS0wTURSGp+XOTGfaGeib0gdtlZZCIWJRDA+NWkQtFiVG1AXGoMZEUeIjEjVGjCYa
+        48JX4gswbo1h4cLowpUmRo0LF7owJkYxiKIt70JbjvdOIUggWKz8yZ9M7j33++eec6lkhRDypyvQNzWH
+        QixCa8aX/49UtPyALZ3rubzeA+f8LnCouREtx1wY305JCoFFHeU2dah1oxeuV+dJvhbwQHGWGNOr2Kek
+        JlE6d1lEFr3bUWQevltbAC2rFoJNYIbsAhMh37dxYDDXENfyzBdSmziSpBBFlYkK1NVc4YwT+N4lttGc
+        dLbvY8AKb/0m8Gawow0+y0j7Jry31Apanh5EiFo9fnx24X43ZgmKn5fW5kLbJi9U5egGlhu5vt5aOzxe
+        YZLcHbSC38jFKrLVg6245jS+kUVUjGp45tQ4ZkYhDU/fXJwlhm/V5Eu9ztUp+xrdGYPxLU6AOqcEf4JN
+        viOb7XDEJcRcWm7oKp7JZexFJiFmUDKPMItJICelS2fRm9p84xBpyflKF1hFtv9BmTFKYMTrTTz41Kzk
+        QBYvrcW2OOBesWbMIbKRs/4cuFXjhQ1uQ1zHM58wMzOBpqgi/L47j5bbpX7vL7FFHSLT/36dVYIk4+cr
+        jeASmei+EttoG57LTp95DM+ll6YoH0XgF6vcQAYWcOsHSg18OIz7PRNoNncGzFChV8Sq3YbB9o0F0FSa
+        DRqODuMA+vOhUjt49KpfpXouPNHvf3HPBguUa9moR6cKbS00AZ5piLQoP0NB35HL5Se22VQ/ZjqYrEM1
+        Fqgzc1Ekl580Cex9zM4jARPypRIwtssHvWfqpQDCSiCnKqWA+LFq6H/YNveAzqANDuYJsCdXOWkPD01e
+        JXwNZqceQOA3tsvg9fFJv2qWwZUABU35ytQDyB8TKNyY6mcNFOzO4+Yn4HAlNb8BJY55Dvh+cXqL/vmZ
+        zhQQLJx+g2QCnJVGrvtPOPFcbhBuqYcqIztCWAnkVMkyFWkfXlaa/xpAPC0Au2OZBhzKtC7CSiCny27m
+        0Au7EnU7legHsUDLIgu0sojXKB/+0zlaWUxkZCOkxqFCPQtVqNct0O8wIzuBIqKo33fGKyLNG1DbAAAA
+        AElFTkSuQmCC
+</value>
   </data>
-  <data name="ciudades1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\ciudades.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAALEAAACxAcYtSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAACaUlEQVRYR+2Uz2vTYBjHg+DwJOjNi6BQEP+O3T14UzB2EQ+KJ3En8QfMg3fRgwoeBD3Py2ZDHeu0
+        YwjthNWkP9YmabeunW23LpvFzcc8cWmT933edmytIvPwCXlD8n4/7/s8byQAIFlabZ3LLa+t1+yfUN/s
+        gGO9WO+J861tVu0XeYBj1Pwe5EMMzy6vb+FE+xXwKFTtp1SGB/fAH44cVMDZiSab4ScwYMORgwog/gyW
+        9g0VjvwRAVE4UvOFD0wAu536ML/SDIQPTAAn5WCCBypABYn4L3B4BAqVDUiXGhw44XQiSzKXMrlwxB/I
+        4l4oAWNfAhYXjvgDWdwLJSDi8PTAXy/BP9sDC8VVGMtH4GLmJYS0hzAUvQbSVDgnxZQ30uzl4wMVeGdq
+        cF4fAyl1o8PkFZAmdlGvfpc+KZf2JIAlyCw1ONKlOsSSOY5X87MwlLoVDGcFEBzPKHJPAfdH5KyKRbdq
+        XO2jiTSEFu7z4ZQAosotZydOdhUQQZUAa06FPyqroJpZXgCJKeN9E8CGowT05u+TQwpMhUtdBYyqTfaA
+        UbE5gZDT7f7gx+UPbvi3zR23Z3SHqJkLCkTk7a4Coh4orGxwAme1YP2fVeJQtlvuPK6A807csoIC7+Wd
+        rgIiqBJcyDwPCHjozTVxCaLhct8EHixOkAK4E/Eis3KP6ZHJvgl8KVbhjHaPlCCPYUT+IX2+fsovkGSD
+        RFACyFtjHo6kbu5NIDZyG3PbAo0tUKgwCpEA8tpIwGntrlhAdVb+URn1wtsCDkd3JXruRDcBJGlVYHRx
+        HIazT7ZPfL1j43HDhsOae9veAaRfxDp1nNrp6Q4AAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="ciudades" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\ciudades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cliudadesch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\cliudadesch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAALEAAACxAAAAAAAAAAAA
+        AAAAAAAAAAAAAADU/wAA1P8IANX/RgDU/6EAvv/eAKf//QCl//8AqP/xAKn/tQCt/1oAtP8OALL/AAAA
+        AAAAAAAAAND/AADU/wAA0/8XANT/igDU/+gAw///BKb6/x2T1/8eisj/BJ/3/wCj//8Apf/yAKn/oACv
+        /yAAlP8AAMX/AADU/wAA1P8YANT/qQLT/fwHv/b/AKj//xSZ5f9kbXT/UFZY/xSR1v8ApP//CJzw/wKi
+        +/8Ap/+6ALD/IQCt/wAA1v8IANT/jQHT/f0srcX/VX6R/zOKvP9QfZf/cmZh/1dNRf8/Y3T/LXih/0Nf
+        bf8mfq//AqL8/wCp/6AAtv8MANX/SgDV/+oHzvb/VYiR/3pnYf93aWT/dmpm/2ttZv9TVUv/UklC/1RI
+        P/9USD7/Q19t/wic8P8Apf/yAK3/WwDU/6IA1f//ANH//zOZvP93aWT/anB1/zCLw/8wnpT/L5OB/yl6
+        qv9NUVH/VEg//y14of8ApP//AKP//wCo/7UA1P/cBM/6/xSs5f9QfZf/dmpm/zGLwP8GpfD/LqmH/y+e
+        cf8Ioun/K3ql/1NKQv8/Y3X/FJHX/wSf9/8Ap//xANX/+R252f9oc3j/d2lk/2pwd/8cnsz/O69w/0uu
+        Qf9IlR3/NpdR/xiVxP9LUlX/U0lB/0xSU/8eiMT/AKb//wDV//kdutn/aHd4/3dqZP9pb3j/M6KV/0yy
+        Rf8zrID/MJpo/0OUKP8pkpD/SlJX/1NJQf9MUlP/HojE/wCn//0A1P/cBNH6/xTC5f9QjZf/dWpn/0GO
+        mP8ZqMD/BaXy/wSj8/8Tocf/NHmJ/1JKQ/8/Y3X/FJDX/wSk9/8Avf/eANT/ogDU//8A1v//NKa8/3dq
+        ZP9qb3b/MIvC/w6b7P8OluT/Knqo/01RUv9USD//LXeh/wCp//8Awv//ANP/oQDV/0sA1f/qB872/1WI
+        kf96Z2H/d2pk/3ZqZv9nbHH/TlVX/1JJQv9USD//VEc+/0Njbf8IvPD/ANT/5wDV/0YA1P8IANT/kAHT
+        /f4srcX/VYiR/zOmvP9RjZf/cmdh/1dMRf8/Y3X/LYWh/0Nqbf8lmrD/AtL8/QDV/4wA0/8HANX/AADV
+        /xsA1f+uAtP9/gfO9v8A1v//FMLl/2R0dP9QV1j/FKLW/wDQ//8IyvD/AtL7/QDV/6oA1P8ZANT/AADW
+        /wAA0/8AANT/GwDU/5AA1f/rANT//wTR+v8duNf/HqvI/wTM9/8A1f//ANX/6wDU/40A1P8YANX/AADQ
+        /wAAAAAAAAAAAADU/wAA1P8KANX/SgDU/6MA1P/dANb/+QDW//kA1f/cANT/ogDV/0oA1f8JANX/AAAA
+        AAAAAAAA4AcAAMADAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAB
+        AADAAwAA4AcAAA==
+</value>
   </data>
 </root>

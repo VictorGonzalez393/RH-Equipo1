@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    public partial class Ciudades_GUI : Form
+    public partial class Ciudades_nuevo : Form
     {
-        public Ciudades_GUI()
+        public Ciudades_nuevo()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tablaCiudad_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

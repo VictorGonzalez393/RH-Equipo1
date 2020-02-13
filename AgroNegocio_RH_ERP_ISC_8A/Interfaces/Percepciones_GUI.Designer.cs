@@ -35,14 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.ID_Percepciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dias_Pagar_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -118,6 +118,25 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.Location = new System.Drawing.Point(353, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 26);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "Buscar percepción";
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
+            this.btn_buscar.Location = new System.Drawing.Point(541, 46);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(33, 26);
+            this.btn_buscar.TabIndex = 5;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            // 
             // ID_Percepciones
             // 
             this.ID_Percepciones.HeaderText = "ID";
@@ -155,25 +174,6 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(353, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 26);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Buscar percepción";
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
-            this.btn_buscar.Location = new System.Drawing.Point(541, 46);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(33, 26);
-            this.btn_buscar.TabIndex = 5;
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            // 
             // Percepciones_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -190,6 +190,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Percepciones_GUI";
             this.Text = "Percepciones";
+            this.Load += new System.EventHandler(this.Percepciones_GUI_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -41,5 +41,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
 
         }
+
+        private void Percepciones_GUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
