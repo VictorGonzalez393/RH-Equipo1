@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    public partial class Deducciones_editar : Form
+    public partial class Login : Form
     {
-        public Deducciones_editar()
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

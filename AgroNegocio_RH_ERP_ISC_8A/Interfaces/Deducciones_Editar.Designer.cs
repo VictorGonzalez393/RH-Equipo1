@@ -1,6 +1,6 @@
 ﻿namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    partial class Deducciones_Editar
+    partial class Deducciones_editar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deducciones_Editar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deducciones_editar));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dias_percepcion = new System.Windows.Forms.NumericUpDown();
@@ -196,7 +196,7 @@
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
             // 
-            // Deducciones_Editar
+            // Deducciones_editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,8 +215,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Deducciones_Editar";
-            this.Text = "Deducciones_Editar";
+            this.Name = "Deducciones_editar";
+            this.Text = "Deducciones_editar";
             ((System.ComponentModel.ISupportInitialize)(this.dias_percepcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
