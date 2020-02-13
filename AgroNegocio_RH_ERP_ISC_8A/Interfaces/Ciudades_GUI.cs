@@ -26,5 +26,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
