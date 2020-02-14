@@ -54,7 +54,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Interfaces\Ciudades_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,25 +71,6 @@
     </Compile>
     <Compile Include="Interfaces\Ciudades_nuevo.Designer.cs">
       <DependentUpon>Ciudades_nuevo.cs</DependentUpon>
-=======
-    <Compile Include="Interfaces\Deducciones_Editar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Deducciones_Editar.Designer.cs">
-      <DependentUpon>Deducciones_Editar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Deducciones_GUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Deducciones_GUI.Designer.cs">
-      <DependentUpon>Deducciones_GUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Deducciones_nuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Deducciones_nuevo.Designer.cs">
-      <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
->>>>>>> fc8cede86270b15cfb8914d0a0bb182c2645c7a6
     </Compile>
     <Compile Include="Interfaces\Percepciones_editar.cs">
       <SubType>Form</SubType>
@@ -112,7 +92,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="Interfaces\Ciudades_editar.resx">
       <DependentUpon>Ciudades_editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,16 +100,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Ciudades_nuevo.resx">
       <DependentUpon>Ciudades_nuevo.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Interfaces\Deducciones_Editar.resx">
-      <DependentUpon>Deducciones_Editar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Deducciones_GUI.resx">
-      <DependentUpon>Deducciones_GUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Deducciones_nuevo.resx">
-      <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
->>>>>>> fc8cede86270b15cfb8914d0a0bb182c2645c7a6
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Percepciones_editar.resx">
       <DependentUpon>Percepciones_editar.cs</DependentUpon>
