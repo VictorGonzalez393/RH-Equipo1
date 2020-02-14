@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\Percepciones_DAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Ciudades_editar.resx">
       <DependentUpon>Ciudades_editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,9 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Iconos\ciudades.png" />
-    <None Include="Iconos\ciudades.ico" />
     <None Include="Iconos\cliudadesch.png" />
-    <Content Include="Iconos\Percepciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

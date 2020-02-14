@@ -12,9 +12,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A
 {
     public partial class Form1 : Form
     {
+        private Datos.Conexion cn;
         public Form1()
         {
             InitializeComponent();
+            cn = new Datos.Conexion();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cn.Conectar("MIZUKI", "sa", "Hola.123");
+            MessageBox.Show("Conexion exitosa" + cn.ToString());
         }
     }
 }
