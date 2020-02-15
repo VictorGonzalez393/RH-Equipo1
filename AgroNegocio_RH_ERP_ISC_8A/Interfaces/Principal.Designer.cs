@@ -74,6 +74,7 @@
             this.cIUDADESToolStripMenuItem.Name = "cIUDADESToolStripMenuItem";
             this.cIUDADESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cIUDADESToolStripMenuItem.Text = "CIUDADES";
+            this.cIUDADESToolStripMenuItem.Click += new System.EventHandler(this.cIUDADESToolStripMenuItem_Click);
             // 
             // dETToolStripMenuItem
             // 

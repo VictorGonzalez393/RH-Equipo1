@@ -22,5 +22,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             label1.Text = DateTime.Now.ToLongDateString();
             label2.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void cIUDADESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ciudades_GUI ciudades_GUI = new Ciudades_GUI();
+            this.Visible = false;
+            ciudades_GUI.ShowDialog();
+            this.Visible = true;
+
+        }
     }
 }
