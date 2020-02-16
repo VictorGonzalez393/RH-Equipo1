@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\Estados_DAO.cs" />
     <Compile Include="Interfaces\Estados_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,7 @@
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Estado.cs" />
     <Compile Include="Modelo\Percepcion.cs" />
     <Compile Include="Datos\Ciudades_DAO.cs" />
     <Compile Include="Datos\Conexion.cs" />
