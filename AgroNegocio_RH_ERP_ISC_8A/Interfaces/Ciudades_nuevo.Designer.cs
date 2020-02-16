@@ -94,6 +94,7 @@
             this.label2.Size = new System.Drawing.Size(35, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "ID:";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -124,6 +125,7 @@
             this.id_ciudad.Name = "id_ciudad";
             this.id_ciudad.Size = new System.Drawing.Size(120, 20);
             this.id_ciudad.TabIndex = 8;
+            this.id_ciudad.Visible = false;
             // 
             // nombre_ciudad
             // 
@@ -144,6 +146,7 @@
             this.btn_guardar.TabIndex = 12;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_cancelar
             // 
@@ -157,11 +160,16 @@
             this.btn_cancelar.TabIndex = 13;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // estado_ciudad
             // 
             this.estado_ciudad.FormattingEnabled = true;
-            this.estado_ciudad.Location = new System.Drawing.Point(209, 182);
+            this.estado_ciudad.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.estado_ciudad.Location = new System.Drawing.Point(209, 184);
             this.estado_ciudad.Name = "estado_ciudad";
             this.estado_ciudad.Size = new System.Drawing.Size(121, 21);
             this.estado_ciudad.TabIndex = 14;
@@ -185,7 +193,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Ciudades_nuevo";
-            this.Text = "Agregar Ciudad";
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.Ciudades_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

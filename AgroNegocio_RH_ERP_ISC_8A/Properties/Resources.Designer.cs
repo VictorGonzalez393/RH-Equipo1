@@ -5,6 +5,11 @@
 //
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
+//     Este código fue generado por una herramienta.
+//     Versión de runtime:4.0.30319.42000
+//
+//     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
+//     se vuelve a generar el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -19,6 +24,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+    ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+    /// </summary>
+    // StronglyTypedResourceBuilder generó automáticamente esta clase
+    // a través de una herramienta como ResGen o Visual Studio.
+    // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
+    // con la opción /str o recompile su proyecto de VS.
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -34,6 +45,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Properties {
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
+        ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
@@ -49,6 +61,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Properties {
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
+        ///   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+        ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -62,6 +76,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Properties {
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ciudades {
             get {
@@ -72,6 +87,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Properties {
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ciudades2 {
             get {
@@ -82,6 +98,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Properties {
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cliudadesch {
             get {
