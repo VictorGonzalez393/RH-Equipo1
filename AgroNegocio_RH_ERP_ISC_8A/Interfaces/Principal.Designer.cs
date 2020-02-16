@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
+﻿namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     partial class Principal
     {
@@ -42,9 +40,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +74,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.cIUDADESToolStripMenuItem.Name = "cIUDADESToolStripMenuItem";
             this.cIUDADESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cIUDADESToolStripMenuItem.Text = "CIUDADES";
-            this.cIUDADESToolStripMenuItem.Click += new System.EventHandler(this.cIUDADESToolStripMenuItem_Click);
             // 
             // dETToolStripMenuItem
             // 
@@ -100,7 +95,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.pERCEPCIONESToolStripMenuItem.Name = "pERCEPCIONESToolStripMenuItem";
             this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pERCEPCIONESToolStripMenuItem.Text = "PERCEPCIONES";
-            this.pERCEPCIONESToolStripMenuItem.Click += new System.EventHandler(this.pERCEPCIONESToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -126,16 +120,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(601, 303);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,22 +128,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
             this.Text = "Principal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void cIUDADESToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion
@@ -174,6 +151,5 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

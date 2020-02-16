@@ -32,7 +32,7 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dias_percepcion = new System.Windows.Forms.NumericUpDown();
-            this.descripcion_percepcion = new System.Windows.Forms.TextBox();
+            this.descriocion_percepcion = new System.Windows.Forms.TextBox();
             this.nombre_percepcion = new System.Windows.Forms.TextBox();
             this.id_percepcion = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,7 +62,6 @@
             this.btn_cancelar.TabIndex = 25;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -85,13 +84,13 @@
             this.dias_percepcion.Size = new System.Drawing.Size(120, 20);
             this.dias_percepcion.TabIndex = 23;
             // 
-            // descripcion_percepcion
+            // descriocion_percepcion
             // 
-            this.descripcion_percepcion.Location = new System.Drawing.Point(190, 215);
-            this.descripcion_percepcion.Name = "descripcion_percepcion";
-            this.descripcion_percepcion.Size = new System.Drawing.Size(121, 20);
-            this.descripcion_percepcion.TabIndex = 22;
-            this.descripcion_percepcion.TextChanged += new System.EventHandler(this.descriocion_percepcion_TextChanged);
+            this.descriocion_percepcion.Location = new System.Drawing.Point(190, 215);
+            this.descriocion_percepcion.Name = "descriocion_percepcion";
+            this.descriocion_percepcion.Size = new System.Drawing.Size(121, 20);
+            this.descriocion_percepcion.TabIndex = 22;
+            this.descriocion_percepcion.TextChanged += new System.EventHandler(this.descriocion_percepcion_TextChanged);
             // 
             // nombre_percepcion
             // 
@@ -103,7 +102,6 @@
             // 
             // id_percepcion
             // 
-            this.id_percepcion.Enabled = false;
             this.id_percepcion.Location = new System.Drawing.Point(191, 117);
             this.id_percepcion.Name = "id_percepcion";
             this.id_percepcion.Size = new System.Drawing.Size(120, 20);
@@ -194,12 +192,11 @@
             // 
             // IniciotoolStripMenuItem1
             // 
-            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IniciotoolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
-            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
-            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
             // 
             // backToolStripMenuItem
             // 
@@ -208,7 +205,6 @@
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
-            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // Percepciones_editar
             // 
@@ -218,7 +214,7 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dias_percepcion);
-            this.Controls.Add(this.descripcion_percepcion);
+            this.Controls.Add(this.descriocion_percepcion);
             this.Controls.Add(this.nombre_percepcion);
             this.Controls.Add(this.id_percepcion);
             this.Controls.Add(this.label5);
@@ -231,7 +227,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Percepciones_editar";
             this.Text = "Editar percepción";
-            this.Load += new System.EventHandler(this.Percepciones_editar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dias_percepcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -247,7 +242,7 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.NumericUpDown dias_percepcion;
-        private System.Windows.Forms.TextBox descripcion_percepcion;
+        private System.Windows.Forms.TextBox descriocion_percepcion;
         private System.Windows.Forms.TextBox nombre_percepcion;
         private System.Windows.Forms.NumericUpDown id_percepcion;
         private System.Windows.Forms.Label label5;
