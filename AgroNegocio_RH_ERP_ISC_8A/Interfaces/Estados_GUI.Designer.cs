@@ -94,6 +94,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
@@ -102,6 +103,7 @@
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(130, 21);
             this.nuevoToolStripMenuItem.Text = "Agregar Estado";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -109,6 +111,7 @@
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(117, 21);
             this.editarToolStripMenuItem.Text = "Editar Estado";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
@@ -116,6 +119,7 @@
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // tablaEstados
             // 
@@ -130,6 +134,7 @@
             this.tablaEstados.Name = "tablaEstados";
             this.tablaEstados.Size = new System.Drawing.Size(494, 235);
             this.tablaEstados.TabIndex = 12;
+            this.tablaEstados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ID_Estado
             // 
@@ -167,6 +172,7 @@
             this.btn_buscar.Size = new System.Drawing.Size(45, 31);
             this.btn_buscar.TabIndex = 11;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // pictureBox1
             // 
@@ -194,6 +200,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Estados_GUI";
             this.Text = "Estados";
+            this.Load += new System.EventHandler(this.Estados_GUI_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEstados)).EndInit();

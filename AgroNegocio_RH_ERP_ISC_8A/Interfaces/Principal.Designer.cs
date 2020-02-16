@@ -72,6 +72,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.eSTADOSToolStripMenuItem.Name = "eSTADOSToolStripMenuItem";
             this.eSTADOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eSTADOSToolStripMenuItem.Text = "ESTADOS";
+            this.eSTADOSToolStripMenuItem.Click += new System.EventHandler(this.eSTADOSToolStripMenuItem_Click);
             // 
             // cIUDADESToolStripMenuItem
             // 

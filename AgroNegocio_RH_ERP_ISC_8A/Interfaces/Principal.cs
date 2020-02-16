@@ -31,5 +31,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             percepciones.ShowDialog();
             this.SetVisibleCore(true);
         }
+
+        private void eSTADOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Estados_GUI estados = new Estados_GUI();
+            this.SetVisibleCore(false);
+            estados.ShowDialog();
+            this.SetVisibleCore(true);
+        }
     }
 }
