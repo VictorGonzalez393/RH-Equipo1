@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgroNegocio_RH_ERP_ISC_8A.Interfaces;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
@@ -21,6 +22,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             label1.Text = DateTime.Now.ToLongDateString();
             label2.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void pERCEPCIONESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Percepciones_GUI percepciones = new Percepciones_GUI();
+            this.SetVisibleCore(false);
+            percepciones.ShowDialog();
+            this.SetVisibleCore(true);
         }
     }
 }
