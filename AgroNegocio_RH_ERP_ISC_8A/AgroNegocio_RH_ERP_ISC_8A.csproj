@@ -47,12 +47,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Estados_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_editar.Designer.cs">
+      <DependentUpon>Estados_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_GUI.Designer.cs">
+      <DependentUpon>Estados_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
+      <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Percepcion.cs" />
+    <Compile Include="Datos\Ciudades_DAO.cs" />
+    <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\Percepciones_DAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_editar.Designer.cs">
+      <DependentUpon>Ciudades_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_GUI.Designer.cs">
+      <DependentUpon>Ciudades_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_nuevo.Designer.cs">
+      <DependentUpon>Ciudades_nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Deducciones_Editar.cs">
       <SubType>Form</SubType>
@@ -72,6 +112,12 @@
     <Compile Include="Interfaces\Deducciones_nuevo.Designer.cs">
       <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Percepciones_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +136,27 @@
     <Compile Include="Interfaces\Percepciones_nuevo.Designer.cs">
       <DependentUpon>Percepciones_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Ciudad.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ciudades_editar.resx">
+      <DependentUpon>Ciudades_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ciudades_GUI.resx">
+      <DependentUpon>Ciudades_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ciudades_nuevo.resx">
+      <DependentUpon>Ciudades_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Deducciones_Editar.resx">
       <DependentUpon>Deducciones_Editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +165,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Deducciones_nuevo.resx">
       <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_editar.resx">
+      <DependentUpon>Estados_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_GUI.resx">
+      <DependentUpon>Estados_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_nuevo.resx">
+      <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Percepciones_editar.resx">
       <DependentUpon>Percepciones_editar.cs</DependentUpon>
@@ -110,19 +187,23 @@
     <EmbeddedResource Include="Interfaces\Percepciones_nuevo.resx">
       <DependentUpon>Percepciones_nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -133,7 +214,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Iconos\Percepciones.png" />
+    <None Include="Iconos\ciudades.png" />
+    <None Include="Iconos\cliudadesch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Iconos\agricultura.ico" />
+    <Content Include="Iconos\anadir%281%29.png" />
+    <Content Include="Iconos\anadir.png" />
+    <Content Include="Iconos\atras.png" />
+    <Content Include="Iconos\buscar %281%29.png" />
+    <Content Include="Iconos\casa.png" />
+    <Content Include="Iconos\dejar.png" />
+    <Content Include="Iconos\documento.png" />
+    <Content Include="Iconos\edit-validated256_25237.png" />
+    <Content Include="Iconos\editar.png" />
+    <Content Include="Iconos\Percepciones_.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
