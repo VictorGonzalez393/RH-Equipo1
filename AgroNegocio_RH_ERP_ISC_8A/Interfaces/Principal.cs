@@ -30,13 +30,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(false);
             percepciones.ShowDialog();
             this.SetVisibleCore(true);
-        private void cIUDADESToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ciudades_GUI ciudades_GUI = new Ciudades_GUI();
-            this.Visible = false;
-            ciudades_GUI.ShowDialog();
-            this.Visible = true;
-
         }
     }
 }
