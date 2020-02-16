@@ -47,6 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Estados_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_editar.Designer.cs">
+      <DependentUpon>Estados_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_GUI.Designer.cs">
+      <DependentUpon>Estados_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
+      <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Percepcion.cs" />
     <Compile Include="Datos\Ciudades_DAO.cs" />
@@ -147,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Deducciones_nuevo.resx">
       <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_editar.resx">
+      <DependentUpon>Estados_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_GUI.resx">
+      <DependentUpon>Estados_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_nuevo.resx">
+      <DependentUpon>Estados_nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
