@@ -54,11 +54,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Deducciones_Editar.cs">
+    <Compile Include="Interfaces\Deducciones_editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Deducciones_Editar.Designer.cs">
-      <DependentUpon>Deducciones_Editar.cs</DependentUpon>
+    <Compile Include="Interfaces\Deducciones_editar.Designer.cs">
+      <DependentUpon>Deducciones_editar.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Deducciones_GUI.cs">
       <SubType>Form</SubType>
@@ -71,6 +71,12 @@
     </Compile>
     <Compile Include="Interfaces\Deducciones_nuevo.Designer.cs">
       <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Percepciones_editar.cs">
       <SubType>Form</SubType>
@@ -92,14 +98,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Interfaces\Deducciones_Editar.resx">
-      <DependentUpon>Deducciones_Editar.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Deducciones_editar.resx">
+      <DependentUpon>Deducciones_editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Deducciones_GUI.resx">
       <DependentUpon>Deducciones_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Deducciones_nuevo.resx">
       <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Percepciones_editar.resx">
       <DependentUpon>Percepciones_editar.cs</DependentUpon>
