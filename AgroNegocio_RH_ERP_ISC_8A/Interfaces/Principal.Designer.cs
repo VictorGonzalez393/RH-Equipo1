@@ -95,6 +95,7 @@
             this.pERCEPCIONESToolStripMenuItem.Name = "pERCEPCIONESToolStripMenuItem";
             this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pERCEPCIONESToolStripMenuItem.Text = "PERCEPCIONES";
+            this.pERCEPCIONESToolStripMenuItem.Click += new System.EventHandler(this.pERCEPCIONESToolStripMenuItem_Click);
             // 
             // label1
             // 

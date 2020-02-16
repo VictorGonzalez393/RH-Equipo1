@@ -6,3 +6,10 @@ C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.In
 C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
 C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
 C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_editar.resources
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_GUI.resources
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_nuevo.resources
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
+C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources

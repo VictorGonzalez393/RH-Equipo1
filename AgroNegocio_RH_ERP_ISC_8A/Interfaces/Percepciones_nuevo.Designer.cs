@@ -64,10 +64,10 @@
             // 
             // IniciotoolStripMenuItem1
             // 
-            this.IniciotoolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
-            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
             this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -78,6 +78,7 @@
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -147,6 +148,7 @@
             // 
             // id_percepcion
             // 
+            this.id_percepcion.Enabled = false;
             this.id_percepcion.Location = new System.Drawing.Point(191, 117);
             this.id_percepcion.Name = "id_percepcion";
             this.id_percepcion.Size = new System.Drawing.Size(120, 20);
@@ -185,6 +187,7 @@
             this.btn_guardar.TabIndex = 11;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_cancelar
             // 
@@ -198,6 +201,7 @@
             this.btn_cancelar.TabIndex = 12;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // Percepciones_nuevo
             // 
@@ -221,6 +225,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Percepciones_nuevo";
             this.Text = "Agregar percepcion";
+            this.Load += new System.EventHandler(this.Percepciones_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

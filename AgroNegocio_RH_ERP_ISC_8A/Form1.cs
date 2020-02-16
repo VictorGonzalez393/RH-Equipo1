@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgroNegocio_RH_ERP_ISC_8A.Interfaces;
 
 namespace AgroNegocio_RH_ERP_ISC_8A
 {
@@ -21,8 +22,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cn.Conectar("MIZUKI", "sa", "Hola.123");
-            MessageBox.Show("Conexion exitosa" + cn.ToString());
+            /*cn.Conectar("LaLiz", "Hola.123");
+            MessageBox.Show("Conexion exitosa" + cn.ToString());*/
+            Principal principal = new Principal();
+            this.SetVisibleCore(false);
+            principal.ShowDialog();
+            Application.Exit();
+
         }
     }
 }
