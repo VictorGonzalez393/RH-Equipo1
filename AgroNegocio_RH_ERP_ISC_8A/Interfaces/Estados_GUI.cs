@@ -30,7 +30,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 renglon.Cells[0].Value = estado.IdEstado;
                 renglon.Cells[1].Value = estado.Nombre;
                 renglon.Cells[2].Value = estado.Siglas;
-                renglon.Cells[4].Value = estado.Estatus;
+                renglon.Cells[3].Value = estado.Estatus;
                 tablaEstados.Rows.Add(renglon);
             }
         }

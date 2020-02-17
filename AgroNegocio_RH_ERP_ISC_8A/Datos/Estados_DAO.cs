@@ -11,7 +11,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
     class Estados_DAO
     {
         private string cadenaconexion = "SERVER=localhost" +
-                ";DATABASE=ERP2020;USER ID=sa ;Password=maritza";
+                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
 
         /*
          * Método para la consulta General de estados 

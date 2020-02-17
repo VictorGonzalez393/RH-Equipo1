@@ -70,7 +70,6 @@
     <Compile Include="Modelo\Estado.cs" />
     <Compile Include="Modelo\Percepcion.cs" />
     <Compile Include="Datos\Ciudades_DAO.cs" />
-    <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\Percepciones_DAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

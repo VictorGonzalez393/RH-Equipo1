@@ -160,7 +160,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void cIUDADESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Ciudades_GUI ciudades = new Ciudades_GUI();
+            this.SetVisibleCore(false);
+            ciudades.ShowDialog();
+            this.SetVisibleCore(true);
         }
 
         #endregion

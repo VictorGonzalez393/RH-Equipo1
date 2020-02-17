@@ -13,11 +13,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A
 {
     public partial class Form1 : Form
     {
-        private Datos.Conexion cn;
+        //private Datos.Conexion cn;
         public Form1()
         {
             InitializeComponent();
-            cn = new Datos.Conexion();
+            //cn = new Datos.Conexion();
         }
 
         private void button1_Click(object sender, EventArgs e)
