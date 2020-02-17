@@ -19,7 +19,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {      
             label1.Text = DateTime.Now.ToLongDateString();
             label2.Text = DateTime.Now.ToLongTimeString();
         }

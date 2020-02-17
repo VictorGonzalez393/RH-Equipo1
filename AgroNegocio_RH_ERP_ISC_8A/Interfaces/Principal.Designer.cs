@@ -49,6 +49,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uBICACIONToolStripMenuItem,
             this.dETToolStripMenuItem});
@@ -70,14 +71,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // eSTADOSToolStripMenuItem
             // 
             this.eSTADOSToolStripMenuItem.Name = "eSTADOSToolStripMenuItem";
-            this.eSTADOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eSTADOSToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.eSTADOSToolStripMenuItem.Text = "ESTADOS";
             this.eSTADOSToolStripMenuItem.Click += new System.EventHandler(this.eSTADOSToolStripMenuItem_Click);
             // 
             // cIUDADESToolStripMenuItem
             // 
             this.cIUDADESToolStripMenuItem.Name = "cIUDADESToolStripMenuItem";
-            this.cIUDADESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cIUDADESToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.cIUDADESToolStripMenuItem.Text = "CIUDADES";
             this.cIUDADESToolStripMenuItem.Click += new System.EventHandler(this.cIUDADESToolStripMenuItem_Click);
             // 
@@ -93,38 +94,40 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // dECUCCIONESToolStripMenuItem
             // 
             this.dECUCCIONESToolStripMenuItem.Name = "dECUCCIONESToolStripMenuItem";
-            this.dECUCCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dECUCCIONESToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.dECUCCIONESToolStripMenuItem.Text = "DECUCCIONES";
             // 
             // pERCEPCIONESToolStripMenuItem
             // 
             this.pERCEPCIONESToolStripMenuItem.Name = "pERCEPCIONESToolStripMenuItem";
-            this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.pERCEPCIONESToolStripMenuItem.Text = "PERCEPCIONES";
             this.pERCEPCIONESToolStripMenuItem.Click += new System.EventHandler(this.pERCEPCIONESToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 368);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.Size = new System.Drawing.Size(32, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "fecha";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(632, 368);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 15);
+            this.label2.Size = new System.Drawing.Size(29, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "hora";
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox1
@@ -141,6 +144,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(715, 408);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
