@@ -150,6 +150,7 @@
             this.Estatus_Per});
             this.tablaDeducciones.Location = new System.Drawing.Point(62, 150);
             this.tablaDeducciones.Name = "tablaDeducciones";
+            this.tablaDeducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaDeducciones.Size = new System.Drawing.Size(594, 228);
             this.tablaDeducciones.TabIndex = 0;
             // 
