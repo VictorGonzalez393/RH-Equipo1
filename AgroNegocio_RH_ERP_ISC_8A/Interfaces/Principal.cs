@@ -39,5 +39,32 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             estados.ShowDialog();
             this.SetVisibleCore(true);
         }
+
+        private void dECUCCIONESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Deducciones_GUI deducciones = new Deducciones_GUI();
+            this.SetVisibleCore(false);
+            deducciones.ShowDialog();
+            this.SetVisibleCore(true);
+        }
+
+        private void uBICACIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.SetVisibleCore(false);
+            Login l = new Login();
+            l.ShowDialog();
+
+            Application.Exit();
+        }
     }
 }

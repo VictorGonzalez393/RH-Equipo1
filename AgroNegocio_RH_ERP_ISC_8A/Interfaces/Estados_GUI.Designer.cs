@@ -57,7 +57,6 @@
             this.buscarEstadoTxt.Name = "buscarEstadoTxt";
             this.buscarEstadoTxt.Size = new System.Drawing.Size(259, 26);
             this.buscarEstadoTxt.TabIndex = 10;
-            this.buscarEstadoTxt.Text = "Buscar estado";
             // 
             // label1
             // 
@@ -132,15 +131,15 @@
             this.tablaEstados.Location = new System.Drawing.Point(40, 136);
             this.tablaEstados.Margin = new System.Windows.Forms.Padding(5);
             this.tablaEstados.Name = "tablaEstados";
+            this.tablaEstados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaEstados.Size = new System.Drawing.Size(494, 235);
-            this.tablaEstados.TabIndex = 12;
+            this.tablaEstados.TabIndex = 0;
             this.tablaEstados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ID_Estado
             // 
             this.ID_Estado.HeaderText = "ID";
             this.ID_Estado.Name = "ID_Estado";
-            this.ID_Estado.ReadOnly = true;
             this.ID_Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ID_Estado.Width = 50;
             // 
@@ -154,7 +153,6 @@
             // 
             this.Siglas_Estado.HeaderText = "Siglas ";
             this.Siglas_Estado.Name = "Siglas_Estado";
-            this.Siglas_Estado.ReadOnly = true;
             this.Siglas_Estado.Width = 170;
             // 
             // Estatus_Estado

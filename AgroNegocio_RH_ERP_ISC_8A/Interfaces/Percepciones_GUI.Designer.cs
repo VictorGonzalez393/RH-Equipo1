@@ -37,13 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tablaPercepciones = new System.Windows.Forms.DataGridView();
-            this.buscarPerTxt = new System.Windows.Forms.TextBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.ID_Percepciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dias_Pagar_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estatus_Per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buscarPerTxt = new System.Windows.Forms.TextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPercepciones)).BeginInit();
@@ -131,35 +131,15 @@
             this.Estatus_Per});
             this.tablaPercepciones.Location = new System.Drawing.Point(31, 112);
             this.tablaPercepciones.Name = "tablaPercepciones";
+            this.tablaPercepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaPercepciones.Size = new System.Drawing.Size(594, 228);
-            this.tablaPercepciones.TabIndex = 3;
+            this.tablaPercepciones.TabIndex = 0;
             this.tablaPercepciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // buscarPerTxt
-            // 
-            this.buscarPerTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarPerTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarPerTxt.Location = new System.Drawing.Point(353, 46);
-            this.buscarPerTxt.Name = "buscarPerTxt";
-            this.buscarPerTxt.Size = new System.Drawing.Size(196, 26);
-            this.buscarPerTxt.TabIndex = 4;
-            this.buscarPerTxt.Text = "Buscar percepción";
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
-            this.btn_buscar.Location = new System.Drawing.Point(541, 46);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(33, 26);
-            this.btn_buscar.TabIndex = 5;
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // ID_Percepciones
             // 
             this.ID_Percepciones.HeaderText = "ID";
             this.ID_Percepciones.Name = "ID_Percepciones";
-            this.ID_Percepciones.ReadOnly = true;
             this.ID_Percepciones.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ID_Percepciones.Width = 50;
             // 
@@ -173,7 +153,6 @@
             // 
             this.Descripcion_Percepcion.HeaderText = "Descripción";
             this.Descripcion_Percepcion.Name = "Descripcion_Percepcion";
-            this.Descripcion_Percepcion.ReadOnly = true;
             this.Descripcion_Percepcion.Width = 170;
             // 
             // Dias_Pagar_Percepcion
@@ -186,6 +165,26 @@
             this.Estatus_Per.HeaderText = "Estatus";
             this.Estatus_Per.Name = "Estatus_Per";
             this.Estatus_Per.Width = 80;
+            // 
+            // buscarPerTxt
+            // 
+            this.buscarPerTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarPerTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buscarPerTxt.Location = new System.Drawing.Point(353, 46);
+            this.buscarPerTxt.Name = "buscarPerTxt";
+            this.buscarPerTxt.Size = new System.Drawing.Size(196, 26);
+            this.buscarPerTxt.TabIndex = 4;
+            this.buscarPerTxt.TextChanged += new System.EventHandler(this.buscarPerTxt_TextChanged);
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
+            this.btn_buscar.Location = new System.Drawing.Point(541, 46);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(33, 26);
+            this.btn_buscar.TabIndex = 5;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // Percepciones_GUI
             // 

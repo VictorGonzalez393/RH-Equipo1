@@ -15,6 +15,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
     public partial class Ciudades_editar : Form
     {
         private Ciudad ciudad;
+        Estados_DAO estadoDAO = new Estados_DAO();
         Ciudades_DAO ciudadDAO = new Ciudades_DAO();
         public Ciudades_editar(Ciudad ciudad)
         {
@@ -24,13 +25,26 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void Ciudades_editar_Load(object sender, EventArgs e)
         {
-            nombre_ciudad.Text = ciudad.Nombre;
-            for(int i = 0; i< estado_ciudad.Items.Count; i++)
+            string consulta_where = " where estatus = @estatus";
+            List<string> parametros = new List<string>();
+            parametros.Add("@estatus");
+            List<object> valores = new List<object>();
+            valores.Add('A');
+
+            List<Estado> estados = estadoDAO.consultaGeneral(consulta_where, parametros, valores);
+
+            foreach (Estado estado in estados)
             {
-                if(ciudad.IDEstado.ToString().Equals(estado_ciudad.Items[i]))
-                {
-                    estado_ciudad.SelectedIndex = i;
-                }
+                estado_ciudad.Items.Add(estado);
+            }
+
+
+            nombre_ciudad.Text = ciudad.Nombre;
+
+            foreach(Estado estado in estado_ciudad.Items)
+            {
+                if (estado.IdEstado == ciudad.IDEstado)
+                    estado_ciudad.SelectedItem = estado;
             }
         }
 

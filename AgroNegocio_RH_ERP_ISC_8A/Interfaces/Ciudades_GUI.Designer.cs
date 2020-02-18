@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ciudades_GUI));
             this.tablaCiudad = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buscar_ciudad = new System.Windows.Forms.TextBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.id_ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buscar_ciudad = new System.Windows.Forms.TextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCiudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editarCiudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -49,22 +50,42 @@
             // 
             // tablaCiudad
             // 
-            this.tablaCiudad.AllowUserToAddRows = false;
-            this.tablaCiudad.AllowUserToDeleteRows = false;
             this.tablaCiudad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCiudad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_ciudad,
             this.nombre_ciudad,
             this.estado,
             this.estatus});
-            this.tablaCiudad.Location = new System.Drawing.Point(38, 159);
-            this.tablaCiudad.MultiSelect = false;
+            this.tablaCiudad.Location = new System.Drawing.Point(20, 103);
             this.tablaCiudad.Name = "tablaCiudad";
-            this.tablaCiudad.ReadOnly = true;
             this.tablaCiudad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaCiudad.Size = new System.Drawing.Size(596, 87);
+            this.tablaCiudad.Size = new System.Drawing.Size(614, 194);
             this.tablaCiudad.TabIndex = 0;
             this.tablaCiudad.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCiudad_CellDoubleClick);
+            // 
+            // id_ciudad
+            // 
+            this.id_ciudad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_ciudad.HeaderText = "ID";
+            this.id_ciudad.Name = "id_ciudad";
+            // 
+            // nombre_ciudad
+            // 
+            this.nombre_ciudad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_ciudad.HeaderText = "Nombre";
+            this.nombre_ciudad.Name = "nombre_ciudad";
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            // 
+            // estatus
+            // 
+            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estatus.HeaderText = "Estatus";
+            this.estatus.Name = "estatus";
             // 
             // label1
             // 
@@ -106,36 +127,11 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // id_ciudad
-            // 
-            this.id_ciudad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_ciudad.HeaderText = "ID";
-            this.id_ciudad.Name = "id_ciudad";
-            this.id_ciudad.ReadOnly = true;
-            // 
-            // nombre_ciudad
-            // 
-            this.nombre_ciudad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_ciudad.HeaderText = "Nombre";
-            this.nombre_ciudad.Name = "nombre_ciudad";
-            // 
-            // estado
-            // 
-            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            // 
-            // estatus
-            // 
-            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estatus.HeaderText = "Estatus";
-            this.estatus.Name = "estatus";
-            // 
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
@@ -143,28 +139,40 @@
             // 
             this.agregarCiudadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("agregarCiudadToolStripMenuItem.Image")));
             this.agregarCiudadToolStripMenuItem.Name = "agregarCiudadToolStripMenuItem";
-            this.agregarCiudadToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.agregarCiudadToolStripMenuItem.Size = new System.Drawing.Size(132, 21);
             this.agregarCiudadToolStripMenuItem.Text = "Agregar Ciudad";
             this.agregarCiudadToolStripMenuItem.Click += new System.EventHandler(this.agregarCiudadToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.agregarCiudadToolStripMenuItem,
-            this.editarCiudadToolStripMenuItem});
+            this.editarCiudadToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(670, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(670, 25);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // editarCiudadToolStripMenuItem
             // 
+            this.editarCiudadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editarCiudadToolStripMenuItem.Image")));
             this.editarCiudadToolStripMenuItem.Name = "editarCiudadToolStripMenuItem";
-            this.editarCiudadToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.editarCiudadToolStripMenuItem.Size = new System.Drawing.Size(119, 21);
             this.editarCiudadToolStripMenuItem.Text = "Editar Ciudad";
             this.editarCiudadToolStripMenuItem.Click += new System.EventHandler(this.editarCiudadToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarToolStripMenuItem.Image")));
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // Ciudades_GUI
             // 
@@ -206,5 +214,6 @@
         private System.Windows.Forms.ToolStripMenuItem agregarCiudadToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarCiudadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

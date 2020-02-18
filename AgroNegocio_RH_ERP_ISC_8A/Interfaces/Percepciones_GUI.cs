@@ -108,7 +108,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tablaPercepciones.SelectedRows.Count != -1)
+            if (tablaPercepciones.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = tablaPercepciones.SelectedRows[0];
 
@@ -159,21 +159,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if(buscarPerTxt.Text.Equals("Buscar percepción"))
+            if(buscarPerTxt.Text.Equals(" "))
             {
                 DialogResult resultado = MessageBox.Show("No hay datos para buscar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information); 
 
             }
             else
             {
-                string consulta_wh = "where nombre like '%'+@nombre+'%'";
+                string consulta_wh = "where nombre like '%'+@nombre+'%'+ and estatus=@estatus";
                 List<string> parametros = new List<string>();
                 parametros.Add("@nombre");
+                parametros.Add("@estatus");
                 List<object> valores = new List<object>();
                 valores.Add(buscarPerTxt.Text);
+                valores.Add('A');
                 llenarTabla(percepciones_DAO.consultaGeneral(consulta_wh, parametros, valores));
 
             }
+        }
+
+        private void buscarPerTxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

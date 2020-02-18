@@ -39,6 +39,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                             lector.GetString(1),
                                                             lector.GetString(2),
                                                             lector.GetString(3)[0]);
+                        parametros.Clear();
+                        valores.Clear();
+                        parametros.Add("@id");
+                        valores.Add(estado_temporal.IdEstado);
+                        estado_temporal.Ciudades = new Ciudades_DAO().consultaGeneral(" where idEstado=@id", parametros, valores);
                         estados.Add(estado_temporal);
                     }
                 }
@@ -149,7 +154,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 string consulta = "select max(idEstado)+1 from Estados";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 conexion.Open();
-                new_ID = (int)comando.ExecuteScalar();
+                var ID = comando.ExecuteScalar();
+                if (ID.GetType().Equals(typeof(DBNull)))
+                {
+                    new_ID = 1;
+                }
+                else
+                {
+                    new_ID = (int)ID;
+                }
                 conexion.Close();
             }
             return new_ID;

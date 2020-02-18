@@ -12,12 +12,20 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public string Nombre { get; set; }
         public string Siglas { get; set; }
         public char Estatus { get; set; }
+        public List<Ciudad> Ciudades = new List<Ciudad>();
+
         public Estado(int id, string nombre, string siglas, char estatus)
         {
             IdEstado = id;
             Nombre = nombre;
             Siglas = siglas;
             Estatus = estatus;
+        }
+
+        override
+        public string ToString()
+        {
+            return Nombre;
         }
     }
 }

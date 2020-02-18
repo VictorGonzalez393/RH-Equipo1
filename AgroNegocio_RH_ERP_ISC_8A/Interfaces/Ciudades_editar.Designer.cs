@@ -64,10 +64,6 @@
             // estado_ciudad
             // 
             this.estado_ciudad.FormattingEnabled = true;
-            this.estado_ciudad.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.estado_ciudad.Location = new System.Drawing.Point(224, 186);
             this.estado_ciudad.Name = "estado_ciudad";
             this.estado_ciudad.Size = new System.Drawing.Size(121, 21);

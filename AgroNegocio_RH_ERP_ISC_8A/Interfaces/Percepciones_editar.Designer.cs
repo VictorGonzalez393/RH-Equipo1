@@ -81,9 +81,19 @@
             // dias_percepcion
             // 
             this.dias_percepcion.Location = new System.Drawing.Point(191, 258);
+            this.dias_percepcion.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.dias_percepcion.Name = "dias_percepcion";
             this.dias_percepcion.Size = new System.Drawing.Size(120, 20);
             this.dias_percepcion.TabIndex = 23;
+            this.dias_percepcion.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // descripcion_percepcion
             // 
@@ -105,9 +115,24 @@
             // 
             this.id_percepcion.Enabled = false;
             this.id_percepcion.Location = new System.Drawing.Point(191, 117);
+            this.id_percepcion.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.id_percepcion.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.id_percepcion.Name = "id_percepcion";
             this.id_percepcion.Size = new System.Drawing.Size(120, 20);
             this.id_percepcion.TabIndex = 20;
+            this.id_percepcion.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.id_percepcion.ValueChanged += new System.EventHandler(this.id_percepcion_ValueChanged);
             // 
             // label5

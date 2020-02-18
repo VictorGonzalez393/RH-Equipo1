@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Percepciones_DAO
+    class Deducciones_DAO
     {
         private string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
@@ -19,12 +19,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
          * Parametros
          * Valores
          */
-        public List<Percepcion> consultaGeneral(string consulta_wh, List<string> parametros, List<object> valores)
+        public List<Deduccion> consultaGeneral(string consulta_wh, List<string> parametros, List<object> valores)
         {
-            List<Percepcion> percepciones = new List<Percepcion>();
+            List<Deduccion> deducciones = new List<Deduccion>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Percepciones " + consulta_wh;
+                string consulta = "select * from Deducciones " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -37,43 +37,44 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     while (lector.Read())
                     {
-                        Percepcion per_temp = new Percepcion(lector.GetInt32(0),
+                        
+                        Deduccion ded_temp = new Deduccion(lector.GetInt32(0),
                                                            lector.GetString(1),
                                                            lector.GetString(2),
-                                                           lector.GetInt32(3),
+                                                           lector.GetDouble(3),
                                                            lector.GetString(4)[0]);
-                        percepciones.Add(per_temp);
+                        deducciones.Add(ded_temp);
                     }
                 }
                 conexion.Close();
             }
-            return percepciones;
+            return deducciones;
         }
 
 
         /**
          * Registrar
          * Método para registrar los valores en la BD.
-         * Recibe un objeto de tipo percepcion
+         * Recibe un objeto de tipo deduccion
          * retorna verdadero si el insert se realiza de manera correcta, falso 
          * si hay un error en la inserción 
          */
-        public bool registrar(Percepcion percepcion)
+        public bool registrar(Deduccion deduccion)
         {
             bool insert = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into Percepciones values (@idPercepcion, @nombre, @descripcion, @diasPagar, @estatus)";
-                    percepcion.IdPercepcion = getMaxID();
+                    string consulta = "insert into Deducciones values (@idDeduccion, @nombre, @descripcion, @porcentaje, @estatus)";
+                    deduccion.IdDeduccion = getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idPercepcion", percepcion.IdPercepcion);
-                    comando.Parameters.AddWithValue("@nombre", percepcion.Nombre);
-                    comando.Parameters.AddWithValue("@descripcion", percepcion.Descripcion);
-                    comando.Parameters.AddWithValue("@diasPagar", percepcion.DiasPagar);
-                    comando.Parameters.AddWithValue("@estatus", percepcion.Estatus);
+                    comando.Parameters.AddWithValue("@idDeduccion", deduccion.IdDeduccion);
+                    comando.Parameters.AddWithValue("@nombre", deduccion.Nombre);
+                    comando.Parameters.AddWithValue("@descripcion", deduccion.Descripcion);
+                    comando.Parameters.AddWithValue("@porcentaje", deduccion.Porcentaje);
+                    comando.Parameters.AddWithValue("@estatus", deduccion.Estatus);
                     if (comando.ExecuteNonQuery() != 0)
                         insert = true;
                     conexion.Close();
@@ -83,25 +84,25 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al registrar percepción. Error: " + ex.Message);
+                throw new Exception("Error al registrar deducción. Error: " + ex.Message);
             }
             return insert;
         }
 
-        public bool editar(Percepcion percepcion)
+        public bool editar(Deduccion deduccion)
         {
             bool editar = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Percepciones set nombre= @nombre, descripcion = @descripcion, diasPagar=@diasPagar where idPercepcion=@idPercepcion";
+                    string consulta = "update Deducciones set nombre= @nombre, descripcion = @descripcion, porcentaje=@porcentaje where idDeduccion=@idDeduccion";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idPercepcion", percepcion.IdPercepcion);
-                    comando.Parameters.AddWithValue("@nombre", percepcion.Nombre);
-                    comando.Parameters.AddWithValue("@descripcion", percepcion.Descripcion);
-                    comando.Parameters.AddWithValue("@diasPagar", percepcion.DiasPagar);
+                    comando.Parameters.AddWithValue("@idDeduccion", deduccion.IdDeduccion);
+                    comando.Parameters.AddWithValue("@nombre", deduccion.Nombre);
+                    comando.Parameters.AddWithValue("@descripcion", deduccion.Descripcion);
+                    comando.Parameters.AddWithValue("@porcentaje", deduccion.Porcentaje);
                     if (comando.ExecuteNonQuery() != 0)
                         editar = true;
                     conexion.Close();
@@ -110,14 +111,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al editar la percepcion. Error: " + ex.Message);
+                throw new Exception("Error al editar la deduccion. Error: " + ex.Message);
             }
             return editar;
         }
 
         /**
          * Eliminar
-         * Método para eliminar logicamente la percepción
+         * Método para eliminar logicamente la deducción
          */
         public bool eliminar(int idP)
         {
@@ -126,10 +127,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Percepciones set estatus='I' where idPercepcion=@idPercepcion";
+                    string consulta = "update Deducciones set estatus='I' where idDeduccion=@idDeduccion";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idPercepcion", idP);
+                    comando.Parameters.AddWithValue("@idDeduccion", idP);
                     if (comando.ExecuteNonQuery() != 0)
                         eliminar = true;
                     conexion.Close();
@@ -138,7 +139,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al eliminar la percepcion. Error: " + ex.Message);
+                throw new Exception("Error al eliminar la deduccion. Error: " + ex.Message);
             }
             return eliminar;
         }
@@ -152,7 +153,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             int new_ID = 0;
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select max(idPercepcion)+1 from Percepciones";
+                
+                string consulta = "select max(idDeduccion)+1 from Deducciones";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 conexion.Open();
                 var ID = comando.ExecuteScalar();
@@ -165,25 +167,26 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     new_ID = (int)ID;
                 }
                 conexion.Close();
+
             }
             return new_ID;
         }
 
         /**
-         * ValidarPercepcion
-         * Método para validar si la percepcion existe o no en la BD
+         * ValidarDeduccion
+         * Método para validar si la deduccion existe o no en la BD
          */
-        public bool validarPercepcion(Percepcion percepcion)
+        public bool validarDeduccion(Deduccion deduccion)
         {
             bool validar = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idPercepcion from Percepciones where nombre=@nombre";
+                    string consulta = "select idDeduccion from Deducciones where nombre=@nombre";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@nombre", percepcion.Nombre);
+                    comando.Parameters.AddWithValue("@nombre", deduccion.Nombre);
                     SqlDataReader lector = comando.ExecuteReader();
                     if (lector.HasRows)
                     {
@@ -198,10 +201,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al validar percepción. Error: " + ex.Message);
+                throw new Exception("Error al validar deducción. Error: " + ex.Message);
             }
             return validar;
         }
-
     }
 }

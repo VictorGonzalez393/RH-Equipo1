@@ -109,5 +109,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             }
         }
+
+        private void dias_percepcion_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

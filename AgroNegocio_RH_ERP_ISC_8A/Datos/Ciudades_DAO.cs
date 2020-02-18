@@ -148,7 +148,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 string consulta = "select max(idciudad)+1 from ciudades";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 conexion.Open();
-                nuevo_ID = (int)comando.ExecuteScalar();
+                
+                var ID = comando.ExecuteScalar();
+                if (ID.GetType().Equals(typeof(DBNull))){
+                    nuevo_ID = 1;
+                }
+                else
+                {
+                    nuevo_ID = (int)ID;
+                }
                 conexion.Close();
             }
             return nuevo_ID;

@@ -65,7 +65,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void editarCiudadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tablaCiudad.SelectedRows.Count != -1)
+            if (tablaCiudad.SelectedRows.Count >0)
             {
                 DataGridViewRow row = tablaCiudad.SelectedRows[0];
 
@@ -120,12 +120,41 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            string consulta_where = " where nombre like '%'+ @nombre + '%'";
+            string consulta_where = " where nombre like '%'+ @nombre + '%' and estatus=@estatus";
             List<string> parametros = new List<string>();
             parametros.Add("@nombre");
+            parametros.Add("@estatus");
             List<object> valores = new List<object>();
             valores.Add(buscar_ciudad.Text);
+            valores.Add('A');
             llenarTabla(ciudadesDAO.consultaGeneral(consulta_where, parametros, valores));
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaCiudad.SelectedRows.Count != -1)
+            {
+
+                try
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la ciudad?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        DataGridViewRow row = tablaCiudad.SelectedRows[0];
+                        int idCiudad = (int)row.Cells[0].Value;
+                        ciudadesDAO.eliminar(idCiudad);
+                        actualizarTabla();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona la ciudad", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

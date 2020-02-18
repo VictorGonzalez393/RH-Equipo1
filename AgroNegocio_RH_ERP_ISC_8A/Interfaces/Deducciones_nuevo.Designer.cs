@@ -34,10 +34,10 @@
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.dias_percepcion = new System.Windows.Forms.NumericUpDown();
-            this.descriocion_percepcion = new System.Windows.Forms.TextBox();
-            this.nombre_percepcion = new System.Windows.Forms.TextBox();
-            this.id_percepcion = new System.Windows.Forms.NumericUpDown();
+            this.porcentaje_deduccion = new System.Windows.Forms.NumericUpDown();
+            this.descripcion_deduccion = new System.Windows.Forms.TextBox();
+            this.nombre_deduccion = new System.Windows.Forms.TextBox();
+            this.id_deduccion = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,8 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dias_percepcion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.porcentaje_deduccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.id_deduccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,14 +61,16 @@
             this.menuStrip1.Size = new System.Drawing.Size(380, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // IniciotoolStripMenuItem1
             // 
-            this.IniciotoolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
-            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
             // 
             // backToolStripMenuItem
             // 
@@ -77,6 +79,7 @@
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click_1);
             // 
             // btn_cancelar
             // 
@@ -105,33 +108,50 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // dias_percepcion
+            // porcentaje_deduccion
             // 
-            this.dias_percepcion.Location = new System.Drawing.Point(199, 253);
-            this.dias_percepcion.Name = "dias_percepcion";
-            this.dias_percepcion.Size = new System.Drawing.Size(120, 20);
-            this.dias_percepcion.TabIndex = 21;
+            this.porcentaje_deduccion.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.porcentaje_deduccion.Location = new System.Drawing.Point(199, 253);
+            this.porcentaje_deduccion.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.porcentaje_deduccion.Name = "porcentaje_deduccion";
+            this.porcentaje_deduccion.Size = new System.Drawing.Size(120, 20);
+            this.porcentaje_deduccion.TabIndex = 21;
+            this.porcentaje_deduccion.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // descriocion_percepcion
+            // descripcion_deduccion
             // 
-            this.descriocion_percepcion.Location = new System.Drawing.Point(198, 210);
-            this.descriocion_percepcion.Name = "descriocion_percepcion";
-            this.descriocion_percepcion.Size = new System.Drawing.Size(121, 20);
-            this.descriocion_percepcion.TabIndex = 20;
+            this.descripcion_deduccion.Location = new System.Drawing.Point(198, 210);
+            this.descripcion_deduccion.Name = "descripcion_deduccion";
+            this.descripcion_deduccion.Size = new System.Drawing.Size(121, 20);
+            this.descripcion_deduccion.TabIndex = 20;
             // 
-            // nombre_percepcion
+            // nombre_deduccion
             // 
-            this.nombre_percepcion.Location = new System.Drawing.Point(199, 160);
-            this.nombre_percepcion.Name = "nombre_percepcion";
-            this.nombre_percepcion.Size = new System.Drawing.Size(120, 20);
-            this.nombre_percepcion.TabIndex = 19;
+            this.nombre_deduccion.Location = new System.Drawing.Point(199, 160);
+            this.nombre_deduccion.Name = "nombre_deduccion";
+            this.nombre_deduccion.Size = new System.Drawing.Size(120, 20);
+            this.nombre_deduccion.TabIndex = 19;
             // 
-            // id_percepcion
+            // id_deduccion
             // 
-            this.id_percepcion.Location = new System.Drawing.Point(199, 112);
-            this.id_percepcion.Name = "id_percepcion";
-            this.id_percepcion.Size = new System.Drawing.Size(120, 20);
-            this.id_percepcion.TabIndex = 18;
+            this.id_deduccion.Enabled = false;
+            this.id_deduccion.Location = new System.Drawing.Point(199, 112);
+            this.id_deduccion.Name = "id_deduccion";
+            this.id_deduccion.Size = new System.Drawing.Size(120, 20);
+            this.id_deduccion.TabIndex = 18;
+            this.id_deduccion.ValueChanged += new System.EventHandler(this.id_deduccion_ValueChanged);
             // 
             // label5
             // 
@@ -205,10 +225,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.dias_percepcion);
-            this.Controls.Add(this.descriocion_percepcion);
-            this.Controls.Add(this.nombre_percepcion);
-            this.Controls.Add(this.id_percepcion);
+            this.Controls.Add(this.porcentaje_deduccion);
+            this.Controls.Add(this.descripcion_deduccion);
+            this.Controls.Add(this.nombre_deduccion);
+            this.Controls.Add(this.id_deduccion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -217,11 +237,12 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Deducciones_nuevo";
-            this.Text = "Deducciones_nuevo";
+            this.Text = "Deducciones nuevo";
+            this.Load += new System.EventHandler(this.Deducciones_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dias_percepcion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.porcentaje_deduccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.id_deduccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,10 +256,10 @@
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.NumericUpDown dias_percepcion;
-        private System.Windows.Forms.TextBox descriocion_percepcion;
-        private System.Windows.Forms.TextBox nombre_percepcion;
-        private System.Windows.Forms.NumericUpDown id_percepcion;
+        private System.Windows.Forms.NumericUpDown porcentaje_deduccion;
+        private System.Windows.Forms.TextBox descripcion_deduccion;
+        private System.Windows.Forms.TextBox nombre_deduccion;
+        private System.Windows.Forms.NumericUpDown id_deduccion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -14,6 +14,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class Ciudades_nuevo : Form
     {
+        Estados_DAO estadoDAO = new Estados_DAO();
         Ciudades_DAO ciudadDAO = new Ciudades_DAO();
         public Ciudades_nuevo()
         {
@@ -33,11 +34,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             List<object> valores = new List<object>();
             valores.Add('A');
 
-            List<Ciudad> ciudades = ciudadDAO.consultaGeneral(consulta_where, parametros, valores);
+            List<Estado> estados = estadoDAO.consultaGeneral(consulta_where, parametros, valores);
 
-            foreach(Ciudad ciudad in ciudades)
+            foreach(Estado estado in estados)
             {
-                estado_ciudad.Items.Add(ciudad.Nombre);
+                estado_ciudad.Items.Add(estado);
             }
 
         }
@@ -46,8 +47,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (validarDatos()==true)
             {
+                Estado estado = (Estado)estado_ciudad.SelectedItem;
                 Ciudad ciudad_nueva = new Ciudad(0, nombre_ciudad.Text, 
-                    int.Parse(estado_ciudad.Items[estado_ciudad.SelectedIndex].ToString()), 'A');
+                   estado.IdEstado, 'A');
                 try
                 {
                     if (ciudadDAO.validarCiudad(ciudad_nueva))
