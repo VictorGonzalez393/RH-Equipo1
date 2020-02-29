@@ -40,7 +40,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch(SqlException ex)
             {
-                throw new Exception("Error al acceder a la BD. Error: " + ex.Message);
+                throw new Exception("Error al acceder a la base de datos.");
                 //return false;
             }
         }

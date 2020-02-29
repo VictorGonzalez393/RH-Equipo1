@@ -84,7 +84,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al registrar deducción. Error: " + ex.Message);
+                throw new Exception("Error al registrar deducción. ");
             }
             return insert;
         }
@@ -111,7 +111,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al editar la deduccion. Error: " + ex.Message);
+                throw new Exception("Error al editar la deduccion.");
             }
             return editar;
         }
@@ -139,7 +139,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al eliminar la deduccion. Error: " + ex.Message);
+                throw new Exception("Error al eliminar la deduccion. ");
             }
             return eliminar;
         }
@@ -201,7 +201,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al validar deducción. Error: " + ex.Message);
+                throw new Exception("Error al validar deducción. ");
             }
             return validar;
         }

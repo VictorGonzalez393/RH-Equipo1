@@ -83,7 +83,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al registrar percepción. Error: " + ex.Message);
+                throw new Exception("Error al registrar percepción.");
             }
             return insert;
         }
@@ -110,7 +110,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al editar la percepcion. Error: " + ex.Message);
+                throw new Exception("Error al editar la percepcion.");
             }
             return editar;
         }
@@ -138,7 +138,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al eliminar la percepcion. Error: " + ex.Message);
+                throw new Exception("Error al eliminar la percepcion. ");
             }
             return eliminar;
         }
@@ -198,7 +198,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al validar percepción. Error: " + ex.Message);
+                throw new Exception("Error al validar percepción.");
             }
             return validar;
         }
