@@ -164,6 +164,7 @@
             // 
             // estado_ciudad
             // 
+            this.estado_ciudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estado_ciudad.FormattingEnabled = true;
             this.estado_ciudad.Location = new System.Drawing.Point(209, 184);
             this.estado_ciudad.Name = "estado_ciudad";

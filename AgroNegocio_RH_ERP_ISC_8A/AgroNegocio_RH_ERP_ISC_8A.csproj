@@ -69,6 +69,12 @@
     <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Horarios_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Horarios_editar.Designer.cs">
+      <DependentUpon>Horarios_editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Deduccion.cs" />
     <Compile Include="Modelo\Estado.cs" />
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Estados_nuevo.resx">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Horarios_editar.resx">
+      <DependentUpon>Horarios_editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

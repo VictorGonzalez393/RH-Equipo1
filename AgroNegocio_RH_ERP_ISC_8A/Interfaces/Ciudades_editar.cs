@@ -53,7 +53,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             if (validarDatos() == true)
             {
                 ciudad.Nombre = nombre_ciudad.Text;
-                ciudad.IDEstado = int.Parse(estado_ciudad.Items[estado_ciudad.SelectedIndex].ToString());
+                ciudad.IDEstado = ((Estado)estado_ciudad.Items[estado_ciudad.SelectedIndex]).IdEstado;
                 try
                 {
                     if (ciudadDAO.validarCiudadEditar(ciudad))
