@@ -79,7 +79,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al registrar estado. Error: " + ex.Message);
+                Console.WriteLine("Error al registrar estado. Error: " + ex.Message);
             }
             return insert;
         }
@@ -109,7 +109,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al editar el estado. Error: " + ex.Message);
+                Console.WriteLine("Error al editar el estado. Error: " + ex.Message);
             }
             return editar;
         }
@@ -137,7 +137,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al eliminar el estado. Error: " + ex.Message);
+                Console.WriteLine("Error al eliminar el estado. Error: " + ex.Message);
             }
             return eliminar;
         }
@@ -197,7 +197,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al validar Estado. Error: " + ex.Message);
+                Console.WriteLine("Error al validar Estado. Error: " + ex.Message);
             }
             return validar;
         }

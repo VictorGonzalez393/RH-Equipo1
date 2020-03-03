@@ -76,7 +76,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al registrar ciudad. Error: " + ex.Message);
+                Console.WriteLine("Error al registrar ciudad. Error: " + ex.Message);
             }
 
             return insert;
@@ -107,7 +107,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al editar ciudad. Error: " + ex.Message);
+                Console.WriteLine("Error al editar ciudad. ");
             }
             return insert;
         }
@@ -134,7 +134,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al eliminar la ciudad. Error: " + ex.Message);
+                Console.WriteLine("Error al eliminar la ciudad.Error: " + ex.Message);
             }
             return insert;
         }
@@ -192,7 +192,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al validar ciudad. Error: " + ex.Message);
+                Console.WriteLine("Error al validar ciudad. Error: " + ex.Message);
             }
             return disponible;
         }
@@ -225,7 +225,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al validar ciudad. Error: " + ex.Message);
+                Console.WriteLine("Error al validar ciudad. Error: " + ex.Message);
             }
             return disponible;
         }

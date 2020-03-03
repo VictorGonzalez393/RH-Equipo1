@@ -111,7 +111,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error al intentar eliminar la ciudad");
                 }
             }
             else
@@ -148,7 +148,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error al intentar eliminar la ciudad");
                 }
             }
             else

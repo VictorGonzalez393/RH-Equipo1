@@ -67,7 +67,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error al registrar la ciudad");
                 }
             }
         }
