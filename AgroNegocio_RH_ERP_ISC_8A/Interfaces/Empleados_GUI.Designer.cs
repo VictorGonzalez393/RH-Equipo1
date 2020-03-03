@@ -40,6 +40,9 @@
             this.fNacimiento_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fContratacion_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estatus_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_buscarEmpleado = new System.Windows.Forms.Button();
+            this.buscarEmpleadoTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +100,7 @@
             this.fNacimiento_Empleado,
             this.fContratacion_Empleado,
             this.Estatus_Empleado});
-            this.tablaEmpleados.Location = new System.Drawing.Point(69, 125);
+            this.tablaEmpleados.Location = new System.Drawing.Point(77, 250);
             this.tablaEmpleados.Margin = new System.Windows.Forms.Padding(5);
             this.tablaEmpleados.Name = "tablaEmpleados";
             this.tablaEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -134,11 +137,46 @@
             this.Estatus_Empleado.HeaderText = "Estatus";
             this.Estatus_Empleado.Name = "Estatus_Empleado";
             // 
+            // btn_buscarEmpleado
+            // 
+            this.btn_buscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscarEmpleado.Image")));
+            this.btn_buscarEmpleado.Location = new System.Drawing.Point(643, 152);
+            this.btn_buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_buscarEmpleado.Name = "btn_buscarEmpleado";
+            this.btn_buscarEmpleado.Size = new System.Drawing.Size(45, 31);
+            this.btn_buscarEmpleado.TabIndex = 14;
+            this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // buscarEmpleadoTxt
+            // 
+            this.buscarEmpleadoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarEmpleadoTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buscarEmpleadoTxt.Location = new System.Drawing.Point(388, 154);
+            this.buscarEmpleadoTxt.Margin = new System.Windows.Forms.Padding(5);
+            this.buscarEmpleadoTxt.Name = "buscarEmpleadoTxt";
+            this.buscarEmpleadoTxt.Size = new System.Drawing.Size(259, 26);
+            this.buscarEmpleadoTxt.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(205, 152);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 31);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Empleados";
+            // 
             // Empleados_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 597);
+            this.Controls.Add(this.btn_buscarEmpleado);
+            this.Controls.Add(this.buscarEmpleadoTxt);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaEmpleados);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Empleados_GUI";
@@ -164,5 +202,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fNacimiento_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn fContratacion_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Empleado;
+        private System.Windows.Forms.Button btn_buscarEmpleado;
+        private System.Windows.Forms.TextBox buscarEmpleadoTxt;
+        private System.Windows.Forms.Label label1;
     }
 }

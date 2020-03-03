@@ -16,5 +16,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             InitializeComponent();
         }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
