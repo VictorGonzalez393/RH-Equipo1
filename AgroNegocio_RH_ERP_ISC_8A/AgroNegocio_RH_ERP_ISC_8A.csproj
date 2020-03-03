@@ -51,6 +51,18 @@
     <Compile Include="Datos\Estados_DAO.cs" />
     <Compile Include="Datos\LoginDAO.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
+    <Compile Include="Interfaces\Empleados_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_GUI.Designer.cs">
+      <DependentUpon>Empleados_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_nuevo.Designer.cs">
+      <DependentUpon>Empleados_nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Estados_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Deducciones_nuevo.resx">
       <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Empleados_GUI.resx">
+      <DependentUpon>Empleados_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Empleados_nuevo.resx">
+      <DependentUpon>Empleados_nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Estados_editar.resx">
       <DependentUpon>Estados_editar.cs</DependentUpon>
