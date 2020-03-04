@@ -89,7 +89,8 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(215, 22);
             this.txtPass.TabIndex = 4;
-            this.txtPass.Text = "Contraseña";
+            this.txtPass.Text = "Password";
+            this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPass_MouseClick);
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
