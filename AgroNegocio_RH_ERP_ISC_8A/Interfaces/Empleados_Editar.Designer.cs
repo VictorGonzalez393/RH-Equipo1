@@ -1,6 +1,6 @@
 ﻿namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    partial class Empleados_nuevo
+    partial class Empleados_Editar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados_nuevo));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados_Editar));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -116,7 +112,10 @@
             this.Hab_Martes = new System.Windows.Forms.CheckBox();
             this.Hab_Lunes = new System.Windows.Forms.CheckBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -126,52 +125,8 @@
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(403, 551);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
-            this.btn_cancelar.TabIndex = 25;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(291, 551);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(94, 31);
-            this.btn_guardar.TabIndex = 24;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = false;
             // 
             // tabControl1
             // 
@@ -182,7 +137,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 511);
-            this.tabControl1.TabIndex = 26;
+            this.tabControl1.TabIndex = 28;
             // 
             // tabPage1
             // 
@@ -244,31 +199,25 @@
             this.cbx_Edo_civil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_Edo_civil.FormattingEnabled = true;
             this.cbx_Edo_civil.Items.AddRange(new object[] {
-            "Soltero",
+            "----Seleccionar------",
             "Casado",
+            "Soltero",
             "Divorciado",
             "Viudo"});
             this.cbx_Edo_civil.Location = new System.Drawing.Point(120, 383);
             this.cbx_Edo_civil.Name = "cbx_Edo_civil";
             this.cbx_Edo_civil.Size = new System.Drawing.Size(247, 24);
             this.cbx_Edo_civil.TabIndex = 33;
-            this.cbx_Edo_civil.Text = "--Seleccione--";
+            this.cbx_Edo_civil.SelectedIndexChanged += new System.EventHandler(this.cbx_Edo_civil_SelectedIndexChanged);
             // 
             // comboBox5
             // 
             this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Ninguna",
-            "Primaria",
-            "Secundaria",
-            "Preparatoria",
-            "Licenciatura"});
             this.comboBox5.Location = new System.Drawing.Point(526, 240);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(258, 24);
             this.comboBox5.TabIndex = 32;
-            this.comboBox5.Text = "--Seleccione--";
             // 
             // dateTimePicker1
             // 
@@ -797,7 +746,6 @@
             this.label30.Size = new System.Drawing.Size(55, 13);
             this.label30.TabIndex = 9;
             this.label30.Text = "H. Inicio";
-            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
             // label29
             // 
@@ -871,7 +819,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker16, 6, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker15, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker14, 4, 2);
@@ -905,7 +853,7 @@
             // dateTimePicker16
             // 
             this.dateTimePicker16.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker16.Location = new System.Drawing.Point(582, 184);
+            this.dateTimePicker16.Location = new System.Drawing.Point(581, 184);
             this.dateTimePicker16.Name = "dateTimePicker16";
             this.dateTimePicker16.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker16.TabIndex = 31;
@@ -913,7 +861,7 @@
             // dateTimePicker15
             // 
             this.dateTimePicker15.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker15.Location = new System.Drawing.Point(479, 184);
+            this.dateTimePicker15.Location = new System.Drawing.Point(478, 184);
             this.dateTimePicker15.Name = "dateTimePicker15";
             this.dateTimePicker15.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker15.TabIndex = 30;
@@ -921,7 +869,7 @@
             // dateTimePicker14
             // 
             this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker14.Location = new System.Drawing.Point(372, 184);
+            this.dateTimePicker14.Location = new System.Drawing.Point(371, 184);
             this.dateTimePicker14.Name = "dateTimePicker14";
             this.dateTimePicker14.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker14.TabIndex = 29;
@@ -929,7 +877,7 @@
             // dateTimePicker13
             // 
             this.dateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker13.Location = new System.Drawing.Point(269, 184);
+            this.dateTimePicker13.Location = new System.Drawing.Point(268, 184);
             this.dateTimePicker13.Name = "dateTimePicker13";
             this.dateTimePicker13.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker13.TabIndex = 28;
@@ -937,7 +885,7 @@
             // dateTimePicker12
             // 
             this.dateTimePicker12.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker12.Location = new System.Drawing.Point(175, 184);
+            this.dateTimePicker12.Location = new System.Drawing.Point(174, 184);
             this.dateTimePicker12.Name = "dateTimePicker12";
             this.dateTimePicker12.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker12.TabIndex = 27;
@@ -961,7 +909,7 @@
             // dateTimePicker9
             // 
             this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker9.Location = new System.Drawing.Point(582, 76);
+            this.dateTimePicker9.Location = new System.Drawing.Point(581, 76);
             this.dateTimePicker9.Name = "dateTimePicker9";
             this.dateTimePicker9.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker9.TabIndex = 24;
@@ -969,7 +917,7 @@
             // dateTimePicker8
             // 
             this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker8.Location = new System.Drawing.Point(479, 76);
+            this.dateTimePicker8.Location = new System.Drawing.Point(478, 76);
             this.dateTimePicker8.Name = "dateTimePicker8";
             this.dateTimePicker8.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker8.TabIndex = 23;
@@ -977,7 +925,7 @@
             // dateTimePicker7
             // 
             this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker7.Location = new System.Drawing.Point(372, 76);
+            this.dateTimePicker7.Location = new System.Drawing.Point(371, 76);
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker7.TabIndex = 22;
@@ -985,7 +933,7 @@
             // dateTimePicker6
             // 
             this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(269, 76);
+            this.dateTimePicker6.Location = new System.Drawing.Point(268, 76);
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker6.TabIndex = 21;
@@ -993,7 +941,7 @@
             // dateTimePicker5
             // 
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker5.Location = new System.Drawing.Point(175, 76);
+            this.dateTimePicker5.Location = new System.Drawing.Point(174, 76);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker5.TabIndex = 20;
@@ -1009,7 +957,7 @@
             // Hab_Domingo
             // 
             this.Hab_Domingo.AutoSize = true;
-            this.Hab_Domingo.Location = new System.Drawing.Point(582, 3);
+            this.Hab_Domingo.Location = new System.Drawing.Point(581, 3);
             this.Hab_Domingo.Name = "Hab_Domingo";
             this.Hab_Domingo.Size = new System.Drawing.Size(35, 17);
             this.Hab_Domingo.TabIndex = 17;
@@ -1020,7 +968,7 @@
             // Hab_Sabado
             // 
             this.Hab_Sabado.AutoSize = true;
-            this.Hab_Sabado.Location = new System.Drawing.Point(479, 3);
+            this.Hab_Sabado.Location = new System.Drawing.Point(478, 3);
             this.Hab_Sabado.Name = "Hab_Sabado";
             this.Hab_Sabado.Size = new System.Drawing.Size(34, 17);
             this.Hab_Sabado.TabIndex = 16;
@@ -1031,7 +979,7 @@
             // Hab_Viernes
             // 
             this.Hab_Viernes.AutoSize = true;
-            this.Hab_Viernes.Location = new System.Drawing.Point(372, 3);
+            this.Hab_Viernes.Location = new System.Drawing.Point(371, 3);
             this.Hab_Viernes.Name = "Hab_Viernes";
             this.Hab_Viernes.Size = new System.Drawing.Size(34, 17);
             this.Hab_Viernes.TabIndex = 15;
@@ -1042,7 +990,7 @@
             // Hab_Jueves
             // 
             this.Hab_Jueves.AutoSize = true;
-            this.Hab_Jueves.Location = new System.Drawing.Point(269, 3);
+            this.Hab_Jueves.Location = new System.Drawing.Point(268, 3);
             this.Hab_Jueves.Name = "Hab_Jueves";
             this.Hab_Jueves.Size = new System.Drawing.Size(32, 17);
             this.Hab_Jueves.TabIndex = 14;
@@ -1053,7 +1001,7 @@
             // Hab_Miercoles
             // 
             this.Hab_Miercoles.AutoSize = true;
-            this.Hab_Miercoles.Location = new System.Drawing.Point(175, 3);
+            this.Hab_Miercoles.Location = new System.Drawing.Point(174, 3);
             this.Hab_Miercoles.Name = "Hab_Miercoles";
             this.Hab_Miercoles.Size = new System.Drawing.Size(36, 17);
             this.Hab_Miercoles.TabIndex = 13;
@@ -1091,19 +1039,62 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(79, 20);
             this.dateTimePicker3.TabIndex = 18;
             // 
-            // Empleados_nuevo
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
+            this.menuStrip1.TabIndex = 27;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelar.Location = new System.Drawing.Point(380, 565);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
+            this.btn_cancelar.TabIndex = 39;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.White;
+            this.btn_guardar.Location = new System.Drawing.Point(279, 565);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(94, 31);
+            this.btn_guardar.TabIndex = 38;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            // 
+            // Empleados_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 618);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(800, 629);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Empleados_nuevo";
-            this.Text = "Empleados_nuevo";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Name = "Empleados_Editar";
+            this.Text = "Empleados_Editar";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1117,16 +1108,15 @@
             this.tabPage3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_guardar;
+
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1210,5 +1200,9 @@
         private System.Windows.Forms.CheckBox Hab_Martes;
         private System.Windows.Forms.CheckBox Hab_Lunes;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_guardar;
     }
 }

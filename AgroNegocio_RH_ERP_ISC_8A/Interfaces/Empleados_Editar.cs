@@ -10,18 +10,15 @@ using System.Windows.Forms;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    public partial class Empleados_nuevo : Form
+    public partial class Empleados_Editar : Form
     {
-        public Empleados_nuevo()
+        public Empleados_Editar()
         {
             InitializeComponent();
         }
 
-        private void label30_Click(object sender, EventArgs e)
+        private void cbx_Edo_civil_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
- 
     }
 }

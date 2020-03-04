@@ -66,5 +66,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             Application.Exit();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Empleados_GUI empleados = new Empleados_GUI();
+            this.SetVisibleCore(false);
+            empleados.ShowDialog();
+            this.SetVisibleCore(true);
+        }
     }
 }
