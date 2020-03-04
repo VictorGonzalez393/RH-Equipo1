@@ -130,7 +130,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idEstado", idE);
                     if (comando.ExecuteNonQuery() != 0)
+                    {
                         eliminar = true;
+                        consulta = "update Ciudades set estatus='I' where idEstado=@idEstado";
+                        comando = new SqlCommand(consulta, conexion);
+                        comando.Parameters.AddWithValue("@idEstado", idE);
+                    }
                     conexion.Close();
                 }
 

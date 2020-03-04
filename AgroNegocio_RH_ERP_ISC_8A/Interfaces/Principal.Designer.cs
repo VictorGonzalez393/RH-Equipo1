@@ -44,6 +44,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uBICACIONToolStripMenuItem,
             this.dETToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.cerrarSesiónToolStripMenuItem,
+            this.empleadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(715, 25);
@@ -78,7 +80,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.eSTADOSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eSTADOSToolStripMenuItem.Image")));
             this.eSTADOSToolStripMenuItem.Name = "eSTADOSToolStripMenuItem";
-            this.eSTADOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eSTADOSToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.eSTADOSToolStripMenuItem.Text = "Estados";
             this.eSTADOSToolStripMenuItem.Click += new System.EventHandler(this.eSTADOSToolStripMenuItem_Click);
             // 
@@ -86,7 +88,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.cIUDADESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cIUDADESToolStripMenuItem.Image")));
             this.cIUDADESToolStripMenuItem.Name = "cIUDADESToolStripMenuItem";
-            this.cIUDADESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cIUDADESToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.cIUDADESToolStripMenuItem.Text = "Ciudades";
             this.cIUDADESToolStripMenuItem.Click += new System.EventHandler(this.cIUDADESToolStripMenuItem_Click);
             // 
@@ -104,7 +106,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.dECUCCIONESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dECUCCIONESToolStripMenuItem.Image")));
             this.dECUCCIONESToolStripMenuItem.Name = "dECUCCIONESToolStripMenuItem";
-            this.dECUCCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dECUCCIONESToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.dECUCCIONESToolStripMenuItem.Text = "Deducciones";
             this.dECUCCIONESToolStripMenuItem.Click += new System.EventHandler(this.dECUCCIONESToolStripMenuItem_Click);
             // 
@@ -112,7 +114,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.pERCEPCIONESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pERCEPCIONESToolStripMenuItem.Image")));
             this.pERCEPCIONESToolStripMenuItem.Name = "pERCEPCIONESToolStripMenuItem";
-            this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.pERCEPCIONESToolStripMenuItem.Text = "Percepciones";
             this.pERCEPCIONESToolStripMenuItem.Click += new System.EventHandler(this.pERCEPCIONESToolStripMenuItem_Click);
             // 
@@ -160,6 +162,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,5 +212,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
     }
 }
