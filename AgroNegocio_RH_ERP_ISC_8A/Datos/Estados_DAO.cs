@@ -10,7 +10,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
     class Estados_DAO
     {
-        private string cadenaconexion = "SERVER=localhost" +
+        private readonly string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
 
         /*
@@ -132,9 +132,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     if (comando.ExecuteNonQuery() != 0)
                     {
                         eliminar = true;
+                        consulta = "";
                         consulta = "update Ciudades set estatus='I' where idEstado=@idEstado";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@idEstado", idE);
+                        comando.ExecuteNonQuery();
                     }
                     conexion.Close();
                 }
