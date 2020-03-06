@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Deducciones_DAO.cs" />
+    <Compile Include="Datos\Departamentos_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Estados_DAO.cs" />
     <Compile Include="Datos\LoginDAO.cs" />
@@ -132,6 +133,7 @@
     </Compile>
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Deduccion.cs" />
+    <Compile Include="Modelo\Departamento.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\Estado.cs" />
     <Compile Include="Modelo\Login_model.cs" />
