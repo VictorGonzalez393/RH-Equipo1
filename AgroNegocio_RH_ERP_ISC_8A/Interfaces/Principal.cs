@@ -13,6 +13,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class Principal : Form
     {
+        private string user;
+        public Principal(string us)
+        {
+            InitializeComponent();
+            user = us;
+            string txt_lb;
+            txt_lb = lbl_user.Text +" "+ user;
+            lbl_user.Text = txt_lb;
+
+        }
         public Principal()
         {
             InitializeComponent();
@@ -64,14 +74,58 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             Login l = new Login();
             l.ShowDialog();
 
-            Application.Exit();
+            //Application.Exit();
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Departamentos_GUI dep = new Departamentos_GUI();
+            this.SetVisibleCore(false);
+            dep.ShowDialog();
+            this.SetVisibleCore(true);
+        }
+
+        private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Puestos_GUI puestos = new Puestos_GUI();
+            this.SetVisibleCore(false);
+            puestos.ShowDialog();
+            this.SetVisibleCore(true);
+        }
+
+        private void historialDePuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             Empleados_GUI empleados = new Empleados_GUI();
             this.SetVisibleCore(false);
             empleados.ShowDialog();
+            this.SetVisibleCore(true);
+        }
+
+        private void organizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void horariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Horarios_editar h = new Horarios_editar();
+            this.SetVisibleCore(false);
+            h.ShowDialog();
             this.SetVisibleCore(true);
         }
     }

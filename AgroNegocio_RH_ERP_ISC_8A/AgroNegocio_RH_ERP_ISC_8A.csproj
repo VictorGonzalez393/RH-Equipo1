@@ -328,17 +328,34 @@
     <Content Include="Iconos\casa.png" />
     <Content Include="Iconos\cerrar-sesion.png" />
     <Content Include="Iconos\contabilidad.png" />
+    <Content Include="Iconos\corazon.png" />
     <Content Include="Iconos\dejar.png" />
+    <Content Include="Iconos\departamento_1.png" />
+    <Content Include="Iconos\dinero.png" />
+    <Content Include="Iconos\dividendo.png" />
     <Content Include="Iconos\documento.png" />
     <Content Include="Iconos\edit-validated256_25237.png" />
     <Content Include="Iconos\editar.png" />
     <Content Include="Iconos\financiero.png" />
     <Content Include="Iconos\marcador-de-posicion %281%29.png" />
     <Content Include="Iconos\marcador-de-posicion.png" />
+    <Content Include="Iconos\material-de-oficina.png" />
     <Content Include="Iconos\metropolitano.png" />
     <Content Include="Iconos\nomina-de-sueldos %281%29.png" />
+    <Content Include="Iconos\nomina-de-sueldos %282%29.png" />
     <Content Include="Iconos\nomina-de-sueldos.png" />
+    <Content Include="Iconos\obrero.png" />
+    <Content Include="Iconos\organizacion.png" />
     <Content Include="Iconos\Percepciones_.png" />
+    <Content Include="Iconos\perdida.png" />
+    <Content Include="Iconos\permiso %281%29.png" />
+    <Content Include="Iconos\permiso.png" />
+    <Content Include="Iconos\reloj %281%29.png" />
+    <Content Include="Iconos\reloj.png" />
+    <Content Include="Iconos\trabajo.png" />
+    <Content Include="Iconos\usuario %281%29.png" />
+    <Content Include="Iconos\usuario.png" />
+    <Content Include="Iconos\equipo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

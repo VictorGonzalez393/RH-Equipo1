@@ -24,10 +24,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A
         {
             /*cn.Conectar("LaLiz", "Hola.123");
             MessageBox.Show("Conexion exitosa" + cn.ToString());*/
-            Principal principal = new Principal();
-            this.SetVisibleCore(false);
-            principal.ShowDialog();
-            Application.Exit();
+            //Principal principal = new Principal();
+            //this.SetVisibleCore(false);
+           // principal.ShowDialog();
+            //Application.Exit();
 
         }
     }

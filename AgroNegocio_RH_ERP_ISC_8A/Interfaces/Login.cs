@@ -39,7 +39,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     if (loginValido == true)
                     {
                         this.SetVisibleCore(false);
-                        Principal p = new Principal();
+                        Principal p = new Principal(txtUsuario.Text);
                         p.ShowDialog();
 
                     }
