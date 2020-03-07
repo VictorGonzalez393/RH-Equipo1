@@ -36,17 +36,16 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tablaPercepciones = new System.Windows.Forms.DataGridView();
-            this.ID_Percepciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dias_Pagar_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estatus_Per = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buscarPerTxt = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.tabla_Percepciones = new System.Windows.Forms.DataGridView();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaPercepciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Percepciones)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -120,52 +119,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // tablaPercepciones
-            // 
-            this.tablaPercepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPercepciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Percepciones,
-            this.Nombre_Percepcion,
-            this.Descripcion_Percepcion,
-            this.Dias_Pagar_Percepcion,
-            this.Estatus_Per});
-            this.tablaPercepciones.Location = new System.Drawing.Point(31, 112);
-            this.tablaPercepciones.Name = "tablaPercepciones";
-            this.tablaPercepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaPercepciones.Size = new System.Drawing.Size(594, 228);
-            this.tablaPercepciones.TabIndex = 0;
-            this.tablaPercepciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID_Percepciones
-            // 
-            this.ID_Percepciones.HeaderText = "ID";
-            this.ID_Percepciones.Name = "ID_Percepciones";
-            this.ID_Percepciones.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_Percepciones.Width = 50;
-            // 
-            // Nombre_Percepcion
-            // 
-            this.Nombre_Percepcion.HeaderText = "Nombre";
-            this.Nombre_Percepcion.Name = "Nombre_Percepcion";
-            this.Nombre_Percepcion.Width = 150;
-            // 
-            // Descripcion_Percepcion
-            // 
-            this.Descripcion_Percepcion.HeaderText = "Descripción";
-            this.Descripcion_Percepcion.Name = "Descripcion_Percepcion";
-            this.Descripcion_Percepcion.Width = 170;
-            // 
-            // Dias_Pagar_Percepcion
-            // 
-            this.Dias_Pagar_Percepcion.HeaderText = "Días a pagar";
-            this.Dias_Pagar_Percepcion.Name = "Dias_Pagar_Percepcion";
-            // 
-            // Estatus_Per
-            // 
-            this.Estatus_Per.HeaderText = "Estatus";
-            this.Estatus_Per.Name = "Estatus_Per";
-            this.Estatus_Per.Width = 80;
-            // 
             // buscarPerTxt
             // 
             this.buscarPerTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,14 +139,69 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(418, 368);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(36, 38);
+            this.btn_siguiente.TabIndex = 6;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(182, 368);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(36, 38);
+            this.btn_anterior.TabIndex = 7;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
+            // 
+            // lbl_pagina
+            // 
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Location = new System.Drawing.Point(238, 377);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
+            this.lbl_pagina.TabIndex = 8;
+            this.lbl_pagina.Text = "Página ";
+            this.lbl_pagina.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Location = new System.Drawing.Point(338, 377);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(34, 20);
+            this.lbl_total.TabIndex = 9;
+            this.lbl_total.Text = "de ";
+            // 
+            // tabla_Percepciones
+            // 
+            this.tabla_Percepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_Percepciones.Location = new System.Drawing.Point(34, 115);
+            this.tabla_Percepciones.Name = "tabla_Percepciones";
+            this.tabla_Percepciones.ReadOnly = true;
+            this.tabla_Percepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tabla_Percepciones.Size = new System.Drawing.Size(594, 225);
+            this.tabla_Percepciones.TabIndex = 10;
+            this.tabla_Percepciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_Percepciones_CellContentClick);
+            this.tabla_Percepciones.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tabla_Percepciones_DataBindingComplete);
+            // 
             // Percepciones_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 451);
+            this.Controls.Add(this.tabla_Percepciones);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_pagina);
+            this.Controls.Add(this.btn_anterior);
+            this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.buscarPerTxt);
-            this.Controls.Add(this.tablaPercepciones);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menu);
@@ -206,7 +214,7 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaPercepciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Percepciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,15 +227,14 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView tablaPercepciones;
         private System.Windows.Forms.TextBox buscarPerTxt;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Percepciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dias_Pagar_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Per;
+        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Label lbl_pagina;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.DataGridView tabla_Percepciones;
     }
 }

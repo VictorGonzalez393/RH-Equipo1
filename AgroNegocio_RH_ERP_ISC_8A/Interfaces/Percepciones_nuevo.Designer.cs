@@ -186,19 +186,14 @@
             // dias_percepcion
             // 
             this.dias_percepcion.Location = new System.Drawing.Point(191, 258);
-            this.dias_percepcion.Minimum = new decimal(new int[] {
-            1,
+            this.dias_percepcion.Maximum = new decimal(new int[] {
+            365,
             0,
             0,
             0});
             this.dias_percepcion.Name = "dias_percepcion";
             this.dias_percepcion.Size = new System.Drawing.Size(120, 20);
             this.dias_percepcion.TabIndex = 10;
-            this.dias_percepcion.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.dias_percepcion.ValueChanged += new System.EventHandler(this.dias_percepcion_ValueChanged);
             // 
             // btn_guardar

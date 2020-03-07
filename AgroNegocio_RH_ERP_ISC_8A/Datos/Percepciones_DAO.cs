@@ -7,10 +7,11 @@ using System.Data.SqlClient;
 using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Percepciones_DAO
+    class Percepciones_DAO : Paginacion
     {
         private string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
+
 
         /**
          * Consulta General
@@ -24,7 +25,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Percepcion> percepciones = new List<Percepcion>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Percepciones " + consulta_wh;
+                string consulta = "select * from Percepciones_Tabla " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -65,7 +66,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into Percepciones values (@idPercepcion, @nombre, @descripcion, @diasPagar, @estatus)";
+                    string consulta = "insert into Percepciones values (@idPercepcion, @nombre, @descripcion, @diasPagar,@estatus)";
                     percepcion.IdPercepcion = getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
@@ -83,7 +84,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al registrar percepción. ");
+                Console.WriteLine("Error al registrar percepción. "+ex.Message);
             }
             return insert;
         }
@@ -105,6 +106,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     if (comando.ExecuteNonQuery() != 0)
                         editar = true;
                     conexion.Close();
+
                 }
 
             }
@@ -180,7 +182,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idPercepcion from Percepciones where nombre=@nombre";
+                    string consulta = "select idPercepcion from Percepciones where nombre=@nombre and estatus='A'";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@nombre", percepcion.Nombre);
@@ -190,9 +192,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                         validar = false;
                     }
                     else
-                    {
+                    { 
                         validar = true;
                     }
+
                     conexion.Close();
                 }
             }

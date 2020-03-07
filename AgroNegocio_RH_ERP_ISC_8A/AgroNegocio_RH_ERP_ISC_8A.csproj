@@ -52,6 +52,7 @@
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Estados_DAO.cs" />
     <Compile Include="Datos\LoginDAO.cs" />
+    <Compile Include="Datos\Paginacion.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
     <Compile Include="Interfaces\Departamentos_editar.cs">
       <SubType>Form</SubType>
@@ -322,7 +323,9 @@
     <Content Include="Iconos\agricultura.ico" />
     <Content Include="Iconos\anadir%281%29.png" />
     <Content Include="Iconos\anadir.png" />
+    <Content Include="Iconos\anterior.png" />
     <Content Include="Iconos\atras.png" />
+    <Content Include="Iconos\atras_2.png" />
     <Content Include="Iconos\banderas.png" />
     <Content Include="Iconos\buscar %281%29.png" />
     <Content Include="Iconos\casa.png" />
@@ -340,6 +343,7 @@
     <Content Include="Iconos\marcador-de-posicion %281%29.png" />
     <Content Include="Iconos\marcador-de-posicion.png" />
     <Content Include="Iconos\material-de-oficina.png" />
+    <Content Include="Iconos\menos_ingresos.png" />
     <Content Include="Iconos\metropolitano.png" />
     <Content Include="Iconos\nomina-de-sueldos %281%29.png" />
     <Content Include="Iconos\nomina-de-sueldos %282%29.png" />
@@ -352,6 +356,8 @@
     <Content Include="Iconos\permiso.png" />
     <Content Include="Iconos\reloj %281%29.png" />
     <Content Include="Iconos\reloj.png" />
+    <Content Include="Iconos\siguiente-pista.png" />
+    <Content Include="Iconos\Siguiente.png" />
     <Content Include="Iconos\trabajo.png" />
     <Content Include="Iconos\usuario %281%29.png" />
     <Content Include="Iconos\usuario.png" />
