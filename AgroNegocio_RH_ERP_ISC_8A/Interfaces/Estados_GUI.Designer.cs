@@ -36,16 +36,16 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tablaEstados = new System.Windows.Forms.DataGridView();
-            this.ID_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Siglas_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estatus_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabla_Estados = new System.Windows.Forms.DataGridView();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaEstados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Estados)).BeginInit();
             this.SuspendLayout();
             // 
             // buscarEstadoTxt
@@ -82,7 +82,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menu.Size = new System.Drawing.Size(605, 31);
+            this.menu.Size = new System.Drawing.Size(557, 31);
             this.menu.TabIndex = 6;
             this.menu.Text = "menuStrip1";
             // 
@@ -120,54 +120,13 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // tablaEstados
-            // 
-            this.tablaEstados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaEstados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Estado,
-            this.Nombre_Estado,
-            this.Siglas_Estado,
-            this.Estatus_Estado});
-            this.tablaEstados.Location = new System.Drawing.Point(40, 136);
-            this.tablaEstados.Margin = new System.Windows.Forms.Padding(5);
-            this.tablaEstados.Name = "tablaEstados";
-            this.tablaEstados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaEstados.Size = new System.Drawing.Size(494, 235);
-            this.tablaEstados.TabIndex = 0;
-            this.tablaEstados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID_Estado
-            // 
-            this.ID_Estado.HeaderText = "ID";
-            this.ID_Estado.Name = "ID_Estado";
-            this.ID_Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_Estado.Width = 50;
-            // 
-            // Nombre_Estado
-            // 
-            this.Nombre_Estado.HeaderText = "Nombre";
-            this.Nombre_Estado.Name = "Nombre_Estado";
-            this.Nombre_Estado.Width = 150;
-            // 
-            // Siglas_Estado
-            // 
-            this.Siglas_Estado.HeaderText = "Siglas ";
-            this.Siglas_Estado.Name = "Siglas_Estado";
-            this.Siglas_Estado.Width = 170;
-            // 
-            // Estatus_Estado
-            // 
-            this.Estatus_Estado.HeaderText = "Estatus";
-            this.Estatus_Estado.Name = "Estatus_Estado";
-            this.Estatus_Estado.Width = 80;
-            // 
             // btn_buscar
             // 
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
             this.btn_buscar.Location = new System.Drawing.Point(489, 59);
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(5);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(45, 31);
+            this.btn_buscar.Size = new System.Drawing.Size(35, 28);
             this.btn_buscar.TabIndex = 11;
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
@@ -183,12 +142,63 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // tabla_Estados
+            // 
+            this.tabla_Estados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_Estados.Location = new System.Drawing.Point(64, 115);
+            this.tabla_Estados.Name = "tabla_Estados";
+            this.tabla_Estados.Size = new System.Drawing.Size(444, 216);
+            this.tabla_Estados.TabIndex = 12;
+            this.tabla_Estados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_Estados_CellContentClick);
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Location = new System.Drawing.Point(296, 369);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(34, 20);
+            this.lbl_total.TabIndex = 16;
+            this.lbl_total.Text = "de ";
+            // 
+            // lbl_pagina
+            // 
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Location = new System.Drawing.Point(196, 369);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
+            this.lbl_pagina.TabIndex = 15;
+            this.lbl_pagina.Text = "Página ";
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(140, 360);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(36, 38);
+            this.btn_anterior.TabIndex = 14;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(376, 360);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(36, 38);
+            this.btn_siguiente.TabIndex = 13;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+            // 
             // Estados_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 443);
-            this.Controls.Add(this.tablaEstados);
+            this.ClientSize = new System.Drawing.Size(557, 443);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_pagina);
+            this.Controls.Add(this.btn_anterior);
+            this.Controls.Add(this.btn_siguiente);
+            this.Controls.Add(this.tabla_Estados);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.buscarEstadoTxt);
             this.Controls.Add(this.pictureBox1);
@@ -202,8 +212,8 @@
             this.Load += new System.EventHandler(this.Estados_GUI_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaEstados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Estados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,10 +230,10 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.DataGridView tablaEstados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Siglas_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Estado;
+        private System.Windows.Forms.DataGridView tabla_Estados;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_pagina;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Button btn_siguiente;
     }
 }

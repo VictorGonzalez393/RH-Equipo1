@@ -183,7 +183,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idDeduccion from Deducciones where nombre=@nombre";
+                    string consulta = "select idDeduccion from Deducciones where nombre=@nombre and estatus='A'";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@nombre", deduccion.Nombre);

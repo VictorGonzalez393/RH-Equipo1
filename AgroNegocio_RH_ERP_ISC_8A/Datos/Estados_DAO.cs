@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Estados_DAO
+    class Estados_DAO : Paginacion
     {
         private readonly string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
@@ -186,7 +186,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idEstado from Estados where nombre=@nombre";
+                    string consulta = "select idEstado from Estados where nombre=@nombre and estatus='A'";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@nombre", estado.Nombre);
