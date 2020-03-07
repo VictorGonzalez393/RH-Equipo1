@@ -116,19 +116,9 @@
             0,
             65536});
             this.porcentaje_deduccion.Location = new System.Drawing.Point(199, 253);
-            this.porcentaje_deduccion.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.porcentaje_deduccion.Name = "porcentaje_deduccion";
             this.porcentaje_deduccion.Size = new System.Drawing.Size(120, 20);
             this.porcentaje_deduccion.TabIndex = 21;
-            this.porcentaje_deduccion.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // descripcion_deduccion
             // 

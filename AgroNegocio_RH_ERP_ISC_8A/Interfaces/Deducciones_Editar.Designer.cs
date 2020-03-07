@@ -80,6 +80,11 @@
             // 
             // porcentaje_deduccion
             // 
+            this.porcentaje_deduccion.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.porcentaje_deduccion.Location = new System.Drawing.Point(187, 232);
             this.porcentaje_deduccion.Name = "porcentaje_deduccion";
             this.porcentaje_deduccion.Size = new System.Drawing.Size(120, 20);

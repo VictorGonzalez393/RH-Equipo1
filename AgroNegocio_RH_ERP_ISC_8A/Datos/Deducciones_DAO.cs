@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Deducciones_DAO
+    class Deducciones_DAO : Paginacion
     {
         private string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";

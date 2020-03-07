@@ -146,7 +146,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if(buscarPerTxt.Text.Equals(" "))
+            if(buscarPerTxt.Text.Equals(""))
             {
                 DialogResult resultado = MessageBox.Show("No hay datos para buscar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information); 
 

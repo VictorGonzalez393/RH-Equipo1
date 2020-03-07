@@ -38,23 +38,23 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tablaDeducciones = new System.Windows.Forms.DataGridView();
-            this.ID_Percepciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Porcentaje_Deduccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estatus_Per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tabla_Deducciones = new System.Windows.Forms.DataGridView();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaDeducciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla_Deducciones)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_buscar
             // 
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
-            this.btn_buscar.Location = new System.Drawing.Point(573, 89);
+            this.btn_buscar.Location = new System.Drawing.Point(564, 79);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(33, 26);
+            this.btn_buscar.Size = new System.Drawing.Size(40, 28);
             this.btn_buscar.TabIndex = 18;
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
@@ -63,9 +63,10 @@
             // 
             this.buscarDedTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarDedTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarDedTxt.Location = new System.Drawing.Point(371, 88);
+            this.buscarDedTxt.Location = new System.Drawing.Point(349, 80);
+            this.buscarDedTxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.buscarDedTxt.Name = "buscarDedTxt";
-            this.buscarDedTxt.Size = new System.Drawing.Size(196, 26);
+            this.buscarDedTxt.Size = new System.Drawing.Size(216, 26);
             this.buscarDedTxt.TabIndex = 17;
             // 
             // label1
@@ -73,19 +74,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(132, 81);
+            this.label1.Location = new System.Drawing.Point(125, 73);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 31);
             this.label1.TabIndex = 15;
             this.label1.Text = "Deducciones";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 45);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(94, 87);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
@@ -100,8 +102,8 @@
             this.eliminarToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menu.Size = new System.Drawing.Size(727, 27);
+            this.menu.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
+            this.menu.Size = new System.Drawing.Size(640, 31);
             this.menu.TabIndex = 20;
             this.menu.Text = "menuStrip1";
             // 
@@ -139,70 +141,89 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click_1);
             // 
-            // tablaDeducciones
+            // Tabla_Deducciones
             // 
-            this.tablaDeducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaDeducciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Percepciones,
-            this.Nombre_Percepcion,
-            this.Descripcion_Percepcion,
-            this.Porcentaje_Deduccion,
-            this.Estatus_Per});
-            this.tablaDeducciones.Location = new System.Drawing.Point(62, 150);
-            this.tablaDeducciones.Name = "tablaDeducciones";
-            this.tablaDeducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaDeducciones.Size = new System.Drawing.Size(594, 228);
-            this.tablaDeducciones.TabIndex = 0;
+            this.Tabla_Deducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabla_Deducciones.Location = new System.Drawing.Point(33, 121);
+            this.Tabla_Deducciones.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Tabla_Deducciones.Name = "Tabla_Deducciones";
+            this.Tabla_Deducciones.ReadOnly = true;
+            this.Tabla_Deducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Tabla_Deducciones.Size = new System.Drawing.Size(550, 261);
+            this.Tabla_Deducciones.TabIndex = 21;
+            this.Tabla_Deducciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Tabla_Deducciones_CellContentClick);
             // 
-            // ID_Percepciones
+            // lbl_total
             // 
-            this.ID_Percepciones.HeaderText = "ID";
-            this.ID_Percepciones.Name = "ID_Percepciones";
-            this.ID_Percepciones.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_Percepciones.Width = 50;
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(320, 416);
+            this.lbl_total.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(32, 19);
+            this.lbl_total.TabIndex = 25;
+            this.lbl_total.Text = "de ";
+            this.lbl_total.Click += new System.EventHandler(this.lbl_total_Click);
             // 
-            // Nombre_Percepcion
+            // lbl_pagina
             // 
-            this.Nombre_Percepcion.HeaderText = "Nombre";
-            this.Nombre_Percepcion.Name = "Nombre_Percepcion";
-            this.Nombre_Percepcion.Width = 150;
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pagina.Location = new System.Drawing.Point(238, 416);
+            this.lbl_pagina.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(66, 19);
+            this.lbl_pagina.TabIndex = 24;
+            this.lbl_pagina.Text = "Página ";
+            this.lbl_pagina.Click += new System.EventHandler(this.lbl_pagina_Click);
             // 
-            // Descripcion_Percepcion
+            // btn_anterior
             // 
-            this.Descripcion_Percepcion.HeaderText = "Descripción";
-            this.Descripcion_Percepcion.Name = "Descripcion_Percepcion";
-            this.Descripcion_Percepcion.Width = 170;
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(181, 408);
+            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(35, 35);
+            this.btn_anterior.TabIndex = 23;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
-            // Porcentaje_Deduccion
+            // btn_siguiente
             // 
-            this.Porcentaje_Deduccion.HeaderText = "Porcentaje (%)";
-            this.Porcentaje_Deduccion.Name = "Porcentaje_Deduccion";
-            // 
-            // Estatus_Per
-            // 
-            this.Estatus_Per.HeaderText = "Estatus";
-            this.Estatus_Per.Name = "Estatus_Per";
-            this.Estatus_Per.Width = 80;
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(382, 410);
+            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(35, 33);
+            this.btn_siguiente.TabIndex = 22;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // Deducciones_GUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 401);
-            this.Controls.Add(this.tablaDeducciones);
+            this.ClientSize = new System.Drawing.Size(640, 499);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_pagina);
+            this.Controls.Add(this.btn_anterior);
+            this.Controls.Add(this.btn_siguiente);
+            this.Controls.Add(this.Tabla_Deducciones);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.buscarDedTxt);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "Deducciones_GUI";
             this.Text = "Deducciones";
             this.Load += new System.EventHandler(this.Deducciones_GUI_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaDeducciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla_Deducciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,11 +239,10 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.DataGridView tablaDeducciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Percepciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje_Deduccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Per;
+        private System.Windows.Forms.DataGridView Tabla_Deducciones;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_pagina;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Button btn_siguiente;
     }
 }
