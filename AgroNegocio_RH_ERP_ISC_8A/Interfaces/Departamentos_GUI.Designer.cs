@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Departamentos_GUI));
             this.tablaDepartamentos = new System.Windows.Forms.DataGridView();
-            this.buscarEstadoTxt = new System.Windows.Forms.TextBox();
+            this.ID_Depa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Depa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buscarDeptoTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_Depa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Depa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDepartamentos)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,15 +59,27 @@
             this.tablaDepartamentos.Size = new System.Drawing.Size(493, 259);
             this.tablaDepartamentos.TabIndex = 12;
             // 
-            // buscarEstadoTxt
+            // ID_Depa
             // 
-            this.buscarEstadoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarEstadoTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarEstadoTxt.Location = new System.Drawing.Point(261, 98);
-            this.buscarEstadoTxt.Margin = new System.Windows.Forms.Padding(5);
-            this.buscarEstadoTxt.Name = "buscarEstadoTxt";
-            this.buscarEstadoTxt.Size = new System.Drawing.Size(259, 26);
-            this.buscarEstadoTxt.TabIndex = 16;
+            this.ID_Depa.HeaderText = "ID";
+            this.ID_Depa.Name = "ID_Depa";
+            this.ID_Depa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Nombre_Depa
+            // 
+            this.Nombre_Depa.HeaderText = "Nombre";
+            this.Nombre_Depa.Name = "Nombre_Depa";
+            this.Nombre_Depa.Width = 350;
+            // 
+            // buscarDeptoTxt
+            // 
+            this.buscarDeptoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarDeptoTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buscarDeptoTxt.Location = new System.Drawing.Point(261, 98);
+            this.buscarDeptoTxt.Margin = new System.Windows.Forms.Padding(5);
+            this.buscarDeptoTxt.Name = "buscarDeptoTxt";
+            this.buscarDeptoTxt.Size = new System.Drawing.Size(259, 26);
+            this.buscarDeptoTxt.TabIndex = 16;
             // 
             // label1
             // 
@@ -97,6 +109,40 @@
             this.menu.TabIndex = 13;
             this.menu.Text = "menuStrip1";
             // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(178, 21);
+            this.nuevoToolStripMenuItem.Text = "Agregar Departamento";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editarToolStripMenuItem.Image")));
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(165, 21);
+            this.editarToolStripMenuItem.Text = "Editar Departamento";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarToolStripMenuItem.Image")));
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
             // btn_buscar
             // 
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
@@ -106,6 +152,7 @@
             this.btn_buscar.Size = new System.Drawing.Size(45, 31);
             this.btn_buscar.TabIndex = 17;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // pictureBox1
             // 
@@ -118,48 +165,6 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            // 
-            // nuevoToolStripMenuItem
-            // 
-            this.nuevoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(178, 21);
-            this.nuevoToolStripMenuItem.Text = "Agregar Departamento";
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editarToolStripMenuItem.Image")));
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(165, 21);
-            this.editarToolStripMenuItem.Text = "Editar Departamento";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarToolStripMenuItem.Image")));
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            // 
-            // ID_Depa
-            // 
-            this.ID_Depa.HeaderText = "ID";
-            this.ID_Depa.Name = "ID_Depa";
-            this.ID_Depa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Nombre_Depa
-            // 
-            this.Nombre_Depa.HeaderText = "Nombre";
-            this.Nombre_Depa.Name = "Nombre_Depa";
-            this.Nombre_Depa.Width = 350;
-            // 
             // Departamentos_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,13 +172,14 @@
             this.ClientSize = new System.Drawing.Size(584, 450);
             this.Controls.Add(this.tablaDepartamentos);
             this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.buscarEstadoTxt);
+            this.Controls.Add(this.buscarDeptoTxt);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Departamentos_GUI";
             this.Text = "Departamentos";
+            this.Load += new System.EventHandler(this.Departamentos_GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaDepartamentos)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -187,7 +193,7 @@
 
         private System.Windows.Forms.DataGridView tablaDepartamentos;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.TextBox buscarEstadoTxt;
+        private System.Windows.Forms.TextBox buscarDeptoTxt;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menu;

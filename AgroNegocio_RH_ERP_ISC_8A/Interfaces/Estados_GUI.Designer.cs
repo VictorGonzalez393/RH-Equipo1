@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 449);
+            this.ClientSize = new System.Drawing.Size(605, 443);
             this.Controls.Add(this.tablaEstados);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.buscarEstadoTxt);

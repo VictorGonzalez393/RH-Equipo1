@@ -16,5 +16,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             InitializeComponent();
         }
+
+        public static implicit operator Departamentos_nuevo(Estados_nuevo v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

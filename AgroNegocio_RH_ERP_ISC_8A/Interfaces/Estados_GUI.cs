@@ -44,9 +44,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             llenarTabla(estados_DAO.consultaGeneral(consulta_wh, parametros, valores));
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+           /* if (e.RowIndex != -1)
             {
                 try
                 {
@@ -70,7 +70,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             else
             {
                 DialogResult resultado = MessageBox.Show("Selecciona el estado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            }*/
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)

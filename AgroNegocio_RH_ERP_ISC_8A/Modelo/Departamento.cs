@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 {
-    class Departamento
+    public class Departamento
     {
         public int idDepto { get; set; }
         public string Nombre { get; set; }
