@@ -8,20 +8,16 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Estados_DAO
+    class Departamentos_DAO
     {
         private readonly string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
-
-        /*
-         * Método para la consulta General de estados 
-         */
-        public List<Estado> consultaGeneral(string consulta_where, List<string> parametros, List<object> valores)
+        public List<Departamento> consultaGeneral(string consulta_where, List<string> parametros, List<object> valores)
         {
-            List<Estado> estados = new List<Estado>();
+            List<Departamento> deptos = new List<Departamento>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Estados " + consulta_where;
+                string consulta = "select * from Departamentos " + consulta_where;
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
@@ -35,41 +31,31 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     while (lector.Read())
                     {
-                        Estado estado_temporal = new Estado(lector.GetInt32(0),
+                        Departamento depto = new Departamento(lector.GetInt32(0),
                                                             lector.GetString(1),
-                                                            lector.GetString(2),
-                                                            lector.GetString(3)[0]);
-                        parametros.Clear();
-                        valores.Clear();
-                        parametros.Add("@id");
-                        valores.Add(estado_temporal.IdEstado);
-                        estado_temporal.Ciudades = new Ciudades_DAO().consultaGeneral(" where idEstado=@id", parametros, valores);
-                        estados.Add(estado_temporal);
+                                                            lector.GetString(2)[0]);
+                        deptos.Add(depto);
                     }
                 }
                 conexion.Close();
             }
-            return estados;
+            return deptos;
         }
 
-        /*
-         * Método para registrar un estado
-         */
-        public bool registrar(Estado estado)
+        public bool registrar(Departamento depto)
         {
             bool insert = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into Estados values (@idEstado, @nombre, @siglas, @estatus)";
-                    estado.IdEstado = getMaxID();
+                    string consulta = "insert into Departamentos values (@idDepartamento, @nombre, @estatus)";
+                    depto.idDepto= getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idEstado", estado.IdEstado);
-                    comando.Parameters.AddWithValue("@nombre", estado.Nombre);
-                    comando.Parameters.AddWithValue("@siglas", estado.Siglas);
-                    comando.Parameters.AddWithValue("@estatus", estado.Estatus);
+                    comando.Parameters.AddWithValue("@idDepartamento", depto.idDepto);
+                    comando.Parameters.AddWithValue("@nombre", depto.Nombre);
+                    comando.Parameters.AddWithValue("@estatus", depto.Estatus);
                     if (comando.ExecuteNonQuery() != 0)
                         insert = true;
                     conexion.Close();
@@ -77,88 +63,68 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 }
 
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                Console.WriteLine("Error al registrar estado. Error: " + ex.Message);
+                throw new Exception("Error al registrar el Departamento. " + depto.Nombre);
             }
             return insert;
         }
 
-        /*
-        *Método para editar
-         */
-
-        public bool editar(Estado estado)
+        public bool editar(Departamento depto)
         {
             bool editar = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Estados set nombre= @nombre, siglas = @siglas where idEstado=@idEstado";
+                    string consulta = "update Departamentos set nombre= @nombre where idDepartamento=@idDepartamento";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idEstado", estado.IdEstado);
-                    comando.Parameters.AddWithValue("@nombre", estado.Nombre);
-                    comando.Parameters.AddWithValue("@siglas", estado.Siglas);
+                    comando.Parameters.AddWithValue("@idDepartamento", depto.idDepto);
+                    comando.Parameters.AddWithValue("@nombre", depto.Nombre);
                     if (comando.ExecuteNonQuery() != 0)
                         editar = true;
                     conexion.Close();
                 }
 
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                Console.WriteLine("Error al editar el estado. Error: " + ex.Message);
+                Console.WriteLine("Error al editar el departamento." );
             }
             return editar;
         }
 
-        /*
-         * Método para eliminar
-         */
-
-        public bool eliminar(int idE)
+        public bool eliminar(int idD)
         {
             bool eliminar = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Estados set estatus='I' where idEstado=@idEstado";
+                    string consulta = "update Departamentos set estatus='I' where idDepartamento=@idDepartamento";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idEstado", idE);
+                    comando.Parameters.AddWithValue("@idDepartamento", idD);
                     if (comando.ExecuteNonQuery() != 0)
-                    {
                         eliminar = true;
-                        consulta = "";
-                        consulta = "update Ciudades set estatus='I' where idEstado=@idEstado";
-                        comando = new SqlCommand(consulta, conexion);
-                        comando.Parameters.AddWithValue("@idEstado", idE);
-                        comando.ExecuteNonQuery();
-                    }
                     conexion.Close();
                 }
 
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                Console.WriteLine("Error al eliminar el estado. Error: " + ex.Message);
+                Console.WriteLine("Error al eliminar el Departamento.");
             }
             return eliminar;
         }
-
-        /*
-         * Obetener el siguiente ID
-         */
 
         public int getMaxID()
         {
             int new_ID = 0;
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select max(idEstado)+1 from Estados";
+                string consulta = "select max(idDepartamento)+1 from Departamentos";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 conexion.Open();
                 var ID = comando.ExecuteScalar();
@@ -175,21 +141,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             return new_ID;
         }
 
-        /*
-         * Validar el Estado
-         */
-
-        public bool validarEstado(Estado estado)
+        public bool validarDepto(Departamento depto)
         {
             bool validar = false;
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idEstado from Estados where nombre=@nombre";
+                    string consulta = "select idDepartamento from Departamentos where nombre=@nombre";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@nombre", estado.Nombre);
+                    comando.Parameters.AddWithValue("@nombre", depto.Nombre);
                     SqlDataReader lector = comando.ExecuteReader();
                     if (lector.HasRows)
                     {
@@ -202,9 +164,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     conexion.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                Console.WriteLine("Error al validar Estado. Error: " + ex.Message);
+                Console.WriteLine("Error al validar departamento.");
             }
             return validar;
         }

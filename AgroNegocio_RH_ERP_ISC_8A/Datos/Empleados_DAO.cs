@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
         public List<Empleado> consultaGeneral(string consulta_wh, List<string> parametros, List<object> valores)
         {
-            List<Empleado> deducciones = new List<Empleado>();
+            List<Empleado> empleados = new List<Empleado>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
                 string consulta = "select * from Empleados " + consulta_wh;
@@ -50,17 +50,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(16),
                                                            lector.GetFloat(17),
                                                            lector.GetChar(18),
-                                                           (lector.GetInt32(19),
-                                                           (lector.GetInt32(20),
-                                                           (lector.GetInt32(21),
-                                                           (lector.GetInt32(22);
+                                                           lector.GetInt32(19),
+                                                           lector.GetInt32(20),
+                                                           lector.GetInt32(21),
+                                                           lector.GetInt32(22));
 
                         empleados.Add(emp_temp);
                     }
                 }
                 conexion.Close();
             }
-            return deducciones;
+            return empleados;
         }
 
 
@@ -68,5 +68,5 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 
 
     }
-}*/
+}
 
