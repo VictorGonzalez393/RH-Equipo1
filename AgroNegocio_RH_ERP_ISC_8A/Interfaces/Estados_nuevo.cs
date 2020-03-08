@@ -27,6 +27,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             Principal pr = new Principal();
             this.SetVisibleCore(false);
             pr.ShowDialog();
+//Application.Exit();
         }
 
         private void Estados_nuevo_Load(object sender, EventArgs e)

@@ -100,5 +100,18 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             Close();
         }
+
+        private void atásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.SetVisibleCore(false);
+            Principal p = new Principal();
+            p.ShowDialog();
+            //Application.Exit();
+        }
     }
 }

@@ -159,6 +159,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(false);
             Principal p = new Principal();
             p.ShowDialog();
+           // Application.Exit();
         }
 
         private void btn_guardar_Click_1(object sender, EventArgs e)

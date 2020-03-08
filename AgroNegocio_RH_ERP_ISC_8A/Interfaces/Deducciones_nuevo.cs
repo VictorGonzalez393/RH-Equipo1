@@ -120,6 +120,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(false);
             Principal p = new Principal();
             p.ShowDialog();
+           // Application.Exit();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

@@ -8,7 +8,7 @@ using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Ciudades_DAO
+    class Ciudades_DAO : Paginacion
     {
 
         private string cadenaconexion = "SERVER=localhost" +
@@ -138,6 +138,22 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return insert;
         }
+        public int getIDEstado(string estado)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idEstado from estados where nombre='"+estado+"'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
+        }
 
 
         private int getMaxID()
@@ -173,7 +189,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
                     string consulta = "select idciudad from ciudades where nombre= @NOMBRE " +
-                        "and idestado= @idestado";
+                        "and idestado= @idestado and estatus='A'";
 
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
