@@ -147,6 +147,8 @@
             this.tabla_Estados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Estados.Location = new System.Drawing.Point(64, 115);
             this.tabla_Estados.Name = "tabla_Estados";
+            this.tabla_Estados.ReadOnly = true;
+            this.tabla_Estados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla_Estados.Size = new System.Drawing.Size(444, 216);
             this.tabla_Estados.TabIndex = 12;
             this.tabla_Estados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_Estados_CellContentClick);
