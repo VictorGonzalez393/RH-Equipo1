@@ -96,14 +96,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 DataGridViewRow row = tabla_Percepciones.SelectedRows[0];
 
                
-                Percepcion percepcion_editar = new Percepcion(
+                Percepcion percepciones_editar = new Percepcion(
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
                     (int)row.Cells[3].Value,
                     Convert.ToChar(row.Cells[4].Value)
                     );
-                Percepciones_editar percepciones_Editar = new Percepciones_editar(percepcion_editar);
+                Percepciones_editar percepciones_Editar = new Percepciones_editar(percepciones_editar);
                 this.SetVisibleCore(false);
                 percepciones_Editar.ShowDialog();
                 this.SetVisibleCore(true);

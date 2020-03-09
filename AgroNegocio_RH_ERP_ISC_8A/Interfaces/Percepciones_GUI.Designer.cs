@@ -132,7 +132,7 @@
             // btn_buscar
             // 
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
-            this.btn_buscar.Location = new System.Drawing.Point(541, 46);
+            this.btn_buscar.Location = new System.Drawing.Point(555, 46);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(33, 26);
             this.btn_buscar.TabIndex = 5;

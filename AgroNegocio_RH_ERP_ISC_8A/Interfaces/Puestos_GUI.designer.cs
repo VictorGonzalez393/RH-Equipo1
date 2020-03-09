@@ -193,6 +193,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Puestos_GUI";
             this.Text = "Puestos";
+            this.Load += new System.EventHandler(this.Puestos_GUI_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPuestos)).EndInit();

@@ -232,6 +232,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Puestos_nuevo";
             this.Text = "Puestos_nuevo";
+            this.Load += new System.EventHandler(this.Puestos_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).EndInit();
