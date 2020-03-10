@@ -22,6 +22,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         }
 
- 
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
