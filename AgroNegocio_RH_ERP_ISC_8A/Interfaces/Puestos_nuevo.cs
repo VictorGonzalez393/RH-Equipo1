@@ -50,7 +50,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 if (!string.IsNullOrWhiteSpace(samin_puesto.Text))
                 {
-                    if (samax_puesto.Value != 0)
+                    if (!string.IsNullOrWhiteSpace(samax_puesto.Text))
                     {
                         return true;
                     }
@@ -87,7 +87,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (validarCampos() == true)
             {
-                Puesto puesto_new = new Puesto(0, nombre_puesto.Text, samin_puesto.Text, (int)samax_puesto.Value, 'A');
+                Puesto puesto_new = new Puesto(0, nombre_puesto.Text, samin_puesto.Text, samax_puesto.Text, 'A');
                 try
                 {
                     if (puestos_DAO.validarPuesto(puesto_new))

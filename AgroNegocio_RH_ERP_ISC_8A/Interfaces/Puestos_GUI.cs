@@ -101,7 +101,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
-                    (int)row.Cells[3].Value,
+                    (string)row.Cells[3].Value,
                     Convert.ToChar(row.Cells[4].Value)
                     );
                 Puestos_editar puestos_Editar = new Puestos_editar(puestos_editar);
@@ -182,17 +182,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
 
-            btn_anterior.Enabled = true;
-            if (puestos_DAO.actual_page < puestos_DAO.pages)
-            {
-                tabla_Puestos.DataSource = puestos_DAO.getSigPagina();
-            }
-            if (puestos_DAO.actual_page == puestos_DAO.pages)
-            {
-                btn_siguiente.Enabled = false;
-            }
-            lbl_pagina.Text = aux1 + " " + puestos_DAO.actual_page;
-            lbl_total.Text = aux2 + " " + puestos_DAO.pages;
         }
 
         private void tabla_Puestos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -228,18 +217,29 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_anterior_Click(object sender, EventArgs e)
         {
-            btn_siguiente.Enabled = true;
-            if (puestoss_DAO.actual_page > 1)
-            {
-                tabla_Puestos.DataSource = puestos_DAO.getAnteriorPagina();
-            }
-            if (puestos_DAO.actual_page == 1)
-            {
-                btn_anterior.Enabled = false;
-            }
-            lbl_pagina.Text = aux1 + " " + puestos_DAO.actual_page;
-            lbl_total.Text = aux2 + " " + puestos_DAO.pages;
+
         }
+
+        private void lbl_pagina_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_anterior_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_total_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_siguiente_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;
@@ -250,5 +250,4 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         }
     }
 }
-    }
-}
+   

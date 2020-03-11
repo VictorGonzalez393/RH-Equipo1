@@ -16,7 +16,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
     {
         private Puesto puesto;
         private Puestos_DAO puestos_DAO;
-        public Puestos_editar()
+        public Puestos_editar(Puesto puesto)
         {
             InitializeComponent();
             this.puesto = puesto;
@@ -34,7 +34,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 puesto.Nombre = nombre_puesto.Text;
                 puesto.Samin = samin_puesto.Text;
-                puesto.Samax = (int)samax_puesto.Value;
+                puesto.Samax = samax_puesto.Text;
                 try
                 {
                     if (puestos_DAO.editar(puesto))
@@ -103,17 +103,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             nombre_puesto.Text = puesto.Nombre;
             samin_puesto.Text = puesto.Samin;
-            samax_puesto.Value = puesto.Samax;
+            samax_puesto.Text = puesto.Samax;
             id_puesto.Value = puesto.IdPuesto;
         }
 
         private bool validarCampos()
         {
-            if (!string.IsNullOrWhiteSpace(nombre_percepcion.Text))
+            if (!string.IsNullOrWhiteSpace(nombre_puesto.Text))
             {
                 if (!string.IsNullOrWhiteSpace(samin_puesto.Text))
                 {
-                    if (samax_puesto.Value != 0)
+                    if (!string.IsNullOrWhiteSpace(samax_puesto.Text))
                     {
                         return true;
                     }

@@ -37,15 +37,19 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.buscarPerTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tablaPuestos = new System.Windows.Forms.DataGridView();
+            this.tabla_Puestos = new System.Windows.Forms.DataGridView();
             this.ID_Puestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Puestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalarioMinimo_Puestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalarioMaximo_Puestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_Puestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaPuestos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Puestos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,20 +131,20 @@
             this.label1.Text = "Puestos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // tablaPuestos
+            // tabla_Puestos
             // 
-            this.tablaPuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabla_Puestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_Puestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Puestos,
             this.Nombre_Puestos,
             this.SalarioMinimo_Puestos,
             this.SalarioMaximo_Puestos,
             this.Estado_Puestos});
-            this.tablaPuestos.Location = new System.Drawing.Point(48, 116);
-            this.tablaPuestos.Name = "tablaPuestos";
-            this.tablaPuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaPuestos.Size = new System.Drawing.Size(544, 257);
-            this.tablaPuestos.TabIndex = 9;
+            this.tabla_Puestos.Location = new System.Drawing.Point(48, 116);
+            this.tabla_Puestos.Name = "tabla_Puestos";
+            this.tabla_Puestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tabla_Puestos.Size = new System.Drawing.Size(544, 204);
+            this.tabla_Puestos.TabIndex = 9;
             // 
             // ID_Puestos
             // 
@@ -179,13 +183,61 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(329, 354);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(31, 20);
+            this.lbl_total.TabIndex = 20;
+            this.lbl_total.Text = "de ";
+            this.lbl_total.Click += new System.EventHandler(this.lbl_total_Click);
+            // 
+            // lbl_pagina
+            // 
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pagina.Location = new System.Drawing.Point(229, 354);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(62, 20);
+            this.lbl_pagina.TabIndex = 19;
+            this.lbl_pagina.Text = "Página ";
+            this.lbl_pagina.Click += new System.EventHandler(this.lbl_pagina_Click);
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(173, 345);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(36, 38);
+            this.btn_anterior.TabIndex = 18;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click_1);
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(409, 345);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(36, 38);
+            this.btn_siguiente.TabIndex = 17;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click_1);
+            // 
             // Puestos_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 410);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_pagina);
+            this.Controls.Add(this.btn_anterior);
+            this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tablaPuestos);
+            this.Controls.Add(this.tabla_Puestos);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.buscarPerTxt);
             this.Controls.Add(this.label1);
@@ -196,7 +248,7 @@
             this.Load += new System.EventHandler(this.Puestos_GUI_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaPuestos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_Puestos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,12 +265,16 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox buscarPerTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView tablaPuestos;
+        private System.Windows.Forms.DataGridView tabla_Puestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Puestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Puestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalarioMinimo_Puestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalarioMaximo_Puestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Puestos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_pagina;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Button btn_siguiente;
     }
 }

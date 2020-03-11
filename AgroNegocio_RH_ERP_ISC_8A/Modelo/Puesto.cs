@@ -11,9 +11,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public int IdPuesto { get; set; }
         public string Nombre { get; set; }
         public string Samin { get; set; }
-        public int Samax { get; set; }
+        public string Samax { get; set; }
         public char Estatus { get; set; }
-        public Puesto(int idPuesto, string nombre, string samin, int samax, char estatus)
+        public Puesto(int idPuesto, string nombre, string samin, string samax, char estatus)
         {
             IdPuesto = idPuesto;
             Nombre = nombre;

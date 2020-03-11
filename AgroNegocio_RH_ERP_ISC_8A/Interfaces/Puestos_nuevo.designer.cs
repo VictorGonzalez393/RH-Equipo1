@@ -34,18 +34,18 @@
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.descriocion_percepcion = new System.Windows.Forms.TextBox();
-            this.nombre_percepcion = new System.Windows.Forms.TextBox();
-            this.id_percepcion = new System.Windows.Forms.NumericUpDown();
+            this.samin_puesto = new System.Windows.Forms.TextBox();
+            this.nombre_puesto = new System.Windows.Forms.TextBox();
+            this.id_puesto = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.samax_puesto = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.id_puesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,38 +103,38 @@
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             // 
-            // descriocion_percepcion
+            // samin_puesto
             // 
-            this.descriocion_percepcion.Location = new System.Drawing.Point(185, 213);
-            this.descriocion_percepcion.Name = "descriocion_percepcion";
-            this.descriocion_percepcion.Size = new System.Drawing.Size(121, 20);
-            this.descriocion_percepcion.TabIndex = 20;
+            this.samin_puesto.Location = new System.Drawing.Point(185, 213);
+            this.samin_puesto.Name = "samin_puesto";
+            this.samin_puesto.Size = new System.Drawing.Size(121, 20);
+            this.samin_puesto.TabIndex = 20;
             // 
-            // nombre_percepcion
+            // nombre_puesto
             // 
-            this.nombre_percepcion.Location = new System.Drawing.Point(185, 152);
-            this.nombre_percepcion.Name = "nombre_percepcion";
-            this.nombre_percepcion.Size = new System.Drawing.Size(120, 20);
-            this.nombre_percepcion.TabIndex = 19;
+            this.nombre_puesto.Location = new System.Drawing.Point(185, 152);
+            this.nombre_puesto.Name = "nombre_puesto";
+            this.nombre_puesto.Size = new System.Drawing.Size(120, 20);
+            this.nombre_puesto.TabIndex = 19;
             // 
-            // id_percepcion
+            // id_puesto
             // 
-            this.id_percepcion.Enabled = false;
-            this.id_percepcion.Location = new System.Drawing.Point(184, 104);
-            this.id_percepcion.Maximum = new decimal(new int[] {
+            this.id_puesto.Enabled = false;
+            this.id_puesto.Location = new System.Drawing.Point(184, 104);
+            this.id_puesto.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.id_percepcion.Minimum = new decimal(new int[] {
+            this.id_puesto.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.id_percepcion.Name = "id_percepcion";
-            this.id_percepcion.Size = new System.Drawing.Size(120, 20);
-            this.id_percepcion.TabIndex = 18;
-            this.id_percepcion.Value = new decimal(new int[] {
+            this.id_puesto.Name = "id_puesto";
+            this.id_puesto.Size = new System.Drawing.Size(120, 20);
+            this.id_puesto.TabIndex = 18;
+            this.id_puesto.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -195,12 +195,12 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Agregar Puesto";
             // 
-            // textBox1
+            // samax_puesto
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 268);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 24;
+            this.samax_puesto.Location = new System.Drawing.Point(185, 268);
+            this.samax_puesto.Name = "samax_puesto";
+            this.samax_puesto.Size = new System.Drawing.Size(121, 20);
+            this.samax_puesto.TabIndex = 24;
             // 
             // pictureBox1
             // 
@@ -217,12 +217,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 421);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.samax_puesto);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.descriocion_percepcion);
-            this.Controls.Add(this.nombre_percepcion);
-            this.Controls.Add(this.id_percepcion);
+            this.Controls.Add(this.samin_puesto);
+            this.Controls.Add(this.nombre_puesto);
+            this.Controls.Add(this.id_puesto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -235,7 +235,7 @@
             this.Load += new System.EventHandler(this.Puestos_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.id_puesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,15 +249,15 @@
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.TextBox descriocion_percepcion;
-        private System.Windows.Forms.TextBox nombre_percepcion;
-        private System.Windows.Forms.NumericUpDown id_percepcion;
+        private System.Windows.Forms.TextBox samin_puesto;
+        private System.Windows.Forms.TextBox nombre_puesto;
+        private System.Windows.Forms.NumericUpDown id_puesto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox samax_puesto;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
