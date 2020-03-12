@@ -14,11 +14,32 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class Departamentos_GUI : Form
     {
-        Departamentos_DAO depto_DAO = new Departamentos_DAO();
+        Departamentos_DAO depto_DAO;
+        String aux1, aux2;
 
         public Departamentos_GUI()
         {
             InitializeComponent();
+            try
+            {
+                depto_DAO = new Departamentos_DAO();
+                depto_DAO.table = "Departamentos_Tabla";
+                depto_DAO.order_by = "ID";
+                depto_DAO.CalculaPaginas();
+                if (depto_DAO.actual_page == 1 || depto_DAO.actual_page == 0)
+                {
+                    btn_anterior.Enabled = false;
+                }
+                else if (depto_DAO.actual_page == depto_DAO.pages)
+                {
+                    btn_siguiente.Enabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
 
 
@@ -31,48 +52,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             Departamentos_nuevo nuevo = new Departamentos_nuevo();
             nuevo.ShowDialog();
-            actualizarTabla();
+            actualizar();
         }
 
-        private void actualizarTabla()
+        private void actualizar()
         {
-            String consulta_wh = "where estatus=@estatus";
-            List<string> parametros = new List<string>();
-            parametros.Add("@estatus");
-            List<object> valores = new List<object>();
-            valores.Add('A');
-            llenarTabla(depto_DAO.consultaGeneral(consulta_wh, parametros, valores));
-        }
-
-        private void llenarTabla(List<Departamento> deptos)
-        {
-            tablaDepartamentos.Rows.Clear();
-            foreach (Departamento depto in deptos)
-            {
-                DataGridViewRow renglon = new DataGridViewRow();
-                renglon.CreateCells(tablaDepartamentos);
-                renglon.Cells[0].Value = depto.idDepto;
-                renglon.Cells[1].Value = depto.Nombre;
-                tablaDepartamentos.Rows.Add(renglon);
-            }
+            btn_anterior.Enabled = false;
+            btn_siguiente.Enabled = true;
+            tabla_Deptos.DataSource = depto_DAO.actualizar();
+            lbl_pagina.Text = aux1 + " " + depto_DAO.actual_page;
+            lbl_total.Text = aux2 + " " + depto_DAO.pages;
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tablaDepartamentos.SelectedRows.Count != -1)
+            if (tabla_Deptos.SelectedRows.Count != -1)
             {
-                DataGridViewRow row = tablaDepartamentos.SelectedRows[0];
+                DataGridViewRow row = tabla_Deptos.SelectedRows[0];
 
                 Departamento depto = new Departamento(
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
-                    (char)row.Cells[2].Value
+                    Convert.ToChar(row.Cells[2].Value)
                     );
                 Departamentos_editar depto_editar = new Departamentos_editar(depto);
                 this.SetVisibleCore(false);
                 depto_editar.ShowDialog();
                 this.SetVisibleCore(true);
-                actualizarTabla();
+                actualizar();
             }
             else
             {
@@ -82,7 +89,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tablaDepartamentos.SelectedRows.Count != -1)
+            if (tabla_Deptos.SelectedRows.Count != -1)
             {
 
                 try
@@ -90,10 +97,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar el Departamento?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
-                        DataGridViewRow row = tablaDepartamentos.SelectedRows[0];
+                        DataGridViewRow row = tabla_Deptos.SelectedRows[0];
                         int idDepto = (int)row.Cells[0].Value;
                         depto_DAO.eliminar(idDepto);
-                        actualizarTabla();
+                        actualizar();
                     }
                 }
                 catch (Exception)
@@ -116,21 +123,57 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
             else
             {
-                string consulta_wh = "where nombre like '%'+@nombre+'%'+ and estatus=@estatus";
-                List<string> parametros = new List<string>();
-                parametros.Add("@nombre");
-                parametros.Add("@estatus");
-                List<object> valores = new List<object>();
-                valores.Add(buscarDeptoTxt.Text);
-                valores.Add('A');
-                llenarTabla(depto_DAO.consultaGeneral(consulta_wh, parametros, valores));
+                string consulta_wh = "nombre like '%'+'" + buscarDeptoTxt.Text + "'+'%'";
+                tabla_Deptos.DataSource = depto_DAO.buscar(consulta_wh);
 
             }
         }
 
+        private void btn_anterior_Click(object sender, EventArgs e)
+        {
+            btn_siguiente.Enabled = true;
+            if (depto_DAO.actual_page > 1)
+            {
+                tabla_Deptos.DataSource = depto_DAO.getAnteriorPagina();
+            }
+            if (depto_DAO.actual_page == 1)
+            {
+                btn_anterior.Enabled = false;
+            }
+            lbl_pagina.Text = aux1 + " " + depto_DAO.actual_page;
+            lbl_total.Text = aux2 + " " + depto_DAO.pages;
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            btn_anterior.Enabled = true;
+            if (depto_DAO.actual_page < depto_DAO.pages)
+            {
+                tabla_Deptos.DataSource = depto_DAO.getSigPagina();
+            }
+            if (depto_DAO.actual_page == depto_DAO.pages)
+            {
+                btn_siguiente.Enabled = false;
+            }
+            lbl_pagina.Text = aux1 + " " + depto_DAO.actual_page;
+            lbl_total.Text = aux2 + " " + depto_DAO.pages;
+        }
+
         private void Departamentos_GUI_Load(object sender, EventArgs e)
         {
-            actualizarTabla(); 
+            try
+            {
+                tabla_Deptos.DataSource = depto_DAO.getSigPagina();
+                aux1 = lbl_pagina.Text;
+                aux2 = lbl_total.Text;
+                lbl_pagina.Text = aux1 + " " + depto_DAO.actual_page;
+                lbl_total.Text = aux2 + " " + depto_DAO.pages;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
     }
 }

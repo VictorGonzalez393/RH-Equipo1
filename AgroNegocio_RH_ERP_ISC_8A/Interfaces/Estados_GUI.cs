@@ -112,7 +112,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         actualizar();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Error al intentar eliminar el estado");
                 }

@@ -13,6 +13,12 @@ create VIEW Ciudades_Tabla As
 	select c.idCiudad 'ID', c.nombre 'Ciudad', e.nombre 'Estado', c.estatus 'Estatus' from Ciudades c join Estados e on c.idEstado=e.idEstado where c.estatus='A';
 	go
 
+create view Departamentos_Tabla as
+	select idDepartamento 'ID', nombre 'Nombre', estatus 'Estatus'
+	from Departamentos where estatus='A'
+	go
+
+Select * from Departamentos_Tabla
 Select * from Percepciones_Tabla
 Select * from Deducciones_Tabla
 Select * from Estados_Tabla

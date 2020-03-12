@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Departamentos_DAO
+    class Departamentos_DAO : Paginacion
     {
         private readonly string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
