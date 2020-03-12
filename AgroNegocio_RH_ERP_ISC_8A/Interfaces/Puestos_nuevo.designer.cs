@@ -34,7 +34,6 @@
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.samin_puesto = new System.Windows.Forms.TextBox();
             this.nombre_puesto = new System.Windows.Forms.TextBox();
             this.id_puesto = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,11 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.samax_puesto = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.samin_puesto = new System.Windows.Forms.NumericUpDown();
+            this.samax_puesto = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.id_puesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samin_puesto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samax_puesto)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -102,13 +104,6 @@
             this.btn_guardar.TabIndex = 22;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
-            // 
-            // samin_puesto
-            // 
-            this.samin_puesto.Location = new System.Drawing.Point(185, 213);
-            this.samin_puesto.Name = "samin_puesto";
-            this.samin_puesto.Size = new System.Drawing.Size(121, 20);
-            this.samin_puesto.TabIndex = 20;
             // 
             // nombre_puesto
             // 
@@ -195,13 +190,6 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Agregar Puesto";
             // 
-            // samax_puesto
-            // 
-            this.samax_puesto.Location = new System.Drawing.Point(185, 268);
-            this.samax_puesto.Name = "samax_puesto";
-            this.samax_puesto.Size = new System.Drawing.Size(121, 20);
-            this.samax_puesto.TabIndex = 24;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -211,16 +199,40 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
+            // samin_puesto
+            // 
+            this.samin_puesto.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.samin_puesto.Location = new System.Drawing.Point(184, 219);
+            this.samin_puesto.Name = "samin_puesto";
+            this.samin_puesto.Size = new System.Drawing.Size(120, 20);
+            this.samin_puesto.TabIndex = 38;
+            // 
+            // samax_puesto
+            // 
+            this.samax_puesto.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.samax_puesto.Location = new System.Drawing.Point(185, 264);
+            this.samax_puesto.Name = "samax_puesto";
+            this.samax_puesto.Size = new System.Drawing.Size(120, 20);
+            this.samax_puesto.TabIndex = 39;
+            // 
             // Puestos_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 421);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.samax_puesto);
+            this.Controls.Add(this.samin_puesto);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.samin_puesto);
             this.Controls.Add(this.nombre_puesto);
             this.Controls.Add(this.id_puesto);
             this.Controls.Add(this.label5);
@@ -237,6 +249,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.id_puesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samin_puesto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samax_puesto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,7 +263,6 @@
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.TextBox samin_puesto;
         private System.Windows.Forms.TextBox nombre_puesto;
         private System.Windows.Forms.NumericUpDown id_puesto;
         private System.Windows.Forms.Label label5;
@@ -257,7 +270,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox samax_puesto;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown samin_puesto;
+        private System.Windows.Forms.NumericUpDown samax_puesto;
     }
 }

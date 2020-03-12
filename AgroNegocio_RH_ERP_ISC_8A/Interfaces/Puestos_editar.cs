@@ -33,8 +33,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             if (validarCampos() == true)
             {
                 puesto.Nombre = nombre_puesto.Text;
-                puesto.Samin = samin_puesto.Text;
-                puesto.Samax = samax_puesto.Text;
+                puesto.Samin = samin_puesto.Value;
+                puesto.Samax = samax_puesto.Value;
+                puesto.Estatus = estado_puesto.PasswordChar;
                 try
                 {
                     if (puestos_DAO.editar(puesto))
@@ -102,8 +103,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void Puestos_editar_Load(object sender, EventArgs e)
         {
             nombre_puesto.Text = puesto.Nombre;
-            samin_puesto.Text = puesto.Samin;
-            samax_puesto.Text = puesto.Samax;
+            samin_puesto.Value = puesto.Samin;
+            samax_puesto.Value = puesto.Samax;
+            estado_puesto.PasswordChar = puesto.Estatus;
             id_puesto.Value = puesto.IdPuesto;
         }
 
@@ -111,11 +113,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (!string.IsNullOrWhiteSpace(nombre_puesto.Text))
             {
-                if (!string.IsNullOrWhiteSpace(samin_puesto.Text))
+                if (samin_puesto.Value!=0)
                 {
-                    if (!string.IsNullOrWhiteSpace(samax_puesto.Text))
+                    if (samax_puesto.Value!=0)
                     {
-                        return true;
+                        if (!string.IsNullOrWhiteSpace(estado_puesto.Text))
+                        { 
+                            return true;
+                        }
+                        else
+                        {
+                        DialogResult resultado = MessageBox.Show("El campo de Estatus se encuentra vacío", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
                     }
                     else
                     {

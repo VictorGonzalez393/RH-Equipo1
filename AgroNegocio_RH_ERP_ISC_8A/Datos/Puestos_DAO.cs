@@ -41,8 +41,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     {
                         Puesto per_temp = new Puesto(lector.GetInt32(0),
                                                            lector.GetString(1),
-                                                           lector.GetString(2),
-                                                           lector.GetInt32(3),
+                                                           lector.GetDecimal(2),
+                                                           lector.GetDecimal(3),
                                                            lector.GetString(4)[0]);
                         puestos.Add(per_temp);
                     }
@@ -104,6 +104,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@nombre", puesto.Nombre);
                     comando.Parameters.AddWithValue("@samin", puesto.Samin);
                     comando.Parameters.AddWithValue("@samax", puesto.Samax);
+                    comando.Parameters.AddWithValue("@estatus", puesto.Estatus);
                     if (comando.ExecuteNonQuery() != 0)
                         editar = true;
                     conexion.Close();

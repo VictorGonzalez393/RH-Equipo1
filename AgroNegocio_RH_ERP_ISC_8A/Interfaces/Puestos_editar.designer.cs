@@ -34,10 +34,8 @@
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.samax_puesto = new System.Windows.Forms.TextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.samin_puesto = new System.Windows.Forms.TextBox();
             this.nombre_puesto = new System.Windows.Forms.TextBox();
             this.id_puesto = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,9 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.estado_puesto = new System.Windows.Forms.TextBox();
+            this.samin_puesto = new System.Windows.Forms.NumericUpDown();
+            this.samax_puesto = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_puesto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samin_puesto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samax_puesto)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -99,13 +101,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Editar puesto";
             // 
-            // samax_puesto
-            // 
-            this.samax_puesto.Location = new System.Drawing.Point(201, 267);
-            this.samax_puesto.Name = "samax_puesto";
-            this.samax_puesto.Size = new System.Drawing.Size(121, 20);
-            this.samax_puesto.TabIndex = 34;
-            // 
             // btn_cancelar
             // 
             this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
@@ -131,13 +126,6 @@
             this.btn_guardar.TabIndex = 32;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
-            // 
-            // samin_puesto
-            // 
-            this.samin_puesto.Location = new System.Drawing.Point(201, 212);
-            this.samin_puesto.Name = "samin_puesto";
-            this.samin_puesto.Size = new System.Drawing.Size(121, 20);
-            this.samin_puesto.TabIndex = 31;
             // 
             // nombre_puesto
             // 
@@ -220,9 +208,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(47, 308);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 24);
+            this.label6.Size = new System.Drawing.Size(83, 24);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Estado:";
+            this.label6.Text = "Estatus:";
             // 
             // estado_puesto
             // 
@@ -231,17 +219,41 @@
             this.estado_puesto.Size = new System.Drawing.Size(121, 20);
             this.estado_puesto.TabIndex = 36;
             // 
+            // samin_puesto
+            // 
+            this.samin_puesto.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.samin_puesto.Location = new System.Drawing.Point(200, 218);
+            this.samin_puesto.Name = "samin_puesto";
+            this.samin_puesto.Size = new System.Drawing.Size(120, 20);
+            this.samin_puesto.TabIndex = 37;
+            // 
+            // samax_puesto
+            // 
+            this.samax_puesto.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.samax_puesto.Location = new System.Drawing.Point(200, 267);
+            this.samax_puesto.Name = "samax_puesto";
+            this.samax_puesto.Size = new System.Drawing.Size(120, 20);
+            this.samax_puesto.TabIndex = 38;
+            // 
             // Puestos_editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 450);
+            this.Controls.Add(this.samax_puesto);
+            this.Controls.Add(this.samin_puesto);
             this.Controls.Add(this.estado_puesto);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.samax_puesto);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.samin_puesto);
             this.Controls.Add(this.nombre_puesto);
             this.Controls.Add(this.id_puesto);
             this.Controls.Add(this.label5);
@@ -259,6 +271,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_puesto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samin_puesto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samax_puesto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,10 +285,8 @@
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox samax_puesto;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.TextBox samin_puesto;
         private System.Windows.Forms.TextBox nombre_puesto;
         private System.Windows.Forms.NumericUpDown id_puesto;
         private System.Windows.Forms.Label label5;
@@ -283,5 +295,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox estado_puesto;
+        private System.Windows.Forms.NumericUpDown samin_puesto;
+        private System.Windows.Forms.NumericUpDown samax_puesto;
     }
 }
