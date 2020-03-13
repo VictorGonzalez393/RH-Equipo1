@@ -35,7 +35,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(1),
                                                            lector.GetString(2),
                                                            lector.GetString(3),
-                                                           lector.GetChar(4),
+                                                           lector.GetString(4),
                                                            lector.GetString(5),
                                                            lector.GetString(6),
                                                            lector.GetFloat(7),
@@ -43,10 +43,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(9),
                                                            lector.GetInt32(10),
                                                            lector.GetInt32(11),
-                                                           lector.GetByte(12),
+                                                           //lector.GetByte(12),
                                                            lector.GetString(13),
                                                            lector.GetString(14),
-                                                           lector.GetString(15),
+                                                           lector.GetInt32(15),
                                                            lector.GetString(16),
                                                            lector.GetFloat(17),
                                                            lector.GetChar(18),
@@ -95,7 +95,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
                     comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
                     comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
-                    comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
                     comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
                     comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
                     comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
@@ -171,7 +171,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
                     comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
                     comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
-                    comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
                     comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
                     comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
                     comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
@@ -225,8 +225,182 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
         }
 
 
+        public int getidDepartamento(string departamento)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idDepartamento from departamentos where nombre='" + departamento + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
+        }
+
+        public int getidCiudad(string ciudad)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idCiudad from Ciudades where nombre='" + ciudad + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
+        }
+
+        public int getidPuesto(string puesto)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idPuesto from puestos where nombre='" + puesto + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
+        }
 
 
+        public int getidSucursal(string sucursal)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idSucursal from sucursales where nombre='" + sucursal + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
+        }
+
+        /*
+         * Metodo que valida si el empleado ya existe o no
+         */
+        public bool validarEmpleado(Empleado empleado)
+        {
+            bool disponible = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "select idempleado from empleados where nombre= @NOMBRE " +
+                        "and estatus='A'";
+
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+
+                    comando.Parameters.AddWithValue("@nombre", empleado.Nombre);
+                    comando.Parameters.AddWithValue("@apaterno", empleado.Apaterno);
+                    comando.Parameters.AddWithValue("@amaterno", empleado.Amaterno);
+                    comando.Parameters.AddWithValue("@sexo", empleado.Sexo);
+                    comando.Parameters.AddWithValue("@fechaContratacion", empleado.FechaContratacion);
+                    comando.Parameters.AddWithValue("@fechaNacimiento", empleado.FechaNacimiento);
+                    comando.Parameters.AddWithValue("@salario", empleado.Salario);
+                    comando.Parameters.AddWithValue("@nss", empleado.Nss);
+                    comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
+                    comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
+                    comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
+                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
+                    comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
+                    comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
+                    comando.Parameters.AddWithValue("@escolaridad", empleado.Escolaridad);
+                    comando.Parameters.AddWithValue("@porcentajeComision", empleado.PorcentajeComision);
+                    comando.Parameters.AddWithValue("@idDepartamento", empleado.IdDepartamento);
+                    comando.Parameters.AddWithValue("@idPuesto", empleado.IdPuesto);
+                    comando.Parameters.AddWithValue("@idCiudad", empleado.IdCiudad);
+                    comando.Parameters.AddWithValue("@idSucursal", empleado.IdSucursal);
+                    SqlDataReader lector = comando.ExecuteReader();
+
+                    if (lector.HasRows)
+                        disponible = false;
+                    else
+                        disponible = true;
+
+                    conexion.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al validar al empleado. Error: " + ex.Message);
+            }
+            return disponible;
+        }
+
+
+        public bool validarEmpleadoEditar(Empleado empleado)
+        {
+            bool disponible = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "select idempleado from empleados where nombre= @NOMBRE " +
+                        "and iddepartamento= @idDepartamento and idpuesto= @idPuesto and idciudad= @idCiudad and" +
+                        "idsucursal= @idSucursal and idEmpleado != @idEmpleado";
+
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+
+                    comando.Parameters.AddWithValue("@idEmpleado", empleado.IdEmpleado);
+                    comando.Parameters.AddWithValue("@nombre", empleado.Nombre);
+                    comando.Parameters.AddWithValue("@apaterno", empleado.Apaterno);
+                    comando.Parameters.AddWithValue("@amaterno", empleado.Amaterno);
+                    comando.Parameters.AddWithValue("@sexo", empleado.Sexo);
+                    comando.Parameters.AddWithValue("@fechaContratacion", empleado.FechaContratacion);
+                    comando.Parameters.AddWithValue("@fechaNacimiento", empleado.FechaNacimiento);
+                    comando.Parameters.AddWithValue("@salario", empleado.Salario);
+                    comando.Parameters.AddWithValue("@nss", empleado.Nss);
+                    comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
+                    comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
+                    comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
+                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
+                    comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
+                    comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
+                    comando.Parameters.AddWithValue("@escolaridad", empleado.Escolaridad);
+                    comando.Parameters.AddWithValue("@porcentajeComision", empleado.PorcentajeComision);
+                    comando.Parameters.AddWithValue("@estatus", empleado.Estatus);
+                    comando.Parameters.AddWithValue("@idDepartamento", empleado.IdDepartamento);
+                    comando.Parameters.AddWithValue("@idPuesto", empleado.IdPuesto);
+                    comando.Parameters.AddWithValue("@idCiudad", empleado.IdCiudad);
+                    comando.Parameters.AddWithValue("@idSucursal", empleado.IdSucursal);
+                    SqlDataReader lector = comando.ExecuteReader();
+
+                    if (lector.HasRows)
+                        disponible = false;
+                    else
+                        disponible = true;
+
+                    conexion.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al validar al empleado. Error: " + ex.Message);
+            }
+            return disponible;
+        }
     }
 }
-

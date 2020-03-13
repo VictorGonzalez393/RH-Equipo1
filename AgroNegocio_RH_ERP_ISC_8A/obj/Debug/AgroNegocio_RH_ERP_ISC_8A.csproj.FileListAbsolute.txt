@@ -144,3 +144,6 @@ C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\Agro
 C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
 C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
 >>>>>>> Stashed changes:AgroNegocio_RH_ERP_ISC_8A/AgroNegocio_RH_ERP_ISC_8A/obj/Debug/AgroNegocio_RH_ERP_ISC_8A.csproj.FileListAbsolute.txt
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_editar.resources
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_GUI.resources
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_nuevo.resources

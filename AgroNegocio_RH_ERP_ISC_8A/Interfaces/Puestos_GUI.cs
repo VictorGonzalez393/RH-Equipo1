@@ -100,8 +100,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Puesto puestos_editar = new Puesto(
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
-                    (string)row.Cells[2].Value,
-                    (string)row.Cells[3].Value,
+                    (Decimal)row.Cells[2].Value,
+                    (Decimal)row.Cells[3].Value,
                     Convert.ToChar(row.Cells[4].Value)
                     );
                 Puestos_editar puestos_Editar = new Puestos_editar(puestos_editar);
