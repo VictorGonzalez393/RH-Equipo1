@@ -16,6 +16,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
     {
         Empleados_DAO empleadodao = new Empleados_DAO();
         Ciudades_DAO ciudadesdao = new Ciudades_DAO();
+        Puestos_DAO puestosdao = new Puestos_DAO();
+        Departamentos_DAO departamentosdao = new Departamentos_DAO();
         public Empleados_nuevo()
         {
             InitializeComponent();
@@ -31,21 +33,45 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         }
 
-        private void Empleados_nuevo_Load(object sender, EventArgs e)
+     
+
+        
+
+        private bool validarDatos()
         {
-            string consulta_where = " where estatus = @estatus";
-            List<string> parametros = new List<string>();
-            parametros.Add("@estatus");
-            List<object> valores = new List<object>();
-            valores.Add('A');
-
-            List<Ciudad> ciudades = ciudadesdao.consultaGeneral(consulta_where, parametros, valores);
-
-            foreach (Ciudad ciudad in ciudades)
+            if (!string.IsNullOrWhiteSpace(nombre_empleado.Text))
             {
-                ciudad_empleado.Items.Add(ciudad);
+                if (ciudad_empleado.SelectedIndex != -1)
+                    return true;
+                else
+                {
+                    MessageBox.Show("Falta la ciudad");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta el nombre");
+                return false;
             }
 
+        }
+
+
+
+
+
+
+        private void btn_cancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.SetVisibleCore(false);
+            Principal p = new Principal();
+            p.ShowDialog();
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -78,42 +104,41 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     MessageBox.Show("Error al registrar al empleado");
                 }
             }
+        }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
 
-        private bool validarDatos()
+        private void Empleados_nuevo_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(nombre_empleado.Text))
+            string consulta_where = " where estatus = @estatus";
+            List<string> parametros = new List<string>();
+            parametros.Add("@estatus");
+            List<object> valores = new List<object>();
+            valores.Add('A');
+
+            List<Ciudad> ciudades = ciudadesdao.consultaGeneral(consulta_where, parametros, valores);
+
+            foreach (Ciudad ciudad in ciudades)
             {
-                if (ciudad_empleado.SelectedIndex != -1)
-                    return true;
-                else
-                {
-                    MessageBox.Show("Falta la ciudad");
-                    return false;
-                }
+                ciudad_empleado.Items.Add(ciudad);
             }
-            else
+
+            List<Puesto> puestos = puestosdao.consultaGeneral(consulta_where, parametros, valores);
+
+            foreach (Puesto puesto in puestos)
             {
-                MessageBox.Show("Falta el nombre");
-                return false;
+                puesto_empleado.Items.Add(puesto);
             }
 
-        }
+            List<Departamento> departamentos = departamentosdao.consultaGeneral(consulta_where, parametros, valores);
 
-
-
-        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.SetVisibleCore(false);
-            Principal p = new Principal();
-            p.ShowDialog();
-        }
-
-        private void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            Close();
+            foreach (Departamento departamento in departamentos)
+            {
+                departamento_empleado.Items.Add(departamento);
+            }
         }
     }
 }

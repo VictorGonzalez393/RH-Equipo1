@@ -73,7 +73,30 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void tablaEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex != -1)
+            {
+                try
+                {
 
+                    DialogResult resultado = MessageBox.Show("Seguro que desea eliminar un Empleado?", "alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        DataGridViewRow renglon = tablaEmpleados.Rows[e.RowIndex];
+                        int idempleado = (int)renglon.Cells[0].Value;
+                        empleadosDAO.eliminar(idempleado);
+                        actualizar();
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar eliminar al Empleado");
+                }
+            }
+            else
+                MessageBox.Show("Selecciona un Empleado");
         }
 
         private void editarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,7 +140,58 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 MessageBox.Show("Selecciona una ciudad");
             }
         }
-        private void btn_siguiente_Click(object sender, EventArgs e)
+        
+
+        private void btn_buscarEmpleado_Click(object sender, EventArgs e)
+        {
+            string consulta_where = "nombre like '%'+'" + buscarEmpleado.Text + "'+ '%'";
+            tablaEmpleados.DataSource = empleadosDAO.buscar(consulta_where);
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados.SelectedRows.Count != -1)
+            {
+
+                try
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar al empleado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        DataGridViewRow row = tablaEmpleados.SelectedRows[0];
+                        int idEmpleado = (int)row.Cells[0].Value;
+                        empleadosDAO.eliminar(idEmpleado);
+                        actualizar();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar eliminar al empleado");
+                }
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona al Empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_anterior_Click(object sender, EventArgs e)
+        {
+            btn_siguiente.Enabled = true;
+            if (empleadosDAO.actual_page > 1)
+            {
+                tablaEmpleados.DataSource = empleadosDAO.getAnteriorPagina();
+            }
+            if (empleadosDAO.actual_page == 1)
+            {
+                btn_anterior.Enabled = false;
+            }
+            lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
+            lbl_total.Text = aux2 + " " + empleadosDAO.pages;
+        }
+
+        private void btn_siguiente_Click_1(object sender, EventArgs e)
         {
             btn_anterior.Enabled = true;
             if (empleadosDAO.actual_page < empleadosDAO.pages)
