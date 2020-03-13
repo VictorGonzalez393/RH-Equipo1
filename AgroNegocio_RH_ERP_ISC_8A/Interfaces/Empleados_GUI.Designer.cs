@@ -43,6 +43,10 @@
             this.buscarEmpleadoTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_buscarEmpleado = new System.Windows.Forms.Button();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +105,7 @@
             this.fNacimiento_Empleado,
             this.fContratacion_Empleado,
             this.Estatus_Empleado});
-            this.tablaEmpleados.Location = new System.Drawing.Point(77, 250);
+            this.tablaEmpleados.Location = new System.Drawing.Point(74, 193);
             this.tablaEmpleados.Margin = new System.Windows.Forms.Padding(5);
             this.tablaEmpleados.Name = "tablaEmpleados";
             this.tablaEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -170,11 +174,57 @@
             this.btn_buscarEmpleado.TabIndex = 14;
             this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
             // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(377, 458);
+            this.lbl_total.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(34, 20);
+            this.lbl_total.TabIndex = 18;
+            this.lbl_total.Text = "de ";
+            // 
+            // lbl_pagina
+            // 
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pagina.Location = new System.Drawing.Point(278, 458);
+            this.lbl_pagina.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
+            this.lbl_pagina.TabIndex = 17;
+            this.lbl_pagina.Text = "Página ";
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(221, 451);
+            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(34, 34);
+            this.btn_anterior.TabIndex = 16;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(443, 451);
+            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(32, 34);
+            this.btn_siguiente.TabIndex = 15;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            // 
             // Empleados_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 597);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_pagina);
+            this.Controls.Add(this.btn_anterior);
+            this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.btn_buscarEmpleado);
             this.Controls.Add(this.buscarEmpleadoTxt);
             this.Controls.Add(this.label1);
@@ -206,5 +256,9 @@
         private System.Windows.Forms.Button btn_buscarEmpleado;
         private System.Windows.Forms.TextBox buscarEmpleadoTxt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_pagina;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Button btn_siguiente;
     }
 }

@@ -18,8 +18,16 @@ create view Departamentos_Tabla as
 	from Departamentos where estatus='A'
 	go
 
+create VIEW Empleados_Tabla AS 
+	select idEmpleado 'ID', nombre 'Nombre', apaterno 'Apaterno', amaterno 'Amaterno', sexo 'Sexo', fechaContratacion 'FechaContratacion',
+	salario 'Salario', nss 'Nss', estadoCivil 'estadoCivil', diasVacaciones 'DiasVacaciones', diasPermiso 'DiasPermiso', fotografia 'Fotografia',
+	direccion 'Direccion', colonia 'Colonia', codigoPostal 'CodigoPostal', escolaridad 'Escolaridad', porcentajeComision 'PorcentajeComision',
+	estatus 'Estatus', idDepartamento 'IdDepartamento', idPuesto 'IdPuesto', idCiudad 'IdCiudad', idSucursal 'IdSucursal' 
+	from Empleados where estatus='A'
+
 Select * from Departamentos_Tabla
 Select * from Percepciones_Tabla
 Select * from Deducciones_Tabla
 Select * from Estados_Tabla
 Select * from Ciudades_Tabla
+select * from Empleados_Tabla

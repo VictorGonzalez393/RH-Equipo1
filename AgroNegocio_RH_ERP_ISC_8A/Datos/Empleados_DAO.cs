@@ -8,7 +8,7 @@ using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Empleados_DAO
+    class Empleados_DAO : Paginacion
     {
         private string cadenaconexion = "SERVER=localhost" +
                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";

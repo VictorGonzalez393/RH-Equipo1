@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgroNegocio_RH_ERP_ISC_8A.Datos;
+using AgroNegocio_RH_ERP_ISC_8A.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,48 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class Empleados_GUI : Form
     {
+        Empleados_DAO empleadosDAO;
+        string aux1, aux2;
         public Empleados_GUI()
         {
             InitializeComponent();
+            try
+            {
+                empleadosDAO = new Empleados_DAO();
+                empleadosDAO.table = "Ciudades_Tabla";
+                empleadosDAO.order_by = "ID";
+                empleadosDAO.CalculaPaginas();
+                if (empleadosDAO.actual_page == 1 || empleadosDAO.actual_page == 0)
+                {
+                    btn_anterior.Enabled = false;
+                }
+                else if (empleadosDAO.actual_page == empleadosDAO.pages)
+                {
+                    btn_siguiente.Enabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                tablaEmpleados.DataSource = empleadosDAO.getSigPagina();
+                aux1 = lbl_pagina.Text;
+                aux2 = lbl_total.Text;
+                lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
+                lbl_total.Text = aux2 + " " + empleadosDAO.pages;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -37,10 +78,67 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void editarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Empleados_Editar empleadoseditar = new Empleados_Editar();
-            this.SetVisibleCore(false);
-            empleadoseditar.ShowDialog();
-            this.SetVisibleCore(true);
+            if (tablaEmpleados.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = tablaEmpleados.SelectedRows[0];
+
+                Empleado empleado_editar = new Empleado(
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[1].Value,
+                    (string)row.Cells[2].Value,
+                    (string)row.Cells[3].Value,
+                    (string)row.Cells[4].Value,
+                    (string)row.Cells[5].Value,
+                    (string)row.Cells[6].Value,
+                    (float)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (int)row.Cells[10].Value,
+                    (int)row.Cells[11].Value,
+                    (string)row.Cells[12].Value,
+                    (string)row.Cells[13].Value,
+                    (int)row.Cells[14].Value,
+                    (string)row.Cells[15].Value,
+                    (float)row.Cells[16].Value,
+                    (char)row.Cells[17].Value,
+                    empleadosDAO.getidDepartamento((string)row.Cells[18].Value),
+                    empleadosDAO.getidPuesto((string)row.Cells[29].Value),
+                    empleadosDAO.getidCiudad((string)row.Cells[20].Value),
+                    empleadosDAO.getidSucursal((string)row.Cells[21].Value)
+                    );
+
+                Empleados_Editar empleados_EditarGUI = new Empleados_Editar(empleado_editar);
+                empleados_EditarGUI.ShowDialog();
+                actualizar();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una ciudad");
+            }
+        }
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            btn_anterior.Enabled = true;
+            if (empleadosDAO.actual_page < empleadosDAO.pages)
+            {
+                tablaEmpleados.DataSource = empleadosDAO.getSigPagina();
+            }
+            if (empleadosDAO.actual_page == empleadosDAO.pages)
+            {
+                btn_siguiente.Enabled = false;
+            }
+            lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
+            lbl_total.Text = aux2 + " " + empleadosDAO.pages;
+        }
+
+        private void actualizar()
+        {
+            btn_anterior.Enabled = false;
+            btn_siguiente.Enabled = true;
+            tablaEmpleados.DataSource = empleadosDAO.actualizar();
+            lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
+            lbl_total.Text = aux2 + " " + empleadosDAO.pages;
         }
     }
 }
