@@ -25,9 +25,15 @@ create VIEW Empleados_Tabla AS
 	estatus 'Estatus', idDepartamento 'IdDepartamento', idPuesto 'IdPuesto', idCiudad 'IdCiudad', idSucursal 'IdSucursal' 
 	from Empleados where estatus='A'
 
+create view Puestos_Tabla as
+	select idPuesto 'ID', nombre 'Nombre', salarioMinimo 'SalarioMinimo', salarioMaximo 'SalarioMaximo', estatus 'Estatus'
+	from Puestos where estatus='A'
+	go
+
 Select * from Departamentos_Tabla
 Select * from Percepciones_Tabla
 Select * from Deducciones_Tabla
 Select * from Estados_Tabla
 Select * from Ciudades_Tabla
 select * from Empleados_Tabla
+select * from Puestos_Tabla

@@ -26,7 +26,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Puesto> puestos = new List<Puesto>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Percepciones_Tabla " + consulta_wh;
+                string consulta = "select * from Puestos_Tabla " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
