@@ -32,7 +32,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public int IdPuesto { get; set; }
         public int IdCiudad { get; set; }
         public int IdSucursal { get; set; }
-
+        public List<Horario> horarios = new List<Horario>(); 
         public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, string sexo, string fechaContratacion,
        string fechaNacimiento, float salario, string nss, string estadoCivil, int diasVacaciones, int diasPermiso, //byte fotografia,
        string direccion, string colonia, int codigoPostal, string escolaridad, float porcentajeComision, char estatus, int idDepartamento,

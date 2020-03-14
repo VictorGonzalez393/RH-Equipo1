@@ -35,13 +35,6 @@
             this.editarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaEmpleados = new System.Windows.Forms.DataGridView();
-            this.buscarEmpleado = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_buscarEmpleado = new System.Windows.Forms.Button();
-            this.lbl_total = new System.Windows.Forms.Label();
-            this.lbl_pagina = new System.Windows.Forms.Label();
-            this.btn_anterior = new System.Windows.Forms.Button();
-            this.btn_siguiente = new System.Windows.Forms.Button();
             this.ID_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +57,14 @@
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buscarEmpleado = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_buscarEmpleado = new System.Windows.Forms.Button();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.verHorarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +77,8 @@
             this.inicioToolStripMenuItem,
             this.agregarEmpleadoToolStripMenuItem,
             this.editarEmpleadoToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.eliminarToolStripMenuItem,
+            this.verHorarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -116,6 +118,8 @@
             // 
             // tablaEmpleados
             // 
+            this.tablaEmpleados.AllowUserToAddRows = false;
+            this.tablaEmpleados.AllowUserToDeleteRows = false;
             this.tablaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Empleado,
@@ -143,10 +147,145 @@
             this.tablaEmpleados.Location = new System.Drawing.Point(74, 193);
             this.tablaEmpleados.Margin = new System.Windows.Forms.Padding(5);
             this.tablaEmpleados.Name = "tablaEmpleados";
+            this.tablaEmpleados.ReadOnly = true;
             this.tablaEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaEmpleados.Size = new System.Drawing.Size(614, 235);
             this.tablaEmpleados.TabIndex = 5;
             this.tablaEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEmpleados_CellContentClick);
+            // 
+            // ID_Empleado
+            // 
+            this.ID_Empleado.HeaderText = "ID";
+            this.ID_Empleado.Name = "ID_Empleado";
+            this.ID_Empleado.ReadOnly = true;
+            this.ID_Empleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_Empleado.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "A.Paterno";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "A.materno";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "sexo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "F.Contra";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "F.Nac";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Salario";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Nss";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "E.Civil";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "D.Vaca";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "D.Perm";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Direcc";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Col.";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "C.Postal";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Escolaridad";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "%Com";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Estatus";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "ID.D";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "ID.P";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "ID.C";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "ID.S";
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
             // 
             // buscarEmpleado
             // 
@@ -225,117 +364,12 @@
             this.btn_siguiente.UseVisualStyleBackColor = true;
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click_1);
             // 
-            // ID_Empleado
+            // verHorarioToolStripMenuItem
             // 
-            this.ID_Empleado.HeaderText = "ID";
-            this.ID_Empleado.Name = "ID_Empleado";
-            this.ID_Empleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_Empleado.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "A.Paterno";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "A.materno";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "sexo";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "F.Contra";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "F.Nac";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Salario";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Nss";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "E.Civil";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "D.Vaca";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "D.Perm";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Direcc";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Col.";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "C.Postal";
-            this.Column14.Name = "Column14";
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Escolaridad";
-            this.Column15.Name = "Column15";
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "%Com";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Estatus";
-            this.Column17.Name = "Column17";
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "ID.D";
-            this.Column18.Name = "Column18";
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "ID.P";
-            this.Column19.Name = "Column19";
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "ID.C";
-            this.Column20.Name = "Column20";
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "ID.S";
-            this.Column21.Name = "Column21";
+            this.verHorarioToolStripMenuItem.Name = "verHorarioToolStripMenuItem";
+            this.verHorarioToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
+            this.verHorarioToolStripMenuItem.Text = "Ver horario";
+            this.verHorarioToolStripMenuItem.Click += new System.EventHandler(this.verHorarioToolStripMenuItem_Click);
             // 
             // Empleados_GUI
             // 
@@ -398,5 +432,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.ToolStripMenuItem verHorarioToolStripMenuItem;
     }
 }

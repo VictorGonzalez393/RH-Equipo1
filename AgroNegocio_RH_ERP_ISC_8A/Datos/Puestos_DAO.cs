@@ -26,7 +26,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Puesto> puestos = new List<Puesto>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Percepciones_Tabla " + consulta_wh;
+                string consulta = "select * from puestos " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -39,10 +39,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     while (lector.Read())
                     {
+                        Console.WriteLine("******** "+lector.GetFieldType(2));
+                        Console.WriteLine("******** "+lector.GetString(2));
                         Puesto per_temp = new Puesto(lector.GetInt32(0),
                                                            lector.GetString(1),
-                                                           lector.GetDecimal(2),
-                                                           lector.GetDecimal(3),
+                                                           6,
+                                                           (decimal)lector.GetFloat(3),
                                                            lector.GetString(4)[0]);
                         puestos.Add(per_temp);
                     }

@@ -106,11 +106,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@idPuesto", empleado.IdPuesto);
                     comando.Parameters.AddWithValue("@idCiudad", empleado.IdCiudad);
                     comando.Parameters.AddWithValue("@idSucursal", empleado.IdSucursal);
-
                     if (comando.ExecuteNonQuery() != 0)
                         insert = true;
                     conexion.Close();
-
+                    foreach(Horario horario in empleado.horarios)
+                    {
+                        horario.IDEmpleado = empleado.IdEmpleado;
+                        Horarios_DAO horarios_DAO = new Horarios_DAO();
+                        bool insert_horario = horarios_DAO.registrar(horario);
+                        if (insert_horario == false)
+                        {
+                            throw new Exception("Error al registrar horario");
+                        }
+                    }
                 }
 
             }

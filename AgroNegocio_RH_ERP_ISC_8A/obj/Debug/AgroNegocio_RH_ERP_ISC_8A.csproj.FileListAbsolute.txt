@@ -1,149 +1,33 @@
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.config
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_editar.resources
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.config
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_editar.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_GUI.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_nuevo.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_editar.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_GUI.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_nuevo.resources
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
-C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_nuevo.resources
-<<<<<<< Updated upstream:AgroNegocio_RH_ERP_ISC_8A/obj/Debug/AgroNegocio_RH_ERP_ISC_8A.csproj.FileListAbsolute.txt
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_editar.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_GUI.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_nuevo.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_Editar.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_GUI.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_nuevo.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_editar.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_GUI.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_nuevo.resources
 C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Horarios_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Horarios_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.config
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_nuevo.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_nuevo.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_nuevo.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Horarios_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_nuevo.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_Editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.config
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_Editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_nuevo.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Horarios_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_editar.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_GUI.resources
-C:\Users\Maritza Torres\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_Editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_nuevo.resources
-=======
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.config
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ciudades_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Deducciones_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Estados_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_editar.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
-C:\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
->>>>>>> Stashed changes:AgroNegocio_RH_ERP_ISC_8A/AgroNegocio_RH_ERP_ISC_8A/obj/Debug/AgroNegocio_RH_ERP_ISC_8A.csproj.FileListAbsolute.txt
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_editar.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_GUI.resources
-\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_nuevo.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Login.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_editar.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_GUI.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Percepciones_nuevo.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Principal.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_editar.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_GUI.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_nuevo.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
+C:\Users\Jenifer\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache

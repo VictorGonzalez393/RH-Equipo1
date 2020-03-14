@@ -144,6 +144,8 @@
             // 
             // tablaHorario
             // 
+            this.tablaHorario.AllowUserToAddRows = false;
+            this.tablaHorario.AllowUserToDeleteRows = false;
             this.tablaHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaHorario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -152,8 +154,10 @@
             this.Fin});
             this.tablaHorario.Location = new System.Drawing.Point(12, 196);
             this.tablaHorario.Name = "tablaHorario";
+            this.tablaHorario.ReadOnly = true;
             this.tablaHorario.Size = new System.Drawing.Size(423, 112);
             this.tablaHorario.TabIndex = 39;
+            this.tablaHorario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaHorario_CellContentClick);
             // 
             // ID
             // 
@@ -221,6 +225,7 @@
             this.editar.TabIndex = 42;
             this.editar.Text = "Editar";
             this.editar.UseVisualStyleBackColor = true;
+            this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
             // eliminar
             // 
@@ -230,6 +235,7 @@
             this.eliminar.TabIndex = 43;
             this.eliminar.Text = "Eliminar";
             this.eliminar.UseVisualStyleBackColor = true;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
             // 
             // nombre
             // 

@@ -206,6 +206,21 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             lbl_total.Text = aux2 + " " + empleadosDAO.pages;
         }
 
+        private void verHorarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados.SelectedRows.Count == 1)
+            {
+                int idemp = (int)tablaEmpleados.SelectedRows[0].Cells["ID_Empleado"].Value;
+                Horarios_editar horarios_Editar = new Horarios_editar(idemp);
+                horarios_Editar.ShowDialog();
+
+            }
+            else
+            {
+                //selecciona un empleado (mensaje)
+            }
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

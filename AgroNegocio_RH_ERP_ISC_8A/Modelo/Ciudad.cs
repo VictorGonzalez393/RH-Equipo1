@@ -20,5 +20,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             IDEstado = idestado;
             Estatus = estatus;
         }
+        override
+            public string ToString()
+        {
+            return Nombre;
+        }
     }
 }
