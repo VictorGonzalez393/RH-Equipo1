@@ -20,7 +20,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             InitializeComponent();
             this.depto = depto;
-            this.depto_DAO = new Departamentos_DAO();
+            depto_DAO = new Departamentos_DAO();
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Error al editar el registro");
 

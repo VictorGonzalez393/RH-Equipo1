@@ -15,7 +15,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
     public partial class Departamentos_GUI : Form
     {
         Departamentos_DAO depto_DAO;
-        String aux1, aux2;
+        string aux1, aux2;
 
         public Departamentos_GUI()
         {
