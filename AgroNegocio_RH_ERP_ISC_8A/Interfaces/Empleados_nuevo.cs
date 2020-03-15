@@ -33,9 +33,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         }
 
+     
 
-
-
+        
 
         private bool validarDatos()
         {
@@ -88,31 +88,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 {
                     if (empleadodao.validarEmpleado(empleado_nuevo))
                     {
-                        if (tablaHorario.Rows.Count > 0)
+                        if (empleadodao.registrar(empleado_nuevo))
                         {
-                            //List<Horario> horarios = new List<Horario>();
-                            foreach (DataGridViewRow renglon in tablaHorario.Rows)
-                            {
-                                Horario horario_nuevo = new Horario(0,
-                                    renglon.Cells["Inicio"].Value.ToString(),
-                                    renglon.Cells["Fin"].Value.ToString(),
-                                    renglon.Cells["Dia"].Value.ToString(),
-                                    0,
-                                    'A'
-                                    );
-                               empleado_nuevo.horarios.Add(horario_nuevo);
-                            }
-                            if (empleadodao.registrar(empleado_nuevo))
-                            {
-                                MessageBox.Show("Registro exitoso");
-                                Close();
-                            }
-                            else
-                                MessageBox.Show("Error al registrar");
+                            MessageBox.Show("Registro exitoso");
+                            Close();
                         }
                         else
-                            MessageBox.Show("Error al registrar. No hay ningún horario de trabajo");
-
+                            MessageBox.Show("Error al registrar");
                     }
                     else
                         MessageBox.Show("Error al registrar. El empleado ya existe");
@@ -158,60 +140,5 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 departamento_empleado.Items.Add(departamento);
             }
         }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void agregar_Click(object sender, EventArgs e)
-        {
-            if (dias.SelectedIndex >= 0)
-            {
-                if (buscarDiaenTabla(dias.SelectedItem.ToString()))
-                {
-                    MessageBox.Show("El dia ya se agrego a la tabla", "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    //if (horaf.Value > horai.Value)
-                    //{
-                    //}
-                    DataGridViewRow renglon = new DataGridViewRow();
-                    renglon.CreateCells(tablaHorario);
-
-                    renglon.Cells[0].Value = dias.SelectedItem.ToString();
-                    renglon.Cells[1].Value = horai.Value.ToString("HH:mm:ss");
-                    renglon.Cells[2].Value = horaf.Value.ToString("HH:mm:ss");
-                    tablaHorario.Rows.Add(renglon);
-                }
-
-            }
-            else
-                MessageBox.Show("Selecciona un dia", "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private bool buscarDiaenTabla(string dia)
-        {
-            bool bandera = false;
-            foreach (DataGridViewRow renglon in tablaHorario.Rows)
-            {
-                if (renglon.Cells["Dia"].Value.ToString().Equals(dia))
-                {
-                    bandera = true;
-                    break;
-                }
-            }
-            return bandera;
-        }
-
-        private void tablaHorario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                tablaHorario.Rows.Remove(tablaHorario.Rows[e.RowIndex]);
-            }
-        }
-
-     
     }
 }

@@ -38,7 +38,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(4),
                                                            lector.GetString(5),
                                                            lector.GetString(6),
-                                                           lector.GetFloat(7),
+                                                           lector.GetDouble(7),
                                                            lector.GetString(8),
                                                            lector.GetString(9),
                                                            lector.GetInt32(10),
@@ -48,7 +48,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(14),
                                                            lector.GetInt32(15),
                                                            lector.GetString(16),
-                                                           lector.GetFloat(17),
+                                                           lector.GetDouble(17),
                                                            lector.GetChar(18),
                                                            lector.GetInt32(19),
                                                            lector.GetInt32(20),
@@ -106,19 +106,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@idPuesto", empleado.IdPuesto);
                     comando.Parameters.AddWithValue("@idCiudad", empleado.IdCiudad);
                     comando.Parameters.AddWithValue("@idSucursal", empleado.IdSucursal);
+
                     if (comando.ExecuteNonQuery() != 0)
                         insert = true;
                     conexion.Close();
-                    foreach(Horario horario in empleado.horarios)
-                    {
-                        horario.IDEmpleado = empleado.IdEmpleado;
-                        Horarios_DAO horarios_DAO = new Horarios_DAO();
-                        bool insert_horario = horarios_DAO.registrar(horario);
-                        if (insert_horario == false)
-                        {
-                            throw new Exception("Error al registrar horario");
-                        }
-                    }
+
                 }
 
             }

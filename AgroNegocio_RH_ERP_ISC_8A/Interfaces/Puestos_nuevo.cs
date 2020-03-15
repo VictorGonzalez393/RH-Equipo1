@@ -85,6 +85,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void samax_puesto_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_guardar_Click_1(object sender, EventArgs e)
+        {
             if (validarCampos() == true)
             {
                 Puesto puesto_new = new Puesto(0, nombre_puesto.Text, samin_puesto.Value, samax_puesto.Value, 'A');
@@ -110,9 +120,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
         }
 
-        private void samax_puesto_ValueChanged(object sender, EventArgs e)
+        private void btn_cancelar_Click_1(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void backToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void IniciotoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

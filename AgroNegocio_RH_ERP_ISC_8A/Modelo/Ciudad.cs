@@ -19,11 +19,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             Nombre = nombre;
             IDEstado = idestado;
             Estatus = estatus;
-        }
+        } 
         override
-            public string ToString()
+        public string ToString()
         {
-            return Nombre;
+            return this.Nombre;
         }
     }
 }

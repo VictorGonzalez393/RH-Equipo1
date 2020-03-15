@@ -42,8 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.estado_puesto = new System.Windows.Forms.TextBox();
             this.samin_puesto = new System.Windows.Forms.NumericUpDown();
             this.samax_puesto = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
@@ -72,6 +70,7 @@
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
             this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click_1);
             // 
             // backToolStripMenuItem
             // 
@@ -80,6 +79,7 @@
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click_1);
             // 
             // pictureBox1
             // 
@@ -107,12 +107,13 @@
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(200, 371);
+            this.btn_cancelar.Location = new System.Drawing.Point(200, 334);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
             this.btn_cancelar.TabIndex = 33;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click_1);
             // 
             // btn_guardar
             // 
@@ -120,12 +121,13 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(85, 371);
+            this.btn_guardar.Location = new System.Drawing.Point(85, 334);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(94, 31);
             this.btn_guardar.TabIndex = 32;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click_1);
             // 
             // nombre_puesto
             // 
@@ -164,9 +166,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(46, 263);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 24);
+            this.label5.Size = new System.Drawing.Size(159, 24);
             this.label5.TabIndex = 28;
-            this.label5.Text = "SalarioMáximo:";
+            this.label5.Text = "Salario Máximo:";
             // 
             // label4
             // 
@@ -201,24 +203,6 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "ID:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(47, 308);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 24);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Estatus:";
-            // 
-            // estado_puesto
-            // 
-            this.estado_puesto.Location = new System.Drawing.Point(199, 313);
-            this.estado_puesto.Name = "estado_puesto";
-            this.estado_puesto.Size = new System.Drawing.Size(121, 20);
-            this.estado_puesto.TabIndex = 36;
-            // 
             // samin_puesto
             // 
             this.samin_puesto.Increment = new decimal(new int[] {
@@ -227,6 +211,11 @@
             0,
             65536});
             this.samin_puesto.Location = new System.Drawing.Point(200, 218);
+            this.samin_puesto.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.samin_puesto.Name = "samin_puesto";
             this.samin_puesto.Size = new System.Drawing.Size(120, 20);
             this.samin_puesto.TabIndex = 37;
@@ -239,6 +228,11 @@
             0,
             65536});
             this.samax_puesto.Location = new System.Drawing.Point(200, 267);
+            this.samax_puesto.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.samax_puesto.Name = "samax_puesto";
             this.samax_puesto.Size = new System.Drawing.Size(120, 20);
             this.samax_puesto.TabIndex = 38;
@@ -250,8 +244,6 @@
             this.ClientSize = new System.Drawing.Size(381, 450);
             this.Controls.Add(this.samax_puesto);
             this.Controls.Add(this.samin_puesto);
-            this.Controls.Add(this.estado_puesto);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.nombre_puesto);
@@ -293,8 +285,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox estado_puesto;
         private System.Windows.Forms.NumericUpDown samin_puesto;
         private System.Windows.Forms.NumericUpDown samax_puesto;
     }

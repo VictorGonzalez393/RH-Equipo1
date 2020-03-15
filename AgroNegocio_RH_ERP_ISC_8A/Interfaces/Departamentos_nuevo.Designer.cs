@@ -57,6 +57,7 @@
             this.btn_cancelar.TabIndex = 34;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -70,6 +71,7 @@
             this.btn_guardar.TabIndex = 33;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // nombre_depa
             // 
@@ -147,6 +149,7 @@
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
             this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
             // 
             // backToolStripMenuItem
             // 
@@ -155,6 +158,7 @@
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // Departamentos_nuevo
             // 
@@ -173,6 +177,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Departamentos_nuevo";
             this.Text = "Agregar Departamento";
+            this.Load += new System.EventHandler(this.Departamentos_nuevo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.id_depa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

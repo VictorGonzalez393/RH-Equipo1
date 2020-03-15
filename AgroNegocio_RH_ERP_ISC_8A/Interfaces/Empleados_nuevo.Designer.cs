@@ -84,15 +84,30 @@
             this.fcontratacion_empleado = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.agregar = new System.Windows.Forms.Button();
-            this.tablaHorario = new System.Windows.Forms.DataGridView();
-            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaf = new System.Windows.Forms.DateTimePicker();
-            this.horai = new System.Windows.Forms.DateTimePicker();
-            this.dias = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePicker16 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker15 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker14 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker12 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker11 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.Hab_Domingo = new System.Windows.Forms.CheckBox();
+            this.Hab_Sabado = new System.Windows.Forms.CheckBox();
+            this.Hab_Viernes = new System.Windows.Forms.CheckBox();
+            this.Hab_Jueves = new System.Windows.Forms.CheckBox();
+            this.Hab_Miercoles = new System.Windows.Forms.CheckBox();
+            this.Hab_Martes = new System.Windows.Forms.CheckBox();
+            this.Hab_Lunes = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -106,7 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.comision_empleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaHorario)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -132,8 +147,6 @@
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,7 +161,6 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,8 +175,6 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -736,107 +746,279 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Snow;
-            this.tabPage3.Controls.Add(this.agregar);
-            this.tabPage3.Controls.Add(this.tablaHorario);
-            this.tabPage3.Controls.Add(this.horaf);
-            this.tabPage3.Controls.Add(this.horai);
-            this.tabPage3.Controls.Add(this.dias);
-            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label31);
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Controls.Add(this.tableLayoutPanel1);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(792, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Horarios";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // agregar
+            // label31
             // 
-            this.agregar.Location = new System.Drawing.Point(40, 89);
-            this.agregar.Name = "agregar";
-            this.agregar.Size = new System.Drawing.Size(75, 23);
-            this.agregar.TabIndex = 49;
-            this.agregar.Text = "Agregar";
-            this.agregar.UseVisualStyleBackColor = true;
-            this.agregar.Click += new System.EventHandler(this.agregar_Click);
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(17, 324);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(41, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "H. Fin";
             // 
-            // tablaHorario
+            // label30
             // 
-            this.tablaHorario.AllowUserToAddRows = false;
-            this.tablaHorario.AllowUserToDeleteRows = false;
-            this.tablaHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaHorario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Dia,
-            this.Inicio,
-            this.Fin});
-            this.tablaHorario.Location = new System.Drawing.Point(38, 139);
-            this.tablaHorario.Name = "tablaHorario";
-            this.tablaHorario.ReadOnly = true;
-            this.tablaHorario.Size = new System.Drawing.Size(343, 112);
-            this.tablaHorario.TabIndex = 48;
-            this.tablaHorario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaHorario_CellDoubleClick);
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 224);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(55, 13);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "H. Inicio";
+            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
-            // Dia
+            // tableLayoutPanel1
             // 
-            this.Dia.HeaderText = "Dia";
-            this.Dia.Name = "Dia";
-            this.Dia.ReadOnly = true;
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.7006F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.2994F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker16, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker15, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker14, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker13, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker12, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker11, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker10, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker9, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker8, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker7, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker6, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker5, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Domingo, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Sabado, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Viernes, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Jueves, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Miercoles, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Martes, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Hab_Lunes, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker3, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(64, 118);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.18692F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.81308F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(686, 265);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // Inicio
+            // dateTimePicker16
             // 
-            this.Inicio.HeaderText = "Inicio";
-            this.Inicio.Name = "Inicio";
-            this.Inicio.ReadOnly = true;
+            this.dateTimePicker16.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker16.Location = new System.Drawing.Point(578, 184);
+            this.dateTimePicker16.Name = "dateTimePicker16";
+            this.dateTimePicker16.ShowUpDown = true;
+            this.dateTimePicker16.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker16.TabIndex = 31;
             // 
-            // Fin
+            // dateTimePicker15
             // 
-            this.Fin.HeaderText = "Fin";
-            this.Fin.Name = "Fin";
-            this.Fin.ReadOnly = true;
+            this.dateTimePicker15.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker15.Location = new System.Drawing.Point(475, 184);
+            this.dateTimePicker15.Name = "dateTimePicker15";
+            this.dateTimePicker15.ShowUpDown = true;
+            this.dateTimePicker15.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker15.TabIndex = 30;
             // 
-            // horaf
+            // dateTimePicker14
             // 
-            this.horaf.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.horaf.Location = new System.Drawing.Point(279, 46);
-            this.horaf.Name = "horaf";
-            this.horaf.ShowUpDown = true;
-            this.horaf.Size = new System.Drawing.Size(102, 20);
-            this.horaf.TabIndex = 47;
+            this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker14.Location = new System.Drawing.Point(368, 184);
+            this.dateTimePicker14.Name = "dateTimePicker14";
+            this.dateTimePicker14.ShowUpDown = true;
+            this.dateTimePicker14.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker14.TabIndex = 29;
             // 
-            // horai
+            // dateTimePicker13
             // 
-            this.horai.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.horai.Location = new System.Drawing.Point(158, 47);
-            this.horai.Name = "horai";
-            this.horai.ShowUpDown = true;
-            this.horai.Size = new System.Drawing.Size(102, 20);
-            this.horai.TabIndex = 46;
+            this.dateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker13.Location = new System.Drawing.Point(265, 184);
+            this.dateTimePicker13.Name = "dateTimePicker13";
+            this.dateTimePicker13.ShowUpDown = true;
+            this.dateTimePicker13.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker13.TabIndex = 28;
             // 
-            // dias
+            // dateTimePicker12
             // 
-            this.dias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dias.FormattingEnabled = true;
-            this.dias.Items.AddRange(new object[] {
-            "Lunes",
-            "Martes",
-            "Miércoles",
-            "Jueves",
-            "Viernes",
-            "Sabado",
-            "Domingo"});
-            this.dias.Location = new System.Drawing.Point(34, 46);
-            this.dias.Name = "dias";
-            this.dias.Size = new System.Drawing.Size(92, 21);
-            this.dias.TabIndex = 45;
+            this.dateTimePicker12.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker12.Location = new System.Drawing.Point(171, 184);
+            this.dateTimePicker12.Name = "dateTimePicker12";
+            this.dateTimePicker12.ShowUpDown = true;
+            this.dateTimePicker12.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker12.TabIndex = 27;
             // 
-            // label23
+            // dateTimePicker11
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(35, 30);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(91, 13);
-            this.label23.TabIndex = 44;
-            this.label23.Text = "Dias laborales:";
+            this.dateTimePicker11.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker11.Location = new System.Drawing.Point(86, 184);
+            this.dateTimePicker11.Name = "dateTimePicker11";
+            this.dateTimePicker11.ShowUpDown = true;
+            this.dateTimePicker11.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePicker11.TabIndex = 26;
+            // 
+            // dateTimePicker10
+            // 
+            this.dateTimePicker10.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker10.Location = new System.Drawing.Point(3, 184);
+            this.dateTimePicker10.Name = "dateTimePicker10";
+            this.dateTimePicker10.ShowUpDown = true;
+            this.dateTimePicker10.Size = new System.Drawing.Size(77, 20);
+            this.dateTimePicker10.TabIndex = 25;
+            // 
+            // dateTimePicker9
+            // 
+            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker9.Location = new System.Drawing.Point(578, 76);
+            this.dateTimePicker9.Name = "dateTimePicker9";
+            this.dateTimePicker9.ShowUpDown = true;
+            this.dateTimePicker9.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker9.TabIndex = 24;
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker8.Location = new System.Drawing.Point(475, 76);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.ShowUpDown = true;
+            this.dateTimePicker8.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker8.TabIndex = 23;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker7.Location = new System.Drawing.Point(368, 76);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.ShowUpDown = true;
+            this.dateTimePicker7.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker7.TabIndex = 22;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker6.Location = new System.Drawing.Point(265, 76);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.ShowUpDown = true;
+            this.dateTimePicker6.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker6.TabIndex = 21;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker5.Location = new System.Drawing.Point(171, 76);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.ShowUpDown = true;
+            this.dateTimePicker5.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker5.TabIndex = 20;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker4.Location = new System.Drawing.Point(86, 76);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.ShowUpDown = true;
+            this.dateTimePicker4.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePicker4.TabIndex = 19;
+            // 
+            // Hab_Domingo
+            // 
+            this.Hab_Domingo.AutoSize = true;
+            this.Hab_Domingo.Location = new System.Drawing.Point(578, 3);
+            this.Hab_Domingo.Name = "Hab_Domingo";
+            this.Hab_Domingo.Size = new System.Drawing.Size(75, 17);
+            this.Hab_Domingo.TabIndex = 17;
+            this.Hab_Domingo.Text = "Domingo";
+            this.Hab_Domingo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Domingo.UseVisualStyleBackColor = true;
+            // 
+            // Hab_Sabado
+            // 
+            this.Hab_Sabado.AutoSize = true;
+            this.Hab_Sabado.Location = new System.Drawing.Point(475, 3);
+            this.Hab_Sabado.Name = "Hab_Sabado";
+            this.Hab_Sabado.Size = new System.Drawing.Size(69, 17);
+            this.Hab_Sabado.TabIndex = 16;
+            this.Hab_Sabado.Text = "Sábado";
+            this.Hab_Sabado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Sabado.UseVisualStyleBackColor = true;
+            // 
+            // Hab_Viernes
+            // 
+            this.Hab_Viernes.AutoSize = true;
+            this.Hab_Viernes.Location = new System.Drawing.Point(368, 3);
+            this.Hab_Viernes.Name = "Hab_Viernes";
+            this.Hab_Viernes.Size = new System.Drawing.Size(68, 17);
+            this.Hab_Viernes.TabIndex = 15;
+            this.Hab_Viernes.Text = "Viernes";
+            this.Hab_Viernes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Viernes.UseVisualStyleBackColor = true;
+            // 
+            // Hab_Jueves
+            // 
+            this.Hab_Jueves.AutoSize = true;
+            this.Hab_Jueves.Location = new System.Drawing.Point(265, 3);
+            this.Hab_Jueves.Name = "Hab_Jueves";
+            this.Hab_Jueves.Size = new System.Drawing.Size(66, 17);
+            this.Hab_Jueves.TabIndex = 14;
+            this.Hab_Jueves.Text = "Jueves";
+            this.Hab_Jueves.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Jueves.UseVisualStyleBackColor = true;
+            // 
+            // Hab_Miercoles
+            // 
+            this.Hab_Miercoles.AutoSize = true;
+            this.Hab_Miercoles.Location = new System.Drawing.Point(171, 3);
+            this.Hab_Miercoles.Name = "Hab_Miercoles";
+            this.Hab_Miercoles.Size = new System.Drawing.Size(80, 17);
+            this.Hab_Miercoles.TabIndex = 13;
+            this.Hab_Miercoles.Text = "Miércoles";
+            this.Hab_Miercoles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Miercoles.UseVisualStyleBackColor = true;
+            // 
+            // Hab_Martes
+            // 
+            this.Hab_Martes.AutoSize = true;
+            this.Hab_Martes.Location = new System.Drawing.Point(86, 3);
+            this.Hab_Martes.Name = "Hab_Martes";
+            this.Hab_Martes.Size = new System.Drawing.Size(64, 17);
+            this.Hab_Martes.TabIndex = 12;
+            this.Hab_Martes.Text = "Martes";
+            this.Hab_Martes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Martes.UseVisualStyleBackColor = true;
+            // 
+            // Hab_Lunes
+            // 
+            this.Hab_Lunes.AutoSize = true;
+            this.Hab_Lunes.Location = new System.Drawing.Point(3, 3);
+            this.Hab_Lunes.Name = "Hab_Lunes";
+            this.Hab_Lunes.Size = new System.Drawing.Size(60, 17);
+            this.Hab_Lunes.TabIndex = 11;
+            this.Hab_Lunes.Text = "Lunes";
+            this.Hab_Lunes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Hab_Lunes.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker3.Location = new System.Drawing.Point(3, 76);
+            this.dateTimePicker3.MaxDate = new System.DateTime(2020, 3, 4, 0, 0, 0, 0);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
+            this.dateTimePicker3.Size = new System.Drawing.Size(77, 20);
+            this.dateTimePicker3.TabIndex = 18;
+            this.dateTimePicker3.Value = new System.DateTime(2020, 3, 4, 0, 0, 0, 0);
             // 
             // Empleados_nuevo
             // 
@@ -867,7 +1049,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaHorario)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -924,19 +1107,34 @@
         private System.Windows.Forms.DateTimePicker fcontratacion_empleado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker16;
+        private System.Windows.Forms.DateTimePicker dateTimePicker15;
+        private System.Windows.Forms.DateTimePicker dateTimePicker14;
+        private System.Windows.Forms.DateTimePicker dateTimePicker13;
+        private System.Windows.Forms.DateTimePicker dateTimePicker12;
+        private System.Windows.Forms.DateTimePicker dateTimePicker11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker9;
+        private System.Windows.Forms.DateTimePicker dateTimePicker8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.CheckBox Hab_Domingo;
+        private System.Windows.Forms.CheckBox Hab_Sabado;
+        private System.Windows.Forms.CheckBox Hab_Viernes;
+        private System.Windows.Forms.CheckBox Hab_Jueves;
+        private System.Windows.Forms.CheckBox Hab_Miercoles;
+        private System.Windows.Forms.CheckBox Hab_Martes;
+        private System.Windows.Forms.CheckBox Hab_Lunes;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.NumericUpDown diasvacaciones_empleado;
         private System.Windows.Forms.NumericUpDown diaspermiso_empleado;
         private System.Windows.Forms.NumericUpDown comision_empleado;
         private System.Windows.Forms.NumericUpDown salario_empleado;
         private System.Windows.Forms.ComboBox sexo_empleado;
-        private System.Windows.Forms.Button agregar;
-        private System.Windows.Forms.DataGridView tablaHorario;
-        private System.Windows.Forms.DateTimePicker horaf;
-        private System.Windows.Forms.DateTimePicker horai;
-        private System.Windows.Forms.ComboBox dias;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Inicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fin;
     }
 }

@@ -26,7 +26,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Puesto> puestos = new List<Puesto>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from puestos " + consulta_wh;
+                string consulta = "select * from Puestos_Tabla " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -39,12 +39,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     while (lector.Read())
                     {
-                        Console.WriteLine("******** "+lector.GetFieldType(2));
-                        Console.WriteLine("******** "+lector.GetString(2));
                         Puesto per_temp = new Puesto(lector.GetInt32(0),
                                                            lector.GetString(1),
-                                                           6,
-                                                           (decimal)lector.GetFloat(3),
+                                                          (decimal) lector.GetDouble(2),
+                                                          (decimal) lector.GetDouble(3),
                                                            lector.GetString(4)[0]);
                         puestos.Add(per_temp);
                     }
@@ -99,14 +97,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Puestos set nombre= @nombre, samin = @samin, samax=@samax where idPuesto=@idPuesto";
+                    string consulta = "update Puestos set nombre= @nombre, salarioMinimo = @samin, salarioMaximo=@samax where idPuesto=@idPuesto";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idPuesto", puesto.IdPuesto);
                     comando.Parameters.AddWithValue("@nombre", puesto.Nombre);
                     comando.Parameters.AddWithValue("@samin", puesto.Samin);
                     comando.Parameters.AddWithValue("@samax", puesto.Samax);
-                    comando.Parameters.AddWithValue("@estatus", puesto.Estatus);
                     if (comando.ExecuteNonQuery() != 0)
                         editar = true;
                     conexion.Close();

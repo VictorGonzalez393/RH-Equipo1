@@ -10,9 +10,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
     class Ciudades_DAO : Paginacion
     {
+
         private string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
 
+        //
+        /*
+         * 
+         * */
         public List<Ciudad> consultaGeneral(string consulta_where, List<string> parametros, List<object> valores)
         {
             List<Ciudad> ciudades = new List<Ciudad>();

@@ -70,6 +70,7 @@
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
             this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
             // 
             // backToolStripMenuItem
             // 
@@ -78,6 +79,7 @@
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click_1);
             // 
             // btn_cancelar
             // 
@@ -91,6 +93,7 @@
             this.btn_cancelar.TabIndex = 23;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click_1);
             // 
             // btn_guardar
             // 
@@ -104,6 +107,7 @@
             this.btn_guardar.TabIndex = 22;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click_1);
             // 
             // nombre_puesto
             // 
@@ -207,6 +211,11 @@
             0,
             65536});
             this.samin_puesto.Location = new System.Drawing.Point(184, 219);
+            this.samin_puesto.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.samin_puesto.Name = "samin_puesto";
             this.samin_puesto.Size = new System.Drawing.Size(120, 20);
             this.samin_puesto.TabIndex = 38;
@@ -219,6 +228,11 @@
             0,
             65536});
             this.samax_puesto.Location = new System.Drawing.Point(185, 264);
+            this.samax_puesto.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.samax_puesto.Name = "samax_puesto";
             this.samax_puesto.Size = new System.Drawing.Size(120, 20);
             this.samax_puesto.TabIndex = 39;

@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos\Horarios_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
     <Compile Include="Datos\Deducciones_DAO.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="Datos\Estados_DAO.cs" />
     <Compile Include="Datos\LoginDAO.cs" />
     <Compile Include="Datos\Paginacion.cs" />
+    <Compile Include="Datos\Sucursales_DAO.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
     <Compile Include="Interfaces\Departamentos_editar.cs">
       <SubType>Form</SubType>
@@ -134,7 +134,6 @@
     <Compile Include="Interfaces\Puestos_nuevo.designer.cs">
       <DependentUpon>Puestos_nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Horario.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\Puesto.cs" />
     <Compile Include="Modelo\Conexion.cs" />
@@ -218,6 +217,7 @@
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Ciudad.cs" />
+    <Compile Include="Modelo\Sucursal.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
