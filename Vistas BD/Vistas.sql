@@ -19,16 +19,23 @@ create view Departamentos_Tabla as
 	go
 
 create VIEW Empleados_Tabla AS 
-	select idEmpleado 'ID', nombre 'Nombre', apaterno 'Apaterno', amaterno 'Amaterno', sexo 'Sexo', fechaContratacion 'FechaContratacion',
-	salario 'Salario', nss 'Nss', estadoCivil 'estadoCivil', diasVacaciones 'DiasVacaciones', diasPermiso 'DiasPermiso', fotografia 'Fotografia',
-	direccion 'Direccion', colonia 'Colonia', codigoPostal 'CodigoPostal', escolaridad 'Escolaridad', porcentajeComision 'PorcentajeComision',
-	estatus 'Estatus', idDepartamento 'IdDepartamento', idPuesto 'IdPuesto', idCiudad 'IdCiudad', idSucursal 'IdSucursal' 
-	from Empleados where estatus='A'
+	select e.idEmpleado 'ID', e.nombre 'Nombre', e.apaterno 'Apaterno', e.amaterno 'Amaterno', e.sexo 'Sexo', e.fechaContratacion 'Fecha Contratacion',
+	e.salario 'Salario', e.nss 'NSS', e.estadoCivil 'Estado Civil', e.diasVacaciones 'Dias Vacaciones', e.diasPermiso 'Dias Permiso', e.fotografia 'Fotografia',
+	e.direccion 'Direccion', e.colonia 'Colonia', e.codigoPostal 'Codigo Postal', e.escolaridad 'Escolaridad', e.porcentajeComision 'Porcentaje Comision',
+	e.estatus 'Estatus', d.nombre 'Departamento', p.nombre 'Puesto', c.nombre 'Ciudad', s.nombre 'Sucursal' from Empleados e 
+	join Departamentos d on d.idDepartamento=e.idDepartamento join Sucursales s on s.idSucursal=e.idSucursal
+	join Puestos p on p.idPuesto=e.idPuesto join Ciudades c on c.idCiudad=e.idCiudad 
+	 where e.estatus='A'
+	 go
 
 create view Puestos_Tabla as
 	select idPuesto 'ID', nombre 'Nombre', salarioMinimo 'SalarioMinimo', salarioMaximo 'SalarioMaximo', estatus 'Estatus'
 	from Puestos where estatus='A'
 	go
+
+
+
+
 
 Select * from Departamentos_Tabla
 Select * from Percepciones_Tabla

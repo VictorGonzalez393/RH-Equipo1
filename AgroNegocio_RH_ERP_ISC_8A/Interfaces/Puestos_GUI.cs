@@ -92,58 +92,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tabla_Puestos.SelectedRows.Count != 0)
-            {
-                DataGridViewRow row = tabla_Puestos.SelectedRows[0];
-
-
-                Puesto puestos_editar = new Puesto(
-                    (int)row.Cells[0].Value,
-                    (string)row.Cells[1].Value,
-                    (Decimal)row.Cells[2].Value,
-                    (Decimal)row.Cells[3].Value,
-                    Convert.ToChar(row.Cells[4].Value)
-                    );
-                Puestos_editar puestos_Editar = new Puestos_editar(puestos_editar);
-                this.SetVisibleCore(false);
-                puestos_Editar.ShowDialog();
-                this.SetVisibleCore(true);
-                actualizar();
-            }
-            else
-            {
-                DialogResult resultado = MessageBox.Show("Selecciona el puesto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+           
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tabla_Puestos.SelectedRows.Count != -1)
-            {
-
-                try
-                {
-                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar el puesto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (resultado == DialogResult.Yes)
-                    {
-                        DataGridViewRow row = tabla_Puestos.SelectedRows[0];
-                        int idPuesto = (int)row.Cells[0].Value;
-                        puestos_DAO.eliminar(idPuesto);
-
-                    }
-                    actualizar();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar eliminar el puesto");
-                    Console.WriteLine("Error: " + ex.Message);
-                }
-            }
-            else
-            {
-                DialogResult resultado = MessageBox.Show("Selecciona el puesto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+           
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
@@ -238,6 +192,74 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void btn_siguiente_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void nuevoToolStripMenuItem_Click_2(object sender, EventArgs e)
+        {
+            Puestos_nuevo puestos_Nuevo = new Puestos_nuevo();
+            puestos_Nuevo.ShowDialog();
+            actualizar();
+        }
+
+        private void editarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (tabla_Puestos.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = tabla_Puestos.SelectedRows[0];
+
+
+                Puesto puestos_editar = new Puesto(
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[1].Value,
+                    Convert.ToDecimal(row.Cells[2].Value),
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToChar(row.Cells[4].Value)
+                    );
+                Puestos_editar puestos_Editar = new Puestos_editar(puestos_editar);
+                this.SetVisibleCore(false);
+                puestos_Editar.ShowDialog();
+                this.SetVisibleCore(true);
+                actualizar();
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona el puesto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void eliminarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (tabla_Puestos.SelectedRows.Count != -1)
+            {
+
+                try
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar el puesto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        DataGridViewRow row = tabla_Puestos.SelectedRows[0];
+                        int idPuesto = (int)row.Cells[0].Value;
+                        puestos_DAO.eliminar(idPuesto);
+
+                    }
+                    actualizar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar eliminar el puesto");
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona el puesto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void actualizar()

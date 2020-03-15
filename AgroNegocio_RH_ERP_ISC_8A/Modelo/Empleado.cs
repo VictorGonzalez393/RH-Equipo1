@@ -16,7 +16,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public string Sexo { get; set; }
         public string FechaContratacion { get; set; }
         public string FechaNacimiento { get; set; }
-        public float Salario { get; set; }
+        public double Salario { get; set; }
         public string Nss { get; set; }
         public string EstadoCivil { get; set; }
         public int DiasVacaciones { get; set; }
@@ -26,7 +26,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public string Colonia { get; set; }
         public int CodigoPostal { get; set; }
         public string Escolaridad { get; set; }
-        public float PorcentajeComision { get; set; }
+        public double PorcentajeComision { get; set; }
         public char Estatus { get; set; }
         public int IdDepartamento { get; set; }
         public int IdPuesto { get; set; }
@@ -34,8 +34,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public int IdSucursal { get; set; }
 
         public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, string sexo, string fechaContratacion,
-       string fechaNacimiento, float salario, string nss, string estadoCivil, int diasVacaciones, int diasPermiso, //byte fotografia,
-       string direccion, string colonia, int codigoPostal, string escolaridad, float porcentajeComision, char estatus, int idDepartamento,
+       string fechaNacimiento, double salario, string nss, string estadoCivil, int diasVacaciones, int diasPermiso, //byte fotografia,
+       string direccion, string colonia, int codigoPostal, string escolaridad, double porcentajeComision, char estatus, int idDepartamento,
        int idPuesto, int idCiudad, int idSucursal)
         {
             IdEmpleado = idEmpleado;

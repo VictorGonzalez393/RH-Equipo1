@@ -35,7 +35,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 puesto.Nombre = nombre_puesto.Text;
                 puesto.Samin = samin_puesto.Value;
                 puesto.Samax = samax_puesto.Value;
-                puesto.Estatus = estado_puesto.PasswordChar;
                 try
                 {
                     if (puestos_DAO.editar(puesto))
@@ -105,7 +104,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             nombre_puesto.Text = puesto.Nombre;
             samin_puesto.Value = puesto.Samin;
             samax_puesto.Value = puesto.Samax;
-            estado_puesto.PasswordChar = puesto.Estatus;
             id_puesto.Value = puesto.IdPuesto;
         }
 
@@ -117,15 +115,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 {
                     if (samax_puesto.Value!=0)
                     {
-                        if (!string.IsNullOrWhiteSpace(estado_puesto.Text))
-                        { 
-                            return true;
-                        }
-                        else
-                        {
-                        DialogResult resultado = MessageBox.Show("El campo de Estatus se encuentra vacío", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
+                        return true;
                     }
                     else
                     {
@@ -162,6 +152,55 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(false);
             pr.ShowDialog();
             //Application.Exit();
+        }
+
+        private void btn_cancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_guardar_Click_1(object sender, EventArgs e)
+        {
+            if (validarCampos() == true)
+            {
+                puesto.Nombre = nombre_puesto.Text;
+                puesto.Samin = samin_puesto.Value;
+                puesto.Samax = samax_puesto.Value;
+                try
+                {
+                    if (puestos_DAO.editar(puesto))
+                    {
+                        DialogResult result = MessageBox.Show("Los datos se han editado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al editar");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+
+            }
+        }
+
+        private void backToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void IniciotoolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            Principal pr = new Principal();
+            this.SetVisibleCore(false);
+            pr.ShowDialog();
         }
     }
 }

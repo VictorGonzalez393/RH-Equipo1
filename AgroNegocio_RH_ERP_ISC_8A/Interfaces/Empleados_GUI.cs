@@ -22,7 +22,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             try
             {
                 empleadosDAO = new Empleados_DAO();
-                empleadosDAO.table = "Ciudades_Tabla";
+                empleadosDAO.table = "Empleados_Tabla";
                 empleadosDAO.order_by = "ID";
                 empleadosDAO.CalculaPaginas();
                 if (empleadosDAO.actual_page == 1 || empleadosDAO.actual_page == 0)
@@ -43,19 +43,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                tablaEmpleados.DataSource = empleadosDAO.getSigPagina();
-                aux1 = lbl_pagina.Text;
-                aux2 = lbl_total.Text;
-                lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
-                lbl_total.Text = aux2 + " " + empleadosDAO.pages;
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -71,7 +59,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(true);
         }
 
-        private void tablaEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaEmpleados1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
@@ -82,7 +70,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                     if (resultado == DialogResult.Yes)
                     {
-                        DataGridViewRow renglon = tablaEmpleados.Rows[e.RowIndex];
+                        DataGridViewRow renglon = tablaEmpleados1.Rows[e.RowIndex];
                         int idempleado = (int)renglon.Cells[0].Value;
                         empleadosDAO.eliminar(idempleado);
                         actualizar();
@@ -101,9 +89,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void editarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tablaEmpleados.SelectedRows.Count > 0)
+            if (tablaEmpleados1.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = tablaEmpleados.SelectedRows[0];
+                DataGridViewRow row = tablaEmpleados1.SelectedRows[0];
 
                 Empleado empleado_editar = new Empleado(
                     (int)row.Cells[0].Value,
@@ -113,7 +101,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (string)row.Cells[4].Value,
                     (string)row.Cells[5].Value,
                     (string)row.Cells[6].Value,
-                    (float)row.Cells[7].Value,
+                    (double)row.Cells[7].Value,
                     (string)row.Cells[8].Value,
                     (string)row.Cells[9].Value,
                     (int)row.Cells[10].Value,
@@ -122,8 +110,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (string)row.Cells[13].Value,
                     (int)row.Cells[14].Value,
                     (string)row.Cells[15].Value,
-                    (float)row.Cells[16].Value,
-                    (char)row.Cells[17].Value,
+                    (double)row.Cells[16].Value,
+                    Convert.ToChar(row.Cells[17].Value),
                     empleadosDAO.getidDepartamento((string)row.Cells[18].Value),
                     empleadosDAO.getidPuesto((string)row.Cells[29].Value),
                     empleadosDAO.getidCiudad((string)row.Cells[20].Value),
@@ -145,12 +133,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void btn_buscarEmpleado_Click(object sender, EventArgs e)
         {
             string consulta_where = "nombre like '%'+'" + buscarEmpleado.Text + "'+ '%'";
-            tablaEmpleados.DataSource = empleadosDAO.buscar(consulta_where);
+            tablaEmpleados1.DataSource = empleadosDAO.buscar(consulta_where);
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tablaEmpleados.SelectedRows.Count != -1)
+            if (tablaEmpleados1.SelectedRows.Count != -1)
             {
 
                 try
@@ -158,7 +146,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar al empleado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
-                        DataGridViewRow row = tablaEmpleados.SelectedRows[0];
+                        DataGridViewRow row = tablaEmpleados1.SelectedRows[0];
                         int idEmpleado = (int)row.Cells[0].Value;
                         empleadosDAO.eliminar(idEmpleado);
                         actualizar();
@@ -181,7 +169,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             btn_siguiente.Enabled = true;
             if (empleadosDAO.actual_page > 1)
             {
-                tablaEmpleados.DataSource = empleadosDAO.getAnteriorPagina();
+                tablaEmpleados1.DataSource = empleadosDAO.getAnteriorPagina();
             }
             if (empleadosDAO.actual_page == 1)
             {
@@ -196,7 +184,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             btn_anterior.Enabled = true;
             if (empleadosDAO.actual_page < empleadosDAO.pages)
             {
-                tablaEmpleados.DataSource = empleadosDAO.getSigPagina();
+                tablaEmpleados1.DataSource = empleadosDAO.getSigPagina();
             }
             if (empleadosDAO.actual_page == empleadosDAO.pages)
             {
@@ -206,11 +194,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             lbl_total.Text = aux2 + " " + empleadosDAO.pages;
         }
 
+        private void Empleados_GUI_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                tablaEmpleados1.DataSource = empleadosDAO.getSigPagina();
+                aux1 = lbl_pagina.Text;
+                aux2 = lbl_total.Text;
+                lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
+                lbl_total.Text = aux2 + " " + empleadosDAO.pages;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;
             btn_siguiente.Enabled = true;
-            tablaEmpleados.DataSource = empleadosDAO.actualizar();
+            tablaEmpleados1.DataSource = empleadosDAO.actualizar();
             lbl_pagina.Text = aux1 + " " + empleadosDAO.actual_page;
             lbl_total.Text = aux2 + " " + empleadosDAO.pages;
         }
