@@ -44,3 +44,4 @@ Select * from Estados_Tabla
 Select * from Ciudades_Tabla
 select * from Empleados_Tabla
 select * from Puestos_Tabla
+select * from Sucursales
