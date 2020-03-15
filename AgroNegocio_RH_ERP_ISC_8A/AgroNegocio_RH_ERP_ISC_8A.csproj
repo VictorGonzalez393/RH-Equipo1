@@ -54,6 +54,7 @@
     <Compile Include="Datos\Estados_DAO.cs" />
     <Compile Include="Datos\LoginDAO.cs" />
     <Compile Include="Datos\Paginacion.cs" />
+    <Compile Include="Datos\Sucursales_DAO.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
     <Compile Include="Interfaces\Departamentos_editar.cs">
       <SubType>Form</SubType>
@@ -216,6 +217,7 @@
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Ciudad.cs" />
+    <Compile Include="Modelo\Sucursal.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
