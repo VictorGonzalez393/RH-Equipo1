@@ -63,6 +63,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             IdSucursal = idSucursal;
 
         }
+        
+        /// <summary>
+        /// Constructor empleado en pruebas de horarios
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
+        public Empleado(int id, string nombre)
+        {
+
+        }
     }
 
 }

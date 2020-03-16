@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados_GUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.verHorarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarEmpleado = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.tablaEmpleados1 = new System.Windows.Forms.DataGridView();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.btn_buscarEmpleado = new System.Windows.Forms.Button();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarEmpleado = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_buscarEmpleado = new System.Windows.Forms.Button();
-            this.lbl_total = new System.Windows.Forms.Label();
-            this.lbl_pagina = new System.Windows.Forms.Label();
-            this.btn_anterior = new System.Windows.Forms.Button();
-            this.btn_siguiente = new System.Windows.Forms.Button();
-            this.tablaEmpleados1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).BeginInit();
             this.SuspendLayout();
@@ -54,12 +55,109 @@
             this.inicioToolStripMenuItem,
             this.agregarEmpleadoToolStripMenuItem,
             this.editarEmpleadoToolStripMenuItem,
+            this.verHorarioToolStripMenuItem,
             this.eliminarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // verHorarioToolStripMenuItem
+            // 
+            this.verHorarioToolStripMenuItem.Name = "verHorarioToolStripMenuItem";
+            this.verHorarioToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
+            this.verHorarioToolStripMenuItem.Text = "Ver Horario";
+            this.verHorarioToolStripMenuItem.Click += new System.EventHandler(this.editarHorarioToolStripMenuItem_Click);
+            // 
+            // buscarEmpleado
+            // 
+            this.buscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarEmpleado.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buscarEmpleado.Location = new System.Drawing.Point(269, 47);
+            this.buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
+            this.buscarEmpleado.Name = "buscarEmpleado";
+            this.buscarEmpleado.Size = new System.Drawing.Size(259, 26);
+            this.buscarEmpleado.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(86, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 31);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Empleados";
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(458, 399);
+            this.lbl_total.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(34, 20);
+            this.lbl_total.TabIndex = 18;
+            this.lbl_total.Text = "de ";
+            // 
+            // lbl_pagina
+            // 
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pagina.Location = new System.Drawing.Point(359, 399);
+            this.lbl_pagina.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
+            this.lbl_pagina.TabIndex = 17;
+            this.lbl_pagina.Text = "Página ";
+            // 
+            // tablaEmpleados1
+            // 
+            this.tablaEmpleados1.AllowUserToAddRows = false;
+            this.tablaEmpleados1.AllowUserToDeleteRows = false;
+            this.tablaEmpleados1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaEmpleados1.Location = new System.Drawing.Point(107, 115);
+            this.tablaEmpleados1.Name = "tablaEmpleados1";
+            this.tablaEmpleados1.ReadOnly = true;
+            this.tablaEmpleados1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaEmpleados1.Size = new System.Drawing.Size(623, 244);
+            this.tablaEmpleados1.TabIndex = 19;
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(302, 392);
+            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(34, 34);
+            this.btn_anterior.TabIndex = 16;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(524, 392);
+            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(32, 34);
+            this.btn_siguiente.TabIndex = 15;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click_1);
+            // 
+            // btn_buscarEmpleado
+            // 
+            this.btn_buscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscarEmpleado.Image")));
+            this.btn_buscarEmpleado.Location = new System.Drawing.Point(524, 45);
+            this.btn_buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_buscarEmpleado.Name = "btn_buscarEmpleado";
+            this.btn_buscarEmpleado.Size = new System.Drawing.Size(45, 31);
+            this.btn_buscarEmpleado.TabIndex = 14;
+            this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
+            this.btn_buscarEmpleado.Click += new System.EventHandler(this.btn_buscarEmpleado_Click);
             // 
             // inicioToolStripMenuItem
             // 
@@ -91,94 +189,6 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // buscarEmpleado
-            // 
-            this.buscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarEmpleado.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarEmpleado.Location = new System.Drawing.Point(269, 47);
-            this.buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
-            this.buscarEmpleado.Name = "buscarEmpleado";
-            this.buscarEmpleado.Size = new System.Drawing.Size(259, 26);
-            this.buscarEmpleado.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(86, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 31);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Empleados";
-            // 
-            // btn_buscarEmpleado
-            // 
-            this.btn_buscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscarEmpleado.Image")));
-            this.btn_buscarEmpleado.Location = new System.Drawing.Point(524, 45);
-            this.btn_buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_buscarEmpleado.Name = "btn_buscarEmpleado";
-            this.btn_buscarEmpleado.Size = new System.Drawing.Size(45, 31);
-            this.btn_buscarEmpleado.TabIndex = 14;
-            this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
-            this.btn_buscarEmpleado.Click += new System.EventHandler(this.btn_buscarEmpleado_Click);
-            // 
-            // lbl_total
-            // 
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_total.Location = new System.Drawing.Point(458, 399);
-            this.lbl_total.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(34, 20);
-            this.lbl_total.TabIndex = 18;
-            this.lbl_total.Text = "de ";
-            // 
-            // lbl_pagina
-            // 
-            this.lbl_pagina.AutoSize = true;
-            this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pagina.Location = new System.Drawing.Point(359, 399);
-            this.lbl_pagina.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbl_pagina.Name = "lbl_pagina";
-            this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
-            this.lbl_pagina.TabIndex = 17;
-            this.lbl_pagina.Text = "Página ";
-            // 
-            // btn_anterior
-            // 
-            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
-            this.btn_anterior.Location = new System.Drawing.Point(302, 392);
-            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_anterior.Name = "btn_anterior";
-            this.btn_anterior.Size = new System.Drawing.Size(34, 34);
-            this.btn_anterior.TabIndex = 16;
-            this.btn_anterior.UseVisualStyleBackColor = true;
-            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
-            // 
-            // btn_siguiente
-            // 
-            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
-            this.btn_siguiente.Location = new System.Drawing.Point(524, 392);
-            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_siguiente.Name = "btn_siguiente";
-            this.btn_siguiente.Size = new System.Drawing.Size(32, 34);
-            this.btn_siguiente.TabIndex = 15;
-            this.btn_siguiente.UseVisualStyleBackColor = true;
-            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click_1);
-            // 
-            // tablaEmpleados1
-            // 
-            this.tablaEmpleados1.AllowUserToAddRows = false;
-            this.tablaEmpleados1.AllowUserToDeleteRows = false;
-            this.tablaEmpleados1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaEmpleados1.Location = new System.Drawing.Point(107, 115);
-            this.tablaEmpleados1.Name = "tablaEmpleados1";
-            this.tablaEmpleados1.ReadOnly = true;
-            this.tablaEmpleados1.Size = new System.Drawing.Size(623, 244);
-            this.tablaEmpleados1.TabIndex = 19;
             // 
             // Empleados_GUI
             // 
@@ -220,5 +230,6 @@
         private System.Windows.Forms.Button btn_anterior;
         private System.Windows.Forms.Button btn_siguiente;
         private System.Windows.Forms.DataGridView tablaEmpleados1;
+        private System.Windows.Forms.ToolStripMenuItem verHorarioToolStripMenuItem;
     }
 }

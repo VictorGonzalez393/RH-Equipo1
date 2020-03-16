@@ -33,10 +33,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         }
 
-     
-
-        
-
         private bool validarDatos()
         {
             if (!string.IsNullOrWhiteSpace(nombre_empleado.Text))
@@ -56,11 +52,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
 
         }
-
-
-
-
-
 
         private void btn_cancelar_Click_1(object sender, EventArgs e)
         {
@@ -91,6 +82,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         if (empleadodao.registrar(empleado_nuevo))
                         {
                             MessageBox.Show("Registro exitoso");
+                            Horarios_editar horarios_Editar = new Horarios_editar(empleado_nuevo.IdEmpleado, 
+                                empleado_nuevo.Nombre + " " + empleado_nuevo.Apaterno + " " + empleado_nuevo.Amaterno);
                             Close();
                         }
                         else
@@ -138,6 +131,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             foreach (Departamento departamento in departamentos)
             {
                 departamento_empleado.Items.Add(departamento);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            } catch (Exception ex)
+            {
+
             }
         }
     }
