@@ -78,7 +78,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
                     string consulta = "insert into Empleados values (@idEmpleado, @nombre, @apaterno, @amaterno, @sexo, @fechaContratacion, " +
-                        "@fechaNacimiento, @salario, @nss, @estadoCivil, @diasVacaciones, @diasPermiso, @fotografia, @direccion, @colonia, @codigoPostal" +
+                        "@fechaNacimiento, @salario, @nss, @estadoCivil, @diasVacaciones, @diasPermiso, @direccion, @colonia, @codigoPostal" +
                         ", @escolaridad, @porcentajeComision, @estatus, @idDepartamento, @idPuesto, @idCiudad, @idSucursal)";
                     empleado.IdEmpleado = getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
@@ -207,7 +207,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Percepciones set estatus='I' where idEmpleado=@idEmpleado";
+                    string consulta = "update Empleados set estatus='I' where idEmpleado=@idEmpleado";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
@@ -219,7 +219,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al eliminar la percepcion. Error: " + ex.Message);
+                Console.WriteLine("Error al eliminar al empleado. Error: " + ex.Message);
             }
             return eliminar;
         }
@@ -304,7 +304,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idempleado from empleados where nombre= @NOMBRE " +
+                    string consulta = "select idEmpleado from Empleados where nombre= @NOMBRE " +
                         "and estatus='A'";
 
                     SqlCommand comando = new SqlCommand(consulta, conexion);

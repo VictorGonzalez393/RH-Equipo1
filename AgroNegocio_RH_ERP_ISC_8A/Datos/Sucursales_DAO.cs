@@ -14,10 +14,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
         public List<Sucursal> consultaGeneral(string consulta_wh, List<string> parametros, List<object> valores)
         {
-            List<Sucursal> percepciones = new List<Sucursal>();
+            List<Sucursal> sucursales = new List<Sucursal>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Sucursal " + consulta_wh;
+                string consulta = "select * from Sucursales " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -35,16 +35,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(2),
                                                            lector.GetString(3),
                                                            lector.GetString(4),
-                                                           lector.GetInt32(5),
+                                                           lector.GetString(5),
                                                            lector.GetDouble(6),
                                                            Convert.ToChar(lector.GetString(7)),
                                                            lector.GetInt32(8));
-                        percepciones.Add(suc_temp);
+                        sucursales.Add(suc_temp);
                     }
                 }
                 conexion.Close();
             }
-            return percepciones;
+            return sucursales;
         }
     }
 }

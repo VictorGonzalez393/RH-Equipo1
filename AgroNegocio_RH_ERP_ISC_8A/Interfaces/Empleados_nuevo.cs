@@ -18,6 +18,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Ciudades_DAO ciudadesdao = new Ciudades_DAO();
         Puestos_DAO puestosdao = new Puestos_DAO();
         Departamentos_DAO departamentosdao = new Departamentos_DAO();
+        Sucursales_DAO sucursalesdao = new Sucursales_DAO();
         public Empleados_nuevo()
         {
             InitializeComponent();
@@ -81,27 +82,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Ciudad ciudad = (Ciudad)ciudad_empleado.SelectedItem;
                 Departamento departamento = (Departamento)departamento_empleado.SelectedItem;
                 Puesto puesto = (Puesto)puesto_empleado.SelectedItem;
+                Sucursal sucursal = (Sucursal)sucursal_empleado.SelectedItem;
                 Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
                     , fcontratacion_empleado.Text, fnacimiento_empleado.Text, 0, nss_empleado.Text, estadocivil_empleado.Text, 0, 0, direccion_empleado.Text
-                    , colonia_empleado.Text, 0, escolaridad_empleado.Text, 0, 'A', departamento.idDepto, puesto.IdPuesto, ciudad.ID, 0);
+                    , colonia_empleado.Text, 0, escolaridad_empleado.Text, 0, 'A', departamento.idDepto, puesto.IdPuesto, ciudad.ID,sucursal.IdSucursal);
                 try
                 {
                     if (empleadodao.validarEmpleado(empleado_nuevo))
                     {
                         if (empleadodao.registrar(empleado_nuevo))
                         {
-                            MessageBox.Show("Registro exitoso");
+                            MessageBox.Show("Insercion exitosa");
                             Close();
                         }
                         else
-                            MessageBox.Show("Error al registrar");
+                            MessageBox.Show("Error al Insertar");
                     }
                     else
-                        MessageBox.Show("Error al registrar. El empleado ya existe");
+                        MessageBox.Show("Error al Insertar. El empleado ya existe");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al registrar al empleado");
+                    MessageBox.Show("Error al insertar al empleado wey" + ex.Message);
                 }
             }
         }
@@ -138,6 +140,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             foreach (Departamento departamento in departamentos)
             {
                 departamento_empleado.Items.Add(departamento);
+            }
+
+            List<Sucursal> sucursales = sucursalesdao.consultaGeneral(consulta_where, parametros, valores);
+
+            foreach (Sucursal sucursal in sucursales)
+            {
+                sucursal_empleado.Items.Add(sucursal);
             }
         }
     }

@@ -13,12 +13,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string Colonia { get; set; }
-        public int CP { get; set; }
+        public string CP { get; set; }
         public double Presupuesto { get; set; }
         public char Estatus { get; set; }
         public int IdCiudad { get; set;}
 
-        public Sucursal(int idSucursal, string nombre, string telefono, string direccion, string colonia, int cP, double presupuesto, char estatus, int idCiudad)
+        public Sucursal(int idSucursal, string nombre, string telefono, string direccion, string colonia, string cP, double presupuesto, char estatus, int idCiudad)
         {
             IdSucursal = idSucursal;
             Nombre = nombre;

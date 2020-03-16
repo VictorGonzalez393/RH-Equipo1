@@ -118,14 +118,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     empleadosDAO.getidSucursal((string)row.Cells[21].Value)
                     );
 
-                Empleados_Editar empleados_EditarGUI = new Empleados_Editar(empleado_editar);
-                empleados_EditarGUI.ShowDialog();
+                Empleados_Editar empleados_Editar = new Empleados_Editar(empleado_editar);
+                this.SetVisibleCore(false);
+                empleados_Editar.ShowDialog();
+                this.SetVisibleCore(true);
                 actualizar();
 
             }
             else
             {
-                MessageBox.Show("Selecciona una ciudad");
+                MessageBox.Show("Selecciona un Empleado");
             }
         }
         
