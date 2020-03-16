@@ -100,21 +100,27 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Puesto puesto_new = new Puesto(0, nombre_puesto.Text, samin_puesto.Value, samax_puesto.Value, 'A');
                 try
                 {
-                    if (puestos_DAO.validarPuesto(puesto_new))
+                    if (samin_puesto.Value < samax_puesto.Value)
                     {
-
-                        puestos_DAO.registrar(puesto_new);
-                        MessageBox.Show("Registro realizado exitosamente");
-                        Close();
+                        if (puestos_DAO.validarPuesto(puesto_new))
+                        {
+                            puestos_DAO.registrar(puesto_new);
+                            MessageBox.Show("Registro realizado exitosamente");
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El puesto ya se encuentra registrada");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("El puesto ya se encuentra registrada");
+                        MessageBox.Show("No puede ser el salario minimo mayor al maximo");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al registrar el puesto");
+                    MessageBox.Show(ex.Message);
                 }
 
             }

@@ -168,19 +168,25 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 puesto.Samax = samax_puesto.Value;
                 try
                 {
-                    if (puestos_DAO.editar(puesto))
+                    if (samin_puesto.Value < samax_puesto.Value)
                     {
-                        DialogResult result = MessageBox.Show("Los datos se han editado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
+                        if (puestos_DAO.editar(puesto))
                         {
-                            Close();
+                            DialogResult result = MessageBox.Show("Los datos se han editado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (result == DialogResult.OK)
+                            {
+                                Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al editar");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Error al editar");
+                        MessageBox.Show("No puede ser el salario minimo mayor al maximo");
                     }
-
                 }
                 catch (Exception ex)
                 {
