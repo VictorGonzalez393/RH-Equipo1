@@ -42,20 +42,33 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (dias.SelectedIndex >= 0)
             {
-                if (buscarDiaenTabla(dias.SelectedItem.ToString()))
+                string dia = dias.SelectedItem.ToString();
+                DataGridViewRow renglon = obtenerDiaEnTabla(dia);
+                if (renglon != null) //El día si existe, ahora, verificar si es A o I
                 {
-                    Mensajes.Info("El dia ya se agrego al horario del empleado");
+                    if ( Convert.ToChar(renglon.Cells["Estatus"].Value) == 'A') //Si el día existe y está activo
+                    {
+                        Mensajes.Info("El dia ya se agrego al horario del empleado");
+                    }
+                    else
+                    { //Solamente se debe mostrar el renglon
+                        renglon.Cells["Dia"].Value = dias.SelectedItem.ToString();
+                        renglon.Cells[2].Value = horai.Value.TimeOfDay;
+                        renglon.Cells[3].Value = horaf.Value.TimeOfDay;
+                        renglon.Cells[4].Value = 'A';
+                        renglon.Visible = true;
+                    }
                 }
                 else
                 {
-                    DataGridViewRow renglon = new DataGridViewRow();
+                    renglon = new DataGridViewRow();
                     renglon.CreateCells(tablaHorario);
                     renglon.Cells[0].Value = 0;
                     renglon.Cells[1].Value = dias.SelectedItem.ToString();
                     renglon.Cells[2].Value = horai.Value.TimeOfDay;
                     renglon.Cells[3].Value = horaf.Value.TimeOfDay;
+                    renglon.Cells[4].Value = 'A';
                     tablaHorario.Rows.Add(renglon);
-
                 }
 
             }
@@ -91,8 +104,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaHorario.SelectedRows.Count == 1)
             {
-                try
-                {
+                //try
+                //{
                     DialogResult resultado = MessageBox.Show("Seguro que desea eliminar el horario?", "alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
@@ -103,25 +116,29 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         }
                         else
                         {
-                            int idhorario = (int)renglon.Cells[0].Value;
-                            dorarios_DAO.eliminar(idhorario);
-                            actualizar();
+                            //int idhorario = (int)renglon.Cells[0].Value;
+                            //dorarios_DAO.eliminar(idhorario);
+                            renglon.Cells["Estatus"].Value = "I";
+                            int index = renglon.Index;
+                            tablaHorario.CurrentCell = null;
+                            tablaHorario.Rows[index].Visible = false;
+                           // actualizar();
                         }
-                        Mensajes.Info("Día eliminado exitosamente");
+                        //Mensajes.Info("Día eliminado exitosamente");
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar eliminar el dia." + ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Error al intentar eliminar el dia." + ex.Message);
+                //}
             }
             else
-                MessageBox.Show("Selecciona una ciudad");
+                MessageBox.Show("Selecciona un día");
         }
 
         private void actualizar()
         {
-            horarios = dorarios_DAO.consultaGeneral(" where  idempleado=@idemp",
+            horarios = dorarios_DAO.consultaGeneral(" where  idempleado=@idemp and estatus=@estatus",
                             new List<string>() { "@idemp", "@estatus" },
                             new List<object>() { idemp, 'A' });
 
@@ -133,6 +150,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 renglon.Cells[1].Value = horario.Dias;
                 renglon.Cells[2].Value = horario.HoraI;
                 renglon.Cells[3].Value = horario.HoraF;
+                renglon.Cells[4].Value = horario.Estatus;
                 tablaHorario.Rows.Add(renglon);
             }
         }
@@ -150,16 +168,29 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void editar_Click(object sender, EventArgs e)
         {
             string dia = dias.SelectedItem.ToString();
-            foreach (DataGridViewRow renglon in tablaHorario.Rows)
+            DataGridViewRow renglon = obtenerDiaEnTabla(dia);
+            if (renglon != null)
             {
-                if (renglon.Cells["Dia"].Value.ToString().Equals(dia))
+                renglon.Cells["Inicio"].Value = horai.Value.TimeOfDay;
+                renglon.Cells["Fin"].Value = horaf.Value.TimeOfDay;
+            }
+            else
+            {
+                Mensajes.Error("El dia no se puede editar");
+            }
+            cancelarEdicion();
+        }
+
+        private DataGridViewRow obtenerDiaEnTabla(string dia)
+        {
+            foreach (DataGridViewRow row in tablaHorario.Rows)
+            {
+                if (row.Cells["Dia"].Value.ToString().Equals(dia))
                 {
-                    renglon.Cells["Inicio"].Value = horai.Value.TimeOfDay;
-                    renglon.Cells["Fin"].Value = horaf.Value.TimeOfDay;
-                    cancelarEdicion();
-                    break;
+                    return row;
                 }
             }
+            return null;
         }
 
         private void tablaHorario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -186,42 +217,60 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow renglon in tablaHorario.Rows)
+            if (tablaHorario.Rows.Count > 0)
             {
-                Horario horario_nuevo = new Horario(
-                    (int)renglon.Cells["ID"].Value,
-                    (TimeSpan)renglon.Cells["Inicio"].Value,
-                    (TimeSpan)renglon.Cells["Fin"].Value,
-                    (string)renglon.Cells["Dia"].Value,
-                    idemp,
-                    'A'
-                    );
-                try
+                foreach (DataGridViewRow renglon in tablaHorario.Rows)
                 {
-                    if (horario_nuevo.ID == 0) //Este horario no está en la BD
+                    Horario horario_nuevo = new Horario(
+                        (int)renglon.Cells["ID"].Value,
+                        (TimeSpan)renglon.Cells["Inicio"].Value,
+                        (TimeSpan)renglon.Cells["Fin"].Value,
+                        (string)renglon.Cells["Dia"].Value,
+                        idemp,
+                        Convert.ToChar(renglon.Cells["Estatus"].Value)
+                        );
+                    try
                     {
-                        if (!dorarios_DAO.registrar(horario_nuevo))
+                        if (horario_nuevo.ID == 0) //Este horario no está en la BD
                         {
-                            Mensajes.Error("Error al registrar el horario del dia " + horario_nuevo.Dias);
-                            break;
+                            if (!dorarios_DAO.registrar(horario_nuevo))
+                            {
+                                Mensajes.Error("Error al registrar el horario del dia " + horario_nuevo.Dias);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if (horario_nuevo.Estatus=='A')
+                            {
+                                if (!dorarios_DAO.editar(horario_nuevo))
+                                {
+                                    Mensajes.Error("Error al actualizar el horario del dia " + horario_nuevo.Dias);
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                if (!dorarios_DAO.eliminar(horario_nuevo.ID))
+                                {
+                                    Mensajes.Error("Error al eliminar el horario del dia " + horario_nuevo.Dias);
+                                    break;
+                                }
+                            }
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (!dorarios_DAO.editar(horario_nuevo))
-                        {
-                            Mensajes.Error("Error al actualizar el horario del dia " + horario_nuevo.Dias);
-                            break;
-                        }
+                        Mensajes.Error("Se ha generado un error con la BD. " + ex.Message);
                     }
                 }
-                catch (Exception ex)
-                {
-                    Mensajes.Error("Se ha generado un error con la BD. " + ex.Message);
-                }
+                Mensajes.Info("Horarios guardados exitosamente");
+                this.Close();
             }
-            Mensajes.Info("Horarios guardados exitosamente");
-            this.Close();
+            else
+            {
+                Mensajes.Info("No se ha agregado ningún horario.");
+            }
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)

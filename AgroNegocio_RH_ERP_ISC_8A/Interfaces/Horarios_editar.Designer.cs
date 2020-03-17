@@ -51,6 +51,7 @@
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaHorario)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -148,7 +149,8 @@
             this.ID,
             this.Dia,
             this.Inicio,
-            this.Fin});
+            this.Fin,
+            this.Estatus});
             this.tablaHorario.Location = new System.Drawing.Point(7, 197);
             this.tablaHorario.MultiSelect = false;
             this.tablaHorario.Name = "tablaHorario";
@@ -197,7 +199,7 @@
             // 
             // editar
             // 
-            this.editar.Location = new System.Drawing.Point(123, 167);
+            this.editar.Location = new System.Drawing.Point(25, 168);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(75, 23);
             this.editar.TabIndex = 42;
@@ -235,9 +237,9 @@
             // 
             // cancelarEditar
             // 
-            this.cancelarEditar.Location = new System.Drawing.Point(330, 124);
+            this.cancelarEditar.Location = new System.Drawing.Point(240, 154);
             this.cancelarEditar.Name = "cancelarEditar";
-            this.cancelarEditar.Size = new System.Drawing.Size(67, 37);
+            this.cancelarEditar.Size = new System.Drawing.Size(75, 37);
             this.cancelarEditar.TabIndex = 46;
             this.cancelarEditar.Text = "Cancelar Edición";
             this.cancelarEditar.UseVisualStyleBackColor = true;
@@ -281,6 +283,12 @@
             this.Fin.HeaderText = "Fin";
             this.Fin.Name = "Fin";
             this.Fin.ReadOnly = true;
+            // 
+            // Estatus
+            // 
+            this.Estatus.HeaderText = "Estatus";
+            this.Estatus.Name = "Estatus";
+            this.Estatus.ReadOnly = true;
             // 
             // Horarios_editar
             // 
@@ -339,5 +347,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
     }
 }

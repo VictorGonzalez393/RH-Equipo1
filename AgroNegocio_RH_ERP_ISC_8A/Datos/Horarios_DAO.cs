@@ -12,7 +12,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
     class Horarios_DAO
     {
         private string cadenaconexion = "SERVER=localhost" +
-                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
+                ";DATABASE=ERP2020;Persist Security Info=True;USER ID=sa ;Password=Hola.123";
         public List<Horario> consultaGeneral(string consulta_where_h, List<string> parametros, List<object> valores)
         {
             List<Horario> horarios = new List<Horario>();
@@ -116,7 +116,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 { 
-                    string consulta = "delete from Horarios where idhorario=@id";
+                    string consulta = "update Horarios set estatus = 'I' where idhorario=@id";
 
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
