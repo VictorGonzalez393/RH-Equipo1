@@ -24,7 +24,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         //public byte Fotografia { get; set; }
         public string Direccion { get; set; }
         public string Colonia { get; set; }
-        public int CodigoPostal { get; set; }
+        public string CodigoPostal { get; set; }
         public string Escolaridad { get; set; }
         public double PorcentajeComision { get; set; }
         public char Estatus { get; set; }
@@ -35,7 +35,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 
         public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, string sexo, string fechaContratacion,
        string fechaNacimiento, double salario, string nss, string estadoCivil, int diasVacaciones, int diasPermiso, //byte fotografia,
-       string direccion, string colonia, int codigoPostal, string escolaridad, double porcentajeComision, char estatus, int idDepartamento,
+       string direccion, string colonia, string codigoPostal, string escolaridad, double porcentajeComision, char estatus, int idDepartamento,
        int idPuesto, int idCiudad, int idSucursal)
         {
             IdEmpleado = idEmpleado;

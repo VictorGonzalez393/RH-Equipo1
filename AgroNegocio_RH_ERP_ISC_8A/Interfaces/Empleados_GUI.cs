@@ -108,12 +108,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (int)row.Cells[11].Value,
                     (string)row.Cells[12].Value,
                     (string)row.Cells[13].Value,
-                    (int)row.Cells[14].Value,
+                    (string)row.Cells[14].Value,
                     (string)row.Cells[15].Value,
                     (double)row.Cells[16].Value,
                     Convert.ToChar(row.Cells[17].Value),
                     empleadosDAO.getidDepartamento((string)row.Cells[18].Value),
-                    empleadosDAO.getidPuesto((string)row.Cells[29].Value),
+                    empleadosDAO.getidPuesto((string)row.Cells[19].Value),
                     empleadosDAO.getidCiudad((string)row.Cells[20].Value),
                     empleadosDAO.getidSucursal((string)row.Cells[21].Value)
                     );

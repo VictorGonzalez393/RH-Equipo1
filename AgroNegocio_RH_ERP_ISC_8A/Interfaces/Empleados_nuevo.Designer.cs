@@ -62,18 +62,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.puesto_empleado = new System.Windows.Forms.ComboBox();
+            this.ciudad_empleado = new System.Windows.Forms.ComboBox();
+            this.sucursal_empleado = new System.Windows.Forms.ComboBox();
+            this.departamento_empleado = new System.Windows.Forms.ComboBox();
             this.diasvacaciones_empleado = new System.Windows.Forms.NumericUpDown();
             this.diaspermiso_empleado = new System.Windows.Forms.NumericUpDown();
             this.comision_empleado = new System.Windows.Forms.NumericUpDown();
             this.salario_empleado = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
-            this.puesto_empleado = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.ciudad_empleado = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.sucursal_empleado = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.departamento_empleado = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -108,6 +108,7 @@
             this.Hab_Martes = new System.Windows.Forms.CheckBox();
             this.Hab_Lunes = new System.Windows.Forms.CheckBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -129,7 +130,8 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem});
+            this.inicioToolStripMenuItem,
+            this.atrasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -336,6 +338,7 @@
             // 
             // id_empleado
             // 
+            this.id_empleado.Enabled = false;
             this.id_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id_empleado.Location = new System.Drawing.Point(120, 186);
             this.id_empleado.Name = "id_empleado";
@@ -504,18 +507,18 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Snow;
+            this.groupBox2.Controls.Add(this.puesto_empleado);
+            this.groupBox2.Controls.Add(this.ciudad_empleado);
+            this.groupBox2.Controls.Add(this.sucursal_empleado);
+            this.groupBox2.Controls.Add(this.departamento_empleado);
             this.groupBox2.Controls.Add(this.diasvacaciones_empleado);
             this.groupBox2.Controls.Add(this.diaspermiso_empleado);
             this.groupBox2.Controls.Add(this.comision_empleado);
             this.groupBox2.Controls.Add(this.salario_empleado);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.puesto_empleado);
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.ciudad_empleado);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.sucursal_empleado);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.departamento_empleado);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
@@ -531,6 +534,43 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Trabajo:";
+            // 
+            // puesto_empleado
+            // 
+            this.puesto_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.puesto_empleado.FormattingEnabled = true;
+            this.puesto_empleado.Location = new System.Drawing.Point(154, 308);
+            this.puesto_empleado.Name = "puesto_empleado";
+            this.puesto_empleado.Size = new System.Drawing.Size(353, 21);
+            this.puesto_empleado.TabIndex = 60;
+            // 
+            // ciudad_empleado
+            // 
+            this.ciudad_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ciudad_empleado.FormattingEnabled = true;
+            this.ciudad_empleado.Location = new System.Drawing.Point(154, 346);
+            this.ciudad_empleado.Name = "ciudad_empleado";
+            this.ciudad_empleado.Size = new System.Drawing.Size(353, 21);
+            this.ciudad_empleado.TabIndex = 59;
+            this.ciudad_empleado.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // sucursal_empleado
+            // 
+            this.sucursal_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sucursal_empleado.FormattingEnabled = true;
+            this.sucursal_empleado.Location = new System.Drawing.Point(154, 385);
+            this.sucursal_empleado.Name = "sucursal_empleado";
+            this.sucursal_empleado.Size = new System.Drawing.Size(353, 21);
+            this.sucursal_empleado.TabIndex = 58;
+            // 
+            // departamento_empleado
+            // 
+            this.departamento_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.departamento_empleado.FormattingEnabled = true;
+            this.departamento_empleado.Location = new System.Drawing.Point(154, 266);
+            this.departamento_empleado.Name = "departamento_empleado";
+            this.departamento_empleado.Size = new System.Drawing.Size(353, 21);
+            this.departamento_empleado.TabIndex = 57;
             // 
             // diasvacaciones_empleado
             // 
@@ -570,15 +610,6 @@
             this.label22.Size = new System.Drawing.Size(0, 13);
             this.label22.TabIndex = 52;
             // 
-            // puesto_empleado
-            // 
-            this.puesto_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puesto_empleado.FormattingEnabled = true;
-            this.puesto_empleado.Location = new System.Drawing.Point(154, 305);
-            this.puesto_empleado.Name = "puesto_empleado";
-            this.puesto_empleado.Size = new System.Drawing.Size(353, 24);
-            this.puesto_empleado.TabIndex = 51;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -590,15 +621,6 @@
             this.label21.Size = new System.Drawing.Size(60, 16);
             this.label21.TabIndex = 50;
             this.label21.Text = "Puesto:";
-            // 
-            // ciudad_empleado
-            // 
-            this.ciudad_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ciudad_empleado.FormattingEnabled = true;
-            this.ciudad_empleado.Location = new System.Drawing.Point(154, 343);
-            this.ciudad_empleado.Name = "ciudad_empleado";
-            this.ciudad_empleado.Size = new System.Drawing.Size(353, 24);
-            this.ciudad_empleado.TabIndex = 49;
             // 
             // label20
             // 
@@ -612,15 +634,6 @@
             this.label20.TabIndex = 48;
             this.label20.Text = "Ciudad:";
             // 
-            // sucursal_empleado
-            // 
-            this.sucursal_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sucursal_empleado.FormattingEnabled = true;
-            this.sucursal_empleado.Location = new System.Drawing.Point(154, 383);
-            this.sucursal_empleado.Name = "sucursal_empleado";
-            this.sucursal_empleado.Size = new System.Drawing.Size(353, 24);
-            this.sucursal_empleado.TabIndex = 47;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -632,15 +645,6 @@
             this.label19.Size = new System.Drawing.Size(72, 16);
             this.label19.TabIndex = 46;
             this.label19.Text = "Sucursal:";
-            // 
-            // departamento_empleado
-            // 
-            this.departamento_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departamento_empleado.FormattingEnabled = true;
-            this.departamento_empleado.Location = new System.Drawing.Point(154, 264);
-            this.departamento_empleado.Name = "departamento_empleado";
-            this.departamento_empleado.Size = new System.Drawing.Size(353, 24);
-            this.departamento_empleado.TabIndex = 45;
             // 
             // label18
             // 
@@ -784,7 +788,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker16, 6, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker15, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker14, 4, 2);
@@ -818,7 +822,7 @@
             // dateTimePicker16
             // 
             this.dateTimePicker16.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker16.Location = new System.Drawing.Point(578, 184);
+            this.dateTimePicker16.Location = new System.Drawing.Point(575, 184);
             this.dateTimePicker16.Name = "dateTimePicker16";
             this.dateTimePicker16.ShowUpDown = true;
             this.dateTimePicker16.Size = new System.Drawing.Size(80, 20);
@@ -827,7 +831,7 @@
             // dateTimePicker15
             // 
             this.dateTimePicker15.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker15.Location = new System.Drawing.Point(475, 184);
+            this.dateTimePicker15.Location = new System.Drawing.Point(472, 184);
             this.dateTimePicker15.Name = "dateTimePicker15";
             this.dateTimePicker15.ShowUpDown = true;
             this.dateTimePicker15.Size = new System.Drawing.Size(80, 20);
@@ -836,7 +840,7 @@
             // dateTimePicker14
             // 
             this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker14.Location = new System.Drawing.Point(368, 184);
+            this.dateTimePicker14.Location = new System.Drawing.Point(365, 184);
             this.dateTimePicker14.Name = "dateTimePicker14";
             this.dateTimePicker14.ShowUpDown = true;
             this.dateTimePicker14.Size = new System.Drawing.Size(80, 20);
@@ -845,7 +849,7 @@
             // dateTimePicker13
             // 
             this.dateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker13.Location = new System.Drawing.Point(265, 184);
+            this.dateTimePicker13.Location = new System.Drawing.Point(262, 184);
             this.dateTimePicker13.Name = "dateTimePicker13";
             this.dateTimePicker13.ShowUpDown = true;
             this.dateTimePicker13.Size = new System.Drawing.Size(80, 20);
@@ -854,7 +858,7 @@
             // dateTimePicker12
             // 
             this.dateTimePicker12.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker12.Location = new System.Drawing.Point(171, 184);
+            this.dateTimePicker12.Location = new System.Drawing.Point(168, 184);
             this.dateTimePicker12.Name = "dateTimePicker12";
             this.dateTimePicker12.ShowUpDown = true;
             this.dateTimePicker12.Size = new System.Drawing.Size(80, 20);
@@ -863,10 +867,10 @@
             // dateTimePicker11
             // 
             this.dateTimePicker11.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker11.Location = new System.Drawing.Point(86, 184);
+            this.dateTimePicker11.Location = new System.Drawing.Point(85, 184);
             this.dateTimePicker11.Name = "dateTimePicker11";
             this.dateTimePicker11.ShowUpDown = true;
-            this.dateTimePicker11.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePicker11.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker11.TabIndex = 26;
             // 
             // dateTimePicker10
@@ -875,13 +879,13 @@
             this.dateTimePicker10.Location = new System.Drawing.Point(3, 184);
             this.dateTimePicker10.Name = "dateTimePicker10";
             this.dateTimePicker10.ShowUpDown = true;
-            this.dateTimePicker10.Size = new System.Drawing.Size(77, 20);
+            this.dateTimePicker10.Size = new System.Drawing.Size(76, 20);
             this.dateTimePicker10.TabIndex = 25;
             // 
             // dateTimePicker9
             // 
             this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker9.Location = new System.Drawing.Point(578, 76);
+            this.dateTimePicker9.Location = new System.Drawing.Point(575, 76);
             this.dateTimePicker9.Name = "dateTimePicker9";
             this.dateTimePicker9.ShowUpDown = true;
             this.dateTimePicker9.Size = new System.Drawing.Size(80, 20);
@@ -890,7 +894,7 @@
             // dateTimePicker8
             // 
             this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker8.Location = new System.Drawing.Point(475, 76);
+            this.dateTimePicker8.Location = new System.Drawing.Point(472, 76);
             this.dateTimePicker8.Name = "dateTimePicker8";
             this.dateTimePicker8.ShowUpDown = true;
             this.dateTimePicker8.Size = new System.Drawing.Size(80, 20);
@@ -899,7 +903,7 @@
             // dateTimePicker7
             // 
             this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker7.Location = new System.Drawing.Point(368, 76);
+            this.dateTimePicker7.Location = new System.Drawing.Point(365, 76);
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.ShowUpDown = true;
             this.dateTimePicker7.Size = new System.Drawing.Size(80, 20);
@@ -908,7 +912,7 @@
             // dateTimePicker6
             // 
             this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(265, 76);
+            this.dateTimePicker6.Location = new System.Drawing.Point(262, 76);
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.ShowUpDown = true;
             this.dateTimePicker6.Size = new System.Drawing.Size(80, 20);
@@ -917,7 +921,7 @@
             // dateTimePicker5
             // 
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker5.Location = new System.Drawing.Point(171, 76);
+            this.dateTimePicker5.Location = new System.Drawing.Point(168, 76);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.ShowUpDown = true;
             this.dateTimePicker5.Size = new System.Drawing.Size(80, 20);
@@ -926,16 +930,16 @@
             // dateTimePicker4
             // 
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(86, 76);
+            this.dateTimePicker4.Location = new System.Drawing.Point(85, 76);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.ShowUpDown = true;
-            this.dateTimePicker4.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePicker4.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker4.TabIndex = 19;
             // 
             // Hab_Domingo
             // 
             this.Hab_Domingo.AutoSize = true;
-            this.Hab_Domingo.Location = new System.Drawing.Point(578, 3);
+            this.Hab_Domingo.Location = new System.Drawing.Point(575, 3);
             this.Hab_Domingo.Name = "Hab_Domingo";
             this.Hab_Domingo.Size = new System.Drawing.Size(75, 17);
             this.Hab_Domingo.TabIndex = 17;
@@ -946,7 +950,7 @@
             // Hab_Sabado
             // 
             this.Hab_Sabado.AutoSize = true;
-            this.Hab_Sabado.Location = new System.Drawing.Point(475, 3);
+            this.Hab_Sabado.Location = new System.Drawing.Point(472, 3);
             this.Hab_Sabado.Name = "Hab_Sabado";
             this.Hab_Sabado.Size = new System.Drawing.Size(69, 17);
             this.Hab_Sabado.TabIndex = 16;
@@ -957,7 +961,7 @@
             // Hab_Viernes
             // 
             this.Hab_Viernes.AutoSize = true;
-            this.Hab_Viernes.Location = new System.Drawing.Point(368, 3);
+            this.Hab_Viernes.Location = new System.Drawing.Point(365, 3);
             this.Hab_Viernes.Name = "Hab_Viernes";
             this.Hab_Viernes.Size = new System.Drawing.Size(68, 17);
             this.Hab_Viernes.TabIndex = 15;
@@ -968,7 +972,7 @@
             // Hab_Jueves
             // 
             this.Hab_Jueves.AutoSize = true;
-            this.Hab_Jueves.Location = new System.Drawing.Point(265, 3);
+            this.Hab_Jueves.Location = new System.Drawing.Point(262, 3);
             this.Hab_Jueves.Name = "Hab_Jueves";
             this.Hab_Jueves.Size = new System.Drawing.Size(66, 17);
             this.Hab_Jueves.TabIndex = 14;
@@ -979,7 +983,7 @@
             // Hab_Miercoles
             // 
             this.Hab_Miercoles.AutoSize = true;
-            this.Hab_Miercoles.Location = new System.Drawing.Point(171, 3);
+            this.Hab_Miercoles.Location = new System.Drawing.Point(168, 3);
             this.Hab_Miercoles.Name = "Hab_Miercoles";
             this.Hab_Miercoles.Size = new System.Drawing.Size(80, 17);
             this.Hab_Miercoles.TabIndex = 13;
@@ -990,7 +994,7 @@
             // Hab_Martes
             // 
             this.Hab_Martes.AutoSize = true;
-            this.Hab_Martes.Location = new System.Drawing.Point(86, 3);
+            this.Hab_Martes.Location = new System.Drawing.Point(85, 3);
             this.Hab_Martes.Name = "Hab_Martes";
             this.Hab_Martes.Size = new System.Drawing.Size(64, 17);
             this.Hab_Martes.TabIndex = 12;
@@ -1016,9 +1020,17 @@
             this.dateTimePicker3.MaxDate = new System.DateTime(2020, 3, 4, 0, 0, 0, 0);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.ShowUpDown = true;
-            this.dateTimePicker3.Size = new System.Drawing.Size(77, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(76, 20);
             this.dateTimePicker3.TabIndex = 18;
             this.dateTimePicker3.Value = new System.DateTime(2020, 3, 4, 0, 0, 0, 0);
+            // 
+            // atrasToolStripMenuItem
+            // 
+            this.atrasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrasToolStripMenuItem.Image")));
+            this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
+            this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // Empleados_nuevo
             // 
@@ -1090,13 +1102,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox puesto_empleado;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox ciudad_empleado;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox sucursal_empleado;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox departamento_empleado;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -1136,5 +1144,10 @@
         private System.Windows.Forms.NumericUpDown comision_empleado;
         private System.Windows.Forms.NumericUpDown salario_empleado;
         private System.Windows.Forms.ComboBox sexo_empleado;
+        private System.Windows.Forms.ComboBox puesto_empleado;
+        private System.Windows.Forms.ComboBox ciudad_empleado;
+        private System.Windows.Forms.ComboBox sucursal_empleado;
+        private System.Windows.Forms.ComboBox departamento_empleado;
+        private System.Windows.Forms.ToolStripMenuItem atrasToolStripMenuItem;
     }
 }

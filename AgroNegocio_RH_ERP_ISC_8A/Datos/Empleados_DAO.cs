@@ -46,7 +46,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            //lector.GetByte(12),
                                                            lector.GetString(13),
                                                            lector.GetString(14),
-                                                           lector.GetInt32(15),
+                                                           lector.GetString(15),
                                                            lector.GetString(16),
                                                            lector.GetDouble(17),
                                                            lector.GetChar(18),
@@ -155,7 +155,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
                     string consulta = "update Empleados set nombre= @nombre,apaterno= @apaterno,amaterno= @amaterno,sexo= @sexo,fechaContratacion= @fechaContratacion, " +
-                        "fechaNacimiento= @fechaNacimiento,salario= @salario,nss= @nss,estadoCivil= @estadoCivil,diasVacaciones= @diasVacaciones, diasPermiso= @diasPermiso,fotografia= @fotografia,direccion= @direccion,colonia= @colonia,codigoPostal= @codigoPostal" +
+                        "fechaNacimiento= @fechaNacimiento,salario= @salario,nss= @nss,estadoCivil= @estadoCivil,diasVacaciones= @diasVacaciones, diasPermiso= @diasPermiso,direccion= @direccion,colonia= @colonia,codigoPostal= @codigoPostal" +
                         ",escolaridad= @escolaridad,porcentajeComision= @porcentajeComision,estatus= @estatus,idDepartamento= @idDepartamento,idPuesto= @idPuesto, idCiudad= @idCiudad,idSucursal= @idSucursal where idEmpleado=@idEmpleado";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();

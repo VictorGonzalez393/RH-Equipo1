@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sexo_empleado = new System.Windows.Forms.ComboBox();
             this.codigopostal_empleado = new System.Windows.Forms.NumericUpDown();
             this.estadocivil_empleado = new System.Windows.Forms.ComboBox();
             this.escolaridad_empleado = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.colonia_empleado = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.id_empleado = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.direccion_empleado = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -66,15 +65,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.departamento_empleado = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.porcentajecomision_empleado = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.diaspermiso_empleado = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.diasvacaciones_empleado = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.nss_empleado = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.salario_empleado = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.fcontratacion_empleado = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
@@ -82,15 +76,23 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.sexo_empleado = new System.Windows.Forms.ComboBox();
+            this.salario_empleado = new System.Windows.Forms.NumericUpDown();
+            this.comision_empleado = new System.Windows.Forms.NumericUpDown();
+            this.diaspermiso_empleado = new System.Windows.Forms.NumericUpDown();
+            this.diasvacaciones_empleado = new System.Windows.Forms.NumericUpDown();
+            this.nss_empleado = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.id_empleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comision_empleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaspermiso_empleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diasvacaciones_empleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nss_empleado)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -127,7 +129,6 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.colonia_empleado);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.id_empleado);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.direccion_empleado);
             this.groupBox1.Controls.Add(this.label7);
@@ -140,7 +141,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
@@ -149,10 +149,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales:";
             // 
+            // sexo_empleado
+            // 
+            this.sexo_empleado.FormattingEnabled = true;
+            this.sexo_empleado.Items.AddRange(new object[] {
+            "F",
+            "M"});
+            this.sexo_empleado.Location = new System.Drawing.Point(120, 218);
+            this.sexo_empleado.Name = "sexo_empleado";
+            this.sexo_empleado.Size = new System.Drawing.Size(247, 21);
+            this.sexo_empleado.TabIndex = 35;
+            // 
             // codigopostal_empleado
             // 
             this.codigopostal_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigopostal_empleado.Location = new System.Drawing.Point(526, 214);
+            this.codigopostal_empleado.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.codigopostal_empleado.Name = "codigopostal_empleado";
             this.codigopostal_empleado.Size = new System.Drawing.Size(258, 22);
             this.codigopostal_empleado.TabIndex = 34;
@@ -162,7 +178,6 @@
             this.estadocivil_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estadocivil_empleado.FormattingEnabled = true;
             this.estadocivil_empleado.Items.AddRange(new object[] {
-            "----Seleccionar------",
             "Casado",
             "Soltero",
             "Divorciado",
@@ -177,6 +192,12 @@
             // 
             this.escolaridad_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.escolaridad_empleado.FormattingEnabled = true;
+            this.escolaridad_empleado.Items.AddRange(new object[] {
+            "Ninguna",
+            "Primaria",
+            "Secundaria",
+            "Preparatori",
+            "Licenciatura"});
             this.escolaridad_empleado.Location = new System.Drawing.Point(526, 240);
             this.escolaridad_empleado.Name = "escolaridad_empleado";
             this.escolaridad_empleado.Size = new System.Drawing.Size(258, 24);
@@ -234,14 +255,6 @@
             this.label9.Size = new System.Drawing.Size(65, 16);
             this.label9.TabIndex = 25;
             this.label9.Text = "Colonia:";
-            // 
-            // id_empleado
-            // 
-            this.id_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id_empleado.Location = new System.Drawing.Point(120, 186);
-            this.id_empleado.Name = "id_empleado";
-            this.id_empleado.Size = new System.Drawing.Size(247, 22);
-            this.id_empleado.TabIndex = 24;
             // 
             // label8
             // 
@@ -366,18 +379,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Sexo:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(6, 194);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ID:";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -405,6 +406,11 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Snow;
+            this.groupBox2.Controls.Add(this.nss_empleado);
+            this.groupBox2.Controls.Add(this.diasvacaciones_empleado);
+            this.groupBox2.Controls.Add(this.diaspermiso_empleado);
+            this.groupBox2.Controls.Add(this.comision_empleado);
+            this.groupBox2.Controls.Add(this.salario_empleado);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.puesto_empleado);
             this.groupBox2.Controls.Add(this.label21);
@@ -414,15 +420,10 @@
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.departamento_empleado);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.porcentajecomision_empleado);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.diaspermiso_empleado);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.diasvacaciones_empleado);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.nss_empleado);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.salario_empleado);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.fcontratacion_empleado);
             this.groupBox2.Controls.Add(this.label12);
@@ -528,14 +529,6 @@
             this.label18.TabIndex = 44;
             this.label18.Text = "Departamento:";
             // 
-            // porcentajecomision_empleado
-            // 
-            this.porcentajecomision_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.porcentajecomision_empleado.Location = new System.Drawing.Point(154, 231);
-            this.porcentajecomision_empleado.Name = "porcentajecomision_empleado";
-            this.porcentajecomision_empleado.Size = new System.Drawing.Size(353, 22);
-            this.porcentajecomision_empleado.TabIndex = 43;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -547,14 +540,6 @@
             this.label17.Size = new System.Drawing.Size(93, 16);
             this.label17.TabIndex = 42;
             this.label17.Text = "% Comisión:";
-            // 
-            // diaspermiso_empleado
-            // 
-            this.diaspermiso_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diaspermiso_empleado.Location = new System.Drawing.Point(154, 194);
-            this.diaspermiso_empleado.Name = "diaspermiso_empleado";
-            this.diaspermiso_empleado.Size = new System.Drawing.Size(353, 22);
-            this.diaspermiso_empleado.TabIndex = 41;
             // 
             // label16
             // 
@@ -568,14 +553,6 @@
             this.label16.TabIndex = 40;
             this.label16.Text = "Dias Permisos:";
             // 
-            // diasvacaciones_empleado
-            // 
-            this.diasvacaciones_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diasvacaciones_empleado.Location = new System.Drawing.Point(154, 159);
-            this.diasvacaciones_empleado.Name = "diasvacaciones_empleado";
-            this.diasvacaciones_empleado.Size = new System.Drawing.Size(353, 22);
-            this.diasvacaciones_empleado.TabIndex = 39;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -588,14 +565,6 @@
             this.label15.TabIndex = 38;
             this.label15.Text = "Dias Vacaciones:";
             // 
-            // nss_empleado
-            // 
-            this.nss_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nss_empleado.Location = new System.Drawing.Point(154, 120);
-            this.nss_empleado.Name = "nss_empleado";
-            this.nss_empleado.Size = new System.Drawing.Size(353, 22);
-            this.nss_empleado.TabIndex = 37;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -607,14 +576,6 @@
             this.label14.Size = new System.Drawing.Size(43, 16);
             this.label14.TabIndex = 36;
             this.label14.Text = "NSS:";
-            // 
-            // salario_empleado
-            // 
-            this.salario_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salario_empleado.Location = new System.Drawing.Point(154, 80);
-            this.salario_empleado.Name = "salario_empleado";
-            this.salario_empleado.Size = new System.Drawing.Size(353, 22);
-            this.salario_empleado.TabIndex = 35;
             // 
             // label13
             // 
@@ -667,6 +628,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // btn_cancelar
             // 
@@ -680,6 +642,7 @@
             this.btn_cancelar.TabIndex = 39;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -695,13 +658,65 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // sexo_empleado
+            // salario_empleado
             // 
-            this.sexo_empleado.FormattingEnabled = true;
-            this.sexo_empleado.Location = new System.Drawing.Point(120, 218);
-            this.sexo_empleado.Name = "sexo_empleado";
-            this.sexo_empleado.Size = new System.Drawing.Size(247, 21);
-            this.sexo_empleado.TabIndex = 35;
+            this.salario_empleado.Location = new System.Drawing.Point(154, 80);
+            this.salario_empleado.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.salario_empleado.Name = "salario_empleado";
+            this.salario_empleado.Size = new System.Drawing.Size(353, 20);
+            this.salario_empleado.TabIndex = 53;
+            // 
+            // comision_empleado
+            // 
+            this.comision_empleado.Location = new System.Drawing.Point(154, 231);
+            this.comision_empleado.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.comision_empleado.Name = "comision_empleado";
+            this.comision_empleado.Size = new System.Drawing.Size(353, 20);
+            this.comision_empleado.TabIndex = 54;
+            // 
+            // diaspermiso_empleado
+            // 
+            this.diaspermiso_empleado.Location = new System.Drawing.Point(154, 194);
+            this.diaspermiso_empleado.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.diaspermiso_empleado.Name = "diaspermiso_empleado";
+            this.diaspermiso_empleado.Size = new System.Drawing.Size(353, 20);
+            this.diaspermiso_empleado.TabIndex = 55;
+            // 
+            // diasvacaciones_empleado
+            // 
+            this.diasvacaciones_empleado.Location = new System.Drawing.Point(154, 159);
+            this.diasvacaciones_empleado.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.diasvacaciones_empleado.Name = "diasvacaciones_empleado";
+            this.diasvacaciones_empleado.Size = new System.Drawing.Size(353, 20);
+            this.diasvacaciones_empleado.TabIndex = 56;
+            // 
+            // nss_empleado
+            // 
+            this.nss_empleado.Location = new System.Drawing.Point(154, 120);
+            this.nss_empleado.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.nss_empleado.Name = "nss_empleado";
+            this.nss_empleado.Size = new System.Drawing.Size(353, 20);
+            this.nss_empleado.TabIndex = 57;
             // 
             // Empleados_Editar
             // 
@@ -720,12 +735,16 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.id_empleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comision_empleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaspermiso_empleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diasvacaciones_empleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nss_empleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -744,7 +763,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox colonia_empleado;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown id_empleado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox direccion_empleado;
         private System.Windows.Forms.Label label7;
@@ -757,7 +775,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -770,15 +787,10 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox departamento_empleado;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox porcentajecomision_empleado;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox diaspermiso_empleado;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox diasvacaciones_empleado;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox nss_empleado;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox salario_empleado;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker fcontratacion_empleado;
         private System.Windows.Forms.Label label12;
@@ -787,5 +799,10 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.ComboBox sexo_empleado;
+        private System.Windows.Forms.NumericUpDown salario_empleado;
+        private System.Windows.Forms.NumericUpDown nss_empleado;
+        private System.Windows.Forms.NumericUpDown diasvacaciones_empleado;
+        private System.Windows.Forms.NumericUpDown diaspermiso_empleado;
+        private System.Windows.Forms.NumericUpDown comision_empleado;
     }
 }
