@@ -144,6 +144,8 @@
             // 
             // tabla_Estados
             // 
+            this.tabla_Estados.AllowUserToAddRows = false;
+            this.tabla_Estados.AllowUserToDeleteRows = false;
             this.tabla_Estados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Estados.Location = new System.Drawing.Point(64, 115);
             this.tabla_Estados.Name = "tabla_Estados";

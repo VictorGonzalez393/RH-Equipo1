@@ -139,7 +139,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void tabla_Estados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+           /* if (e.RowIndex != -1)
             {
                 try
                 {
@@ -164,7 +164,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             else
             {
                 DialogResult resultado = MessageBox.Show("Selecciona el estado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            }*/
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)

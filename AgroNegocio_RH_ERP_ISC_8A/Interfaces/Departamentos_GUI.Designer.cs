@@ -144,6 +144,8 @@
             // 
             // tabla_Deptos
             // 
+            this.tabla_Deptos.AllowUserToAddRows = false;
+            this.tabla_Deptos.AllowUserToDeleteRows = false;
             this.tabla_Deptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Deptos.Location = new System.Drawing.Point(64, 144);
             this.tabla_Deptos.Name = "tabla_Deptos";
