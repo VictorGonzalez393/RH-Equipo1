@@ -180,6 +180,8 @@
             // 
             // tabla_Percepciones
             // 
+            this.tabla_Percepciones.AllowUserToAddRows = false;
+            this.tabla_Percepciones.AllowUserToDeleteRows = false;
             this.tabla_Percepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Percepciones.Location = new System.Drawing.Point(34, 115);
             this.tabla_Percepciones.Name = "tabla_Percepciones";

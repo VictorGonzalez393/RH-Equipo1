@@ -64,7 +64,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(17, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(58, 49);
             this.pictureBox1.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.buscar_ciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscar_ciudad.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.buscar_ciudad.Location = new System.Drawing.Point(226, 55);
-            this.buscar_ciudad.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buscar_ciudad.Margin = new System.Windows.Forms.Padding(5);
             this.buscar_ciudad.Name = "buscar_ciudad";
             this.buscar_ciudad.Size = new System.Drawing.Size(202, 26);
             this.buscar_ciudad.TabIndex = 5;
@@ -85,7 +85,7 @@
             // 
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
             this.btn_buscar.Location = new System.Drawing.Point(428, 54);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(5);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(32, 28);
             this.btn_buscar.TabIndex = 6;
@@ -142,9 +142,11 @@
             // 
             // tabla_Ciudades
             // 
+            this.tabla_Ciudades.AllowUserToAddRows = false;
+            this.tabla_Ciudades.AllowUserToDeleteRows = false;
             this.tabla_Ciudades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Ciudades.Location = new System.Drawing.Point(17, 105);
-            this.tabla_Ciudades.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabla_Ciudades.Margin = new System.Windows.Forms.Padding(5);
             this.tabla_Ciudades.Name = "tabla_Ciudades";
             this.tabla_Ciudades.ReadOnly = true;
             this.tabla_Ciudades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -178,7 +180,7 @@
             // 
             this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
             this.btn_anterior.Location = new System.Drawing.Point(98, 364);
-            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(34, 34);
             this.btn_anterior.TabIndex = 11;
@@ -189,7 +191,7 @@
             // 
             this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
             this.btn_siguiente.Location = new System.Drawing.Point(320, 364);
-            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(32, 34);
             this.btn_siguiente.TabIndex = 10;
@@ -214,7 +216,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Ciudades_GUI";
             this.Text = "Ciudades";
             this.Load += new System.EventHandler(this.Form1_Load);

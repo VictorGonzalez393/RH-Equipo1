@@ -52,7 +52,7 @@
             // 
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
             this.btn_buscar.Location = new System.Drawing.Point(564, 79);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(5);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(40, 28);
             this.btn_buscar.TabIndex = 18;
@@ -64,7 +64,7 @@
             this.buscarDedTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarDedTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.buscarDedTxt.Location = new System.Drawing.Point(349, 80);
-            this.buscarDedTxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buscarDedTxt.Margin = new System.Windows.Forms.Padding(5);
             this.buscarDedTxt.Name = "buscarDedTxt";
             this.buscarDedTxt.Size = new System.Drawing.Size(216, 26);
             this.buscarDedTxt.TabIndex = 17;
@@ -85,7 +85,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(21, 45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 87);
             this.pictureBox1.TabIndex = 19;
@@ -143,9 +143,11 @@
             // 
             // Tabla_Deducciones
             // 
+            this.Tabla_Deducciones.AllowUserToAddRows = false;
+            this.Tabla_Deducciones.AllowUserToDeleteRows = false;
             this.Tabla_Deducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabla_Deducciones.Location = new System.Drawing.Point(33, 121);
-            this.Tabla_Deducciones.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Tabla_Deducciones.Margin = new System.Windows.Forms.Padding(5);
             this.Tabla_Deducciones.Name = "Tabla_Deducciones";
             this.Tabla_Deducciones.ReadOnly = true;
             this.Tabla_Deducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -181,7 +183,7 @@
             // 
             this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
             this.btn_anterior.Location = new System.Drawing.Point(181, 408);
-            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_anterior.Margin = new System.Windows.Forms.Padding(5);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(35, 35);
             this.btn_anterior.TabIndex = 23;
@@ -192,7 +194,7 @@
             // 
             this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
             this.btn_siguiente.Location = new System.Drawing.Point(382, 410);
-            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_siguiente.Margin = new System.Windows.Forms.Padding(5);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(35, 33);
             this.btn_siguiente.TabIndex = 22;
@@ -216,7 +218,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Deducciones_GUI";
             this.Text = "Deducciones";
             this.Load += new System.EventHandler(this.Deducciones_GUI_Load_1);

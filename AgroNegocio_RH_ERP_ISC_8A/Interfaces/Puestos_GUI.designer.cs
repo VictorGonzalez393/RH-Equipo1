@@ -132,9 +132,12 @@
             // 
             // tabla_Puestos
             // 
+            this.tabla_Puestos.AllowUserToAddRows = false;
+            this.tabla_Puestos.AllowUserToDeleteRows = false;
             this.tabla_Puestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_Puestos.Location = new System.Drawing.Point(48, 116);
             this.tabla_Puestos.Name = "tabla_Puestos";
+            this.tabla_Puestos.ReadOnly = true;
             this.tabla_Puestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla_Puestos.Size = new System.Drawing.Size(544, 204);
             this.tabla_Puestos.TabIndex = 9;
