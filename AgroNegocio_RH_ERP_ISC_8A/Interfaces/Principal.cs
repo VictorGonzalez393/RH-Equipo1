@@ -128,5 +128,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             h.ShowDialog();
             this.SetVisibleCore(true);
         }
+
+        private void historialDePuestosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HistorialPuestos_GUI historial = new HistorialPuestos_GUI();
+            this.SetVisibleCore(false);
+            historial.ShowDialog();
+            this.SetVisibleCore(true);
+
+        }
     }
 }

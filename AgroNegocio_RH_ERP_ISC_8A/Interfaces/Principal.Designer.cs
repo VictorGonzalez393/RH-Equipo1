@@ -42,6 +42,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.nóminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.documentaciónEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_user = new System.Windows.Forms.Label();
             this.imgUser = new System.Windows.Forms.PictureBox();
-            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
@@ -162,6 +162,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.nóminaDeduccionesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina Deducciones";
             // 
+            // formasDePagoToolStripMenuItem
+            // 
+            this.formasDePagoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("formasDePagoToolStripMenuItem.Image")));
+            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
+            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
+            // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -204,6 +211,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.historialDePuestosToolStripMenuItem1.Name = "historialDePuestosToolStripMenuItem1";
             this.historialDePuestosToolStripMenuItem1.Size = new System.Drawing.Size(238, 22);
             this.historialDePuestosToolStripMenuItem1.Text = "Historial de puestos";
+            this.historialDePuestosToolStripMenuItem1.Click += new System.EventHandler(this.historialDePuestosToolStripMenuItem1_Click);
             // 
             // organizaciónToolStripMenuItem
             // 
@@ -220,7 +228,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.puestosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("puestosToolStripMenuItem.Image")));
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
@@ -228,7 +236,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.departamentosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("departamentosToolStripMenuItem.Image")));
             this.departamentosToolStripMenuItem.Name = "departamentosToolStripMenuItem";
-            this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.departamentosToolStripMenuItem.Text = "Departamentos";
             this.departamentosToolStripMenuItem.Click += new System.EventHandler(this.departamentosToolStripMenuItem_Click);
             // 
@@ -319,13 +327,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.imgUser.Size = new System.Drawing.Size(32, 39);
             this.imgUser.TabIndex = 5;
             this.imgUser.TabStop = false;
-            // 
-            // formasDePagoToolStripMenuItem
-            // 
-            this.formasDePagoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("formasDePagoToolStripMenuItem.Image")));
-            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
-            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
             // 
             // Principal
             // 

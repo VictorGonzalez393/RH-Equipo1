@@ -46,7 +46,7 @@
             this.departamento_historial = new System.Windows.Forms.ComboBox();
             this.salario_historial = new System.Windows.Forms.NumericUpDown();
             this.finicio_historial = new System.Windows.Forms.DateTimePicker();
-            this.ffin_empleados = new System.Windows.Forms.DateTimePicker();
+            this.ffin_historial = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salario_historial)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // atásToolStripMenuItem
             // 
@@ -103,6 +104,7 @@
             this.btn_guardar.TabIndex = 21;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label4
             // 
@@ -219,6 +221,7 @@
             // 
             // finicio_historial
             // 
+            this.finicio_historial.CustomFormat = "yyyy-MM-dd";
             this.finicio_historial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finicio_historial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.finicio_historial.Location = new System.Drawing.Point(225, 204);
@@ -226,21 +229,21 @@
             this.finicio_historial.Size = new System.Drawing.Size(289, 22);
             this.finicio_historial.TabIndex = 33;
             // 
-            // ffin_empleados
+            // ffin_historial
             // 
-            this.ffin_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ffin_empleados.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ffin_empleados.Location = new System.Drawing.Point(225, 243);
-            this.ffin_empleados.Name = "ffin_empleados";
-            this.ffin_empleados.Size = new System.Drawing.Size(289, 22);
-            this.ffin_empleados.TabIndex = 34;
+            this.ffin_historial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ffin_historial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ffin_historial.Location = new System.Drawing.Point(225, 243);
+            this.ffin_historial.Name = "ffin_historial";
+            this.ffin_historial.Size = new System.Drawing.Size(289, 22);
+            this.ffin_historial.TabIndex = 34;
             // 
             // HistorialPuestos_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 450);
-            this.Controls.Add(this.ffin_empleados);
+            this.Controls.Add(this.ffin_historial);
             this.Controls.Add(this.finicio_historial);
             this.Controls.Add(this.salario_historial);
             this.Controls.Add(this.departamento_historial);
@@ -258,6 +261,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "HistorialPuestos_nuevo";
             this.Text = "HistorialPuestos_nuevo";
+            this.Load += new System.EventHandler(this.HistorialPuestos_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salario_historial)).EndInit();
@@ -285,6 +289,6 @@
         private System.Windows.Forms.ComboBox departamento_historial;
         private System.Windows.Forms.NumericUpDown salario_historial;
         private System.Windows.Forms.DateTimePicker finicio_historial;
-        private System.Windows.Forms.DateTimePicker ffin_empleados;
+        private System.Windows.Forms.DateTimePicker ffin_historial;
     }
 }

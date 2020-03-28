@@ -213,3 +213,6 @@ C:\Users\chela\Downloads\RH-Equipo1-d9c1b4f2964d33dbb7d596f8d3353212225802ee\Agr
 C:\Users\chela\Downloads\RH-Equipo1-d9c1b4f2964d33dbb7d596f8d3353212225802ee\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
 C:\Users\chela\Downloads\RH-Equipo1-d9c1b4f2964d33dbb7d596f8d3353212225802ee\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
 C:\Users\chela\Downloads\RH-Equipo1-d9c1b4f2964d33dbb7d596f8d3353212225802ee\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_editar.resources
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_GUI.resources
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_nuevo.resources

@@ -28,6 +28,13 @@ create VIEW Empleados_Tabla AS
 	 where e.estatus='A'
 	 go
 
+	 create view HistorialPuestos_Tabla AS 
+	 select  h.fechaInicio 'Fecha Inicio',
+	 h.fechaFin 'Fecha Fin', h.salario'salario', e.nombre 'Nombre', p.nombre 'Puesto', d.nombre 'Departamento' from HistorialPuestos h join Empleados e on e.idEmpleado = h.idEmpleado join
+	 Puestos p on p.idPuesto = h.idPuesto join Departamentos d on d.idDepartamento = h.idDepartamento
+	 go
+
+	 
 create view Puestos_Tabla as
 	select idPuesto 'ID', nombre 'Nombre', salarioMinimo 'SalarioMinimo', salarioMaximo 'SalarioMaximo', estatus 'Estatus'
 	from Puestos where estatus='A'

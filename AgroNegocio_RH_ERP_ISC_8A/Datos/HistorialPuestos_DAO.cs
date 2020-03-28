@@ -40,7 +40,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                         HistorialPuesto historial_temporal = new HistorialPuesto(lector.GetInt32(0),
                                                             lector.GetInt32(1),
                                                             lector.GetInt32(2),
-                                                            lector.GetString(3),
+                                                            lector.GetDateTime(3),
                                                             lector.GetString(4),
                                                             lector.GetDouble(5));
                         historialpuestos.Add(historial_temporal);

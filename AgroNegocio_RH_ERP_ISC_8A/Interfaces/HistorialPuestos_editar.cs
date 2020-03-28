@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgroNegocio_RH_ERP_ISC_8A.Datos;
+using AgroNegocio_RH_ERP_ISC_8A.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class HistorialPuestos_editar : Form
     {
-        public HistorialPuestos_editar()
+        private HistorialPuesto historialpuesto;
+        HistorialPuestos_DAO historialdao = new HistorialPuestos_DAO();
+        public HistorialPuestos_editar(HistorialPuesto historialpuesto)
         {
             InitializeComponent();
+            this.historialpuesto = historialpuesto;
         }
     }
 }
