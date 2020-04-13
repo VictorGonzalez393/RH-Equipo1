@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
@@ -111,6 +112,12 @@
     <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
+      <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Horarios_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +142,7 @@
     <Compile Include="Interfaces\Puestos_nuevo.designer.cs">
       <DependentUpon>Puestos_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\DocumentacionEmpleado.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\Horario.cs" />
     <Compile Include="Modelo\Puesto.cs" />
@@ -253,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Departamentos_nuevo.resx">
       <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado.resx">
+      <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Empleados_Editar.resx">
       <DependentUpon>Empleados_Editar.cs</DependentUpon>
