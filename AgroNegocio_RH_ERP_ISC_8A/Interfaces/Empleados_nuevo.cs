@@ -255,6 +255,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                             MessageBox.Show("Insercion exitosa. Favor de llenar su horario.");
                             Horarios_editar horarios_Editar = new Horarios_editar(empleado_nuevo.IdEmpleado,
                                 empleado_nuevo.Nombre + " " + empleado_nuevo.Apaterno + " " + empleado_nuevo.Amaterno);
+                            horarios_Editar.ShowDialog();
                             Close();
                         }
                         else

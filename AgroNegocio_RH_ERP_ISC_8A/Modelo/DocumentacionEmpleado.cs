@@ -15,7 +15,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public char Estatus { get; set; }
         public int idEmpleado { get; set; }
         public DocumentacionEmpleado(int id, string nombredocumento, TimeSpan fechaentrega, 
-            byte [] documento,char estatus int idempleado)
+            byte [] documento,char estatus, int idempleado)
         {
             ID = id;
             nombreDocumento = nombredocumento;

@@ -33,7 +33,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                         DocumentacionEmpleado documento_temporal = new DocumentacionEmpleado(lector.GetInt32(0),
                                                                                              lector.GetString(1),
                                                                                              lector.GetTimeSpan(2),
-                                                                                             lector.GetByte(3),
+                                                                                             new byte[3],//lector.GetBytes(3),
                                                                                              lector.GetString(4)[0],
                                                                                              lector.GetInt32(5)
                                                                                              );

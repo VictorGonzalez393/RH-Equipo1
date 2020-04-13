@@ -51,7 +51,7 @@ create table Empleados
 	estadoCivil varchar (20) not null,
 	diasVacaciones integer not null,
 	diasPermiso integer not null,
-	fotografia varbinary not null,
+	--fotografia varbinary,
 	direccion varchar(80) not null,
 	colonia varchar(50) not null,
 	codigoPostal varchar(5) not null,

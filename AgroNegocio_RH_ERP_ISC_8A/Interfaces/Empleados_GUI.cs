@@ -22,11 +22,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             try
             {
                 empleadosDAO = new Empleados_DAO();
-                /*empleadosDAO.table = "Empleados_Tabla"; 
-                empleadosDAO.order_by = "ID";//Descomentar*/
+                empleadosDAO.table = "Empleados_Tabla"; 
+                empleadosDAO.order_by = "ID";//Descomentar
 
-                empleadosDAO.table = "empleados"; //Pruebas en horarios
-                empleadosDAO.order_by = "IDempleado ";
+                //empleadosDAO.table = "empleados"; //Pruebas en horarios
+                //empleadosDAO.order_by = "IDempleado ";
                 
                 empleadosDAO.CalculaPaginas();
                 if (empleadosDAO.actual_page == 1 || empleadosDAO.actual_page == 0)
@@ -222,7 +222,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             if (tablaEmpleados1.SelectedRows.Count == 1)
             {
                 int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
-                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value;
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " "+ tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value ;
                 Horarios_editar horarios_Editar = new Horarios_editar(idemp, nombreemp);
                 horarios_Editar.ShowDialog();
 
