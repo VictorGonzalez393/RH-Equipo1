@@ -22,8 +22,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             try
             {
                 empleadosDAO = new Empleados_DAO();
-                empleadosDAO.table = "Empleados_Tabla";
-                empleadosDAO.order_by = "ID";
+                /*empleadosDAO.table = "Empleados_Tabla"; 
+                empleadosDAO.order_by = "ID";//Descomentar*/
+
+                empleadosDAO.table = "empleados"; //Pruebas en horarios
+                empleadosDAO.order_by = "IDempleado ";
+                
                 empleadosDAO.CalculaPaginas();
                 if (empleadosDAO.actual_page == 1 || empleadosDAO.actual_page == 0)
                 {
@@ -210,6 +214,22 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        private void editarHorarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados1.SelectedRows.Count == 1)
+            {
+                int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value;
+                Horarios_editar horarios_Editar = new Horarios_editar(idemp, nombreemp);
+                horarios_Editar.ShowDialog();
+
+            }
+            else
+            {
+                //selecciona un empleado (mensaje)
             }
         }
 

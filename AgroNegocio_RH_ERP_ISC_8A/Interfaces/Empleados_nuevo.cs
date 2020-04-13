@@ -34,10 +34,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         }
 
-
-
-
-
         private bool validarDatos()
         {
             if (!string.IsNullOrWhiteSpace(nombre_empleado.Text))
@@ -222,105 +218,102 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             return false;
         }
 
-     
-
-        
-       
-
-
 
 
 
 
 
         private void btn_cancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.SetVisibleCore(false);
+            Principal p = new Principal();
+            p.ShowDialog();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (validarDatos() == true)
+            {
+                Ciudad ciudad = (Ciudad)ciudad_empleado.SelectedItem;
+                Departamento departamento = (Departamento)departamento_empleado.SelectedItem;
+                Puesto puesto = (Puesto)puesto_empleado.SelectedItem;
+                Sucursal sucursal = (Sucursal)sucursal_empleado.SelectedItem;
+                Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
+                    , fcontratacion_empleado.Text, fnacimiento_empleado.Text, 0, nss_empleado.Text, estadocivil_empleado.Text, 0, 0, direccion_empleado.Text
+                    , colonia_empleado.Text, codigopostal_empleado.Text, escolaridad_empleado.Text, 0, 'A', departamento.idDepto, puesto.IdPuesto, ciudad.ID, sucursal.IdSucursal);
+                try
+                {
+                    if (empleadodao.validarEmpleado(empleado_nuevo))
                     {
-                        Close();
-                    }
-
-                    private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
-                    {
-                       this.SetVisibleCore(false);
-                       Principal p = new Principal();
-                       p.ShowDialog();
-                    }
-
-                    private void btn_guardar_Click(object sender, EventArgs e)
-                    {
-                         if(validarDatos() == true)
+                        if (empleadodao.registrar(empleado_nuevo))
                         {
-                            Ciudad ciudad = (Ciudad)ciudad_empleado.SelectedItem;
-                            Departamento departamento = (Departamento)departamento_empleado.SelectedItem;
-                            Puesto puesto = (Puesto)puesto_empleado.SelectedItem;
-                            Sucursal sucursal = (Sucursal)sucursal_empleado.SelectedItem;
-                            Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
-                                , fcontratacion_empleado.Text, fnacimiento_empleado.Text, 0, nss_empleado.Text, estadocivil_empleado.Text, 0, 0, direccion_empleado.Text
-                                , colonia_empleado.Text, codigopostal_empleado.Text, escolaridad_empleado.Text, 0, 'A', departamento.idDepto, puesto.IdPuesto, ciudad.ID, sucursal.IdSucursal);
-                            try
-                            {
-                                if (empleadodao.validarEmpleado(empleado_nuevo))
-                                {
-                                    if (empleadodao.registrar(empleado_nuevo))
-                                    {
-                                        MessageBox.Show("Insercion exitosa");
-                                        Close();
-                                    }
-                                    else
-                                        MessageBox.Show("Error al Insertar");
-                                }
-                                else
-                                    MessageBox.Show("Error al Insertar. El empleado ya existe");
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Error al insertar al empleado wey" + ex.Message);
-                            }
+                            MessageBox.Show("Insercion exitosa. Favor de llenar su horario.");
+                            Horarios_editar horarios_Editar = new Horarios_editar(empleado_nuevo.IdEmpleado,
+                                empleado_nuevo.Nombre + " " + empleado_nuevo.Apaterno + " " + empleado_nuevo.Amaterno);
+                            Close();
                         }
+                        else
+                            MessageBox.Show("Error al Insertar");
                     }
+                    else
+                        MessageBox.Show("Error al Insertar. El empleado ya existe");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al insertar al empleado wey" + ex.Message);
+                }
 
-                    private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-                    {
+            }
+        }
 
-                    }
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
-                    private void Empleados_nuevo_Load(object sender, EventArgs e)
-                    {
-                        id_empleado.Value = empleadodao.getMaxID();
+        }
 
-                        string consulta_where = " where estatus = @estatus";
-                        List<string> parametros = new List<string>();
-                        parametros.Add("@estatus");
-                        List<object> valores = new List<object>();
-                        valores.Add('A');
+        private void Empleados_nuevo_Load(object sender, EventArgs e)
+        {
+            id_empleado.Value = empleadodao.getMaxID();
 
-                        List<Ciudad> ciudades = ciudadesdao.consultaGeneral(consulta_where, parametros, valores);
+            string consulta_where = " where estatus = @estatus";
+            List<string> parametros = new List<string>();
+            parametros.Add("@estatus");
+            List<object> valores = new List<object>();
+            valores.Add('A');
 
-                        foreach (Ciudad ciudad in ciudades)
-                        {
-                            ciudad_empleado.Items.Add(ciudad);
-                        }
+            List<Ciudad> ciudades = ciudadesdao.consultaGeneral(consulta_where, parametros, valores);
 
-                        List<Puesto> puestos = puestosdao.consultaGeneral(consulta_where, parametros, valores);
+            foreach (Ciudad ciudad in ciudades)
+            {
+                ciudad_empleado.Items.Add(ciudad);
+            }
 
-                        foreach (Puesto puesto in puestos)
-                        {
-                            puesto_empleado.Items.Add(puesto);
-                        }
+            List<Puesto> puestos = puestosdao.consultaGeneral(consulta_where, parametros, valores);
 
-                        List<Departamento> departamentos = departamentosdao.consultaGeneral(consulta_where, parametros, valores);
+            foreach (Puesto puesto in puestos)
+            {
+                puesto_empleado.Items.Add(puesto);
+            }
 
-                        foreach (Departamento departamento in departamentos)
-                        {
-                            departamento_empleado.Items.Add(departamento);
-                        }
+            List<Departamento> departamentos = departamentosdao.consultaGeneral(consulta_where, parametros, valores);
 
-                        List<Sucursal> sucursales = sucursalesdao.consultaGeneral(consulta_where, parametros, valores);
+            foreach (Departamento departamento in departamentos)
+            {
+                departamento_empleado.Items.Add(departamento);
+            }
 
-                        foreach (Sucursal sucursal in sucursales)
-                        {
-                            sucursal_empleado.Items.Add(sucursal);
-                        }
-                    }
+            List<Sucursal> sucursales = sucursalesdao.consultaGeneral(consulta_where, parametros, valores);
+
+            foreach (Sucursal sucursal in sucursales)
+            {
+                sucursal_empleado.Items.Add(sucursal);
+            }
+        }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -331,7 +324,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             Close();
         }
-    }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
             }
-        
-  
+            catch (Exception ex)
+            {
+
+            }
+        }
+    }
+}
+
+

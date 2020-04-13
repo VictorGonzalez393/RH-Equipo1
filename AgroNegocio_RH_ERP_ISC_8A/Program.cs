@@ -17,7 +17,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Interfaces.Login());
-           Application.Run(new Interfaces.Principal());
+           Application.Run(new Interfaces.Empleados_GUI());
         }
     }
 }
