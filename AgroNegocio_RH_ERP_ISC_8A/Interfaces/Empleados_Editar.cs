@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Puestos_DAO puestosdao = new Puestos_DAO();
         Departamentos_DAO departamentosdao = new Departamentos_DAO();
         Sucursales_DAO sucursalesdao = new Sucursales_DAO();
+        MemoryStream archivo_actual;
+        Image imag;
 
         public Empleados_Editar(Empleado empleado)
         {
@@ -75,7 +78,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             sexo_empleado.SelectedItem = empleado.Sexo;
             fcontratacion_empleado.Text = empleado.FechaContratacion;
             fnacimiento_empleado.Text = empleado.FechaNacimiento;
-            salario_empleado.Value = (int)empleado.Salario;
+            salario_empleado.Value = (decimal)empleado.Salario;
             nss_empleado.Text = empleado.Nss;
             estadocivil_empleado.SelectedItem = empleado.EstadoCivil;
             diasvacaciones_empleado.Value = empleado.DiasVacaciones;
@@ -85,7 +88,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             codigopostal_empleado.Text = empleado.CodigoPostal;
             escolaridad_empleado.SelectedItem = empleado.Escolaridad;
             comision_empleado.Value = (int)empleado.PorcentajeComision;
-            
+            img_1.Image = empleado.img;
+
             foreach (Departamento departamento in departamento_empleado.Items) 
             {
                 if (departamento.idDepto == empleado.IdDepartamento)
@@ -139,6 +143,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 empleado.IdPuesto = ((Puesto)puesto_empleado.Items[puesto_empleado.SelectedIndex]).IdPuesto;
                 empleado.IdCiudad = ((Ciudad)ciudad_empleado.Items[ciudad_empleado.SelectedIndex]).ID;
                 empleado.IdSucursal = ((Sucursal)sucursal_empleado.Items[sucursal_empleado.SelectedIndex]).IdSucursal;
+                empleado.img = imag;
                 try
                 {
                     if (empleadodao.editar(empleado))
@@ -223,14 +228,31 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                                                                                     {
                                                                                         if (sucursal_empleado.SelectedIndex != -1)
-                                                                                            return true;
+                                                                                        {
+                                                                                            if (imag != null)
+                                                                                            {
+                                                                                                return true;
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                MessageBox.Show("Seleccione la fotografía del empleado");
+                                                                                                return false;
+                                                                                            }
+
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            MessageBox.Show("Falta seleccionar la sucursal");
+                                                                                            return false;
+                                                                                        }
+                                                                                           
 
 
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         MessageBox.Show("Falta la Ciudad");
-
+                                                                                        return false;
                                                                                     }
 
 
@@ -367,6 +389,30 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog abrir = new OpenFileDialog()
+            {
+                ValidateNames = true,
+                Multiselect = false,
+                Filter = "Imagen|*.jpg"
+            })
+            {
+                if (abrir.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] bt = File.ReadAllBytes(abrir.FileName);
+                    archivo_actual = new MemoryStream(bt);
+                    imag = new Bitmap(new Bitmap(new MemoryStream(bt)), new Size(120, 134));
+                    img_1.Image = imag;
+                }
+            }
+        }
+
+        private void atrásToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }

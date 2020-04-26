@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +45,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(9),
                                                            lector.GetInt32(10),
                                                            lector.GetInt32(11),
-                                                           //lector.GetByte(12),
                                                            lector.GetString(13),
                                                            lector.GetString(14),
                                                            lector.GetString(15),
@@ -53,7 +54,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetInt32(19),
                                                            lector.GetInt32(20),
                                                            lector.GetInt32(21),
-                                                           lector.GetInt32(22));
+                                                           lector.GetInt32(22),
+                                                           (byte[]) lector[12]);
 
                         empleados.Add(emp_temp);
                     }
@@ -78,7 +80,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
                     string consulta = "insert into Empleados values (@idEmpleado, @nombre, @apaterno, @amaterno, @sexo, @fechaContratacion, " +
-                        "@fechaNacimiento, @salario, @nss, @estadoCivil, @diasVacaciones, @diasPermiso, @direccion, @colonia, @codigoPostal" +
+                        "@fechaNacimiento, @salario, @nss, @estadoCivil, @diasVacaciones, @diasPermiso,@fotografia, @direccion, @colonia, @codigoPostal" +
                         ", @escolaridad, @porcentajeComision, @estatus, @idDepartamento, @idPuesto, @idCiudad, @idSucursal)";
                     empleado.IdEmpleado = getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
@@ -95,7 +97,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
                     comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
                     comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
-                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    comando.Parameters.AddWithValue("@fotografia", empleado.img_bt);
                     comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
                     comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
                     comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
@@ -156,7 +158,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     string consulta = "update Empleados set nombre= @nombre,apaterno= @apaterno,amaterno= @amaterno,sexo= @sexo,fechaContratacion= @fechaContratacion, " +
                         "fechaNacimiento= @fechaNacimiento,salario= @salario,nss= @nss,estadoCivil= @estadoCivil,diasVacaciones= @diasVacaciones, diasPermiso= @diasPermiso,direccion= @direccion,colonia= @colonia,codigoPostal= @codigoPostal" +
-                        ",escolaridad= @escolaridad,porcentajeComision= @porcentajeComision,estatus= @estatus,idDepartamento= @idDepartamento,idPuesto= @idPuesto, idCiudad= @idCiudad,idSucursal= @idSucursal where idEmpleado=@idEmpleado";
+                        ",escolaridad= @escolaridad,porcentajeComision= @porcentajeComision,estatus= @estatus,idDepartamento= @idDepartamento,idPuesto= @idPuesto, idCiudad= @idCiudad,idSucursal= @idSucursal, fotografia=@fotografia where idEmpleado=@idEmpleado";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idEmpleado", empleado.IdEmpleado);
@@ -171,7 +173,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
                     comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
                     comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
-                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    comando.Parameters.AddWithValue("@fotografia", empleado.img_bt);
                     comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
                     comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
                     comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
@@ -191,7 +193,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al editar la percepcion. Error: " + ex.Message);
+                Console.WriteLine("Error al editar al empleado. Error: " + ex.Message);
             }
             return editar;
         }
@@ -321,7 +323,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@estadoCivil", empleado.EstadoCivil);
                     comando.Parameters.AddWithValue("@diasVacaciones", empleado.DiasVacaciones);
                     comando.Parameters.AddWithValue("@diasPermiso", empleado.DiasPermiso);
-                    //comando.Parameters.AddWithValue("@fotografia", empleado.Fotografia);
+                    comando.Parameters.AddWithValue("@fotografia", empleado.img_bt);
                     comando.Parameters.AddWithValue("@direccion", empleado.Direccion);
                     comando.Parameters.AddWithValue("@colonia", empleado.Colonia);
                     comando.Parameters.AddWithValue("@codigoPostal", empleado.CodigoPostal);
@@ -401,6 +403,23 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 Console.WriteLine("Error al validar al empleado. Error: " + ex.Message);
             }
             return disponible;
+        } 
+        public Image GetImage(int id)
+        {
+            Image img;
+            byte[] f;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select fotografia from Empleados where idEmpleado='" + id + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var foto = comando.ExecuteScalar();
+                f = (byte[])foto;
+                conexion.Close();
+            }
+            img= new Bitmap(new Bitmap(new MemoryStream(f)), new Size(120, 134));
+            return img;
         }
     }
 }

@@ -119,7 +119,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     empleadosDAO.getidDepartamento((string)row.Cells[18].Value),
                     empleadosDAO.getidPuesto((string)row.Cells[19].Value),
                     empleadosDAO.getidCiudad((string)row.Cells[20].Value),
-                    empleadosDAO.getidSucursal((string)row.Cells[21].Value)
+                    empleadosDAO.getidSucursal((string)row.Cells[21].Value),
+                    empleadosDAO.GetImage((int)row.Cells[0].Value)
                     );
 
                 Empleados_Editar empleados_Editar = new Empleados_Editar(empleado_editar);

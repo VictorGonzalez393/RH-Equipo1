@@ -11,3 +11,7 @@ create VIEW Empleados_Tabla AS
 	join Puestos p on p.idPuesto=e.idPuesto join Ciudades c on c.idCiudad=e.idCiudad 
 	 where e.estatus='A'
 	 go
+---Modificación liz
+alter table Empleados alter column fotografia varbinary(max)
+	 
+	 select * from Empleados_Tabla;

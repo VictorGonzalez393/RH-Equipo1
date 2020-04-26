@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Puestos_DAO puestosdao = new Puestos_DAO();
         Departamentos_DAO departamentosdao = new Departamentos_DAO();
         Sucursales_DAO sucursalesdao = new Sucursales_DAO();
+        MemoryStream archivo_actual;
+        Image imag;
         public Empleados_nuevo()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private bool validarDatos()
         {
+          
             if (!string.IsNullOrWhiteSpace(nombre_empleado.Text))
 
             {
@@ -94,13 +98,30 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                                                                                     {
                                                                                         if (sucursal_empleado.SelectedIndex != -1)
-                                                                                            return true;
+                                                                                        {
+                                                                                            if (imag != null)
+                                                                                            {
+                                                                 
+                                                                                                return true;
 
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                MessageBox.Show("Falta la fotografía del empleado");
+                                                                                                return false;
+                                                                                            }
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            MessageBox.Show("Falta seleccionar la sucursal");
+                                                                                            return false;
+                                                                                        }
 
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         MessageBox.Show("Falta la Ciudad");
+                                                                                        return false;
 
                                                                                     }
 
@@ -244,8 +265,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Puesto puesto = (Puesto)puesto_empleado.SelectedItem;
                 Sucursal sucursal = (Sucursal)sucursal_empleado.SelectedItem;
                 Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
-                    , fcontratacion_empleado.Text, fnacimiento_empleado.Text, 0, nss_empleado.Text, estadocivil_empleado.Text, 0, 0, direccion_empleado.Text
-                    , colonia_empleado.Text, codigopostal_empleado.Text, escolaridad_empleado.Text, 0, 'A', departamento.idDepto, puesto.IdPuesto, ciudad.ID, sucursal.IdSucursal);
+                    , fcontratacion_empleado.Text, fnacimiento_empleado.Text,(double) salario_empleado.Value, nss_empleado.Text, estadocivil_empleado.Text,
+                    (int)diasvacaciones_empleado.Value,(int) diaspermiso_empleado.Value, direccion_empleado.Text, colonia_empleado.Text, Convert.ToString(codigopostal_empleado.Value),
+                    escolaridad_empleado.Text,(double)comision_empleado.Value,'A', ((Departamento)departamento_empleado.Items[departamento_empleado.SelectedIndex]).idDepto,
+                    ((Puesto)puesto_empleado.Items[puesto_empleado.SelectedIndex]).IdPuesto, 
+                    ((Ciudad)ciudad_empleado.Items[ciudad_empleado.SelectedIndex]).ID, 
+                    ((Sucursal)sucursal_empleado.Items[sucursal_empleado.SelectedIndex]).IdSucursal, imag);
+
+   
                 try
                 {
                     if (empleadodao.validarEmpleado(empleado_nuevo))
@@ -258,15 +285,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                             horarios_Editar.ShowDialog();
                             Close();
                         }
+
                         else
-                            MessageBox.Show("Error al Insertar");
+                            MessageBox.Show("Error al guardar");
                     }
                     else
                         MessageBox.Show("Error al Insertar. El empleado ya existe");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al insertar al empleado wey" + ex.Message);
+                    MessageBox.Show("Error al insertar al empleado" + ex.Message);
                 }
 
             }
@@ -334,8 +362,27 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Error: " + ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog abrir = new OpenFileDialog()
+            {
+                ValidateNames = true,
+                Multiselect=false, Filter="Imagen|*.jpg"
+            })
+            {
+                if (abrir.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] bt = File.ReadAllBytes(abrir.FileName);
+                    archivo_actual = new MemoryStream(bt);
+                    imag = new Bitmap(new Bitmap(new MemoryStream(bt)),new Size(120, 134));
+                    img_1.Image = imag;
+                }
+            }
+            
         }
     }
 }

@@ -42,17 +42,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.nóminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentaciónEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historialDePuestosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.organizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ausenciasJustificadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.incapacidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +54,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_user = new System.Windows.Forms.Label();
             this.imgUser = new System.Windows.Forms.PictureBox();
-            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
@@ -75,7 +68,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.dETToolStripMenuItem,
             this.empleadosToolStripMenuItem,
             this.organizaciónToolStripMenuItem,
-            this.permisosToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -162,48 +154,20 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.nóminaDeduccionesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina Deducciones";
             // 
+            // formasDePagoToolStripMenuItem
+            // 
+            this.formasDePagoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("formasDePagoToolStripMenuItem.Image")));
+            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
+            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
+            // 
             // empleadosToolStripMenuItem
             // 
-            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empleadosToolStripMenuItem1,
-            this.documentaciónEmpleadoToolStripMenuItem,
-            this.horariosToolStripMenuItem,
-            this.historialDePuestosToolStripMenuItem1});
             this.empleadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("empleadosToolStripMenuItem.Image")));
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(103, 21);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
-            // 
-            // empleadosToolStripMenuItem1
-            // 
-            this.empleadosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("empleadosToolStripMenuItem1.Image")));
-            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
-            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(238, 22);
-            this.empleadosToolStripMenuItem1.Text = "Empleados";
-            this.empleadosToolStripMenuItem1.Click += new System.EventHandler(this.empleadosToolStripMenuItem1_Click);
-            // 
-            // documentaciónEmpleadoToolStripMenuItem
-            // 
-            this.documentaciónEmpleadoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("documentaciónEmpleadoToolStripMenuItem.Image")));
-            this.documentaciónEmpleadoToolStripMenuItem.Name = "documentaciónEmpleadoToolStripMenuItem";
-            this.documentaciónEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.documentaciónEmpleadoToolStripMenuItem.Text = "Documentación empleado";
-            // 
-            // horariosToolStripMenuItem
-            // 
-            this.horariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("horariosToolStripMenuItem.Image")));
-            this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
-            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.horariosToolStripMenuItem.Text = "Horarios";
-            this.horariosToolStripMenuItem.Click += new System.EventHandler(this.horariosToolStripMenuItem_Click);
-            // 
-            // historialDePuestosToolStripMenuItem1
-            // 
-            this.historialDePuestosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("historialDePuestosToolStripMenuItem1.Image")));
-            this.historialDePuestosToolStripMenuItem1.Name = "historialDePuestosToolStripMenuItem1";
-            this.historialDePuestosToolStripMenuItem1.Size = new System.Drawing.Size(238, 22);
-            this.historialDePuestosToolStripMenuItem1.Text = "Historial de puestos";
             // 
             // organizaciónToolStripMenuItem
             // 
@@ -220,7 +184,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.puestosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("puestosToolStripMenuItem.Image")));
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
@@ -228,33 +192,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.departamentosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("departamentosToolStripMenuItem.Image")));
             this.departamentosToolStripMenuItem.Name = "departamentosToolStripMenuItem";
-            this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.departamentosToolStripMenuItem.Text = "Departamentos";
             this.departamentosToolStripMenuItem.Click += new System.EventHandler(this.departamentosToolStripMenuItem_Click);
-            // 
-            // permisosToolStripMenuItem
-            // 
-            this.permisosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ausenciasJustificadasToolStripMenuItem,
-            this.incapacidadesToolStripMenuItem});
-            this.permisosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("permisosToolStripMenuItem.Image")));
-            this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
-            this.permisosToolStripMenuItem.Text = "Permisos";
-            // 
-            // ausenciasJustificadasToolStripMenuItem
-            // 
-            this.ausenciasJustificadasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ausenciasJustificadasToolStripMenuItem.Image")));
-            this.ausenciasJustificadasToolStripMenuItem.Name = "ausenciasJustificadasToolStripMenuItem";
-            this.ausenciasJustificadasToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.ausenciasJustificadasToolStripMenuItem.Text = "Ausencias justificadas";
-            // 
-            // incapacidadesToolStripMenuItem
-            // 
-            this.incapacidadesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("incapacidadesToolStripMenuItem.Image")));
-            this.incapacidadesToolStripMenuItem.Name = "incapacidadesToolStripMenuItem";
-            this.incapacidadesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.incapacidadesToolStripMenuItem.Text = "Incapacidades";
             // 
             // cerrarSesiónToolStripMenuItem
             // 
@@ -320,13 +260,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.imgUser.TabIndex = 5;
             this.imgUser.TabStop = false;
             // 
-            // formasDePagoToolStripMenuItem
-            // 
-            this.formasDePagoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("formasDePagoToolStripMenuItem.Image")));
-            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
-            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,13 +316,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private System.Windows.Forms.ToolStripMenuItem nóminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nóminaPercepcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nóminaDeduccionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem documentaciónEmpleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem horariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historialDePuestosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ausenciasJustificadasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem incapacidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
     }
 }

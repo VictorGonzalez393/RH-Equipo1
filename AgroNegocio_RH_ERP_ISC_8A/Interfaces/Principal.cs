@@ -79,7 +79,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Empleados_GUI empleados = new Empleados_GUI();
+            this.SetVisibleCore(false);
+            empleados.ShowDialog();
+            this.SetVisibleCore(true);
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -110,10 +113,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Empleados_GUI empleados = new Empleados_GUI();
-            this.SetVisibleCore(false);
-            empleados.ShowDialog();
-            this.SetVisibleCore(true);
+            
         }
 
         private void organizaciónToolStripMenuItem_Click(object sender, EventArgs e)

@@ -155,12 +155,8 @@
             this.tablaHorario.MultiSelect = false;
             this.tablaHorario.Name = "tablaHorario";
             this.tablaHorario.ReadOnly = true;
-//<<<<<<< HEAD
-//            this.tablaHorario.Size = new System.Drawing.Size(423, 112);
-//=======
             this.tablaHorario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaHorario.Size = new System.Drawing.Size(448, 213);
-//>>>>>>> Jeni_Entrega2
             this.tablaHorario.TabIndex = 39;
             this.tablaHorario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaHorario_CellDoubleClick);
             // 
@@ -191,15 +187,12 @@
             this.Fin.HeaderText = "Fin";
             this.Fin.Name = "Fin";
             this.Fin.ReadOnly = true;
-//<<<<<<< HEAD
-//=======
             // 
             // Estatus
             // 
             this.Estatus.HeaderText = "Estatus";
             this.Estatus.Name = "Estatus";
             this.Estatus.ReadOnly = true;
-//>>>>>>> Jeni_Entrega2
             // 
             // agregar
             // 
@@ -318,8 +311,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Horarios_editar";
-            this.Text = "Form1";
+            this.Text = "Horarios";
             this.Load += new System.EventHandler(this.Horarios_editar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaHorario)).EndInit();
             this.panel1.ResumeLayout(false);
