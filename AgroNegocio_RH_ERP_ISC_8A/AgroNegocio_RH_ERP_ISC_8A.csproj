@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9564711-6532-484F-95F8-9028816334A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AgroNegocio_RH_ERP_ISC_8A</RootNamespace>
+    <AssemblyName>AgroNegocio_RH_ERP_ISC_8A</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\Empleados_DAO.cs" />
+    <Compile Include="Datos\Puestos_DAO.cs" />
+    <Compile Include="Datos\Deducciones_DAO.cs" />
+    <Compile Include="Datos\Departamentos_DAO.cs" />
+    <Compile Include="Datos\Estados_DAO.cs" />
+    <Compile Include="Datos\LoginDAO.cs" />
+    <Compile Include="Datos\Paginacion.cs" />
+    <Compile Include="Datos\Sucursales_DAO.cs" />
+    <Compile Include="Datos\UsuarioDAO.cs" />
+    <Compile Include="Interfaces\Departamentos_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Departamentos_editar.Designer.cs">
+      <DependentUpon>Departamentos_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Departamentos_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Departamentos_GUI.Designer.cs">
+      <DependentUpon>Departamentos_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Departamentos_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Departamentos_nuevo.Designer.cs">
+      <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_Editar.Designer.cs">
+      <DependentUpon>Empleados_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_GUI.Designer.cs">
+      <DependentUpon>Empleados_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_nuevo.Designer.cs">
+      <DependentUpon>Empleados_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_editar.Designer.cs">
+      <DependentUpon>Estados_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_GUI.Designer.cs">
+      <DependentUpon>Estados_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estados_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
+      <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Horarios_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Horarios_editar.Designer.cs">
+      <DependentUpon>Horarios_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_Editar.Designer.cs">
+      <DependentUpon>Incapacidades_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_GUI.Designer.cs">
+      <DependentUpon>Incapacidades_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_nuevo.Designer.cs">
+      <DependentUpon>Incapacidades_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Puestos_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Puestos_editar.designer.cs">
+      <DependentUpon>Puestos_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Puestos_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Puestos_GUI.designer.cs">
+      <DependentUpon>Puestos_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Puestos_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Puestos_nuevo.designer.cs">
+      <DependentUpon>Puestos_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Empleado.cs" />
+    <Compile Include="Modelo\Puesto.cs" />
+    <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Deduccion.cs" />
+    <Compile Include="Modelo\Departamento.cs" />
+    <Compile Include="Modelo\Estado.cs" />
+    <Compile Include="Modelo\Login_model.cs" />
+    <Compile Include="Modelo\Percepcion.cs" />
+    <Compile Include="Datos\Ciudades_DAO.cs" />
+    <Compile Include="Datos\Percepciones_DAO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_editar.Designer.cs">
+      <DependentUpon>Ciudades_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_GUI.Designer.cs">
+      <DependentUpon>Ciudades_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ciudades_nuevo.Designer.cs">
+      <DependentUpon>Ciudades_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Deducciones_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Deducciones_Editar.Designer.cs">
+      <DependentUpon>Deducciones_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Deducciones_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Deducciones_GUI.Designer.cs">
+      <DependentUpon>Deducciones_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Deducciones_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Deducciones_nuevo.Designer.cs">
+      <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Percepciones_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Percepciones_editar.Designer.cs">
+      <DependentUpon>Percepciones_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Percepciones_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Percepciones_GUI.Designer.cs">
+      <DependentUpon>Percepciones_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Percepciones_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Percepciones_nuevo.Designer.cs">
+      <DependentUpon>Percepciones_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Ciudad.cs" />
+    <Compile Include="Modelo\Sucursal.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ciudades_editar.resx">
+      <DependentUpon>Ciudades_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ciudades_GUI.resx">
+      <DependentUpon>Ciudades_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ciudades_nuevo.resx">
+      <DependentUpon>Ciudades_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Deducciones_Editar.resx">
+      <DependentUpon>Deducciones_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Deducciones_GUI.resx">
+      <DependentUpon>Deducciones_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Deducciones_nuevo.resx">
+      <DependentUpon>Deducciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Departamentos_editar.resx">
+      <DependentUpon>Departamentos_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Departamentos_GUI.resx">
+      <DependentUpon>Departamentos_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Departamentos_nuevo.resx">
+      <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Empleados_Editar.resx">
+      <DependentUpon>Empleados_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Empleados_GUI.resx">
+      <DependentUpon>Empleados_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Empleados_nuevo.resx">
+      <DependentUpon>Empleados_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_editar.resx">
+      <DependentUpon>Estados_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_GUI.resx">
+      <DependentUpon>Estados_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estados_nuevo.resx">
+      <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Horarios_editar.resx">
+      <DependentUpon>Horarios_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Incapacidades_Editar.resx">
+      <DependentUpon>Incapacidades_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Incapacidades_GUI.resx">
+      <DependentUpon>Incapacidades_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Incapacidades_nuevo.resx">
+      <DependentUpon>Incapacidades_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Percepciones_editar.resx">
+      <DependentUpon>Percepciones_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Percepciones_GUI.resx">
+      <DependentUpon>Percepciones_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Percepciones_nuevo.resx">
+      <DependentUpon>Percepciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Puestos_editar.resx">
+      <DependentUpon>Puestos_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Puestos_GUI.resx">
+      <DependentUpon>Puestos_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Puestos_nuevo.resx">
+      <DependentUpon>Puestos_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconos\ciudades.png" />
+    <None Include="Iconos\cliudadesch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Iconos\agricultura.ico" />
+    <Content Include="Iconos\anadir%281%29.png" />
+    <Content Include="Iconos\anadir.png" />
+    <Content Include="Iconos\anterior.png" />
+    <Content Include="Iconos\atras.png" />
+    <Content Include="Iconos\atras_2.png" />
+    <Content Include="Iconos\banderas.png" />
+    <Content Include="Iconos\buscar %281%29.png" />
+    <Content Include="Iconos\casa.png" />
+    <Content Include="Iconos\cerrar-sesion.png" />
+    <Content Include="Iconos\contabilidad.png" />
+    <Content Include="Iconos\corazon.png" />
+    <Content Include="Iconos\dejar.png" />
+    <Content Include="Iconos\departamento_1.png" />
+    <Content Include="Iconos\dinero.png" />
+    <Content Include="Iconos\dividendo.png" />
+    <Content Include="Iconos\documento.png" />
+    <Content Include="Iconos\edit-validated256_25237.png" />
+    <Content Include="Iconos\editar.png" />
+    <Content Include="Iconos\financiero.png" />
+    <Content Include="Iconos\marcador-de-posicion %281%29.png" />
+    <Content Include="Iconos\marcador-de-posicion.png" />
+    <Content Include="Iconos\material-de-oficina.png" />
+    <Content Include="Iconos\menos_ingresos.png" />
+    <Content Include="Iconos\metropolitano.png" />
+    <Content Include="Iconos\nomina-de-sueldos %281%29.png" />
+    <Content Include="Iconos\nomina-de-sueldos %282%29.png" />
+    <Content Include="Iconos\nomina-de-sueldos.png" />
+    <Content Include="Iconos\obrero.png" />
+    <Content Include="Iconos\organizacion.png" />
+    <Content Include="Iconos\Percepciones_.png" />
+    <Content Include="Iconos\perdida.png" />
+    <Content Include="Iconos\permiso %281%29.png" />
+    <Content Include="Iconos\permiso.png" />
+    <Content Include="Iconos\reloj %281%29.png" />
+    <Content Include="Iconos\reloj.png" />
+    <Content Include="Iconos\salud %281%29.png" />
+    <Content Include="Iconos\salud.png" />
+    <Content Include="Iconos\siguiente-pista.png" />
+    <Content Include="Iconos\Siguiente.png" />
+    <Content Include="Iconos\trabajo.png" />
+    <Content Include="Iconos\usuario %281%29.png" />
+    <Content Include="Iconos\usuario.png" />
+    <Content Include="Iconos\equipo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
