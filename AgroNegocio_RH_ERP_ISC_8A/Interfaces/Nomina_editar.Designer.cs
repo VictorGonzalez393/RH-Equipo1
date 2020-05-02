@@ -216,6 +216,7 @@
             // 
             this.btnCalPer.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnCalPer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalPer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCalPer.Location = new System.Drawing.Point(267, 353);
             this.btnCalPer.Name = "btnCalPer";
