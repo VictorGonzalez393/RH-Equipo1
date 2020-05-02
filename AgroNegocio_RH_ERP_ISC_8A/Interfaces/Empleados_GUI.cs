@@ -234,6 +234,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
         }
 
+        private void nóminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Nomina_GUI ng = new Nomina_GUI();
+            ng.ShowDialog();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Principal p = new Principal();
+            this.Close();
+            p.ShowDialog();
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;
