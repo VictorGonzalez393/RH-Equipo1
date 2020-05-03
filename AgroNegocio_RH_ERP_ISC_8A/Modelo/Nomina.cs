@@ -17,11 +17,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public int faltas { get; set; }
         public string fechaInicio { get; set; }
         public string fechaFin { get; set; }
+    
+        public string formaPago { get; set; }
+        public char estatus { get; set; }
         public int idEmpleado { get; set; }
-        public int idFormaPago { get; set; }
-
-        public Nomina(int idNomina, string fechaPago, decimal totalP, decimal totalD, decimal cantidadNeta, int diasTrabajados, int faltas, string fechaInicio, string fechaFin, int idEmpleado, int idFormaPago)
+        public Nomina(int idEmpleado,int idNomina, string fechaPago, decimal totalP, decimal totalD, decimal cantidadNeta, int diasTrabajados, 
+            int faltas, string fechaInicio, string fechaFin, string formaPago, char estatus)
         {
+            this.idEmpleado = idEmpleado;
             this.idNomina = idNomina;
             this.fechaPago = fechaPago;
             this.totalP = totalP;
@@ -31,8 +34,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             this.faltas = faltas;
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
-            this.idEmpleado = idEmpleado;
-            this.idFormaPago = idFormaPago;
+            this.formaPago = formaPago;
+            this.estatus = estatus;
         } 
 
     }
