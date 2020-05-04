@@ -50,6 +50,7 @@
     <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
+    <Compile Include="Datos\NominasPercepciones_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
     <Compile Include="Datos\Deducciones_DAO.cs" />
     <Compile Include="Datos\Departamentos_DAO.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Modelo\DocumentacionEmpleado.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\Horario.cs" />
+    <Compile Include="Modelo\NominasPercepcion.cs" />
     <Compile Include="Modelo\Puesto.cs" />
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Deduccion.cs" />
