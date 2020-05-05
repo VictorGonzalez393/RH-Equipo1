@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nomina_GUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaNóminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarNóminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_pagina = new System.Windows.Forms.Label();
             this.btn_anterior = new System.Windows.Forms.Button();
@@ -44,11 +44,13 @@
             this.btn_buscarNomina = new System.Windows.Forms.Button();
             this.buscarNomina = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tablaNomina = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaNomina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -75,20 +77,6 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
-            // 
-            // nóminaPercepcionesToolStripMenuItem
-            // 
-            this.nóminaPercepcionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaPercepcionesToolStripMenuItem.Image")));
-            this.nóminaPercepcionesToolStripMenuItem.Name = "nóminaPercepcionesToolStripMenuItem";
-            this.nóminaPercepcionesToolStripMenuItem.Size = new System.Drawing.Size(169, 21);
-            this.nóminaPercepcionesToolStripMenuItem.Text = "Nómina percepciones";
-            // 
-            // nóminaDeduccionesToolStripMenuItem
-            // 
-            this.nóminaDeduccionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaDeduccionesToolStripMenuItem.Image")));
-            this.nóminaDeduccionesToolStripMenuItem.Name = "nóminaDeduccionesToolStripMenuItem";
-            this.nóminaDeduccionesToolStripMenuItem.Size = new System.Drawing.Size(165, 21);
-            this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina deducciones";
             // 
             // atrásToolStripMenuItem
             // 
@@ -117,6 +105,20 @@
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // nóminaPercepcionesToolStripMenuItem
+            // 
+            this.nóminaPercepcionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaPercepcionesToolStripMenuItem.Image")));
+            this.nóminaPercepcionesToolStripMenuItem.Name = "nóminaPercepcionesToolStripMenuItem";
+            this.nóminaPercepcionesToolStripMenuItem.Size = new System.Drawing.Size(169, 21);
+            this.nóminaPercepcionesToolStripMenuItem.Text = "Nómina percepciones";
+            // 
+            // nóminaDeduccionesToolStripMenuItem
+            // 
+            this.nóminaDeduccionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaDeduccionesToolStripMenuItem.Image")));
+            this.nóminaDeduccionesToolStripMenuItem.Name = "nóminaDeduccionesToolStripMenuItem";
+            this.nóminaDeduccionesToolStripMenuItem.Size = new System.Drawing.Size(165, 21);
+            this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina deducciones";
             // 
             // lbl_total
             // 
@@ -174,10 +176,10 @@
             // 
             this.buscarNomina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarNomina.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarNomina.Location = new System.Drawing.Point(452, 91);
+            this.buscarNomina.Location = new System.Drawing.Point(506, 91);
             this.buscarNomina.Margin = new System.Windows.Forms.Padding(5);
             this.buscarNomina.Name = "buscarNomina";
-            this.buscarNomina.Size = new System.Drawing.Size(259, 26);
+            this.buscarNomina.Size = new System.Drawing.Size(205, 26);
             this.buscarNomina.TabIndex = 20;
             // 
             // label1
@@ -185,31 +187,32 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(62, 48);
+            this.label1.Location = new System.Drawing.Point(45, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 31);
             this.label1.TabIndex = 19;
             this.label1.Text = "Nómina";
             // 
-            // dataGridView1
+            // tablaNomina
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(67, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(685, 248);
-            this.dataGridView1.TabIndex = 26;
+            this.tablaNomina.AllowUserToAddRows = false;
+            this.tablaNomina.AllowUserToDeleteRows = false;
+            this.tablaNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaNomina.Location = new System.Drawing.Point(67, 125);
+            this.tablaNomina.Name = "tablaNomina";
+            this.tablaNomina.ReadOnly = true;
+            this.tablaNomina.Size = new System.Drawing.Size(685, 248);
+            this.tablaNomina.TabIndex = 26;
             // 
             // nombre
             // 
-            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.Location = new System.Drawing.Point(164, 93);
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Size = new System.Drawing.Size(174, 26);
+            this.nombre.Size = new System.Drawing.Size(223, 26);
             this.nombre.TabIndex = 46;
             // 
             // label4
@@ -222,14 +225,25 @@
             this.label4.TabIndex = 45;
             this.label4.Text = "Empleado:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 31);
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Nomina_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 466);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tablaNomina);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_pagina);
             this.Controls.Add(this.btn_anterior);
@@ -242,9 +256,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Nomina_GUI";
             this.Text = "Nomina";
+            this.Load += new System.EventHandler(this.Nomina_GUI_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaNomina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,8 +283,9 @@
         private System.Windows.Forms.Button btn_buscarNomina;
         private System.Windows.Forms.TextBox buscarNomina;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tablaNomina;
         private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
