@@ -241,7 +241,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
                 string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value;
                 Nomina_GUI nomina = new Nomina_GUI(idemp, nombreemp);
+                this.SetVisibleCore(false);
                 nomina.ShowDialog();
+                this.SetVisibleCore(true);
 
             }
             else

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class Nomina_DAO
+    class Nomina_DAO : Paginacion
     {
         private string cadenaconexion = "SERVER=localhost" +
                 ";DATABASE=ERP2020;Persist Security Info=True;USER ID=sa ;Password=Hola.123";
@@ -174,8 +174,29 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 conexion.Close();
             }
             return idF;
-        }
+        } 
 
+        public int getMaxID()
+        {
+            int new_ID = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select max(idNomina)+1 from Nominas";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var ID = comando.ExecuteScalar();
+                if (ID.GetType().Equals(typeof(DBNull)))
+                {
+                    new_ID = 1;
+                }
+                else
+                {
+                    new_ID = (int)ID;
+                }
+                conexion.Close();
+            }
+            return new_ID;
+        }
 
 
     }

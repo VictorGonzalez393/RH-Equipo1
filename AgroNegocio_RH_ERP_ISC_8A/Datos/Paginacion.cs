@@ -18,7 +18,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
         public int actual_page = 0;        //Página actual
         public int rows_per_page = 2;     //Cantidad de registros por página
         private string cadenaconexion = "SERVER=localhost; DATABASE=ERP2020; USER ID=sa; Password=Hola.123";
-
+        public string where;
         public void CalculaPaginas()
         {
             try
@@ -26,10 +26,21 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
                     conexion.Open();
-                    SqlCommand command = new SqlCommand("select count(*) from " + table, conexion);
-                    var rows = command.ExecuteScalar();
-                    conexion.Close();
-                    this.pages = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(rows) / rows_per_page));
+                    if (where==null)
+                    {
+                        SqlCommand command = new SqlCommand("select count(*) from " + table, conexion);
+                        var rows = command.ExecuteScalar();
+                        conexion.Close();
+                        this.pages = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(rows) / rows_per_page));
+
+                    }
+                    else
+                    {
+                        SqlCommand command = new SqlCommand("select count(*) from " + table+" where "+where, conexion);
+                        var rows = command.ExecuteScalar();
+                        conexion.Close();
+                        this.pages = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(rows) / rows_per_page));
+                    }
                 }
             }
             catch (SqlException ex)
@@ -37,6 +48,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 Console.WriteLine("La tabla no existe. \n" + ex.Message);
             }
         }
+
+
 
         public DataTable getSigPagina()
         {
@@ -47,17 +60,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                     {
-                        actual_page += 1;
-                        string txt_sql = "select * from " + table + " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
-                        SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
-                        adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
-                        adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
-                        adapter.Fill(dt);
+                        if (where == null) { 
+                            actual_page += 1;
+                            string txt_sql = "select * from " + table + " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
+                            SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
+                            adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
+                            adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
+                            adapter.Fill(dt);
+                        }
+                        else
+                        {
+                            actual_page += 1;
+                            string txt_sql = "select * from " + table +" where "+where+" order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
+                            SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
+                            adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
+                            adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
+                            adapter.Fill(dt);
+                        }
                     }
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("Error con la BD. \n" + ex.Message);
+                    Console.WriteLine("Error con la BD1. \n" + ex.Message);
                 }
             }
             return dt;
@@ -72,17 +96,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 {
                     using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                     {
-                        actual_page -= 1;
-                        string txt_sql = "select * from " + table + " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
-                        SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
-                        adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
-                        adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
-                        adapter.Fill(dt);
+                        if (where == null) { 
+                            actual_page -= 1;
+                            string txt_sql = "select * from " + table + " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
+                            SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
+                            adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
+                            adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
+                            adapter.Fill(dt);
+                        }
+                        else
+                        {
+                            actual_page -= 1;
+                            string txt_sql = "select * from " + table+" where "+where+ " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
+                            SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
+                            adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
+                            adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
+                            adapter.Fill(dt);
+                        }
                     }
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("Error con la BD. \n" + ex.Message);
+                    Console.WriteLine("Error con la BD2. \n" + ex.Message);
                 }
             }
             return dt;
@@ -103,7 +138,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error con la BD. \n" + ex.Message);
+                Console.WriteLine("Error con la BD4. \n" + ex.Message);
             }
             return dt;
         }
@@ -117,17 +152,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    actual_page = 1;
-                    string txt_sql = "select * from " + table + " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
-                    SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
-                    adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
-                    adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
-                    adapter.Fill(dt);
+                    if (where == null) { 
+                        actual_page = 1;
+                        string txt_sql = "select * from " + table + " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
+                        SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
+                        adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
+                        adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
+                        adapter.Fill(dt);
+                    }
+                    else
+                    {
+                        actual_page = 1;
+                        string txt_sql = "select * from " + table +" where "+where+ " order by '" + order_by + "' offset (@page-1)*@rows_per_page rows fetch next @rows_per_page rows only";
+                        SqlDataAdapter adapter = new SqlDataAdapter(txt_sql, conexion);
+                        adapter.SelectCommand.Parameters.AddWithValue("@page", actual_page);
+                        adapter.SelectCommand.Parameters.AddWithValue("@rows_per_page", rows_per_page);
+                        adapter.Fill(dt);
+                    }
                 }
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error con la BD. \n" + ex.Message);
+                Console.WriteLine("Error con la BD3. \n" + ex.Message);
             }
             return dt;
 
