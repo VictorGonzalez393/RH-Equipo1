@@ -20,6 +20,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             Descripcion = descripcion;
             Porcentaje = porcentaje;
             Estatus = estatus;
+        } 
+
+        override
+        public string ToString()
+        {
+            return this.Nombre;
         }
-    }
+    } 
+    
 }

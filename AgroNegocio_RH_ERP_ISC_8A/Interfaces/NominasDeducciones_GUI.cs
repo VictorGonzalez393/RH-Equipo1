@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
-    public partial class Nomina_editar : Form
+    public partial class NominasDeducciones_GUI : Form
     {
-        int idEmp;
-        public Nomina_editar()
+        public NominasDeducciones_GUI()
         {
             InitializeComponent();
         }
-        public Nomina_editar(string empleado, int idEmp)
-        {
-            InitializeComponent();
-            this.idEmp = idEmp;
-            txtEmp.Text = empleado;
-        }
-        private void Nomina_editar_Load(object sender, EventArgs e)
+
+        private void NominasDeducciones_GUI_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

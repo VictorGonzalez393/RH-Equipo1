@@ -12,9 +12,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class Nomina_nuevo : Form
     {
+        int idEmp;
         public Nomina_nuevo()
         {
             InitializeComponent();
+        }
+        public Nomina_nuevo(string empleado, int idEmp)
+        {
+            InitializeComponent();
+            this.idEmp = idEmp;
+            txtEmp.Text = empleado;
         }
 
         private void textTotalD_TextChanged(object sender, EventArgs e)

@@ -230,14 +230,26 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
             else
             {
-                //selecciona un empleado (mensaje)
+                DialogResult resultado = MessageBox.Show("Selecciona a un Empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void nóminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Nomina_GUI ng = new Nomina_GUI();
-            ng.ShowDialog();
+            if (tablaEmpleados1.SelectedRows.Count == 1)
+            {
+                int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value;
+                Nomina_GUI nomina = new Nomina_GUI(idemp, nombreemp);
+                this.SetVisibleCore(false);
+                nomina.ShowDialog();
+                this.SetVisibleCore(true);
+
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona a un empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)

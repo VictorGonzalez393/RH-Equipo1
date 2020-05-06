@@ -45,7 +45,7 @@
             this.totalP = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCalPer = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.fechaPago = new System.Windows.Forms.DateTimePicker();
@@ -225,13 +225,13 @@
             this.btnCalPer.Text = "Calcular nómina";
             this.btnCalPer.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtEmp
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(322, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 58;
+            this.txtEmp.Enabled = false;
+            this.txtEmp.Location = new System.Drawing.Point(322, 107);
+            this.txtEmp.Name = "txtEmp";
+            this.txtEmp.Size = new System.Drawing.Size(183, 20);
+            this.txtEmp.TabIndex = 58;
             // 
             // label5
             // 
@@ -407,7 +407,7 @@
             this.Controls.Add(this.totalP);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCalPer);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.fechaPago);
@@ -420,6 +420,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Nomina_editar";
             this.Text = "Editar nómina";
+            this.Load += new System.EventHandler(this.Nomina_editar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.faltas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNeta)).EndInit();
@@ -452,7 +453,7 @@
         private System.Windows.Forms.NumericUpDown totalP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCalPer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker fechaPago;

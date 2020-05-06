@@ -21,5 +21,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             DiasPagar = diasPagar;
             Estatus = estatus;
         }
+        override
+        public string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }

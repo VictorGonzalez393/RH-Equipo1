@@ -31,7 +31,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             IdCiudad = idCiudad;
         }
         override
-            public string ToString()
+        public string ToString()
         {
             return this.Nombre;
         }

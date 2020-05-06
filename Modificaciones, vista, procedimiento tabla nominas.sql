@@ -15,11 +15,12 @@ alter table Nominas alter column fechaFin varchar(20) not null
 go
 
 --Vista tabla nóminas
-create view Nominas_Tabla as
-	select n.idEmpleado 'N°Empleado', n.idNomina 'N°Nómina', n.fechaPago 'Fecha pago', n.totalP 'Total percepciones',
-	n.totalD 'Total deducciones', n.cantidadNeta 'Cantidad neta', n.diasTrabajados 'Dias trabajados',
-	faltas 'Faltas', n.fechaInicio 'Fecha inicio', n.fechaFin 'Fecha Fin', f.nombre 'Forma de pago', n.estatus 'Estatus' from Nominas n join FormasPago f on n.idFormaPago=f.idFormaPago where n.estatus='A'
-	go
+alter view Nominas_Tabla as
+	select n.idNomina 'ID',n.idEmpleado 'ID_Empleado', n.fechaPago 'Fecha_pago', n.totalP 'Total_percepciones',
+	n.totalD 'Total_deducciones', n.cantidadNeta 'Cantidad_neta', n.diasTrabajados 'Dias_trabajados',
+	faltas 'Faltas', n.fechaInicio 'Fecha_inicio', n.fechaFin 'Fecha_Fin', f.nombre 'Forma_de_pago', n.estatus 'Estatus' from Nominas n join FormasPago f on n.idFormaPago=f.idFormaPago where n.estatus='A'
+	go 
+select * from Nominas_Tabla where ID_Empleado=1
 
 --Procedimiento insertar nómina
 alter procedure sp_agrega_nomina 

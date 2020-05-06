@@ -36,10 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fechaPago = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmp = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.totalP = new System.Windows.Forms.NumericUpDown();
             this.totalD = new System.Windows.Forms.NumericUpDown();
@@ -57,8 +59,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.formaPago = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalP)).BeginInit();
@@ -164,6 +164,24 @@
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // IniciotoolStripMenuItem1
+            // 
+            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
+            this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
+            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
+            // 
+            // atrásToolStripMenuItem
+            // 
+            this.atrásToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atrásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrásToolStripMenuItem.Image")));
+            this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
+            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.atrásToolStripMenuItem.Text = "Atrás";
+            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
+            // 
             // fechaPago
             // 
             this.fechaPago.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,13 +215,13 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Empleado:";
             // 
-            // textBox1
+            // txtEmp
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(292, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 29;
+            this.txtEmp.Enabled = false;
+            this.txtEmp.Location = new System.Drawing.Point(292, 101);
+            this.txtEmp.Name = "txtEmp";
+            this.txtEmp.Size = new System.Drawing.Size(157, 20);
+            this.txtEmp.TabIndex = 29;
             // 
             // label6
             // 
@@ -371,24 +389,6 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // IniciotoolStripMenuItem1
-            // 
-            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
-            this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
-            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
-            this.IniciotoolStripMenuItem1.Text = "Inicio";
-            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
-            // 
-            // atrásToolStripMenuItem
-            // 
-            this.atrásToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.atrásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrásToolStripMenuItem.Image")));
-            this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
-            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.atrásToolStripMenuItem.Text = "Atrás";
-            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
-            // 
             // Nomina_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +410,7 @@
             this.Controls.Add(this.totalP);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCalPer);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.fechaPago);
@@ -455,7 +455,7 @@
         private System.Windows.Forms.DateTimePicker fechaPago;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmp;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown totalP;
         private System.Windows.Forms.NumericUpDown totalD;
