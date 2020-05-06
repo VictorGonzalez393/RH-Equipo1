@@ -125,6 +125,12 @@
     <Compile Include="Interfaces\Horarios_editar.designer.cs">
       <DependentUpon>Horarios_editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\NominasDeducciones_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NominasDeducciones_GUI.Designer.cs">
+      <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Nomina_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NominasDeducciones_GUI.resx">
+      <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Nomina_editar.resx">
       <DependentUpon>Nomina_editar.cs</DependentUpon>
