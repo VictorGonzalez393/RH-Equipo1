@@ -50,6 +50,7 @@
     <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
+    <Compile Include="Datos\NominasPercepciones_DAO.cs" />
     <Compile Include="Datos\Nomina_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
     <Compile Include="Datos\Deducciones_DAO.cs" />
@@ -131,6 +132,18 @@
     <Compile Include="Interfaces\NominasDeducciones_GUI.Designer.cs">
       <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_GUI.Designer.cs">
+      <DependentUpon>NominasPercepciones_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_nuevo.Designer.cs">
+      <DependentUpon>NominasPercepciones_nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Nomina_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +180,7 @@
     <Compile Include="Interfaces\Puestos_nuevo.designer.cs">
       <DependentUpon>Puestos_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\NominasPercepcion.cs" />
     <Compile Include="Modelo\DocumentacionEmpleado.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\FormasPago.cs" />
