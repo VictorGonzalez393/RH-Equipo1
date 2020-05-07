@@ -144,9 +144,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ausencias_justificadas_GUI";
             this.Text = "Ausencias_Justificadas_principal";
+            this.Load += new System.EventHandler(this.Ausencias_justificadas_GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Justificaciones)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

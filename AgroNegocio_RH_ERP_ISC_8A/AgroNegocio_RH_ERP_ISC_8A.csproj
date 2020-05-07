@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\Ausencias_justificadas_DAO.cs" />
     <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
@@ -59,6 +60,12 @@
     <Compile Include="Datos\Paginacion.cs" />
     <Compile Include="Datos\Sucursales_DAO.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
+    <Compile Include="Interfaces\Ausencias_justificadas_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_justificadas_editar.Designer.cs">
+      <DependentUpon>Ausencias_justificadas_editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Departamentos_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +126,18 @@
     <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
       <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Ausencias_justificadas_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_justificadas_GUI.Designer.cs">
+      <DependentUpon>Ausencias_justificadas_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_justificadas_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_justificadas_nuevo.Designer.cs">
+      <DependentUpon>Ausencias_justificadas_nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Horarios_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +180,7 @@
     <Compile Include="Interfaces\Puestos_nuevo.designer.cs">
       <DependentUpon>Puestos_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Ausencia_justificada.cs" />
     <Compile Include="Modelo\DocumentacionEmpleado.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\FormasPago.cs" />
@@ -255,6 +275,15 @@
     <Compile Include="Mensajes.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ausencias_justificadas_editar.resx">
+      <DependentUpon>Ausencias_justificadas_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ausencias_justificadas_GUI.resx">
+      <DependentUpon>Ausencias_justificadas_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ausencias_justificadas_nuevo.resx">
+      <DependentUpon>Ausencias_justificadas_nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Ciudades_editar.resx">
       <DependentUpon>Ciudades_editar.cs</DependentUpon>
