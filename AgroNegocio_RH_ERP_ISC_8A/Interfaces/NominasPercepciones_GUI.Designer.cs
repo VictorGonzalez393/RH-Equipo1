@@ -69,6 +69,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
@@ -84,6 +85,7 @@
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // tabla_nominasp
             // 
@@ -96,6 +98,8 @@
             this.tabla_nominasp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla_nominasp.Size = new System.Drawing.Size(594, 225);
             this.tabla_nominasp.TabIndex = 20;
+            this.tabla_nominasp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_nominasp_CellContentClick);
+            this.tabla_nominasp.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.tabla_nominasp_DataBindingComplete);
             // 
             // lbl_total
             // 
@@ -145,6 +149,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(36, 38);
             this.btn_anterior.TabIndex = 17;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_siguiente
             // 
@@ -154,6 +159,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(36, 38);
             this.btn_siguiente.TabIndex = 16;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // btn_buscar
             // 
@@ -163,6 +169,7 @@
             this.btn_buscar.Size = new System.Drawing.Size(33, 26);
             this.btn_buscar.TabIndex = 15;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // pictureBox1
             // 
@@ -190,6 +197,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NominasPercepciones_GUI";
             this.Text = "NominasPercepciones_GUI";
+            this.Load += new System.EventHandler(this.NominasPercepciones_GUI_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_nominasp)).EndInit();

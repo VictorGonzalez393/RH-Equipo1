@@ -139,6 +139,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.nóminaToolStripMenuItem.Name = "nóminaToolStripMenuItem";
             this.nóminaToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.nóminaToolStripMenuItem.Text = "Nómina";
+            this.nóminaToolStripMenuItem.Click += new System.EventHandler(this.nóminaToolStripMenuItem_Click);
             // 
             // nóminaPercepcionesToolStripMenuItem
             // 

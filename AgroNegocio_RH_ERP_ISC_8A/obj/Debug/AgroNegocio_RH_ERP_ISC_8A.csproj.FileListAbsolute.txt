@@ -105,3 +105,5 @@ C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debu
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.NominasPercepciones_GUI.resources
+\\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.NominasPercepciones_nuevo.resources

@@ -9,7 +9,7 @@ using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class NominasPercepciones_DAO
+    class NominasPercepciones_DAO : Paginacion
     {
         private string cadenaconexion = "SERVER=localhost" +
                ";DATABASE=ERP2020;Persist Security Info=True;USER ID=sa ;Password=Hola.123";
@@ -72,33 +72,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return insert;
         }
-        public bool editar(Percepcion percepcion)
-        {
-            bool editar = false;
-            try
-            {
-                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
-                {
-                    string consulta = "update NominasPercepciones set idNomina= @idNomina, idPercepcion = @idPercepcion, importe=@importe, estatus=@estatus where idNomina=@idNomina and idPercepcion=@idPercepcion";
-                    SqlCommand comando = new SqlCommand(consulta, conexion);
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@idPercepcion", percepcion.IdPercepcion);
-                    comando.Parameters.AddWithValue("@nombre", percepcion.Nombre);
-                    comando.Parameters.AddWithValue("@descripcion", percepcion.Descripcion);
-                    comando.Parameters.AddWithValue("@diasPagar", percepcion.DiasPagar);
-                    if (comando.ExecuteNonQuery() != 0)
-                        editar = true;
-                    conexion.Close();
-
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("Error al editar la percepcion. Error: " + ex.Message);
-            }
-            return editar;
-        }
+        
         public bool eliminar(int idPercepcion)
         {
             bool eliminar = false;
