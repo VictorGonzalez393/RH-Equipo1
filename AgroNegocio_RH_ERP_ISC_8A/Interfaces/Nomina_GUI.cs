@@ -175,39 +175,39 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             lbl_total.Text = aux2 + " " + nominas_DAO.pages;
         }
 
-        private void nóminaPercepcionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tablaNomina.SelectedRows.Count == 1)
-            {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasPercepciones_GUI np = new NominasPercepciones_GUI(idNom);
-                this.SetVisibleCore(false);
-                np.ShowDialog();
-                this.SetVisibleCore(true);
+        //private void nóminaPercepcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    if (tablaNomina.SelectedRows.Count == 1)
+        //    {
+        //        int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
+        //        NominasPercepciones_GUI np = new NominasPercepciones_GUI(idNom);
+        //        this.SetVisibleCore(false);
+        //        np.ShowDialog();
+        //        this.SetVisibleCore(true);
 
-            }
-            else
-            {
-                DialogResult resultado = MessageBox.Show("Selecciona a una nómina", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        DialogResult resultado = MessageBox.Show("Selecciona a una nómina", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //    }
+        //}
 
-        private void nóminaDeduccionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tablaNomina.SelectedRows.Count == 1)
-            {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom);
-                this.SetVisibleCore(false);
-                np.ShowDialog();
-                this.SetVisibleCore(true);
+        //private void nóminaDeduccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    if (tablaNomina.SelectedRows.Count == 1)
+        //    {
+        //        int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
+        //        NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom);
+        //        this.SetVisibleCore(false);
+        //        np.ShowDialog();
+        //        this.SetVisibleCore(true);
 
-            }
-            else
-            {
-                DialogResult resultado = MessageBox.Show("Selecciona a una nómina", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        DialogResult resultado = MessageBox.Show("Selecciona a una nómina", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //    }
+        //}
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {

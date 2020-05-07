@@ -333,6 +333,12 @@
     <EmbeddedResource Include="Interfaces\NominasDeducciones_GUI.resx">
       <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NominasPercepciones_GUI.resx">
+      <DependentUpon>NominasPercepciones_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NominasPercepciones_nuevo.resx">
+      <DependentUpon>NominasPercepciones_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Nomina_editar.resx">
       <DependentUpon>Nomina_editar.cs</DependentUpon>
     </EmbeddedResource>
