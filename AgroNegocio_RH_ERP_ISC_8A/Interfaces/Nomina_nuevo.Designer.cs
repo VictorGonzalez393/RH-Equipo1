@@ -29,116 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nomina_nuevo));
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
-            this.id_percepcion = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fechaPago = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmp = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.totalP = new System.Windows.Forms.NumericUpDown();
-            this.totalD = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cantidadNeta = new System.Windows.Forms.NumericUpDown();
-            this.btnCalPer = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.diasTrabajados = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.faltas = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.fechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.fechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.formaPago = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).BeginInit();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.formaPago_cm = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.fechaFin = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.fechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.faltas = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.diasTrabajados = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmp = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.fechaPago = new System.Windows.Forms.DateTimePicker();
+            this.idNomina = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cantNeta = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.totalD = new System.Windows.Forms.NumericUpDown();
+            this.totalP = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.listPercepciones = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.listDeducciones = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.totalP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidadNeta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.faltas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.faltas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idNomina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cantNeta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalP)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(360, 407);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(81, 31);
-            this.btn_cancelar.TabIndex = 25;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(235, 407);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(81, 31);
-            this.btn_guardar.TabIndex = 24;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = false;
-            // 
-            // id_percepcion
-            // 
-            this.id_percepcion.Enabled = false;
-            this.id_percepcion.Location = new System.Drawing.Point(52, 101);
-            this.id_percepcion.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.id_percepcion.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.id_percepcion.Name = "id_percepcion";
-            this.id_percepcion.Size = new System.Drawing.Size(103, 20);
-            this.id_percepcion.TabIndex = 20;
-            this.id_percepcion.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(10, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 24);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Fecha de pago:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(14, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 24);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "ID:";
             // 
             // label1
             // 
@@ -160,7 +99,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(753, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(748, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,204 +121,6 @@
             this.atrásToolStripMenuItem.Text = "Atrás";
             this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
-            // fechaPago
-            // 
-            this.fechaPago.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaPago.Location = new System.Drawing.Point(165, 146);
-            this.fechaPago.MinDate = new System.DateTime(2020, 5, 2, 0, 0, 0, 0);
-            this.fechaPago.Name = "fechaPago";
-            this.fechaPago.Size = new System.Drawing.Size(97, 20);
-            this.fechaPago.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(9, 262);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(226, 24);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Total de percepciones:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(183, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 24);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Empleado:";
-            // 
-            // txtEmp
-            // 
-            this.txtEmp.Enabled = false;
-            this.txtEmp.Location = new System.Drawing.Point(292, 101);
-            this.txtEmp.Name = "txtEmp";
-            this.txtEmp.Size = new System.Drawing.Size(157, 20);
-            this.txtEmp.TabIndex = 29;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(12, 300);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 24);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Total de deducciones:";
-            // 
-            // totalP
-            // 
-            this.totalP.Enabled = false;
-            this.totalP.Location = new System.Drawing.Point(238, 265);
-            this.totalP.Name = "totalP";
-            this.totalP.Size = new System.Drawing.Size(78, 20);
-            this.totalP.TabIndex = 33;
-            this.totalP.ValueChanged += new System.EventHandler(this.totalP_ValueChanged);
-            // 
-            // totalD
-            // 
-            this.totalD.Enabled = false;
-            this.totalD.Location = new System.Drawing.Point(239, 304);
-            this.totalD.Name = "totalD";
-            this.totalD.Size = new System.Drawing.Size(78, 20);
-            this.totalD.TabIndex = 34;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(12, 342);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 24);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "Cantidad neta:";
-            // 
-            // cantidadNeta
-            // 
-            this.cantidadNeta.Enabled = false;
-            this.cantidadNeta.Location = new System.Drawing.Point(155, 347);
-            this.cantidadNeta.Name = "cantidadNeta";
-            this.cantidadNeta.Size = new System.Drawing.Size(78, 20);
-            this.cantidadNeta.TabIndex = 37;
-            // 
-            // btnCalPer
-            // 
-            this.btnCalPer.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnCalPer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCalPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalPer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCalPer.Location = new System.Drawing.Point(242, 347);
-            this.btnCalPer.Name = "btnCalPer";
-            this.btnCalPer.Size = new System.Drawing.Size(105, 23);
-            this.btnCalPer.TabIndex = 31;
-            this.btnCalPer.Text = "Calcular nómina";
-            this.btnCalPer.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(264, 142);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 24);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Días trabajados:";
-            // 
-            // diasTrabajados
-            // 
-            this.diasTrabajados.Location = new System.Drawing.Point(418, 144);
-            this.diasTrabajados.Name = "diasTrabajados";
-            this.diasTrabajados.Size = new System.Drawing.Size(54, 20);
-            this.diasTrabajados.TabIndex = 39;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(477, 142);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 24);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "Faltas:";
-            // 
-            // faltas
-            // 
-            this.faltas.Location = new System.Drawing.Point(546, 144);
-            this.faltas.Name = "faltas";
-            this.faltas.Size = new System.Drawing.Size(49, 20);
-            this.faltas.TabIndex = 41;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(13, 183);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 24);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Fecha inicio:";
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaInicio.Location = new System.Drawing.Point(140, 185);
-            this.fechaInicio.MinDate = new System.DateTime(2020, 5, 2, 0, 0, 0, 0);
-            this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.Size = new System.Drawing.Size(97, 20);
-            this.fechaInicio.TabIndex = 43;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(245, 183);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 24);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Fecha fin:";
-            // 
-            // fechaFin
-            // 
-            this.fechaFin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFin.Location = new System.Drawing.Point(346, 185);
-            this.fechaFin.MinDate = new System.DateTime(2020, 5, 2, 0, 0, 0, 0);
-            this.fechaFin.Name = "fechaFin";
-            this.fechaFin.Size = new System.Drawing.Size(97, 20);
-            this.fechaFin.TabIndex = 45;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(448, 181);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(159, 24);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "Forma de pago:";
-            // 
-            // formaPago
-            // 
-            this.formaPago.FormattingEnabled = true;
-            this.formaPago.Location = new System.Drawing.Point(608, 183);
-            this.formaPago.Name = "formaPago";
-            this.formaPago.Size = new System.Drawing.Size(104, 21);
-            this.formaPago.TabIndex = 47;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -389,36 +130,426 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(10, 74);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(736, 387);
+            this.tabControl1.TabIndex = 16;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.listDeducciones);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.listPercepciones);
+            this.tabPage1.Controls.Add(this.formaPago_cm);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.fechaFin);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.fechaInicio);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.faltas);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.diasTrabajados);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.txtEmp);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.fechaPago);
+            this.tabPage1.Controls.Add(this.idNomina);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(728, 361);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Asignar datos";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.cantNeta);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.totalD);
+            this.tabPage2.Controls.Add(this.totalP);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.btnCalcular);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(728, 361);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Calcular nómina";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // formaPago_cm
+            // 
+            this.formaPago_cm.FormattingEnabled = true;
+            this.formaPago_cm.Location = new System.Drawing.Point(601, 87);
+            this.formaPago_cm.Name = "formaPago_cm";
+            this.formaPago_cm.Size = new System.Drawing.Size(104, 21);
+            this.formaPago_cm.TabIndex = 72;
+            this.formaPago_cm.SelectedIndexChanged += new System.EventHandler(this.formaPago_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label12.Location = new System.Drawing.Point(441, 85);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(159, 24);
+            this.label12.TabIndex = 71;
+            this.label12.Text = "Forma de pago:";
+            // 
+            // fechaFin
+            // 
+            this.fechaFin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaFin.Location = new System.Drawing.Point(339, 89);
+            this.fechaFin.MinDate = new System.DateTime(2020, 5, 2, 0, 0, 0, 0);
+            this.fechaFin.Name = "fechaFin";
+            this.fechaFin.Size = new System.Drawing.Size(97, 20);
+            this.fechaFin.TabIndex = 70;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(238, 87);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 24);
+            this.label11.TabIndex = 69;
+            this.label11.Text = "Fecha fin:";
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaInicio.Location = new System.Drawing.Point(133, 89);
+            this.fechaInicio.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.Size = new System.Drawing.Size(97, 20);
+            this.fechaInicio.TabIndex = 68;
+            this.fechaInicio.ValueChanged += new System.EventHandler(this.fechaInicio_ValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(6, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 24);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Fecha inicio:";
+            // 
+            // faltas
+            // 
+            this.faltas.Location = new System.Drawing.Point(539, 48);
+            this.faltas.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.faltas.Name = "faltas";
+            this.faltas.Size = new System.Drawing.Size(49, 20);
+            this.faltas.TabIndex = 66;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(470, 46);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 24);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "Faltas:";
+            // 
+            // diasTrabajados
+            // 
+            this.diasTrabajados.Location = new System.Drawing.Point(411, 48);
+            this.diasTrabajados.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.diasTrabajados.Name = "diasTrabajados";
+            this.diasTrabajados.Size = new System.Drawing.Size(54, 20);
+            this.diasTrabajados.TabIndex = 64;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(257, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 24);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Días trabajados:";
+            // 
+            // txtEmp
+            // 
+            this.txtEmp.Enabled = false;
+            this.txtEmp.Location = new System.Drawing.Point(285, 5);
+            this.txtEmp.Name = "txtEmp";
+            this.txtEmp.Size = new System.Drawing.Size(157, 20);
+            this.txtEmp.TabIndex = 56;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(176, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 24);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Empleado:";
+            // 
+            // fechaPago
+            // 
+            this.fechaPago.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaPago.Location = new System.Drawing.Point(158, 50);
+            this.fechaPago.MinDate = new System.DateTime(2020, 5, 2, 0, 0, 0, 0);
+            this.fechaPago.Name = "fechaPago";
+            this.fechaPago.Size = new System.Drawing.Size(97, 20);
+            this.fechaPago.TabIndex = 53;
+            // 
+            // idNomina
+            // 
+            this.idNomina.Enabled = false;
+            this.idNomina.Location = new System.Drawing.Point(45, 5);
+            this.idNomina.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.idNomina.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.idNomina.Name = "idNomina";
+            this.idNomina.Size = new System.Drawing.Size(103, 20);
+            this.idNomina.TabIndex = 50;
+            this.idNomina.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(3, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 24);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Fecha de pago:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(7, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 24);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "ID:";
+            // 
+            // cantNeta
+            // 
+            this.cantNeta.Enabled = false;
+            this.cantNeta.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.cantNeta.Location = new System.Drawing.Point(157, 121);
+            this.cantNeta.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.cantNeta.Name = "cantNeta";
+            this.cantNeta.Size = new System.Drawing.Size(78, 20);
+            this.cantNeta.TabIndex = 71;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(14, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 24);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Cantidad neta:";
+            // 
+            // totalD
+            // 
+            this.totalD.Enabled = false;
+            this.totalD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.totalD.Location = new System.Drawing.Point(241, 78);
+            this.totalD.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.totalD.Name = "totalD";
+            this.totalD.Size = new System.Drawing.Size(78, 20);
+            this.totalD.TabIndex = 69;
+            // 
+            // totalP
+            // 
+            this.totalP.Enabled = false;
+            this.totalP.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.totalP.Location = new System.Drawing.Point(240, 39);
+            this.totalP.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.totalP.Name = "totalP";
+            this.totalP.Size = new System.Drawing.Size(78, 20);
+            this.totalP.TabIndex = 68;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(14, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(219, 24);
+            this.label6.TabIndex = 67;
+            this.label6.Text = "Total de deducciones:";
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCalcular.Location = new System.Drawing.Point(268, 121);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(105, 23);
+            this.btnCalcular.TabIndex = 66;
+            this.btnCalcular.Text = "Calcular ";
+            this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalPer_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(11, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 24);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "Total de percepciones:";
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelar.Location = new System.Drawing.Point(407, 467);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(81, 31);
+            this.btn_cancelar.TabIndex = 66;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.White;
+            this.btn_guardar.Location = new System.Drawing.Point(275, 467);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(88, 31);
+            this.btn_guardar.TabIndex = 65;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
+            // listPercepciones
+            // 
+            this.listPercepciones.FormattingEnabled = true;
+            this.listPercepciones.Location = new System.Drawing.Point(11, 170);
+            this.listPercepciones.Name = "listPercepciones";
+            this.listPercepciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listPercepciones.Size = new System.Drawing.Size(161, 95);
+            this.listPercepciones.TabIndex = 73;
+            this.listPercepciones.Click += new System.EventHandler(this.listDeducciones_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(8, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(229, 18);
+            this.label13.TabIndex = 74;
+            this.label13.Text = "Seleccione las percepciones:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(282, 150);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(223, 18);
+            this.label14.TabIndex = 76;
+            this.label14.Text = "Seleccione las deducciones:";
+            // 
+            // listDeducciones
+            // 
+            this.listDeducciones.FormattingEnabled = true;
+            this.listDeducciones.Location = new System.Drawing.Point(285, 171);
+            this.listDeducciones.Name = "listDeducciones";
+            this.listDeducciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listDeducciones.Size = new System.Drawing.Size(161, 95);
+            this.listDeducciones.TabIndex = 75;
+            this.listDeducciones.Click += new System.EventHandler(this.listDeducciones_Click);
+            // 
             // Nomina_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 450);
-            this.Controls.Add(this.formaPago);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.fechaFin);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.fechaInicio);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.faltas);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.diasTrabajados);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.cantidadNeta);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.totalD);
-            this.Controls.Add(this.totalP);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnCalPer);
-            this.Controls.Add(this.txtEmp);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.fechaPago);
+            this.ClientSize = new System.Drawing.Size(748, 511);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.id_percepcion);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -427,51 +558,62 @@
             this.Name = "Nomina_nuevo";
             this.Text = "Agregar nómina";
             this.Load += new System.EventHandler(this.Nomina_nuevo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.id_percepcion)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.totalP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidadNeta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.faltas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.faltas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idNomina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cantNeta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.NumericUpDown id_percepcion;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem IniciotoolStripMenuItem1;
-        private System.Windows.Forms.DateTimePicker fechaPago;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEmp;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown totalP;
-        private System.Windows.Forms.NumericUpDown totalD;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown cantidadNeta;
-        private System.Windows.Forms.Button btnCalPer;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown diasTrabajados;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown faltas;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker fechaInicio;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker fechaFin;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox formaPago;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ComboBox formaPago_cm;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker fechaFin;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker fechaInicio;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown faltas;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown diasTrabajados;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtEmp;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker fechaPago;
+        private System.Windows.Forms.NumericUpDown idNomina;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.NumericUpDown cantNeta;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown totalD;
+        private System.Windows.Forms.NumericUpDown totalP;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListBox listDeducciones;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox listPercepciones;
     }
 }

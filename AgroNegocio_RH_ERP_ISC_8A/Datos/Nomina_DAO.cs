@@ -56,23 +56,25 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             bool insert = false;
             try
             {
+                
                 using(SqlConnection conexion=new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "sp_agrega_nomina";
-                    SqlCommand comando= new SqlCommand(consulta, conexion);
+                    string consulta = "insert into Nominas values (@idNom, @fp, @tP, @tD,@cn,@dT,@f,@fI,@fF,@iE,@iFP,@estatus)";
+                    nomina.idNomina = getMaxID();
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@fPago", nomina.fechaPago);
+                    comando.Parameters.AddWithValue("@idNom", nomina.idNomina);
+                    comando.Parameters.AddWithValue("@fp", nomina.fechaPago);
                     comando.Parameters.AddWithValue("@tP", nomina.totalP);
                     comando.Parameters.AddWithValue("@tD", nomina.totalD);
-                    comando.Parameters.AddWithValue("@diasT", nomina.diasTrabajados);
-                    comando.Parameters.AddWithValue("@fal", nomina.faltas);
-                    comando.Parameters.AddWithValue("@fInicio", nomina.fechaInicio);
-                    comando.Parameters.AddWithValue("@fFin", nomina.fechaFin);
-                    comando.Parameters.AddWithValue("@idEmp", nomina.idEmpleado);
-                    comando.Parameters.AddWithValue("@idForP", getIdFormaPago(nomina.formaPago));
-                    comando.Parameters.Add("@msg", SqlDbType.VarChar, -1);
-                    comando.Parameters["@msg"].Direction = System.Data.ParameterDirection.Output;
+                    comando.Parameters.AddWithValue("@cn", nomina.cantidadNeta);
+                    comando.Parameters.AddWithValue("@dT", nomina.diasTrabajados);
+                    comando.Parameters.AddWithValue("@f", nomina.faltas);
+                    comando.Parameters.AddWithValue("@fI", nomina.fechaInicio);
+                    comando.Parameters.AddWithValue("@fF", nomina.fechaFin);
+                    comando.Parameters.AddWithValue("@iE", nomina.idEmpleado);
+                    comando.Parameters.AddWithValue("@iFP", getIdFormaPago(nomina.formaPago));
+                    comando.Parameters.AddWithValue("@estatus", 'A');
                     if (comando.ExecuteNonQuery() != 0)
                         insert = true;
                     conexion.Close();
@@ -198,6 +200,57 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             return new_ID;
         }
 
+        public bool insertarNP(int idNom, int idP, double importe)
+        {
+            bool insert = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "insert into NominasPercepciones values(@idN,@idP,@importe,@estatus)";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idN", idNom);
+                    comando.Parameters.AddWithValue("@idP", idP);
+                    comando.Parameters.AddWithValue("@importe", importe);
+                    comando.Parameters.AddWithValue("@estatus", 'A');
+                    if (comando.ExecuteNonQuery() != 0)
+                        insert = true;
+                    conexion.Close();
+                }
 
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al registrar nomina de percepción. Error: " + ex.Message);
+            }
+            return insert;
+        }
+        public bool insertarND(int idNom, int idD, double importe)
+        {
+            bool insert = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "insert into NominasDeducciones values (@idN,@idD,@importe,@estatus)";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idN", idNom);
+                    comando.Parameters.AddWithValue("@idD", idD);
+                    comando.Parameters.AddWithValue("@importe", importe);
+                    comando.Parameters.AddWithValue("@estatus", 'A');
+                    if (comando.ExecuteNonQuery() != 0)
+                        insert = true;
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al registrar nomina de deducción. Error: " + ex.Message);
+            }
+            return insert;
+        }
     }
 }

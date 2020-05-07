@@ -169,7 +169,52 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 conexion.Close();
             }
             return new_ID;
+        } 
+
+        public int getDias(string idP)
+        {
+            int d = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select diasPagar from Percepciones where nombre='" + idP+"'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var sa = comando.ExecuteScalar();
+                if (sa.GetType().Equals(typeof(DBNull)))
+                {
+                    d = 0;
+                }
+                else
+                {
+                    d = (int)sa;
+                }
+                conexion.Close();
+            }
+            return d;
         }
+
+        public int getIdP(string idP)
+        {
+            int d = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idPercepcion from Percepciones where nombre='" + idP + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var sa = comando.ExecuteScalar();
+                if (sa.GetType().Equals(typeof(DBNull)))
+                {
+                    d = 0;
+                }
+                else
+                {
+                    d = (int)sa;
+                }
+                conexion.Close();
+            }
+            return d;
+        }
+
 
         /**
          * ValidarPercepcion

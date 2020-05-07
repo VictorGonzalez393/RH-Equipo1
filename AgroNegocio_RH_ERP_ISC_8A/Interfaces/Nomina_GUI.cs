@@ -144,7 +144,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                 try
                 {
-                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la percepción?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la nómina?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
                         DataGridViewRow row = tablaNomina.SelectedRows[0];
@@ -157,16 +157,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la percepción");
+                    MessageBox.Show("Error al intentar eliminar la nómina");
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
             else
             {
-                DialogResult resultado = MessageBox.Show("Selecciona la percepción", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult resultado = MessageBox.Show("Selecciona la nómina", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void actualizar()
+        public void actualizar()
         {
             btn_anterior.Enabled = false;
             btn_siguiente.Enabled = true;
@@ -179,11 +179,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
+              /**  int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
                 NominasPercepciones_GUI np = new NominasPercepciones_GUI(idNom);
                 this.SetVisibleCore(false);
                 np.ShowDialog();
-                this.SetVisibleCore(true);
+                this.SetVisibleCore(true);**/
 
             }
             else
@@ -196,11 +196,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
+              /**  int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
                 NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom);
                 this.SetVisibleCore(false);
                 np.ShowDialog();
-                this.SetVisibleCore(true);
+                this.SetVisibleCore(true);**/
 
             }
             else
@@ -227,12 +227,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             Nomina_nuevo nn = new Nomina_nuevo(nombre.Text,idEmp);
             nn.ShowDialog();
+            actualizar();
         }
 
         private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Nomina_editar ne = new Nomina_editar(nombre.Text,idEmp);
             ne.ShowDialog();
+            actualizar();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

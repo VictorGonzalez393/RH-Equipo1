@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
+    <Compile Include="Datos\FormasPago_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
     <Compile Include="Datos\Nomina_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
