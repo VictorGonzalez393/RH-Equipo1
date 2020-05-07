@@ -144,7 +144,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     }
                 }
 
-                totalD.Value = (decimal)tD;
+                totalD.Text = Convert.ToString(tD);
                 for (int i = 0; i < listPercepciones.Items.Count; i++)
                 {
                     if (listPercepciones.GetSelected(i) == true)
@@ -160,16 +160,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                     }
                 }
-                totalP.Value = (decimal)tP;
+                totalP.Text = Convert.ToString(tP);
                 if (tD <= tP)
                 {
-                    cantNeta.Value = totalP.Value - totalD.Value;
+                    double cNeta = tP - tD;
+                    cantNeta.Text =Convert.ToString(cNeta);
                 }
-                if (salarioE>salarioMin && totalD.Value == 0)
+                if (salarioE>salarioMin && tD == 0)
                 {
                     Mensajes.Error("No se han agregado las deducciones, favor de seleccionar por lo menos el IMSS");
                 }
-                if (totalP.Value == 0)
+                if (tP == 0)
                 {
                     Mensajes.Error("No se han agregado las percepciones, favor de seleccionar por lo menos el Sueldo");
                 }
@@ -192,7 +193,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
                         if (formaPago_cm.SelectedIndex != -1)
                         {
-                            if(totalP.Value!=0 && cantNeta.Value != 0)
+                            if(Convert.ToDecimal(totalP.Text)!=0 && Convert.ToDecimal(cantNeta.Text) != 0)
                             {
                                 return true;
                             }
@@ -231,55 +232,61 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (validarDatos()==true)
             {
-                FormasPago fp = (FormasPago)formaPago_cm.SelectedItem;
-                Nomina n = new Nomina(idEmp, (int)idNomina.Value,fechaPago.Text,
-                    totalP.Value,totalD.Value,cantNeta.Value,(int)diasTrabajados.Value,(int)faltas.Value,
-                    fechaInicio.Text,fechaFin.Text,fp.nombre,'A');
-                   if(nomina_DAO.insertar(n) == true)
+                if (nomina_DAO.existe(fechaPago.Text, idEmp)==false)
+                {
+                    FormasPago fp = (FormasPago)formaPago_cm.SelectedItem;
+                    Nomina n = new Nomina(idEmp, (int)idNomina.Value, fechaPago.Text,
+                        Convert.ToDecimal(totalP.Text), Convert.ToDecimal(totalD.Text), Convert.ToDecimal(cantNeta.Text), (int)diasTrabajados.Value, (int)faltas.Value,
+                        fechaInicio.Text, fechaFin.Text, fp.nombre, 'A');
+                    if (nomina_DAO.insertar(n) == true)
                     {
-                    double imp;
-                    for (int i = 0; i < listDeducciones.Items.Count; i++)
-                    {
-                        imp = 0;
-                        if (listDeducciones.GetSelected(i) == true)
+                        double imp;
+                        for (int i = 0; i < listDeducciones.Items.Count; i++)
                         {
-                            
-                            double porcentaje = deducciones_dao.getPorcentaje(listDeducciones.Items[i].ToString()) / 100;
-                            imp = porcentaje * sueldoTotal;
-                            nomina_DAO.insertarND((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()), imp);
-                            Console.WriteLine("Deduccion:" + listDeducciones.Items[i].ToString() + " porcentaje: " + porcentaje + " imp:" + imp);
+                            imp = 0;
+                            if (listDeducciones.GetSelected(i) == true)
+                            {
+
+                                double porcentaje = deducciones_dao.getPorcentaje(listDeducciones.Items[i].ToString()) / 100;
+                                imp = porcentaje * sueldoTotal;
+                                nomina_DAO.insertarND((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()), imp);
+                                Console.WriteLine("Deduccion:" + listDeducciones.Items[i].ToString() + " porcentaje: " + porcentaje + " imp:" + imp);
+                            }
+
                         }
+                        for (int i = 0; i < listPercepciones.Items.Count; i++)
+                        {
+                            imp = 0;
+                            if (listPercepciones.GetSelected(i) == true)
+                            {
+                                if (listPercepciones.Items[i].ToString().Equals("Sueldo"))
+                                {
+                                    imp = sueldoTotal;
+                                }
+                                else
+                                {
+                                    imp = percepciones_dao.getDias(listPercepciones.Items[i].ToString()) * salarioE;
+                                }
+                                nomina_DAO.insertarNP((int)idNomina.Value, percepciones_dao.getIdP(listPercepciones.Items[i].ToString()), imp);
+                            }
+
+                        }
+                        Mensajes.Info("La nómina se registro correctamente");
+
+                        Close();
 
                     }
-                    for (int i = 0; i < listPercepciones.Items.Count; i++)
+                    else
                     {
-                        imp = 0;
-                        if (listPercepciones.GetSelected(i) == true)
-                        {
-                            if (listPercepciones.Items[i].ToString().Equals("Sueldo"))
-                            {
-                                imp = sueldoTotal;
-                            }
-                            else
-                            {
-                                imp = percepciones_dao.getDias(listPercepciones.Items[i].ToString()) * salarioE;
-                            }
-                            nomina_DAO.insertarNP((int)idNomina.Value, percepciones_dao.getIdP(listPercepciones.Items[i].ToString()), imp);
-                        }
-
+                        Mensajes.Error("Error al insertar en la BD");
                     }
-                    Mensajes.Info("La nómina se registro correctamente");
-                    
-                    Close();
+
 
                 }
                 else
                 {
-                    Mensajes.Error("Error al insertar en la BD");
-                } 
-                
-
-
+                    Mensajes.Error("Ya existe nómina con la misma fecha de pago");
+                }
             }
         }
 

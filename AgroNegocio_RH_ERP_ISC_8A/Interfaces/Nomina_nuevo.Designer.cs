@@ -36,7 +36,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.listDeducciones = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listPercepciones = new System.Windows.Forms.ListBox();
             this.formaPago_cm = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.fechaFin = new System.Windows.Forms.DateTimePicker();
@@ -53,30 +56,24 @@
             this.idNomina = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cantNeta = new System.Windows.Forms.NumericUpDown();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
-            this.totalD = new System.Windows.Forms.NumericUpDown();
-            this.totalP = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.listPercepciones = new System.Windows.Forms.ListBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.listDeducciones = new System.Windows.Forms.ListBox();
+            this.cantNeta = new System.Windows.Forms.TextBox();
+            this.totalD = new System.Windows.Forms.TextBox();
+            this.totalP = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faltas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNomina)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantNeta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalP)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -170,22 +167,48 @@
             this.tabPage1.Text = "Asignar datos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label14
             // 
-            this.tabPage2.Controls.Add(this.cantNeta);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.totalD);
-            this.tabPage2.Controls.Add(this.totalP);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.btnCalcular);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(728, 361);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Calcular nómina";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(282, 150);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(223, 18);
+            this.label14.TabIndex = 76;
+            this.label14.Text = "Seleccione las deducciones:";
+            // 
+            // listDeducciones
+            // 
+            this.listDeducciones.FormattingEnabled = true;
+            this.listDeducciones.Location = new System.Drawing.Point(285, 171);
+            this.listDeducciones.Name = "listDeducciones";
+            this.listDeducciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listDeducciones.Size = new System.Drawing.Size(161, 95);
+            this.listDeducciones.TabIndex = 75;
+            this.listDeducciones.Click += new System.EventHandler(this.listDeducciones_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(8, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(229, 18);
+            this.label13.TabIndex = 74;
+            this.label13.Text = "Seleccione las percepciones:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // listPercepciones
+            // 
+            this.listPercepciones.FormattingEnabled = true;
+            this.listPercepciones.Location = new System.Drawing.Point(11, 170);
+            this.listPercepciones.Name = "listPercepciones";
+            this.listPercepciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listPercepciones.Size = new System.Drawing.Size(161, 95);
+            this.listPercepciones.TabIndex = 73;
+            this.listPercepciones.Click += new System.EventHandler(this.listDeducciones_Click);
             // 
             // formaPago_cm
             // 
@@ -370,23 +393,22 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "ID:";
             // 
-            // cantNeta
+            // tabPage2
             // 
-            this.cantNeta.Enabled = false;
-            this.cantNeta.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.cantNeta.Location = new System.Drawing.Point(157, 121);
-            this.cantNeta.Maximum = new decimal(new int[] {
-            -727379968,
-            232,
-            0,
-            0});
-            this.cantNeta.Name = "cantNeta";
-            this.cantNeta.Size = new System.Drawing.Size(78, 20);
-            this.cantNeta.TabIndex = 71;
+            this.tabPage2.Controls.Add(this.cantNeta);
+            this.tabPage2.Controls.Add(this.totalD);
+            this.tabPage2.Controls.Add(this.totalP);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.btnCalcular);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(728, 361);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Calcular nómina";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -398,42 +420,6 @@
             this.label7.Size = new System.Drawing.Size(144, 24);
             this.label7.TabIndex = 70;
             this.label7.Text = "Cantidad neta:";
-            // 
-            // totalD
-            // 
-            this.totalD.Enabled = false;
-            this.totalD.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.totalD.Location = new System.Drawing.Point(241, 78);
-            this.totalD.Maximum = new decimal(new int[] {
-            -727379968,
-            232,
-            0,
-            0});
-            this.totalD.Name = "totalD";
-            this.totalD.Size = new System.Drawing.Size(78, 20);
-            this.totalD.TabIndex = 69;
-            // 
-            // totalP
-            // 
-            this.totalP.Enabled = false;
-            this.totalP.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.totalP.Location = new System.Drawing.Point(240, 39);
-            this.totalP.Maximum = new decimal(new int[] {
-            -727379968,
-            232,
-            0,
-            0});
-            this.totalP.Name = "totalP";
-            this.totalP.Size = new System.Drawing.Size(78, 20);
-            this.totalP.TabIndex = 68;
             // 
             // label6
             // 
@@ -452,7 +438,7 @@
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCalcular.Location = new System.Drawing.Point(268, 121);
+            this.btnCalcular.Location = new System.Drawing.Point(269, 116);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(105, 23);
             this.btnCalcular.TabIndex = 66;
@@ -499,48 +485,29 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // listPercepciones
+            // cantNeta
             // 
-            this.listPercepciones.FormattingEnabled = true;
-            this.listPercepciones.Location = new System.Drawing.Point(11, 170);
-            this.listPercepciones.Name = "listPercepciones";
-            this.listPercepciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listPercepciones.Size = new System.Drawing.Size(161, 95);
-            this.listPercepciones.TabIndex = 73;
-            this.listPercepciones.Click += new System.EventHandler(this.listDeducciones_Click);
+            this.cantNeta.Enabled = false;
+            this.cantNeta.Location = new System.Drawing.Point(160, 120);
+            this.cantNeta.Name = "cantNeta";
+            this.cantNeta.Size = new System.Drawing.Size(100, 20);
+            this.cantNeta.TabIndex = 76;
             // 
-            // label13
+            // totalD
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(8, 149);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(229, 18);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "Seleccione las percepciones:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.totalD.Enabled = false;
+            this.totalD.Location = new System.Drawing.Point(239, 78);
+            this.totalD.Name = "totalD";
+            this.totalD.Size = new System.Drawing.Size(100, 20);
+            this.totalD.TabIndex = 75;
             // 
-            // label14
+            // totalP
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(282, 150);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(223, 18);
-            this.label14.TabIndex = 76;
-            this.label14.Text = "Seleccione las deducciones:";
-            // 
-            // listDeducciones
-            // 
-            this.listDeducciones.FormattingEnabled = true;
-            this.listDeducciones.Location = new System.Drawing.Point(285, 171);
-            this.listDeducciones.Name = "listDeducciones";
-            this.listDeducciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listDeducciones.Size = new System.Drawing.Size(161, 95);
-            this.listDeducciones.TabIndex = 75;
-            this.listDeducciones.Click += new System.EventHandler(this.listDeducciones_Click);
+            this.totalP.Enabled = false;
+            this.totalP.Location = new System.Drawing.Point(239, 39);
+            this.totalP.Name = "totalP";
+            this.totalP.Size = new System.Drawing.Size(100, 20);
+            this.totalP.TabIndex = 74;
             // 
             // Nomina_nuevo
             // 
@@ -564,14 +531,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faltas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNomina)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantNeta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalP)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,10 +566,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.NumericUpDown cantNeta;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown totalD;
-        private System.Windows.Forms.NumericUpDown totalP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label4;
@@ -615,5 +576,8 @@
         private System.Windows.Forms.ListBox listDeducciones;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ListBox listPercepciones;
+        private System.Windows.Forms.TextBox cantNeta;
+        private System.Windows.Forms.TextBox totalD;
+        private System.Windows.Forms.TextBox totalP;
     }
 }

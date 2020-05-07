@@ -38,7 +38,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.formaPago = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.listDeducciones = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listPercepciones = new System.Windows.Forms.ListBox();
+            this.formaPago_cm = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.fechaFin = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,17 +59,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cantidadNeta = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.totalD = new System.Windows.Forms.NumericUpDown();
-            this.totalP = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCalPer = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.listDeducciones = new System.Windows.Forms.ListBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.listPercepciones = new System.Windows.Forms.ListBox();
+            this.totalP = new System.Windows.Forms.TextBox();
+            this.totalD = new System.Windows.Forms.TextBox();
+            this.cantNeta = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -74,9 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.diasTrabajados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNomina)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidadNeta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalP)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_cancelar
@@ -91,6 +88,7 @@
             this.btn_cancelar.TabIndex = 54;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -104,6 +102,7 @@
             this.btn_guardar.TabIndex = 53;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // menuStrip1
             // 
@@ -124,6 +123,7 @@
             this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
             this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
             // 
             // atrásToolStripMenuItem
             // 
@@ -132,6 +132,7 @@
             this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
             this.atrásToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.atrásToolStripMenuItem.Text = "Atrás";
+            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -169,7 +170,7 @@
             this.tabPage1.Controls.Add(this.listDeducciones);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.listPercepciones);
-            this.tabPage1.Controls.Add(this.formaPago);
+            this.tabPage1.Controls.Add(this.formaPago_cm);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.fechaFin);
             this.tabPage1.Controls.Add(this.label11);
@@ -193,13 +194,53 @@
             this.tabPage1.Text = "Asignar datos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // formaPago
+            // label14
             // 
-            this.formaPago.FormattingEnabled = true;
-            this.formaPago.Location = new System.Drawing.Point(601, 87);
-            this.formaPago.Name = "formaPago";
-            this.formaPago.Size = new System.Drawing.Size(104, 21);
-            this.formaPago.TabIndex = 72;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(282, 150);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(202, 18);
+            this.label14.TabIndex = 80;
+            this.label14.Text = "Seleccionar deducciones:";
+            // 
+            // listDeducciones
+            // 
+            this.listDeducciones.FormattingEnabled = true;
+            this.listDeducciones.Location = new System.Drawing.Point(285, 171);
+            this.listDeducciones.Name = "listDeducciones";
+            this.listDeducciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listDeducciones.Size = new System.Drawing.Size(161, 173);
+            this.listDeducciones.TabIndex = 79;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(8, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(208, 18);
+            this.label13.TabIndex = 78;
+            this.label13.Text = "Seleccionar percepciones:";
+            // 
+            // listPercepciones
+            // 
+            this.listPercepciones.FormattingEnabled = true;
+            this.listPercepciones.Location = new System.Drawing.Point(11, 170);
+            this.listPercepciones.Name = "listPercepciones";
+            this.listPercepciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listPercepciones.Size = new System.Drawing.Size(161, 173);
+            this.listPercepciones.TabIndex = 77;
+            // 
+            // formaPago_cm
+            // 
+            this.formaPago_cm.FormattingEnabled = true;
+            this.formaPago_cm.Location = new System.Drawing.Point(601, 87);
+            this.formaPago_cm.Name = "formaPago_cm";
+            this.formaPago_cm.Size = new System.Drawing.Size(104, 21);
+            this.formaPago_cm.TabIndex = 72;
             // 
             // label12
             // 
@@ -257,6 +298,11 @@
             // faltas
             // 
             this.faltas.Location = new System.Drawing.Point(539, 48);
+            this.faltas.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             this.faltas.Name = "faltas";
             this.faltas.Size = new System.Drawing.Size(49, 20);
             this.faltas.TabIndex = 66;
@@ -275,6 +321,11 @@
             // diasTrabajados
             // 
             this.diasTrabajados.Location = new System.Drawing.Point(411, 48);
+            this.diasTrabajados.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             this.diasTrabajados.Name = "diasTrabajados";
             this.diasTrabajados.Size = new System.Drawing.Size(54, 20);
             this.diasTrabajados.TabIndex = 64;
@@ -366,10 +417,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.cantidadNeta);
-            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.cantNeta);
             this.tabPage2.Controls.Add(this.totalD);
             this.tabPage2.Controls.Add(this.totalP);
+            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.btnCalPer);
             this.tabPage2.Controls.Add(this.label4);
@@ -381,19 +432,6 @@
             this.tabPage2.Text = "Calcular nómina";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // cantidadNeta
-            // 
-            this.cantidadNeta.Enabled = false;
-            this.cantidadNeta.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.cantidadNeta.Location = new System.Drawing.Point(157, 121);
-            this.cantidadNeta.Name = "cantidadNeta";
-            this.cantidadNeta.Size = new System.Drawing.Size(78, 20);
-            this.cantidadNeta.TabIndex = 71;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -404,32 +442,6 @@
             this.label7.Size = new System.Drawing.Size(144, 24);
             this.label7.TabIndex = 70;
             this.label7.Text = "Cantidad neta:";
-            // 
-            // totalD
-            // 
-            this.totalD.Enabled = false;
-            this.totalD.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.totalD.Location = new System.Drawing.Point(241, 78);
-            this.totalD.Name = "totalD";
-            this.totalD.Size = new System.Drawing.Size(78, 20);
-            this.totalD.TabIndex = 69;
-            // 
-            // totalP
-            // 
-            this.totalP.Enabled = false;
-            this.totalP.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.totalP.Location = new System.Drawing.Point(240, 39);
-            this.totalP.Name = "totalP";
-            this.totalP.Size = new System.Drawing.Size(78, 20);
-            this.totalP.TabIndex = 68;
             // 
             // label6
             // 
@@ -448,12 +460,13 @@
             this.btnCalPer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalPer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCalPer.Location = new System.Drawing.Point(244, 121);
+            this.btnCalPer.Location = new System.Drawing.Point(283, 119);
             this.btnCalPer.Name = "btnCalPer";
             this.btnCalPer.Size = new System.Drawing.Size(105, 23);
             this.btnCalPer.TabIndex = 66;
             this.btnCalPer.Text = "Calcular nómina";
             this.btnCalPer.UseVisualStyleBackColor = false;
+            this.btnCalPer.Click += new System.EventHandler(this.btnCalPer_Click);
             // 
             // label4
             // 
@@ -466,45 +479,29 @@
             this.label4.TabIndex = 65;
             this.label4.Text = "Total de percepciones:";
             // 
-            // label14
+            // totalP
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(282, 150);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(202, 18);
-            this.label14.TabIndex = 80;
-            this.label14.Text = "Seleccionar deducciones:";
+            this.totalP.Enabled = false;
+            this.totalP.Location = new System.Drawing.Point(243, 40);
+            this.totalP.Name = "totalP";
+            this.totalP.Size = new System.Drawing.Size(100, 20);
+            this.totalP.TabIndex = 71;
             // 
-            // listDeducciones
+            // totalD
             // 
-            this.listDeducciones.FormattingEnabled = true;
-            this.listDeducciones.Location = new System.Drawing.Point(285, 171);
-            this.listDeducciones.Name = "listDeducciones";
-            this.listDeducciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listDeducciones.Size = new System.Drawing.Size(161, 173);
-            this.listDeducciones.TabIndex = 79;
+            this.totalD.Enabled = false;
+            this.totalD.Location = new System.Drawing.Point(243, 79);
+            this.totalD.Name = "totalD";
+            this.totalD.Size = new System.Drawing.Size(100, 20);
+            this.totalD.TabIndex = 72;
             // 
-            // label13
+            // cantNeta
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(8, 149);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(208, 18);
-            this.label13.TabIndex = 78;
-            this.label13.Text = "Seleccionar percepciones:";
-            // 
-            // listPercepciones
-            // 
-            this.listPercepciones.FormattingEnabled = true;
-            this.listPercepciones.Location = new System.Drawing.Point(11, 170);
-            this.listPercepciones.Name = "listPercepciones";
-            this.listPercepciones.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listPercepciones.Size = new System.Drawing.Size(161, 173);
-            this.listPercepciones.TabIndex = 77;
+            this.cantNeta.Enabled = false;
+            this.cantNeta.Location = new System.Drawing.Point(164, 121);
+            this.cantNeta.Name = "cantNeta";
+            this.cantNeta.Size = new System.Drawing.Size(100, 20);
+            this.cantNeta.TabIndex = 73;
             // 
             // Nomina_editar
             // 
@@ -532,9 +529,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.idNomina)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidadNeta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,7 +544,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ComboBox formaPago;
+        private System.Windows.Forms.ComboBox formaPago_cm;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker fechaFin;
         private System.Windows.Forms.Label label11;
@@ -567,10 +561,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.NumericUpDown cantidadNeta;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown totalD;
-        private System.Windows.Forms.NumericUpDown totalP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCalPer;
         private System.Windows.Forms.Label label4;
@@ -578,5 +569,8 @@
         private System.Windows.Forms.ListBox listDeducciones;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ListBox listPercepciones;
+        private System.Windows.Forms.TextBox cantNeta;
+        private System.Windows.Forms.TextBox totalD;
+        private System.Windows.Forms.TextBox totalP;
     }
 }

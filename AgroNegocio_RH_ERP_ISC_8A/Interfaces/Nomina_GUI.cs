@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgroNegocio_RH_ERP_ISC_8A.Datos;
+using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
@@ -16,12 +17,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         public int idEmp { get; set; }
         Nomina_DAO nominas_DAO;
         string aux1, aux2;
+        double salarioE = 0;
+        double salarioMin = 123.22;
+        Empleados_DAO em_dao = new Empleados_DAO();
         public Nomina_GUI()
         {
             InitializeComponent();
             try
             {
                 nominas_DAO = new Nomina_DAO();
+                salarioE= em_dao.getSalario(this.idEmp);
                 nominas_DAO.table = "Nominas_Tabla";
                 nominas_DAO.order_by = "ID";
                 nominas_DAO.where = "ID_Empleado=" + idEmp;
@@ -75,6 +80,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 tablaNomina.DataSource = nominas_DAO.getSigPagina();
                 aux1 = lbl_pagina.Text;
                 aux2 = lbl_total.Text;
+                salarioE = em_dao.getSalario(this.idEmp);
                 lbl_pagina.Text = aux1 + " " + nominas_DAO.actual_page;
                 lbl_total.Text = aux2 + " " + nominas_DAO.pages;
             }
@@ -196,11 +202,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-              /**  int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom);
+                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
+                NominasDeducciones_GUI np = new NominasDeducciones_GUI();
                 this.SetVisibleCore(false);
                 np.ShowDialog();
-                this.SetVisibleCore(true);**/
+                this.SetVisibleCore(true);
 
             }
             else
@@ -232,14 +238,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Nomina_editar ne = new Nomina_editar(nombre.Text,idEmp);
-            ne.ShowDialog();
-            actualizar();
+            if (tablaNomina.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+
+                Nomina nominas = new Nomina(
+                    (int)row.Cells[1].Value,
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[2].Value,
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToDecimal(row.Cells[4].Value),
+                    Convert.ToDecimal(row.Cells[5].Value),
+                    (int)row.Cells[6].Value,
+                    (int)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (string)row.Cells[10].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+                Nomina_editar ne = new Nomina_editar(nombre.Text, nominas,salarioE,salarioMin);
+                ne.ShowDialog();
+                actualizar();
+            }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

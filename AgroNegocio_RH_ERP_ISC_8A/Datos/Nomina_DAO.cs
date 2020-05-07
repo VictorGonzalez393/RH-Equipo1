@@ -94,23 +94,21 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "sp_editar_nomina";
+                    string consulta = "update Nominas set formaPago=@fpago,totalP=@tP,totalD=@tD,cantidadNeta=@cn," +
+                        "diasTrabajados=@diasT,faltas=@fal,fechaInicio=@fInicio,fechaFin=@fFin,idEmpleado=@idEmp,idFormaPago=@idForP where idNomina=@id";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@id", nomina.idNomina);
                     comando.Parameters.AddWithValue("@fPago", nomina.fechaPago);
                     comando.Parameters.AddWithValue("@tP", nomina.totalP);
                     comando.Parameters.AddWithValue("@tD", nomina.totalD);
+                    comando.Parameters.AddWithValue("@cn", nomina.cantidadNeta);
                     comando.Parameters.AddWithValue("@diasT", nomina.diasTrabajados);
                     comando.Parameters.AddWithValue("@fal", nomina.faltas);
                     comando.Parameters.AddWithValue("@fInicio", nomina.fechaInicio);
                     comando.Parameters.AddWithValue("@fFin", nomina.fechaFin);
                     comando.Parameters.AddWithValue("@idEmp", nomina.idEmpleado);
                     comando.Parameters.AddWithValue("@idForP", getIdFormaPago(nomina.formaPago));
-                    comando.Parameters.AddWithValue("@est", 'A');
-                    comando.Parameters.Add("@msg", SqlDbType.VarChar, -1);
-                    comando.Parameters["@msg"].Direction = System.Data.ParameterDirection.Output;
                     if (comando.ExecuteNonQuery() != 0)
                         editar = true;
                     conexion.Close();
@@ -251,6 +249,36 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 Console.WriteLine("Error al registrar nomina de deducción. Error: " + ex.Message);
             }
             return insert;
+        } 
+
+        public bool existe(string fechaP, int idEmp)
+        {
+            bool band = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "select idNomina from Nominas where idEmpleado=" + idEmp + " and fechaPago='" + fechaP + "' and estatus='A'" ;
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+
+                    SqlDataReader lector = comando.ExecuteReader();
+                    if (lector.HasRows)
+                    {
+                        band = true;
+                    }
+                    else
+                    {
+                        band = false;
+                    }
+
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return band;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 {
-    class Nomina
+    public class Nomina
     {
         public int idNomina { get; set; }
         public string fechaPago { get; set; }
