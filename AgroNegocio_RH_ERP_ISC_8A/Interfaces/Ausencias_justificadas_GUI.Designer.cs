@@ -38,6 +38,10 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Justificaciones)).BeginInit();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +62,7 @@
             this.tabla_Justificaciones.AllowUserToAddRows = false;
             this.tabla_Justificaciones.AllowUserToDeleteRows = false;
             this.tabla_Justificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla_Justificaciones.Location = new System.Drawing.Point(73, 138);
+            this.tabla_Justificaciones.Location = new System.Drawing.Point(73, 130);
             this.tabla_Justificaciones.Name = "tabla_Justificaciones";
             this.tabla_Justificaciones.ReadOnly = true;
             this.tabla_Justificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -131,11 +135,51 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Location = new System.Drawing.Point(302, 371);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(27, 16);
+            this.lbl_total.TabIndex = 28;
+            this.lbl_total.Text = "de ";
+            // 
+            // lbl_pagina
+            // 
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.Location = new System.Drawing.Point(223, 371);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(54, 16);
+            this.lbl_pagina.TabIndex = 27;
+            this.lbl_pagina.Text = "Página ";
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
+            this.btn_anterior.Location = new System.Drawing.Point(159, 360);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(36, 38);
+            this.btn_anterior.TabIndex = 26;
+            this.btn_anterior.UseVisualStyleBackColor = true;
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
+            this.btn_siguiente.Location = new System.Drawing.Point(365, 360);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(36, 38);
+            this.btn_siguiente.TabIndex = 25;
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            // 
             // Ausencias_justificadas_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 376);
+            this.ClientSize = new System.Drawing.Size(617, 421);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_pagina);
+            this.Controls.Add(this.btn_anterior);
+            this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.tabla_Justificaciones);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.buscarJustificacionesTxt);
@@ -166,5 +210,9 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_pagina;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Button btn_siguiente;
     }
 }

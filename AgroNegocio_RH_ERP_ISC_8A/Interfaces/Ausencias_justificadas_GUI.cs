@@ -224,32 +224,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_anterior_Click(object sender, EventArgs e)
         {
-            btn_siguiente.Enabled = true;
-            if (ausencias_Justificadas_DAO.actual_page > 1)
-            {
-                tabla_Justificaciones.DataSource = ausencias_Justificadas_DAO.getAnteriorPagina();
-            }
-            if (ausencias_Justificadas_DAO.actual_page == 1)
-            {
-                btn_anterior.Enabled = false;
-            }
-            lbl_pagina.Text = aux1 + " " + ausencias_Justificadas_DAO.actual_page;
-            lbl_total.Text = aux2 + " " + ausencias_Justificadas_DAO.pages;
+
         }
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
-            btn_anterior.Enabled = true;
-            if (ausencias_Justificadas_DAO.actual_page < ausencias_Justificadas_DAO.pages)
-            {
-                tabla_Justificaciones.DataSource = ausencias_Justificadas_DAO.getSigPagina();
-            }
-            if (ausencias_Justificadas_DAO.actual_page == ausencias_Justificadas_DAO.pages)
-            {
-                btn_siguiente.Enabled = false;
-            }
-            lbl_pagina.Text = aux1 + " " + ausencias_Justificadas_DAO.actual_page;
-            lbl_total.Text = aux2 + " " + ausencias_Justificadas_DAO.pages;
+
         }
 
         private void tabla_Justificaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -284,7 +264,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             btn_anterior.Enabled = false;
             btn_siguiente.Enabled = true;
-            Tabla_Deducciones.DataSource = ausencias_Justificadas_DAO.actualizar();
+            tabla_Justificaciones.DataSource = ausencias_Justificadas_DAO.actualizar();
             lbl_pagina.Text = aux1 + " " + ausencias_Justificadas_DAO.actual_page;
             lbl_total.Text = aux2 + " " + ausencias_Justificadas_DAO.pages;
         }

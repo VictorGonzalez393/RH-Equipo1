@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ausencias_justificadas_editar));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.fechaSolicitud_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
             this.id_empleadoA = new System.Windows.Forms.NumericUpDown();
             this.id_empleadoS = new System.Windows.Forms.NumericUpDown();
             this.id_justificacion = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tipo_ausencia_Justificada = new System.Windows.Forms.TextBox();
+            this.fechaInicio_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
+            this.fechaFin_ausencia_Justficada = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,10 +47,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.justificaciones = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleadoA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleadoS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_justificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.justificaciones)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_cancelar
@@ -65,6 +69,7 @@
             this.btn_cancelar.TabIndex = 44;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -78,13 +83,15 @@
             this.btn_guardar.TabIndex = 43;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // dateTimePicker3
+            // fechaSolicitud_ausencia_Justificada
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(179, 165);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(220, 22);
-            this.dateTimePicker3.TabIndex = 42;
+            this.fechaSolicitud_ausencia_Justificada.Location = new System.Drawing.Point(179, 165);
+            this.fechaSolicitud_ausencia_Justificada.Name = "fechaSolicitud_ausencia_Justificada";
+            this.fechaSolicitud_ausencia_Justificada.Size = new System.Drawing.Size(220, 22);
+            this.fechaSolicitud_ausencia_Justificada.TabIndex = 42;
+            this.fechaSolicitud_ausencia_Justificada.ValueChanged += new System.EventHandler(this.fechaSolicitud_ausencia_Justificada_ValueChanged);
             // 
             // id_empleadoA
             // 
@@ -93,6 +100,7 @@
             this.id_empleadoA.Name = "id_empleadoA";
             this.id_empleadoA.Size = new System.Drawing.Size(166, 22);
             this.id_empleadoA.TabIndex = 41;
+            this.id_empleadoA.ValueChanged += new System.EventHandler(this.id_empleadoA_ValueChanged);
             // 
             // id_empleadoS
             // 
@@ -101,6 +109,7 @@
             this.id_empleadoS.Name = "id_empleadoS";
             this.id_empleadoS.Size = new System.Drawing.Size(166, 22);
             this.id_empleadoS.TabIndex = 40;
+            this.id_empleadoS.ValueChanged += new System.EventHandler(this.id_empleadoS_ValueChanged);
             // 
             // id_justificacion
             // 
@@ -109,27 +118,31 @@
             this.id_justificacion.Name = "id_justificacion";
             this.id_justificacion.Size = new System.Drawing.Size(155, 22);
             this.id_justificacion.TabIndex = 39;
+            this.id_justificacion.ValueChanged += new System.EventHandler(this.id_justificacion_ValueChanged_1);
             // 
-            // textBox1
+            // tipo_ausencia_Justificada
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 256);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 38;
+            this.tipo_ausencia_Justificada.Location = new System.Drawing.Point(123, 256);
+            this.tipo_ausencia_Justificada.Name = "tipo_ausencia_Justificada";
+            this.tipo_ausencia_Justificada.Size = new System.Drawing.Size(100, 22);
+            this.tipo_ausencia_Justificada.TabIndex = 38;
+            this.tipo_ausencia_Justificada.TextChanged += new System.EventHandler(this.tipo_ausencia_Justificada_TextChanged);
             // 
-            // dateTimePicker2
+            // fechaInicio_ausencia_Justificada
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(135, 211);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(218, 22);
-            this.dateTimePicker2.TabIndex = 37;
+            this.fechaInicio_ausencia_Justificada.Location = new System.Drawing.Point(135, 211);
+            this.fechaInicio_ausencia_Justificada.Name = "fechaInicio_ausencia_Justificada";
+            this.fechaInicio_ausencia_Justificada.Size = new System.Drawing.Size(218, 22);
+            this.fechaInicio_ausencia_Justificada.TabIndex = 37;
+            this.fechaInicio_ausencia_Justificada.ValueChanged += new System.EventHandler(this.fechaInicio_ausencia_Justificada_ValueChanged);
             // 
-            // dateTimePicker1
+            // fechaFin_ausencia_Justficada
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(443, 212);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(223, 22);
-            this.dateTimePicker1.TabIndex = 36;
+            this.fechaFin_ausencia_Justficada.Location = new System.Drawing.Point(443, 212);
+            this.fechaFin_ausencia_Justficada.Name = "fechaFin_ausencia_Justficada";
+            this.fechaFin_ausencia_Justficada.Size = new System.Drawing.Size(223, 22);
+            this.fechaFin_ausencia_Justficada.TabIndex = 36;
+            this.fechaFin_ausencia_Justficada.ValueChanged += new System.EventHandler(this.fechaFin_ausencia_Justficada_ValueChanged);
             // 
             // label8
             // 
@@ -221,21 +234,52 @@
             this.justificaciones.TabIndex = 45;
             this.justificaciones.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.IniciotoolStripMenuItem1,
+            this.backToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(692, 24);
+            this.menuStrip1.TabIndex = 46;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // IniciotoolStripMenuItem1
+            // 
+            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
+            this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
+            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.IniciotoolStripMenuItem1.Text = "Inicio";
+            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
+            // 
+            // backToolStripMenuItem
+            // 
+            this.backToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.backToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("backToolStripMenuItem.Image")));
+            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            // 
             // Ausencias_justificadas_editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 451);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.justificaciones);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.fechaSolicitud_ausencia_Justificada);
             this.Controls.Add(this.id_empleadoA);
             this.Controls.Add(this.id_empleadoS);
             this.Controls.Add(this.id_justificacion);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.tipo_ausencia_Justificada);
+            this.Controls.Add(this.fechaInicio_ausencia_Justificada);
+            this.Controls.Add(this.fechaFin_ausencia_Justficada);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -249,10 +293,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ausencias_justificadas_editar";
             this.Text = "Ausencias_Justificadas_editar";
+            this.Load += new System.EventHandler(this.Ausencias_justificadas_editar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.id_empleadoA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleadoS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_justificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.justificaciones)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,13 +309,13 @@
 
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker fechaSolicitud_ausencia_Justificada;
         private System.Windows.Forms.NumericUpDown id_empleadoA;
         private System.Windows.Forms.NumericUpDown id_empleadoS;
         private System.Windows.Forms.NumericUpDown id_justificacion;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox tipo_ausencia_Justificada;
+        private System.Windows.Forms.DateTimePicker fechaInicio_ausencia_Justificada;
+        private System.Windows.Forms.DateTimePicker fechaFin_ausencia_Justficada;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -278,5 +325,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox justificaciones;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem IniciotoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
     }
 }
