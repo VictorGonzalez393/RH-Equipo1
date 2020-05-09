@@ -203,7 +203,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             if (tablaNomina.SelectedRows.Count == 1)
             {
                 int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasDeducciones_GUI np = new NominasDeducciones_GUI();
+                NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom,this.idEmp); /*Mandar el GUI con esos valores*/
                 this.SetVisibleCore(false);
                 np.ShowDialog();
                 this.SetVisibleCore(true);

@@ -59,6 +59,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.img_1 = new System.Windows.Forms.PictureBox();
             this.sexo_empleado = new System.Windows.Forms.ComboBox();
             this.codigopostal_empleado = new System.Windows.Forms.NumericUpDown();
             this.estadocivil_empleado = new System.Windows.Forms.ComboBox();
@@ -83,7 +84,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.img_1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,10 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleado)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -478,6 +478,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales:";
             // 
+            // img_1
+            // 
+            this.img_1.Location = new System.Drawing.Point(28, 19);
+            this.img_1.Name = "img_1";
+            this.img_1.Size = new System.Drawing.Size(120, 134);
+            this.img_1.TabIndex = 36;
+            this.img_1.TabStop = false;
+            // 
             // sexo_empleado
             // 
             this.sexo_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -748,14 +756,6 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 511);
             this.tabControl1.TabIndex = 26;
             // 
-            // img_1
-            // 
-            this.img_1.Location = new System.Drawing.Point(28, 19);
-            this.img_1.Name = "img_1";
-            this.img_1.Size = new System.Drawing.Size(120, 134);
-            this.img_1.TabIndex = 36;
-            this.img_1.TabStop = false;
-            // 
             // Empleados_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,10 +781,10 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleado)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

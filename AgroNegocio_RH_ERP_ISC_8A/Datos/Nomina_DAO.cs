@@ -280,5 +280,40 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return band;
         }
+
+        public Nomina ExtraerNomina(int id)
+        {
+            Nomina nom = new Nomina();
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "select * from Nominas_Tabla where idNomina=" + id +" and estatus='A'";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+
+                    SqlDataReader lector = comando.ExecuteReader();
+                    nom = new Nomina(lector.GetInt32(0),
+                                    lector.GetInt32(1),
+                                    lector.GetString(2),
+                                    lector.GetDecimal(3),
+                                    lector.GetDecimal(4),
+                                    lector.GetDecimal(5),
+                                    lector.GetInt32(6),
+                                    lector.GetInt32(7),
+                                    lector.GetString(8),
+                                    lector.GetString(9),
+                                    lector.GetString(10),
+                                    lector.GetString(11)[0]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return nom;
+        }
+
+
     }
 }
