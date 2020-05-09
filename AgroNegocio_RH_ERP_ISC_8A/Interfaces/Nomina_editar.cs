@@ -43,6 +43,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.totalD.Text = Convert.ToString(nom.totalD);
             this.diasTrabajados.Value = (decimal)nom.diasTrabajados;
             this.faltas.Value = (decimal)nom.faltas;
+            this.fechaInicio.Value = Convert.ToDateTime(nom.fechaInicio);
+            this.fechaPago.Value = Convert.ToDateTime(nom.fechaPago);
+            this.fechaFin.Value = Convert.ToDateTime(nom.fechaFin);
 
             string consulta_where = " where estatus=@estatus";
             List<string> parametros = new List<string>();
@@ -179,7 +182,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (validarDatos() == true)
             {
-                if (nomina_DAO.existe(fechaPago.Text, idEmp) == false)
+                if (nomina_DAO.existe(fechaPago.Text, idEmp) == true)
                 {
                     FormasPago fp = (FormasPago)formaPago_cm.SelectedItem;
                     Nomina n = new Nomina(idEmp, (int)idNomina.Value, fechaPago.Text,
@@ -218,7 +221,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                             }
 
                         }
-                        Mensajes.Info("La nómina se registro correctamente");
+                        Mensajes.Info("La nómina se edito correctamente");
 
                         Close();
 

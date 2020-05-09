@@ -59,13 +59,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cantNeta = new System.Windows.Forms.TextBox();
+            this.totalD = new System.Windows.Forms.TextBox();
+            this.totalP = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCalPer = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.totalP = new System.Windows.Forms.TextBox();
-            this.totalD = new System.Windows.Forms.TextBox();
-            this.cantNeta = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -279,7 +279,7 @@
             this.fechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaInicio.Location = new System.Drawing.Point(133, 89);
-            this.fechaInicio.MinDate = new System.DateTime(2020, 5, 2, 0, 0, 0, 0);
+            this.fechaInicio.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.fechaInicio.Name = "fechaInicio";
             this.fechaInicio.Size = new System.Drawing.Size(97, 20);
             this.fechaInicio.TabIndex = 68;
@@ -432,6 +432,30 @@
             this.tabPage2.Text = "Calcular nómina";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cantNeta
+            // 
+            this.cantNeta.Enabled = false;
+            this.cantNeta.Location = new System.Drawing.Point(164, 121);
+            this.cantNeta.Name = "cantNeta";
+            this.cantNeta.Size = new System.Drawing.Size(100, 20);
+            this.cantNeta.TabIndex = 73;
+            // 
+            // totalD
+            // 
+            this.totalD.Enabled = false;
+            this.totalD.Location = new System.Drawing.Point(243, 79);
+            this.totalD.Name = "totalD";
+            this.totalD.Size = new System.Drawing.Size(100, 20);
+            this.totalD.TabIndex = 72;
+            // 
+            // totalP
+            // 
+            this.totalP.Enabled = false;
+            this.totalP.Location = new System.Drawing.Point(243, 40);
+            this.totalP.Name = "totalP";
+            this.totalP.Size = new System.Drawing.Size(100, 20);
+            this.totalP.TabIndex = 71;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -478,30 +502,6 @@
             this.label4.Size = new System.Drawing.Size(226, 24);
             this.label4.TabIndex = 65;
             this.label4.Text = "Total de percepciones:";
-            // 
-            // totalP
-            // 
-            this.totalP.Enabled = false;
-            this.totalP.Location = new System.Drawing.Point(243, 40);
-            this.totalP.Name = "totalP";
-            this.totalP.Size = new System.Drawing.Size(100, 20);
-            this.totalP.TabIndex = 71;
-            // 
-            // totalD
-            // 
-            this.totalD.Enabled = false;
-            this.totalD.Location = new System.Drawing.Point(243, 79);
-            this.totalD.Name = "totalD";
-            this.totalD.Size = new System.Drawing.Size(100, 20);
-            this.totalD.TabIndex = 72;
-            // 
-            // cantNeta
-            // 
-            this.cantNeta.Enabled = false;
-            this.cantNeta.Location = new System.Drawing.Point(164, 121);
-            this.cantNeta.Name = "cantNeta";
-            this.cantNeta.Size = new System.Drawing.Size(100, 20);
-            this.cantNeta.TabIndex = 73;
             // 
             // Nomina_editar
             // 

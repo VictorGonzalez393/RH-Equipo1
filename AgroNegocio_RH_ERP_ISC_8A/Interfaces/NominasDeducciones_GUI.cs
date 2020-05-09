@@ -79,20 +79,23 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             if (!existeDeduccion(d))
             {
-                //Guardar 
+                ////Guardar 
                 double SalarioTotal = salarioE * (nomina.diasTrabajados - nomina.faltas);
+                Console.WriteLine("Salario total: " + SalarioTotal);
                 double importe = (SalarioTotal * selecD.Porcentaje) / 100;
+                Console.WriteLine("porcentaje: " + selecD.Porcentaje);
                 double totalD = (double)nomina.totalD + importe;
                 double cantNeta = (double) nomina.cantidadNeta - importe;
-                NominaDeduccion nominaD = new NominaDeduccion(idNomina, selecD.IdDeduccion, importe, 'A', selecD.Nombre, selecD.Descripcion);
+                Console.WriteLine("importe: " + importe + " cantidadNeta: " + cantNeta);
+                NominaDeduccion nominaD = new NominaDeduccion(Convert.ToInt32(id_nomina.Text), selecD.IdDeduccion, importe, 'A', selecD.Nombre, selecD.Descripcion);
                 if (nd_dao.registrar(nominaD, totalD, cantNeta))
                 {
-                    MessageBox.Show("Se agregó la Deducción.");
+                    Mensajes.Info("Se agregó la Deducción.");
                     Actualizar();
                 }
                 else
                 {
-                    MessageBox.Show("Error al registrar NominaDeducción");
+                    Mensajes.Error("Error al registrar NominaDeducción");
                 }
             }
             else

@@ -34,8 +34,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 
                         NominaDeduccion ded_temp = new NominaDeduccion(lector.GetInt32(0),
                                                            lector.GetInt32(1),
-                                                           lector.GetFloat(2),
-                                                           lector.GetString(3)[0],
+                                                           lector.GetDouble(2),
+                                                           Convert.ToChar(lector.GetString(3)),
                                                            lector.GetString(4),
                                                            lector.GetString(5));
                         deducciones.Add(ded_temp);
@@ -65,7 +65,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     {
                         insert = true;
                         consulta = "";
-                        consulta = "update Nominas set totalD=@totalD and cantidadNeta=@cantNeta where idNomina=@idNomina";
+                        consulta = "update Nominas set totalD=@totalD, cantidadNeta=@cantNeta where idNomina=@idNomina";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@totalD",totalD);
                         comando.Parameters.AddWithValue("@cantidadNeta", cantNeta);
@@ -76,9 +76,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 }
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                throw new Exception("Error al agregar Deducción a Nómina");
+                Console.WriteLine("Error al agregar Deducción a Nómina"+ex.Message);
             }
             return insert;
         }
