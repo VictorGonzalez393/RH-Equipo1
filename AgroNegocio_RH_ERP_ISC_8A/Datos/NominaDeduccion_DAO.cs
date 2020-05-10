@@ -96,15 +96,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     string consulta = "update NominasDeducciones set estatus=@est where idNomina=@idnom and idDeduccion=@iddec";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
+                    comando.Parameters.AddWithValue("@est", 'I');
                     comando.Parameters.AddWithValue("@idnom", idNomina);
                     comando.Parameters.AddWithValue("@iddec", idDeduccion);
-                    comando.Parameters.AddWithValue("@est", 'I');
                     
                     if (comando.ExecuteNonQuery() != 0)
                     {
                         Console.WriteLine(idNomina + " " + idDeduccion + " - " + totalD + " " + cantNeta);
                         consulta = "";
-                        consulta = "update Nominas set totalD=@totalD and cantidadNeta=@cantNeta where idNomina=@idnm";
+                        consulta = "update Nominas set totalD=@totalD, cantidadNeta=@cantNeta where idNomina=@idn";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@totalD", totalD);
                         comando.Parameters.AddWithValue("@cantNeta", cantNeta);
