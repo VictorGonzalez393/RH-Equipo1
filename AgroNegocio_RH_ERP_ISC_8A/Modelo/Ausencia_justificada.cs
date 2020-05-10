@@ -13,8 +13,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public string FechaInicio { get; set; }
         public string FechaFin { get; set; }
         public string Tipo { get; set; }
-        public int IdEmpleadoS { get; set; }
-        public int IdEmpleadoA { get; set; }
+        public double IdEmpleadoS { get; set; }
+        public double IdEmpleadoA { get; set; }
         public char Estatus { get; set; }
         public Ausencia_justificada(int idAusencia, string fechaSolicitud, string fechaInicio, string fechaFin, string tipo, int idEmpleadoS, int idEmpleadoA, char estatus)
         {

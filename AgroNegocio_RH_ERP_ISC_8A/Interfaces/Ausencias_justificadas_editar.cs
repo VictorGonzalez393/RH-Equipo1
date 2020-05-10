@@ -38,7 +38,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 ausencia_Justificada.FechaSolicitud = fechaSolicitud_ausencia_Justificada.Text;
                 ausencia_Justificada.FechaInicio = fechaInicio_ausencia_Justificada.Text;
-                ausencia_Justificada.FechaFin = fechaFin_ausencia_Justificada.Text;
+                ausencia_Justificada.FechaFin = fechaFin_ausencia_Justficada.Text;
                 ausencia_Justificada.Tipo = tipo_ausencia_Justificada.Text;
                 ausencia_Justificada.IdEmpleadoS = (int)id_empleadoS.Value;
                 ausencia_Justificada.IdEmpleadoA = (int)id_empleadoA.Value;
@@ -115,7 +115,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 if (!string.IsNullOrWhiteSpace(fechaInicio_ausencia_Justificada.Text))
                 {
-                    if (!string.IsNullOrWhiteSpace(fechaFin_ausencia_Justificada.Text))
+                    if (!string.IsNullOrWhiteSpace(fechaFin_ausencia_Justficada.Text))
                     {
                         if (!string.IsNullOrWhiteSpace(tipo_ausencia_Justificada.Text))
                         {

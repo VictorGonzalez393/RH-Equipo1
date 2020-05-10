@@ -68,7 +68,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
-                    (double)row.Cells[3].Value,
+                    (string)row.Cells[3].Value,
+                    (string)row.Cells[4].Value,
+                    (double)row.Cells[5].Value,
+                    (double)row.Cells[6].Value,
+                    (string)row.Cells[7].Value,
                     Convert.ToChar(row.Cells[4].Value)
                     );
                 Ausencias_justificadas_editar ausencias_Justificadas_Editar = new Ausencias_justificadas_editar(ausencia_Justificada_editar);
@@ -123,7 +127,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 try
                 {
-                    string consulta_wh = "nombre like '%'+'" + buscarJustificacionesTxt.Text + "'+'%'";
+                    string consulta_wh = "fechaSolicitud like '%'+'" + buscarJustificacionesTxt.Text + "'+'%'";
                     tabla_Justificaciones.DataSource = ausencias_Justificadas_DAO.buscar(consulta_wh);
                 }
                 catch (Exception ex)
@@ -169,7 +173,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
-                    (double)row.Cells[3].Value,
+                    (string)row.Cells[3].Value,
+                    (string)row.Cells[4].Value,
+                    (double)row.Cells[5].Value,
+                    (double)row.Cells[6].Value,
+                    (string)row.Cells[7].Value,
                     Convert.ToChar(row.Cells[4].Value)
                     );
                 Ausencias_justificadas_editar ausencias_Justificadas_Editar = new Ausencias_justificadas_editar(ausencia_Justificada_editar);

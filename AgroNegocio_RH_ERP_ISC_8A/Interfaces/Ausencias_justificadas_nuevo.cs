@@ -47,7 +47,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 if (!string.IsNullOrWhiteSpace(fechaInicio_ausencia_Justificada.Text))
                 {
-                    if (!string.IsNullOrWhiteSpace(fechaFin_ausencia_Justificada.Text))
+                    if (!string.IsNullOrWhiteSpace(fechaFin_ausencia_Justficada.Text))
                     {
                         if (!string.IsNullOrWhiteSpace(tipo_ausencia_Justificada.Text))
                         {
@@ -101,7 +101,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Ausencia_justificada ausencia_Justificada_new = new Ausencia_justificada(0, fechaSolicitud_ausencia_Justificada.Text, fechaInicio_ausencia_Justificada.Text, fechaFin_ausencia_Justificada.Text, tipo_ausencia_Justificada.Text, (int)idEmpleadoS_ausencia_Justificada.Value, (int)idEmpleadoA_ausencia_Justificada.Value, 'A');
                 try
                 {
-                    if (ausencias_Justificadas_DAO.validarAusencia_justificada(ausencia_Justificada_new))
+                    if (ausencias_Justificadas_DAO.validarAusencia_iustificada(ausencia_Justificada_new))
                     {
 
                         ausencias_Justificadas_DAO.registrar(ausencia_Justificada_new);

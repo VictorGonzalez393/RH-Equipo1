@@ -24,7 +24,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Ausencia_justificada> ausencias_Justificadas = new List<Ausencia_justificada>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from Deducciones " + consulta_wh;
+                string consulta = "select * from AusenciasJustificadas " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
