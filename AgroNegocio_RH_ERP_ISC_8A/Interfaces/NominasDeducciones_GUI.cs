@@ -57,7 +57,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
             else
             {
-                consulta_where = " where estatus = @estatus";
+                consulta_where = " where estatus=@estatus";
             }         
             List<string> parametros = new List<string>();
             parametros.Add("@estatus");
@@ -74,33 +74,40 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            Deduccion selecD = (Deduccion)deduccions.SelectedItem; //obtiene la deduccion seleccionada
-            int d = selecD.IdDeduccion; 
-
-            if (!existeDeduccion(d))
+            if (deduccions.SelectedIndex == -1)
             {
-                ////Guardar 
-                double SalarioTotal = salarioE * (nomina.diasTrabajados - nomina.faltas);
-                Console.WriteLine("Salario total: " + SalarioTotal);
-                double importe = (SalarioTotal * selecD.Porcentaje) / 100;
-                Console.WriteLine("porcentaje: " + selecD.Porcentaje);
-                double totalD = (double)nomina.totalD + importe;
-                double cantNeta = (double) nomina.cantidadNeta - importe;
-                Console.WriteLine("importe: " + importe + " cantidadNeta: " + cantNeta);
-                NominaDeduccion nominaD = new NominaDeduccion(Convert.ToInt32(id_nomina.Text), selecD.IdDeduccion, importe, 'A', selecD.Nombre, selecD.Descripcion);
-                if (nd_dao.registrar(nominaD, totalD, cantNeta))
-                {
-                    Mensajes.Info("Se agregó la Deducción.");
-                    Actualizar();
-                }
-                else
-                {
-                    Mensajes.Error("Error al registrar NominaDeducción");
-                }
+                MessageBox.Show("Selecciona una Deducción");
             }
             else
             {
-                Mensajes.Error("La Deducción ya está agregada.");
+                Deduccion selecD = (Deduccion)deduccions.SelectedItem; //obtiene la deduccion seleccionada
+                int d = selecD.IdDeduccion;
+
+                if (!existeDeduccion(d))
+                {
+                    ////Guardar 
+                    double SalarioTotal = salarioE * (nomina.diasTrabajados - nomina.faltas);
+                    Console.WriteLine("Salario total: " + SalarioTotal);
+                    double importe = (SalarioTotal * selecD.Porcentaje) / 100;
+                    Console.WriteLine("porcentaje: " + selecD.Porcentaje);
+                    double totalD = (double)nomina.totalD + importe;
+                    double cantNeta = (double)nomina.cantidadNeta - importe;
+                    Console.WriteLine("importe: " + importe + " cantidadNeta: " + cantNeta);
+                    NominaDeduccion nominaD = new NominaDeduccion(Convert.ToInt32(id_nomina.Text), selecD.IdDeduccion, importe, 'A', selecD.Nombre, selecD.Descripcion);
+                    if (nd_dao.registrar(nominaD, totalD, cantNeta))
+                    {
+                        Mensajes.Info("Se agregó la Deducción.");
+                        Actualizar();
+                    }
+                    else
+                    {
+                        Mensajes.Error("Error al registrar NominaDeducción");
+                    }
+                }
+                else
+                {
+                    Mensajes.Error("La Deducción ya está agregada.");
+                }
             }
         }
 
@@ -149,25 +156,21 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
             else
             {
-                DialogResult resultado = MessageBox.Show("Selecciona la Deducción a eliminar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 MessageBox.Show("Selecciona la Deducción a eliminar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Los datos guardados correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (result == DialogResult.OK)
-            {
-                Close();
-            }
+            Close();
         }
 
         private void Actualizar()
         {
             /* Llenar la tabla de deduccines agregadas a la nomina*/
-            nd = nd_dao.consultaGeneral(" where nd.idNomina=@idNomina and nd.estatus=@estatus",
-                new List<string>() { "@idNomina", "@estatus" },
-                new List<object>() { idNomina, 'A' });
+            nd = nd_dao.consultaGeneral(" where idNomina=@idNomina",
+                new List<string>() { "@idNomina" },
+                new List<object>() { idNomina });
 
             foreach (NominaDeduccion nd_temp in nd)
             {

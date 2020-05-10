@@ -18,7 +18,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<NominaDeduccion> deducciones = new List<NominaDeduccion>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select nd.idNomina, nd.idDeduccion, nd.importe, nd.estatus, d.Nombre, d.Descripcion from Deducciones d join NominasDeducciones nd on d.idDeduccion = nd.idDeduccion" + consulta_wh;
+                string consulta = "select * from NominasDeducciones_Tabla" + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -68,7 +68,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                         consulta = "update Nominas set totalD=@totalD, cantidadNeta=@cantNeta where idNomina=@idNomina";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@totalD",totalD);
-                        comando.Parameters.AddWithValue("@cantidadNeta", cantNeta);
+                        comando.Parameters.AddWithValue("@cantNeta", cantNeta);
                         comando.Parameters.AddWithValue("@idNomina", deduccion.idNomina);
                         comando.ExecuteNonQuery();
                     }   
@@ -102,7 +102,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                         consulta = "update Nominas set totalD=@totalD and cantidadNeta=@cantNeta where idNomina=@idNomina";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@totalD", totalD);
-                        comando.Parameters.AddWithValue("@cantidadNeta", cantNeta);
+                        comando.Parameters.AddWithValue("@cantNeta", cantNeta);
                         comando.Parameters.AddWithValue("@idNomina", idNomina);
                         comando.ExecuteNonQuery();
                     }
