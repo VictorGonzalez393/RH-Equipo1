@@ -87,10 +87,13 @@
             // 
             // fechaSolicitud_ausencia_Justificada
             // 
+            this.fechaSolicitud_ausencia_Justificada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaSolicitud_ausencia_Justificada.Location = new System.Drawing.Point(179, 165);
+            this.fechaSolicitud_ausencia_Justificada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.fechaSolicitud_ausencia_Justificada.Name = "fechaSolicitud_ausencia_Justificada";
             this.fechaSolicitud_ausencia_Justificada.Size = new System.Drawing.Size(220, 22);
             this.fechaSolicitud_ausencia_Justificada.TabIndex = 42;
+            this.fechaSolicitud_ausencia_Justificada.Value = new System.DateTime(2020, 5, 25, 23, 59, 59, 0);
             this.fechaSolicitud_ausencia_Justificada.ValueChanged += new System.EventHandler(this.fechaSolicitud_ausencia_Justificada_ValueChanged);
             // 
             // id_empleadoA
@@ -130,18 +133,24 @@
             // 
             // fechaInicio_ausencia_Justificada
             // 
+            this.fechaInicio_ausencia_Justificada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaInicio_ausencia_Justificada.Location = new System.Drawing.Point(135, 211);
+            this.fechaInicio_ausencia_Justificada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.fechaInicio_ausencia_Justificada.Name = "fechaInicio_ausencia_Justificada";
             this.fechaInicio_ausencia_Justificada.Size = new System.Drawing.Size(218, 22);
             this.fechaInicio_ausencia_Justificada.TabIndex = 37;
+            this.fechaInicio_ausencia_Justificada.Value = new System.DateTime(2020, 5, 25, 23, 59, 59, 0);
             this.fechaInicio_ausencia_Justificada.ValueChanged += new System.EventHandler(this.fechaInicio_ausencia_Justificada_ValueChanged);
             // 
             // fechaFin_ausencia_Justficada
             // 
+            this.fechaFin_ausencia_Justficada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaFin_ausencia_Justficada.Location = new System.Drawing.Point(443, 212);
+            this.fechaFin_ausencia_Justficada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.fechaFin_ausencia_Justficada.Name = "fechaFin_ausencia_Justficada";
             this.fechaFin_ausencia_Justficada.Size = new System.Drawing.Size(223, 22);
             this.fechaFin_ausencia_Justficada.TabIndex = 36;
+            this.fechaFin_ausencia_Justficada.Value = new System.DateTime(2020, 5, 25, 23, 59, 59, 0);
             this.fechaFin_ausencia_Justficada.ValueChanged += new System.EventHandler(this.fechaFin_ausencia_Justficada_ValueChanged);
             // 
             // label8
