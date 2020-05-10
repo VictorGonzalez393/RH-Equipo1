@@ -14,7 +14,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class NominasDeducciones_GUI : Form
     {
-        int idEmp, idNomina;
+        int idEmp, idNom;
         Empleados_DAO em_dao;
         Nomina_DAO nom_dao;
         Deducciones_DAO ded_dao;
@@ -29,26 +29,27 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             InitializeComponent();
         }
 
-        public NominasDeducciones_GUI(int idNomina, int idEmpleado)
+        public NominasDeducciones_GUI(Nomina nom, int idEmpleado, string name,double salarioE)
         {
             InitializeComponent();
             this.idEmp = idEmpleado;
-            this.idNomina = idNomina;
+            //Mensajes.Info("Nomina: " + nom.idNomina + " f:" + nom.fechaPago);
+            this.id_nomina.Text = Convert.ToString(nom.idNomina);
             em_dao = new Empleados_DAO();
             ded_dao = new Deducciones_DAO();
             nom_dao = new Nomina_DAO();
             nd_dao = new NominaDeduccion_DAO();
+            nomina = nom;
+            this.empleadotxt.Text = name;
+           
+
         }
 
 
         private void NominasDeducciones_GUI_Load(object sender, EventArgs e)
         {
-            /* Llenar campos idNomina y Nombre de empleado*/
-            id_nomina.Text = idNomina.ToString();
-            empleadotxt.Text = em_dao.getNombre(idEmp);
-            salarioE = em_dao.getSalario(idEmp);
-            nomina = nom_dao.ExtraerNomina(idNomina);
-
+            //idNom = nomina.idNomina;
+            salarioE = this.em_dao.getSalario(nomina.idEmpleado);
             /*Llenar el combo de deducciones existentes en la BD*/
             string consulta_where="";
             if (salarioE <= salarioMin)
@@ -76,7 +77,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (deduccions.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecciona una Deducción");
+                Mensajes.Error("Selecciona una Deducción");
             }
             else
             {
@@ -87,11 +88,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 {
                     ////Guardar 
                     double SalarioTotal = salarioE * (nomina.diasTrabajados - nomina.faltas);
+                    Console.WriteLine("SalarioE" + salarioE);
+                    Console.WriteLine("nomina " + nomina.diasTrabajados);
                     Console.WriteLine("Salario total: " + SalarioTotal);
                     double importe = (SalarioTotal * selecD.Porcentaje) / 100;
                     Console.WriteLine("porcentaje: " + selecD.Porcentaje);
-                    double totalD = (double)nomina.totalD + importe;
-                    double cantNeta = (double)nomina.cantidadNeta - importe;
+                    Console.WriteLine("CantidadNeta: "+nomina.cantidadNeta + " TotalD: " + nomina.totalD);
+                    double totalD = Convert.ToDouble(nomina.totalD) + importe;
+
+                    double cantNeta = Convert.ToDouble(nomina.cantidadNeta) - importe;
                     Console.WriteLine("importe: " + importe + " cantidadNeta: " + cantNeta);
                     NominaDeduccion nominaD = new NominaDeduccion(Convert.ToInt32(id_nomina.Text), selecD.IdDeduccion, importe, 'A', selecD.Nombre, selecD.Descripcion);
                     if (nd_dao.registrar(nominaD, totalD, cantNeta))
@@ -134,24 +139,25 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     if (resultado == DialogResult.Yes)
                     {
                         DataGridViewRow row = tablaNominasD.SelectedRows[0];
-                        int idDeduc = (int)row.Cells[0].Value;
-                        double importe = (double)row.Cells[3].Value;
-                        double totalD = (double)nomina.totalD - importe;
-                        double cantNeta = (double)nomina.cantidadNeta + importe;
-                        if(nd_dao.eliminar(idDeduc, idNomina, totalD, cantNeta))
+                        int idDeduc = Convert.ToInt32(row.Cells[0].Value);
+                        double importe = Convert.ToDouble(row.Cells[3].Value);
+                        double totalD = Convert.ToDouble(nomina.totalD) - importe;
+                        double cantNeta = Convert.ToDouble(nomina.cantidadNeta) + importe;
+                        Console.WriteLine("DATOS: " + idDeduc + " imp:" + importe + " totalD: " + totalD + " cantNeta: " + cantNeta+" Nomina" +nomina.idNomina);
+                        if(nd_dao.eliminar(idDeduc, nomina.idNomina, totalD, cantNeta))
                         {
-                            MessageBox.Show("Se eliminó la Deducción.");
+                            Mensajes.Info("Se eliminó la Deducción.");
                             Actualizar();
                         }
                         else
                         {
-                            MessageBox.Show("Error al borrar la Deducción.");
+                            Mensajes.Error("Error al borrar la Deducción.");
                         }   
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al intentar eliminar el departamento.");
+                    Mensajes.Error("Error al intentar eliminar el nómina deducción.");
                 }
             }
             else
@@ -170,7 +176,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             /* Llenar la tabla de deduccines agregadas a la nomina*/
             nd = nd_dao.consultaGeneral(" where idNomina=@idNomina",
                 new List<string>() { "@idNomina" },
-                new List<object>() { idNomina });
+                new List<object>() { nomina.idNomina});
 
             foreach (NominaDeduccion nd_temp in nd)
             {

@@ -112,8 +112,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             if (diasTrabajados.Value != 0)
             {
-                decimal dias = diasTrabajados.Value - faltas.Value;
-                sueldoTotal = (double)dias * salarioE;
+                double dias = Convert.ToDouble(diasTrabajados.Value) - Convert.ToDouble(faltas.Value);
+                sueldoTotal = dias * salarioE;
                 for (int i = 0; i < listDeducciones.Items.Count; i++)
                 {
                     if (listDeducciones.GetSelected(i) == true)
@@ -188,7 +188,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     Nomina n = new Nomina(idEmp, (int)idNomina.Value, fechaPago.Text,
                         Convert.ToDecimal(totalP.Text), Convert.ToDecimal(totalD.Text), Convert.ToDecimal(cantNeta.Text), (int)diasTrabajados.Value, (int)faltas.Value,
                         fechaInicio.Text, fechaFin.Text, fp.nombre, 'A');
-                    if (nomina_DAO.insertar(n) == true)
+                    if (nomina_DAO.editar(n) == true)
                     {
                         double imp;
                         for (int i = 0; i < listDeducciones.Items.Count; i++)
@@ -202,7 +202,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                                 nomina_DAO.insertarND((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()), imp);
                                 Console.WriteLine("Deduccion:" + listDeducciones.Items[i].ToString() + " porcentaje: " + porcentaje + " imp:" + imp);
                             }
-
+                            
                         }
                         for (int i = 0; i < listPercepciones.Items.Count; i++)
                         {

@@ -94,7 +94,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update Nominas set formaPago=@fpago,totalP=@tP,totalD=@tD,cantidadNeta=@cn," +
+                    string consulta = "update Nominas set fechaPago=@fpago,totalP=@tP,totalD=@tD,cantidadNeta=@cn," +
                         "diasTrabajados=@diasT,faltas=@fal,fechaInicio=@fInicio,fechaFin=@fFin,idEmpleado=@idEmp,idFormaPago=@idForP where idNomina=@id";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
@@ -288,7 +288,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select * from Nominas_Tabla where idNomina=" + id +" and estatus='A'";
+                    string consulta = "select * from Nominas where idNomina=" + id +" and estatus='A'";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
 

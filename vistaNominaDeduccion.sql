@@ -5,3 +5,7 @@ Create view NominasDeducciones_Tabla as
 	go 
 
 select * from NominasDeducciones_Tabla where idNomina=1;
+delete from NominasDeducciones where idNomina=1 and idDeduccion=3 
+select * from Nominas_Tabla;
+
+update NominasDeducciones set estatus='A' where idNomina=1 and idDeduccion=3

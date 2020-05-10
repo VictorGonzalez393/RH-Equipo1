@@ -133,8 +133,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
            
             if (diasTrabajados.Value != 0)
             {
-               decimal dias = diasTrabajados.Value - faltas.Value;
-                sueldoTotal = (double)dias * salarioE;
+               double dias = Convert.ToDouble(diasTrabajados.Value) - Convert.ToDouble(faltas.Value);
+                sueldoTotal = dias * salarioE;
                 for (int i = 0; i < listDeducciones.Items.Count; i++)
                 {
                     if (listDeducciones.GetSelected(i) == true)

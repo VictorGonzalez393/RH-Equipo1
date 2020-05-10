@@ -51,6 +51,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             InitializeComponent();
             nombre.Text=empleado;
             this.idEmp = idEmp;
+            salarioE = em_dao.getSalario(this.idEmp);
             try { 
                 nominas_DAO = new Nomina_DAO();
                 nominas_DAO.table = "Nominas_Tabla";
@@ -154,7 +155,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     if (resultado == DialogResult.Yes)
                     {
                         DataGridViewRow row = tablaNomina.SelectedRows[0];
-                        int idNomina = (int)row.Cells[0].Value;
+                        int idNomina = (int)row.Cells[1].Value;
                         nominas_DAO.eliminar(idNomina);
 
                     }
@@ -202,11 +203,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom,this.idEmp); /*Mandar el GUI con esos valores*/
+               
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+                Nomina nom = new Nomina(
+                    (int)row.Cells[1].Value,
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[2].Value,
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToDecimal(row.Cells[4].Value),
+                    Convert.ToDecimal(row.Cells[5].Value),
+                    (int)row.Cells[6].Value,
+                    (int)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (string)row.Cells[10].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+                if (salarioE <= salarioMin)
+                {
+
+                }
+                else
+                {
+
+                }
+                NominasDeducciones_GUI np = new NominasDeducciones_GUI(nom,this.idEmp,this.nombre.Text,salarioE); /*Mandar el GUI con esos valores*/
                 this.SetVisibleCore(false);
                 np.ShowDialog();
                 this.SetVisibleCore(true);
+                actualizar();
 
             }
             else

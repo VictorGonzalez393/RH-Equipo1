@@ -63,7 +63,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@estatus", deduccion.estatus);
                     if (comando.ExecuteNonQuery() != 0)
                     {
-                        insert = true;
+                        
                         consulta = "";
                         consulta = "update Nominas set totalD=@totalD, cantidadNeta=@cantNeta where idNomina=@idNomina";
                         comando = new SqlCommand(consulta, conexion);
@@ -71,6 +71,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                         comando.Parameters.AddWithValue("@cantNeta", cantNeta);
                         comando.Parameters.AddWithValue("@idNomina", deduccion.idNomina);
                         comando.ExecuteNonQuery();
+                        insert = true;
                     }   
                     conexion.Close();
                 }
@@ -86,33 +87,42 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
         public bool eliminar(int idNomina, int idDeduccion, double totalD, double cantNeta)
         {
             bool eliminar = false;
+            Console.WriteLine(idNomina + " " + idDeduccion + " " + totalD + " " + cantNeta);
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update NominasDeducciones set estatus='I' where idNomina=@idNomina and idDeduccion=@idDeduccion";
+                    
+                    string consulta = "update NominasDeducciones set estatus=@est where idNomina=@idnom and idDeduccion=@iddec";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idNomina", idNomina);
-                    comando.Parameters.AddWithValue("@idDeduccion", idDeduccion);
+                    comando.Parameters.AddWithValue("@idnom", idNomina);
+                    comando.Parameters.AddWithValue("@iddec", idDeduccion);
+                    comando.Parameters.AddWithValue("@est", 'I');
+                    
                     if (comando.ExecuteNonQuery() != 0)
                     {
-                        eliminar = true;
+                        Console.WriteLine(idNomina + " " + idDeduccion + " - " + totalD + " " + cantNeta);
                         consulta = "";
-                        consulta = "update Nominas set totalD=@totalD and cantidadNeta=@cantNeta where idNomina=@idNomina";
+                        consulta = "update Nominas set totalD=@totalD and cantidadNeta=@cantNeta where idNomina=@idnm";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@totalD", totalD);
                         comando.Parameters.AddWithValue("@cantNeta", cantNeta);
-                        comando.Parameters.AddWithValue("@idNomina", idNomina);
+                        comando.Parameters.AddWithValue("@idn", idNomina);
                         comando.ExecuteNonQuery();
+                        eliminar = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR");
                     }
                     conexion.Close();
                 }
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                Console.WriteLine("Error al eliminar Deduccion de Nomina.");
+                Console.WriteLine("Error al eliminar Deduccion de Nomina."+ ex.Message);
             }
             return eliminar;
         }
