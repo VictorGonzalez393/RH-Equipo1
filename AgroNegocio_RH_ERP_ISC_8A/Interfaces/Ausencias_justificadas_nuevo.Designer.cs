@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ausencias_justificadas_nuevo));
             this.tipo_ausencia_Justificada = new System.Windows.Forms.TextBox();
-            this.fechaInicio_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
-            this.fechaFin_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,13 +41,15 @@
             this.id_justificacion = new System.Windows.Forms.NumericUpDown();
             this.id_empleadoS = new System.Windows.Forms.NumericUpDown();
             this.id_empleadoA = new System.Windows.Forms.NumericUpDown();
-            this.fechaSolicitud_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.justificaciones = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fechaSolicitud_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
+            this.fechaInicio_ausencia_Justificada = new System.Windows.Forms.DateTimePicker();
+            this.fechaFin_ausencia_Justficada = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.id_justificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleadoS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleadoA)).BeginInit();
@@ -63,20 +63,6 @@
             this.tipo_ausencia_Justificada.Name = "tipo_ausencia_Justificada";
             this.tipo_ausencia_Justificada.Size = new System.Drawing.Size(100, 22);
             this.tipo_ausencia_Justificada.TabIndex = 21;
-            // 
-            // fechaInicio_ausencia_Justificada
-            // 
-            this.fechaInicio_ausencia_Justificada.Location = new System.Drawing.Point(137, 207);
-            this.fechaInicio_ausencia_Justificada.Name = "fechaInicio_ausencia_Justificada";
-            this.fechaInicio_ausencia_Justificada.Size = new System.Drawing.Size(218, 22);
-            this.fechaInicio_ausencia_Justificada.TabIndex = 20;
-            // 
-            // fechaFin_ausencia_Justificada
-            // 
-            this.fechaFin_ausencia_Justificada.Location = new System.Drawing.Point(454, 208);
-            this.fechaFin_ausencia_Justificada.Name = "fechaFin_ausencia_Justificada";
-            this.fechaFin_ausencia_Justificada.Size = new System.Drawing.Size(223, 22);
-            this.fechaFin_ausencia_Justificada.TabIndex = 19;
             // 
             // label8
             // 
@@ -183,13 +169,6 @@
             this.id_empleadoA.Size = new System.Drawing.Size(166, 22);
             this.id_empleadoA.TabIndex = 24;
             // 
-            // fechaSolicitud_ausencia_Justificada
-            // 
-            this.fechaSolicitud_ausencia_Justificada.Location = new System.Drawing.Point(178, 169);
-            this.fechaSolicitud_ausencia_Justificada.Name = "fechaSolicitud_ausencia_Justificada";
-            this.fechaSolicitud_ausencia_Justificada.Size = new System.Drawing.Size(220, 22);
-            this.fechaSolicitud_ausencia_Justificada.TabIndex = 25;
-            // 
             // btn_guardar
             // 
             this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
@@ -257,22 +236,52 @@
             this.backToolStripMenuItem.Text = "Back";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
+            // fechaSolicitud_ausencia_Justificada
+            // 
+            this.fechaSolicitud_ausencia_Justificada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaSolicitud_ausencia_Justificada.Location = new System.Drawing.Point(183, 165);
+            this.fechaSolicitud_ausencia_Justificada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.fechaSolicitud_ausencia_Justificada.Name = "fechaSolicitud_ausencia_Justificada";
+            this.fechaSolicitud_ausencia_Justificada.Size = new System.Drawing.Size(220, 22);
+            this.fechaSolicitud_ausencia_Justificada.TabIndex = 50;
+            this.fechaSolicitud_ausencia_Justificada.Value = new System.DateTime(2020, 5, 25, 23, 59, 59, 0);
+            // 
+            // fechaInicio_ausencia_Justificada
+            // 
+            this.fechaInicio_ausencia_Justificada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaInicio_ausencia_Justificada.Location = new System.Drawing.Point(139, 211);
+            this.fechaInicio_ausencia_Justificada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.fechaInicio_ausencia_Justificada.Name = "fechaInicio_ausencia_Justificada";
+            this.fechaInicio_ausencia_Justificada.Size = new System.Drawing.Size(218, 22);
+            this.fechaInicio_ausencia_Justificada.TabIndex = 49;
+            this.fechaInicio_ausencia_Justificada.Value = new System.DateTime(2020, 5, 25, 23, 59, 59, 0);
+            // 
+            // fechaFin_ausencia_Justficada
+            // 
+            this.fechaFin_ausencia_Justficada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaFin_ausencia_Justficada.Location = new System.Drawing.Point(447, 212);
+            this.fechaFin_ausencia_Justficada.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.fechaFin_ausencia_Justficada.Name = "fechaFin_ausencia_Justficada";
+            this.fechaFin_ausencia_Justficada.Size = new System.Drawing.Size(223, 22);
+            this.fechaFin_ausencia_Justficada.TabIndex = 48;
+            this.fechaFin_ausencia_Justficada.Value = new System.DateTime(2020, 5, 25, 23, 59, 59, 0);
+            // 
             // Ausencias_justificadas_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 428);
+            this.Controls.Add(this.fechaSolicitud_ausencia_Justificada);
+            this.Controls.Add(this.fechaInicio_ausencia_Justificada);
+            this.Controls.Add(this.fechaFin_ausencia_Justficada);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.justificaciones);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.fechaSolicitud_ausencia_Justificada);
             this.Controls.Add(this.id_empleadoA);
             this.Controls.Add(this.id_empleadoS);
             this.Controls.Add(this.id_justificacion);
             this.Controls.Add(this.tipo_ausencia_Justificada);
-            this.Controls.Add(this.fechaInicio_ausencia_Justificada);
-            this.Controls.Add(this.fechaFin_ausencia_Justificada);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -301,8 +310,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox tipo_ausencia_Justificada;
-        private System.Windows.Forms.DateTimePicker fechaInicio_ausencia_Justificada;
-        private System.Windows.Forms.DateTimePicker fechaFin_ausencia_Justificada;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -314,12 +321,14 @@
         private System.Windows.Forms.NumericUpDown id_justificacion;
         private System.Windows.Forms.NumericUpDown id_empleadoS;
         private System.Windows.Forms.NumericUpDown id_empleadoA;
-        private System.Windows.Forms.DateTimePicker fechaSolicitud_ausencia_Justificada;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.PictureBox justificaciones;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem IniciotoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker fechaSolicitud_ausencia_Justificada;
+        private System.Windows.Forms.DateTimePicker fechaInicio_ausencia_Justificada;
+        private System.Windows.Forms.DateTimePicker fechaFin_ausencia_Justficada;
     }
 }
