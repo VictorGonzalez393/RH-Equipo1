@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.percepciones = new System.Windows.Forms.ComboBox();
+            this.percepciones_cb = new System.Windows.Forms.ComboBox();
             this.id_nomina = new System.Windows.Forms.TextBox();
             this.empleadotxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btn_agregar);
-            this.groupBox1.Controls.Add(this.percepciones);
+            this.groupBox1.Controls.Add(this.percepciones_cb);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox1.Location = new System.Drawing.Point(12, 92);
@@ -85,14 +85,14 @@
             this.btn_agregar.TabIndex = 48;
             this.btn_agregar.UseVisualStyleBackColor = true;
             // 
-            // percepciones
+            // percepciones_cb
             // 
-            this.percepciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.percepciones.FormattingEnabled = true;
-            this.percepciones.Location = new System.Drawing.Point(135, 38);
-            this.percepciones.Name = "percepciones";
-            this.percepciones.Size = new System.Drawing.Size(254, 26);
-            this.percepciones.TabIndex = 46;
+            this.percepciones_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.percepciones_cb.FormattingEnabled = true;
+            this.percepciones_cb.Location = new System.Drawing.Point(135, 38);
+            this.percepciones_cb.Name = "percepciones_cb";
+            this.percepciones_cb.Size = new System.Drawing.Size(254, 26);
+            this.percepciones_cb.TabIndex = 46;
             // 
             // id_nomina
             // 
@@ -259,7 +259,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.ComboBox percepciones;
+        private System.Windows.Forms.ComboBox percepciones_cb;
         private System.Windows.Forms.TextBox id_nomina;
         private System.Windows.Forms.TextBox empleadotxt;
         private System.Windows.Forms.Label label8;

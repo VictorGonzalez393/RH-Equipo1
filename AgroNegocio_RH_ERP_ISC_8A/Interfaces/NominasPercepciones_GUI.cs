@@ -45,7 +45,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             List<Percepcion> percepciones = per_dao.consultaGeneral(consulta_where, parametros, valores);
             foreach (Percepcion percep in percepciones)
             {
-                percepciones.Items.Add(percep);
+                percepciones_cb.Items.Add(percep);
             }
 
             Actualizar();
