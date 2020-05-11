@@ -170,6 +170,49 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 
             }
             return new_ID;
+        } 
+
+        public double getPorcentaje(string idD)
+        {
+            double p = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select porcentaje from Deducciones where nombre='" +idD+"'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var sa = comando.ExecuteScalar();
+                if (sa.GetType().Equals(typeof(DBNull)))
+                {
+                    p = 0;
+                }
+                else
+                {
+                    p = (double)sa;
+                }
+                conexion.Close();
+            }
+            return p;
+        }
+        public int getIdD(string idD)
+        {
+            int p = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idDeduccion from Deducciones where nombre='" + idD + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var sa = comando.ExecuteScalar();
+                if (sa.GetType().Equals(typeof(DBNull)))
+                {
+                    p = 0;
+                }
+                else
+                {
+                    p = (int)sa;
+                }
+                conexion.Close();
+            }
+            return p;
         }
 
         /**

@@ -49,7 +49,10 @@
   <ItemGroup>
     <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
+    <Compile Include="Datos\FormasPago_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
+    <Compile Include="Datos\NominaDeduccion_DAO.cs" />
+    <Compile Include="Datos\NominaPercepcion_DAO.cs" />
     <Compile Include="Datos\Nomina_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
     <Compile Include="Datos\Deducciones_DAO.cs" />
@@ -131,6 +134,12 @@
     <Compile Include="Interfaces\NominasDeducciones_GUI.Designer.cs">
       <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_GUI.Designer.cs">
+      <DependentUpon>NominasPercepciones_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Nomina_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +181,8 @@
     <Compile Include="Modelo\FormasPago.cs" />
     <Compile Include="Modelo\Horario.cs" />
     <Compile Include="Modelo\Nomina.cs" />
+    <Compile Include="Modelo\NominaDeduccion.cs" />
+    <Compile Include="Modelo\NominaPercepcion.cs" />
     <Compile Include="Modelo\Puesto.cs" />
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Deduccion.cs" />
@@ -319,6 +330,9 @@
     <EmbeddedResource Include="Interfaces\NominasDeducciones_GUI.resx">
       <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NominasPercepciones_GUI.resx">
+      <DependentUpon>NominasPercepciones_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Nomina_editar.resx">
       <DependentUpon>Nomina_editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +391,7 @@
     <None Include="Iconos\cliudadesch.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Iconos\agregar.png" />
     <Content Include="Iconos\agricultura.ico" />
     <Content Include="Iconos\anadir%281%29.png" />
     <Content Include="Iconos\anadir.png" />
@@ -396,6 +411,7 @@
     <Content Include="Iconos\documento.png" />
     <Content Include="Iconos\edit-validated256_25237.png" />
     <Content Include="Iconos\editar.png" />
+    <None Include="Iconos\eliminar.png" />
     <Content Include="Iconos\financiero.png" />
     <Content Include="Iconos\marcador-de-posicion %281%29.png" />
     <Content Include="Iconos\marcador-de-posicion.png" />

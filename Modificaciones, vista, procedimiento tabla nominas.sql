@@ -1,6 +1,7 @@
 use ERP2020
 select * from FormasPago
 insert into FormasPago values(1, 'Crédito','A')
+EXEC sp_RENAME 'FormasPago.estaus' , 'estatus', 'COLUMN'
 insert into Nominas values(1,'4/15/2020',3500,1000,2500,15,0,'4/1/2020','4/15/2020',1,1,'A')
 select * from Nominas
 
@@ -37,7 +38,8 @@ alter procedure sp_agrega_nomina
 as
    declare @cantN float
    set @cantN=@tP-@tD
-	if not exists(select * from Nominas where fechaInicio=@fInicio and fechafin=@fFin and idEmpleado=@idEmp and fechaPago=@fPago and estatus='A')
+	if not exists(select * from Nominas where fechaInicio=@fInicio and fechafin=@fFin and idEmpleado=@idEmp 
+	and fechaPago=@fPago and estatus='A')
 	begin
 	if(@cantN>0)
 		begin
@@ -185,7 +187,7 @@ as
 	go 
 
 --Procedimiento agregar nómina deducción
-create procedure sp_agregar_nominaDeducción
+create procedure sp_agregar_nominaDeduccion
 	@idN int,
 	@idD int,
 	@importe float,
@@ -222,7 +224,7 @@ as
 	go  
 
 --Procedimiento editar nómina deducción
-create procedure sp_editar_nominaDeducción
+create procedure sp_editar_nominaDeduccion
 	@idN int,
 	@idD int,
 	@importe float,
