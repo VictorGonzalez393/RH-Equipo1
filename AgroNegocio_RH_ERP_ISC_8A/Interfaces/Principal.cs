@@ -128,10 +128,5 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             h.ShowDialog();
             this.SetVisibleCore(true);
         }
-
-        private void nóminaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
