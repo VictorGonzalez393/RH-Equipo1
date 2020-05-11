@@ -52,6 +52,7 @@
     <Compile Include="Datos\FormasPago_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
     <Compile Include="Datos\NominaDeduccion_DAO.cs" />
+    <Compile Include="Datos\NominaPercepcion_DAO.cs" />
     <Compile Include="Datos\Nomina_DAO.cs" />
     <Compile Include="Datos\Puestos_DAO.cs" />
     <Compile Include="Datos\Deducciones_DAO.cs" />
@@ -133,6 +134,12 @@
     <Compile Include="Interfaces\NominasDeducciones_GUI.Designer.cs">
       <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NominasPercepciones_GUI.Designer.cs">
+      <DependentUpon>NominasPercepciones_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Nomina_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +182,7 @@
     <Compile Include="Modelo\Horario.cs" />
     <Compile Include="Modelo\Nomina.cs" />
     <Compile Include="Modelo\NominaDeduccion.cs" />
+    <Compile Include="Modelo\NominaPercepcion.cs" />
     <Compile Include="Modelo\Puesto.cs" />
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Deduccion.cs" />
@@ -321,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\NominasDeducciones_GUI.resx">
       <DependentUpon>NominasDeducciones_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NominasPercepciones_GUI.resx">
+      <DependentUpon>NominasPercepciones_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Nomina_editar.resx">
       <DependentUpon>Nomina_editar.cs</DependentUpon>
