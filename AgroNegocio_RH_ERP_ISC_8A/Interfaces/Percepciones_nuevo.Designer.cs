@@ -100,7 +100,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(38, 38);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -124,7 +123,6 @@
             this.label3.Size = new System.Drawing.Size(91, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nombre:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -136,7 +134,6 @@
             this.label4.Size = new System.Drawing.Size(127, 24);
             this.label4.TabIndex = 5;
             this.label4.Text = "Descripción:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -148,7 +145,6 @@
             this.label5.Size = new System.Drawing.Size(132, 24);
             this.label5.TabIndex = 6;
             this.label5.Text = "Días a pagar:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // id_percepcion
             // 
@@ -172,7 +168,6 @@
             0,
             0,
             0});
-            this.id_percepcion.ValueChanged += new System.EventHandler(this.id_percepcion_ValueChanged);
             // 
             // nombre_percepcion
             // 
@@ -180,7 +175,6 @@
             this.nombre_percepcion.Name = "nombre_percepcion";
             this.nombre_percepcion.Size = new System.Drawing.Size(120, 20);
             this.nombre_percepcion.TabIndex = 8;
-            this.nombre_percepcion.TextChanged += new System.EventHandler(this.nombre_percepcion_TextChanged);
             // 
             // descriocion_percepcion
             // 
@@ -188,7 +182,6 @@
             this.descriocion_percepcion.Name = "descriocion_percepcion";
             this.descriocion_percepcion.Size = new System.Drawing.Size(121, 20);
             this.descriocion_percepcion.TabIndex = 9;
-            this.descriocion_percepcion.TextChanged += new System.EventHandler(this.descriocion_percepcion_TextChanged);
             // 
             // dias_percepcion
             // 
