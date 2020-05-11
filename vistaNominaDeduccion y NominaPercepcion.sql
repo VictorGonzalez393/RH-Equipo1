@@ -9,3 +9,11 @@ delete from NominasDeducciones where idNomina=1 and idDeduccion=3
 select * from Nominas_Tabla;
 
 update NominasDeducciones set estatus='A' where idNomina=1 and idDeduccion=3
+
+Create view NominasPercepciones_Tabla as
+select np.idNomina 'idNomina', np.idPercepcion 'idPerc', np.importe 'importe', np.estatus 'estatus', p.Nombre 'nombreP',
+p.Descripcion 'descripcionP' from Percepciones p join NominasPercepciones np on p.idPercepcion = np.idPercepcion
+where np.estatus='A'
+go
+
+select * from NominasPercepciones_Tabla
