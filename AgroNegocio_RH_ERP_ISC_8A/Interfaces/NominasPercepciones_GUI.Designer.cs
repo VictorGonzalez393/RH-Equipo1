@@ -84,6 +84,7 @@
             this.btn_agregar.Size = new System.Drawing.Size(28, 23);
             this.btn_agregar.TabIndex = 48;
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // percepciones_cb
             // 
@@ -226,6 +227,7 @@
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // NominasPercepciones_GUI
             // 
