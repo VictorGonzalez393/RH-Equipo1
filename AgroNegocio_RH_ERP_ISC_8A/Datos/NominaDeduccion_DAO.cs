@@ -93,10 +93,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
                     
-                    string consulta = "update NominasDeducciones set estatus=@est where idNomina=@idnom and idDeduccion=@iddec";
+                    string consulta = "delete from NominasDeducciones where idNomina=@idnom and idDeduccion=@iddec";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@est", 'I');
                     comando.Parameters.AddWithValue("@idnom", idNomina);
                     comando.Parameters.AddWithValue("@iddec", idDeduccion);
                     
@@ -114,7 +113,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     }
                     else
                     {
-                        Console.WriteLine("ERROR");
+                        Console.WriteLine("Error al eliminar de NominasDeducciones");
                     }
                     conexion.Close();
                 }
