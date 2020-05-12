@@ -66,16 +66,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.empleadotxt.Text = name;
         }
 
-        private void btn_agregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_eliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Actualizar()
         {
             /* Llenar la tabla de deduccines agregadas a la nomina*/
