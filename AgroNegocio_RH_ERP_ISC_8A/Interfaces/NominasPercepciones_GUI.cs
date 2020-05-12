@@ -159,6 +159,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             Close();
         }
 
+        private void btn_agregar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void Actualizar()
         {
             /* Llenar la tabla de percepciones agregadas a la nomina*/

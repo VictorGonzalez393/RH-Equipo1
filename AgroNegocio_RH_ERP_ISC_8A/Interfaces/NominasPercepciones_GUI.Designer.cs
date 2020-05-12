@@ -84,6 +84,7 @@
             this.btn_agregar.Size = new System.Drawing.Size(28, 23);
             this.btn_agregar.TabIndex = 48;
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click_1);
             // 
             // percepcions
             // 

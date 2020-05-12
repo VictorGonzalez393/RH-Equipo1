@@ -186,11 +186,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-              /**  int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasPercepciones_GUI np = new NominasPercepciones_GUI(idNom);
+
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+                Nomina nom = new Nomina(
+                    (int)row.Cells[1].Value,
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[2].Value,
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToDecimal(row.Cells[4].Value),
+                    Convert.ToDecimal(row.Cells[5].Value),
+                    (int)row.Cells[6].Value,
+                    (int)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (string)row.Cells[10].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+                if (salarioE <= salarioMin)
+                {
+
+                }
+                else
+                {
+
+                }
+                NominasPercepciones_GUI np = new NominasPercepciones_GUI(nom, this.idEmp, this.nombre.Text, salarioE); /*Mandar el GUI con esos valores*/
                 this.SetVisibleCore(false);
                 np.ShowDialog();
-                this.SetVisibleCore(true);**/
+                this.SetVisibleCore(true);
+                actualizar();
 
             }
             else
