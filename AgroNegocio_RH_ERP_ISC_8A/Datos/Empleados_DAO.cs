@@ -278,6 +278,43 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 
         }
 
+        public double getSalario(int idEmp)
+        {
+            double salario=0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select salario from Empleados where idEmpleado="+idEmp;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var sa = comando.ExecuteScalar();
+                if (sa.GetType().Equals(typeof(DBNull)))
+                {
+                    salario = 0;
+                }
+                else
+                {
+                    salario = (double)sa;
+                }
+                conexion.Close();
+            }
+            return salario;
+        }
+
+        /**METODO PARA OBTENER EL NOMBRE DEL EMPLEADO MEDIANTE SU ID**/
+        public string getNombre(int idEmp)
+        {
+            string nombre = "";
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select nombre from Empleados where idEmpleado=" + idEmp;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var no = comando.ExecuteScalar();
+                nombre = (string)no;
+                conexion.Close();
+            }
+            return nombre;
+        }
 
         public int getidSucursal(string sucursal)
         {

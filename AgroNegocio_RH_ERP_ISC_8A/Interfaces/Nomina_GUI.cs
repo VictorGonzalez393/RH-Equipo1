@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgroNegocio_RH_ERP_ISC_8A.Datos;
+using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
@@ -16,12 +17,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         public int idEmp { get; set; }
         Nomina_DAO nominas_DAO;
         string aux1, aux2;
+        double salarioE = 0;
+        double salarioMin = 123.22;
+        Empleados_DAO em_dao = new Empleados_DAO();
         public Nomina_GUI()
         {
             InitializeComponent();
             try
             {
                 nominas_DAO = new Nomina_DAO();
+                salarioE= em_dao.getSalario(this.idEmp);
                 nominas_DAO.table = "Nominas_Tabla";
                 nominas_DAO.order_by = "ID";
                 nominas_DAO.where = "ID_Empleado=" + idEmp;
@@ -46,6 +51,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             InitializeComponent();
             nombre.Text=empleado;
             this.idEmp = idEmp;
+            salarioE = em_dao.getSalario(this.idEmp);
             try { 
                 nominas_DAO = new Nomina_DAO();
                 nominas_DAO.table = "Nominas_Tabla";
@@ -75,6 +81,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 tablaNomina.DataSource = nominas_DAO.getSigPagina();
                 aux1 = lbl_pagina.Text;
                 aux2 = lbl_total.Text;
+                salarioE = em_dao.getSalario(this.idEmp);
                 lbl_pagina.Text = aux1 + " " + nominas_DAO.actual_page;
                 lbl_total.Text = aux2 + " " + nominas_DAO.pages;
             }
@@ -144,11 +151,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                 try
                 {
-                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la percepción?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la nómina?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
                         DataGridViewRow row = tablaNomina.SelectedRows[0];
-                        int idNomina = (int)row.Cells[0].Value;
+                        int idNomina = (int)row.Cells[1].Value;
                         nominas_DAO.eliminar(idNomina);
 
                     }
@@ -157,16 +164,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la percepción");
+                    MessageBox.Show("Error al intentar eliminar la nómina");
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
             else
             {
-                DialogResult resultado = MessageBox.Show("Selecciona la percepción", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult resultado = MessageBox.Show("Selecciona la nómina", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void actualizar()
+        public void actualizar()
         {
             btn_anterior.Enabled = false;
             btn_siguiente.Enabled = true;
@@ -179,11 +186,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasPercepciones_GUI np = new NominasPercepciones_GUI(idNom);
+
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+                Nomina nom = new Nomina(
+                    (int)row.Cells[1].Value,
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[2].Value,
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToDecimal(row.Cells[4].Value),
+                    Convert.ToDecimal(row.Cells[5].Value),
+                    (int)row.Cells[6].Value,
+                    (int)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (string)row.Cells[10].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+                if (salarioE <= salarioMin)
+                {
+
+                }
+                else
+                {
+
+                }
+                NominasPercepciones_GUI np = new NominasPercepciones_GUI(nom, this.idEmp, this.nombre.Text, salarioE); /*Mandar el GUI con esos valores*/
                 this.SetVisibleCore(false);
                 np.ShowDialog();
                 this.SetVisibleCore(true);
+                actualizar();
 
             }
             else
@@ -196,11 +226,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaNomina.SelectedRows.Count == 1)
             {
-                int idNom = (int)tablaNomina.SelectedRows[0].Cells[0].Value;
-                NominasDeducciones_GUI np = new NominasDeducciones_GUI(idNom);
+               
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+                Nomina nom = new Nomina(
+                    (int)row.Cells[1].Value,
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[2].Value,
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToDecimal(row.Cells[4].Value),
+                    Convert.ToDecimal(row.Cells[5].Value),
+                    (int)row.Cells[6].Value,
+                    (int)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (string)row.Cells[10].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+                if (salarioE <= salarioMin)
+                {
+
+                }
+                else
+                {
+
+                }
+                NominasDeducciones_GUI np = new NominasDeducciones_GUI(nom,this.idEmp,this.nombre.Text,salarioE); /*Mandar el GUI con esos valores*/
                 this.SetVisibleCore(false);
                 np.ShowDialog();
                 this.SetVisibleCore(true);
+                actualizar();
 
             }
             else
@@ -227,17 +280,33 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             Nomina_nuevo nn = new Nomina_nuevo(nombre.Text,idEmp);
             nn.ShowDialog();
+            actualizar();
         }
 
         private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Nomina_editar ne = new Nomina_editar(nombre.Text,idEmp);
-            ne.ShowDialog();
+            if (tablaNomina.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+
+                Nomina nominas = new Nomina(
+                    (int)row.Cells[1].Value,
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[2].Value,
+                    Convert.ToDecimal(row.Cells[3].Value),
+                    Convert.ToDecimal(row.Cells[4].Value),
+                    Convert.ToDecimal(row.Cells[5].Value),
+                    (int)row.Cells[6].Value,
+                    (int)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (string)row.Cells[10].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+                Nomina_editar ne = new Nomina_editar(nombre.Text, nominas,salarioE,salarioMin);
+                ne.ShowDialog();
+                actualizar();
+            }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
