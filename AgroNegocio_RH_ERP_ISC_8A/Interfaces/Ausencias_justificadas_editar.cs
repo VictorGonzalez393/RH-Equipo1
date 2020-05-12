@@ -15,19 +15,20 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
     public partial class Ausencias_justificadas_editar : Form
     {
         Ausencias_justificadas_DAO ausencias_Justificadas_DAO;
-        public Ausencias_justificadas_editar()
+        Ausencia_justificada ausencia_Justificada;
+        public Ausencias_justificadas_editar(Ausencia_justificada au)
         {
             InitializeComponent();
-            this.justificaciones = justificaciones;
             ausencias_Justificadas_DAO = new Ausencias_justificadas_DAO();
+            ausencia_Justificada = au;
         }
 
         private void Ausencias_justificadas_editar_Load(object sender, EventArgs e)
         {
-            fechaSolicitud_ausencia_Justificada.Text = ausencia_Justificada.FechaSolicitud;
-            fechaInicio_ausencia_Justificada.Text = ausencia_Justificada.FechaInicio;
-            fechaFin_ausencia_Justficada.Value = ausencia_Justificada.FechaFin;
-            tipo_ausencia_Justificada = ausencia_Justificada.Tipo;
+            fechaSolicitud_ausencia_Justificada.Value =Convert.ToDateTime(ausencia_Justificada.FechaSolicitud);
+            fechaInicio_ausencia_Justificada.Value = Convert.ToDateTime(ausencia_Justificada.FechaInicio);
+            fechaFin_ausencia_Justficada.Value = Convert.ToDateTime(ausencia_Justificada.FechaFin);
+            tipo_ausencia_Justificada.Text = ausencia_Justificada.Tipo;
             id_empleadoS.Value = ausencia_Justificada.IdEmpleadoS;
             id_empleadoA.Value = ausencia_Justificada.IdEmpleadoA;
         }

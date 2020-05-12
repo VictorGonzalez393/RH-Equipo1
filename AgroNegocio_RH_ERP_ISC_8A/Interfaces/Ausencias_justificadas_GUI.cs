@@ -69,11 +69,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
                     (string)row.Cells[3].Value,
-                    (string)row.Cells[4].Value,
-                    (double)row.Cells[5].Value,
-                    (double)row.Cells[6].Value,
-                    (string)row.Cells[7].Value,
-                    Convert.ToChar(row.Cells[4].Value)
+                    Convert.ToChar(row.Cells[4].Value),
+                    ausencias_Justificadas_DAO.getEmpleado((int)row.Cells[5].Value),
+                    (int)row.Cells[5].Value,
+                    ausencias_Justificadas_DAO.getEmpleado((int) row.Cells[8].Value),
+                    (int) row.Cells[8].Value,
+                    Convert.ToChar(row.Cells[11].Value)
                     );
                 Ausencias_justificadas_editar ausencias_Justificadas_Editar = new Ausencias_justificadas_editar(ausencia_Justificada_editar);
                 this.SetVisibleCore(false);
@@ -99,15 +100,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     if (resultado == DialogResult.Yes)
                     {
                         DataGridViewRow row = tabla_Justificaciones.SelectedRows[0];
-                        int idAusenciaJustificada = (int)row.Cells[0].Value;
-                        Ausencias_justificadas_DAO.eliminar(idAusenciaJustificada);
-                        actualizar();
+                        int idAj = (int)row.Cells[0].Value;
+                        ausencias_Justificadas_DAO.eliminar(idAj);
+                        actualizar(); 
 
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la justificacion");
+                    Mensajes.Error("Error al intentar eliminar la justificacion");
                 }
             }
             else
@@ -174,11 +175,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
                     (string)row.Cells[3].Value,
-                    (string)row.Cells[4].Value,
-                    (double)row.Cells[5].Value,
-                    (double)row.Cells[6].Value,
-                    (string)row.Cells[7].Value,
-                    Convert.ToChar(row.Cells[4].Value)
+                    Convert.ToChar(row.Cells[4].Value),
+                    ausencias_Justificadas_DAO.getEmpleado((int)row.Cells[5].Value),
+                    (int)row.Cells[5].Value,
+                    ausencias_Justificadas_DAO.getEmpleado((int)row.Cells[8].Value),
+                    (int)row.Cells[8].Value,
+                    Convert.ToChar(row.Cells[11].Value)
                     );
                 Ausencias_justificadas_editar ausencias_Justificadas_Editar = new Ausencias_justificadas_editar(ausencia_Justificada_editar);
                 this.SetVisibleCore(false);

@@ -259,6 +259,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             p.ShowDialog();
         }
 
+        private void ausenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ausencias_justificadas_GUI a = new Ausencias_justificadas_GUI();
+            SetVisibleCore(false);
+            a.ShowDialog();
+            SetVisibleCore(true);
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

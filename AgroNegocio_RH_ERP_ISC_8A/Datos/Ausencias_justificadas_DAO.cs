@@ -42,10 +42,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(1),
                                                            lector.GetString(2),
                                                            lector.GetString(3),
-                                                           lector.GetString(4),
+                                                           lector.GetString(4)[0],
+                                                           getEmpleado(lector.GetInt32(5)),
                                                            lector.GetInt32(5),
+                                                           getEmpleado(lector.GetInt32(6)),
                                                            lector.GetInt32(6),
-                                                           lector.GetString(7)[0]);
+                                                           lector.GetString(7)[0]) ;
                         ausencias_Justificadas.Add(ausencia_temp);
                     }
                 }
@@ -67,7 +69,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into Deducciones values (@idAusencia, @fechaSolicitud, @fechaInicio, @fechaFin, @tipo, @idEmpleadoS, @idEempleadoA, @estatus)";
+                    string consulta = "insert into AusenciasJustificadas values (@idAusencia, @fechaSolicitud, @fechaInicio, @fechaFin, @tipo, @idEmpleadoS, @idEempleadoA, @estatus)";
                     ausencia_Justificada.IdAusencia = getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
@@ -209,6 +211,35 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 Console.WriteLine("Error al validar justificacion. Error: " + ex.Message);
             }
             return validar;
+        } 
+
+        public string getEmpleado(int idEm)
+        {
+            string em = "";
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "select nombre, apaterno, amaterno from Empleados where idEmpleado='" + idEm + "'";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    SqlDataReader lector = comando.ExecuteReader();
+                    if (lector.HasRows)
+                    {
+                        while (lector.Read())
+                        {
+                            em = lector.GetString(0) + " " + lector.GetString(1) + "" + lector.GetString(3);
+                        }
+
+                    }
+                    conexion.Close();
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine("Error");
+            }
+            return em;
         }
     }
 
