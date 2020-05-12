@@ -93,7 +93,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
 
-                    string consulta = "update NominasPercepciones set estatus=@est where idNomina=@idnom and idPercepcion=@idper";
+                    string consulta = "Delete from NominasPercepciones where idNomina=@idnom and idPercepcion=@idper";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@est", 'I');

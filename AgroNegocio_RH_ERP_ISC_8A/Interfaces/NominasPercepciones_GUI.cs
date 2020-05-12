@@ -30,7 +30,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             salarioE = this.em_dao.getSalario(nomina.idEmpleado);
             /*Llenar el combo de percepciones existentes en la BD*/
             string consulta_where = "";
-            if (salarioMin == salarioE)
+            if (salarioE <= salarioMin)
             {
                 consulta_where = " where estatus=@estatus and nombre <>'Subsidio'";
             }
@@ -68,40 +68,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            if (percepcions.SelectedIndex == -1)
-            {
-                Mensajes.Error("Selecciona una Deducción");
-            }
-            else
-            {
-                Percepcion selecP = (Percepcion)percepcions.SelectedItem; //obtiene la Percepcion seleccionada
-                int p = selecP.IdPercepcion;
-
-                if (!existePercepcion(p))
-                {
-                    ////Guardar 
-                    double importe = (salarioE * per_dao.getDias(selecP.Nombre));
-                    Console.WriteLine("CantidadNeta: " + nomina.cantidadNeta + " TotalD: " + nomina.totalD);
-                    double totalP = Convert.ToDouble(nomina.totalP) + importe;
-
-                    double cantNeta = Convert.ToDouble(nomina.cantidadNeta) - importe;
-                    Console.WriteLine("importe: " + importe + " cantidadNeta: " + cantNeta);
-                    NominaPercepcion nominaP = new NominaPercepcion(Convert.ToInt32(id_nomina.Text), selecP.IdPercepcion, importe, 'A', selecP.Nombre, selecP.Descripcion);
-                    if (np_dao.registrar(nominaP, totalP, cantNeta))
-                    {
-                        Mensajes.Info("Se agregó la Percepción.");
-                        Actualizar();
-                    }
-                    else
-                    {
-                        Mensajes.Error("Error al registrar NominaPercepción");
-                    }
-                }
-                else
-                {
-                    Mensajes.Error("La Percepción ya está agregada.");
-                }
-            }
+            
         }
 
         private Boolean existePercepcion(int d) /*Consultar en la tabla si ya existe la percepción que se quiere agregar*/
@@ -161,7 +128,40 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_agregar_Click_1(object sender, EventArgs e)
         {
+            if (percepcions.SelectedIndex == -1)
+            {
+                Mensajes.Error("Selecciona una Deducción");
+            }
+            else
+            {
+                Percepcion selecP = (Percepcion)percepcions.SelectedItem; //obtiene la Percepcion seleccionada
+                int p = selecP.IdPercepcion;
 
+                if (!existePercepcion(p))
+                {
+                    ////Guardar 
+                    double importe = (salarioE * per_dao.getDias(selecP.Nombre));
+                    Console.WriteLine("CantidadNeta: " + nomina.cantidadNeta + " TotalP: " + nomina.totalP);
+                    double totalP = Convert.ToDouble(nomina.totalP) + importe;
+
+                    double cantNeta = Convert.ToDouble(nomina.cantidadNeta) - importe;
+                    Console.WriteLine("importe: " + importe + " cantidadNeta: " + cantNeta);
+                    NominaPercepcion nominaP = new NominaPercepcion(Convert.ToInt32(id_nomina.Text), selecP.IdPercepcion, importe, 'A', selecP.Nombre, selecP.Descripcion);
+                    if (np_dao.registrar(nominaP, totalP, cantNeta))
+                    {
+                        Mensajes.Info("Se agregó la Percepción.");
+                        Actualizar();
+                    }
+                    else
+                    {
+                        Mensajes.Error("Error al registrar NominaPercepción");
+                    }
+                }
+                else
+                {
+                    Mensajes.Error("La Percepción ya está agregada.");
+                }
+            }
         }
 
         private void Actualizar()
