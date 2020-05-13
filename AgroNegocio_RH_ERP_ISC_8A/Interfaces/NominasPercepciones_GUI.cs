@@ -30,7 +30,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             salarioE = this.em_dao.getSalario(nomina.idEmpleado);
             /*Llenar el combo de percepciones existentes en la BD*/
             string consulta_where = "";
-            if (salarioE <= salarioMin)
+            if (salarioE > salarioMin)
             {
                 consulta_where = " where estatus=@estatus and nombre <>'Subsidio'";
             }
@@ -99,7 +99,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         double totalP = Convert.ToDouble(nomina.totalP) - importe;
                         double cantNeta = Convert.ToDouble(nomina.cantidadNeta) + importe;
                         Console.WriteLine("DATOS: " + idPercep + " imp:" + importe + " totalP: " + totalP + " cantNeta: " + cantNeta + " Nomina" + nomina.idNomina);
-                        if (np_dao.eliminar(idPercep, nomina.idNomina, totalP, cantNeta))
+                        if (np_dao.eliminar(nomina.idNomina, idPercep, totalP, cantNeta))
                         {
                             Mensajes.Info("Se eliminó la Percepción.");
                             Actualizar();
@@ -166,6 +166,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void Actualizar()
         {
+            tablaNominasP.Rows.Clear();
             /* Llenar la tabla de percepciones agregadas a la nomina*/
             np = np_dao.consultaGeneral(" where idNomina=@idNomina",
                 new List<string>() { "@idNomina" },
