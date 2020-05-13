@@ -245,8 +245,9 @@
             this.Controls.Add(this.tablaNominasP);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_salir);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NominasPercepciones_GUI";
-            this.Text = "NominasPercepciones_GUI";
+            this.Text = "Nomina de Percepciones";
             this.Load += new System.EventHandler(this.NominasPercepciones_GUI_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

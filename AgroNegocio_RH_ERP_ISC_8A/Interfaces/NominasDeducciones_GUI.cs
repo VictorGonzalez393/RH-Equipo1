@@ -144,7 +144,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         double totalD = Convert.ToDouble(nomina.totalD) - importe;
                         double cantNeta = Convert.ToDouble(nomina.cantidadNeta) + importe;
                         Console.WriteLine("DATOS: " + idDeduc + " imp:" + importe + " totalD: " + totalD + " cantNeta: " + cantNeta+" Nomina" +nomina.idNomina);
-                        if(nd_dao.eliminar(idDeduc, nomina.idNomina, totalD, cantNeta))
+                        if(nd_dao.eliminar(nomina.idNomina, idDeduc, totalD, cantNeta))
                         {
                             Mensajes.Info("Se eliminó la Deducción.");
                             Actualizar();
