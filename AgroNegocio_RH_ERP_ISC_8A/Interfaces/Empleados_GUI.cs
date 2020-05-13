@@ -260,6 +260,23 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.Close();
         }
 
+        private void ausenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados1.SelectedRows.Count == 1)
+            {
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value;
+                int id = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
+                Ausencias_GUI a = new Ausencias_GUI(nombreemp, id);
+                SetVisibleCore(false);
+                a.ShowDialog();
+                SetVisibleCore(true);
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona a un empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.percepciones_cb = new System.Windows.Forms.ComboBox();
+            this.percepcions = new System.Windows.Forms.ComboBox();
             this.id_nomina = new System.Windows.Forms.TextBox();
             this.empleadotxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btn_agregar);
-            this.groupBox1.Controls.Add(this.percepciones_cb);
+            this.groupBox1.Controls.Add(this.percepcions);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox1.Location = new System.Drawing.Point(12, 92);
@@ -84,15 +84,16 @@
             this.btn_agregar.Size = new System.Drawing.Size(28, 23);
             this.btn_agregar.TabIndex = 48;
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click_1);
             // 
-            // percepciones_cb
+            // percepcions
             // 
-            this.percepciones_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.percepciones_cb.FormattingEnabled = true;
-            this.percepciones_cb.Location = new System.Drawing.Point(135, 38);
-            this.percepciones_cb.Name = "percepciones_cb";
-            this.percepciones_cb.Size = new System.Drawing.Size(254, 26);
-            this.percepciones_cb.TabIndex = 46;
+            this.percepcions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.percepcions.FormattingEnabled = true;
+            this.percepcions.Location = new System.Drawing.Point(135, 38);
+            this.percepcions.Name = "percepcions";
+            this.percepcions.Size = new System.Drawing.Size(254, 26);
+            this.percepcions.TabIndex = 46;
             // 
             // id_nomina
             // 
@@ -193,18 +194,19 @@
             this.importe.Name = "importe";
             this.importe.ReadOnly = true;
             // 
-            // btn_guardar
+            // btn_salir
             // 
-            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(561, 422);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(94, 31);
-            this.btn_guardar.TabIndex = 52;
-            this.btn_guardar.Text = "Salir";
-            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_salir.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.ForeColor = System.Drawing.Color.White;
+            this.btn_salir.Location = new System.Drawing.Point(561, 422);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(94, 31);
+            this.btn_salir.TabIndex = 52;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // pictureBox1
             // 
@@ -226,6 +228,7 @@
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // NominasPercepciones_GUI
             // 
@@ -241,7 +244,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaNominasP);
             this.Controls.Add(this.btn_eliminar);
-            this.Controls.Add(this.btn_guardar);
+            this.Controls.Add(this.btn_salir);
             this.Name = "NominasPercepciones_GUI";
             this.Text = "NominasPercepciones_GUI";
             this.Load += new System.EventHandler(this.NominasPercepciones_GUI_Load);
@@ -259,7 +262,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.ComboBox percepciones_cb;
+        private System.Windows.Forms.ComboBox percepcions;
         private System.Windows.Forms.TextBox id_nomina;
         private System.Windows.Forms.TextBox empleadotxt;
         private System.Windows.Forms.Label label8;
@@ -272,6 +275,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button btn_salir;
     }
 }
