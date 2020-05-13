@@ -24,7 +24,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Ausencia_justificada> ausencias_Justificadas = new List<Ausencia_justificada>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from AusenciasJustificadas " + consulta_wh;
+                string consulta = "select * from AusenciasJustificadas_Tabla " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -43,11 +43,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                            lector.GetString(2),
                                                            lector.GetString(3),
                                                            lector.GetString(4)[0],
-                                                           getEmpleado(lector.GetInt32(5)),
+                                                           lector.GetString(6),
                                                            lector.GetInt32(5),
-                                                           getEmpleado(lector.GetInt32(6)),
-                                                           lector.GetInt32(6),
-                                                           lector.GetString(7)[0]) ;
+                                                           lector.GetString(9),
+                                                           lector.GetInt32(8),
+                                                           lector.GetString(11)[0]) ;
                         ausencias_Justificadas.Add(ausencia_temp);
                     }
                 }
@@ -69,7 +69,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into AusenciasJustificadas values (@idAusencia, @fechaSolicitud, @fechaInicio, @fechaFin, @tipo, @idEmpleadoS, @idEempleadoA, @estatus)";
+                    string consulta = "insert into AusenciasJustificadas values (@idAusencia, @fechaSolicitud, @fechaInicio, @fechaFin, @tipo, @idEmpleadoS, @idEmpleadoA, @estatus)";
                     ausencia_Justificada.IdAusencia = getMaxID();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
@@ -90,7 +90,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al registrar justificacion. Error: " + ex.Message);
+                Console.WriteLine("Error al registrar ausencia. Error: " + ex.Message);
             }
             return insert;
         }
@@ -139,7 +139,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     string consulta = "update AusenciasJustificadas set estatus='I' where idAusencia=@idAusencia";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idDeduccion", idA);
+                    comando.Parameters.AddWithValue("@idAusencia", idA);
                     if (comando.ExecuteNonQuery() != 0)
                         eliminar = true;
                     conexion.Close();
@@ -213,34 +213,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             return validar;
         } 
 
-        public string getEmpleado(int idEm)
-        {
-            string em = "";
-            try
-            {
-                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
-                {
-                    string consulta = "select nombre, apaterno, amaterno from Empleados where idEmpleado='" + idEm + "'";
-                    SqlCommand comando = new SqlCommand(consulta, conexion);
-                    conexion.Open();
-                    SqlDataReader lector = comando.ExecuteReader();
-                    if (lector.HasRows)
-                    {
-                        while (lector.Read())
-                        {
-                            em = lector.GetString(0) + " " + lector.GetString(1) + "" + lector.GetString(3);
-                        }
-
-                    }
-                    conexion.Close();
-                }
-            }
-            catch(SqlException ex)
-            {
-                Console.WriteLine("Error");
-            }
-            return em;
-        }
+       
     }
 
 }

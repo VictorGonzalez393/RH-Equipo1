@@ -53,6 +53,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             SetVisibleCore(false);
             p.ShowDialog();
             this.Close();
+            actualizar();
         }
 
         private void Ausencias_GUI_Load(object sender, EventArgs e)
@@ -119,8 +120,67 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(false);
             au.ShowDialog();
             this.SetVisibleCore(true);
+            actualizar();
         }
 
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaAusencias.SelectedRows.Count != -1)
+            {
+
+                try
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la ausencia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        DataGridViewRow row = tablaAusencias.SelectedRows[0];
+                        int idAu = (int)row.Cells[0].Value;
+                        au_dao.eliminar(idAu);
+
+                    }
+                    actualizar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar eliminar la ausencia");
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona la ausencia", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaAusencias.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = tablaAusencias.SelectedRows[0];
+
+                Ausencia_justificada aus = new Ausencia_justificada(
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[1].Value,
+                    (string)row.Cells[2].Value,
+                    (string)row.Cells[3].Value,
+                    Convert.ToChar(row.Cells[4].Value),
+                    (string)row.Cells[6].Value,
+                    (int)row.Cells[5].Value,
+                    (string)row.Cells[9].Value,
+                    (int)row.Cells[8].Value,
+                    Convert.ToChar(row.Cells[11].Value));
+
+                Ausencias_editar ae = new Ausencias_editar(aus, idEmpleado, txtEmpleado.Text);
+                SetVisibleCore(false);
+                ae.ShowDialog();
+                SetVisibleCore(true);
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una ciudad");
+            }
+        }
         private void actualizar()
         {
             btn_anterior.Enabled = false;

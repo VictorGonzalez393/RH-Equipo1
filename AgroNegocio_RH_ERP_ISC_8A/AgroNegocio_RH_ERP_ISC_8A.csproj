@@ -63,6 +63,12 @@
     <Compile Include="Datos\Paginacion.cs" />
     <Compile Include="Datos\Sucursales_DAO.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
+    <Compile Include="Interfaces\Ausencias_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_editar.Designer.cs">
+      <DependentUpon>Ausencias_editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Ausencias_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     <Compile Include="Mensajes.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Ausencias_editar.resx">
+      <DependentUpon>Ausencias_editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Ausencias_GUI.resx">
       <DependentUpon>Ausencias_GUI.cs</DependentUpon>

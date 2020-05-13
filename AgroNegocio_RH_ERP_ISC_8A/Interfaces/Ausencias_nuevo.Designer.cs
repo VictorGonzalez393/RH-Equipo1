@@ -81,6 +81,7 @@
             this.btn_guardar.TabIndex = 17;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // pictureBox1
             // 
@@ -139,7 +140,6 @@
             this.id_au.Name = "id_au";
             this.id_au.Size = new System.Drawing.Size(120, 20);
             this.id_au.TabIndex = 20;
-            this.id_au.Visible = false;
             // 
             // label2
             // 
@@ -151,7 +151,6 @@
             this.label2.Size = new System.Drawing.Size(35, 24);
             this.label2.TabIndex = 19;
             this.label2.Text = "ID:";
-            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -163,7 +162,6 @@
             this.label3.Size = new System.Drawing.Size(158, 24);
             this.label3.TabIndex = 21;
             this.label3.Text = "Fecha solicitud:";
-            this.label3.Visible = false;
             // 
             // label4
             // 
@@ -175,7 +173,6 @@
             this.label4.Size = new System.Drawing.Size(131, 24);
             this.label4.TabIndex = 22;
             this.label4.Text = "Fecha inicio:";
-            this.label4.Visible = false;
             // 
             // label5
             // 
@@ -187,7 +184,6 @@
             this.label5.Size = new System.Drawing.Size(103, 24);
             this.label5.TabIndex = 23;
             this.label5.Text = "Fecha fin:";
-            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -199,7 +195,6 @@
             this.label6.Size = new System.Drawing.Size(58, 24);
             this.label6.TabIndex = 24;
             this.label6.Text = "Tipo:";
-            this.label6.Visible = false;
             // 
             // label7
             // 
@@ -211,7 +206,6 @@
             this.label7.Size = new System.Drawing.Size(130, 24);
             this.label7.TabIndex = 25;
             this.label7.Text = "Empleado S:";
-            this.label7.Visible = false;
             // 
             // empleadoS
             // 
@@ -231,7 +225,6 @@
             this.label8.Size = new System.Drawing.Size(232, 24);
             this.label8.TabIndex = 27;
             this.label8.Text = "Empleado que autoriza:";
-            this.label8.Visible = false;
             // 
             // fechaSol
             // 
@@ -266,7 +259,6 @@
             // 
             // tipo_cm
             // 
-            this.tipo_cm.Enabled = false;
             this.tipo_cm.FormattingEnabled = true;
             this.tipo_cm.Location = new System.Drawing.Point(400, 140);
             this.tipo_cm.Name = "tipo_cm";
@@ -275,12 +267,12 @@
             // 
             // empleadoA_cm
             // 
-            this.empleadoA_cm.Enabled = false;
             this.empleadoA_cm.FormattingEnabled = true;
             this.empleadoA_cm.Location = new System.Drawing.Point(263, 245);
             this.empleadoA_cm.Name = "empleadoA_cm";
             this.empleadoA_cm.Size = new System.Drawing.Size(295, 21);
             this.empleadoA_cm.TabIndex = 32;
+            this.empleadoA_cm.SelectedIndexChanged += new System.EventHandler(this.empleadoA_cm_SelectedIndexChanged);
             // 
             // Ausencias_nuevo
             // 
