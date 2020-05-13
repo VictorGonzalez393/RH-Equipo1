@@ -141,7 +141,7 @@
             this.vacacionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vacacionesToolStripMenuItem.Image")));
             this.vacacionesToolStripMenuItem.Name = "vacacionesToolStripMenuItem";
             this.vacacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vacacionesToolStripMenuItem.Text = "Vacaciones";
+            this.vacacionesToolStripMenuItem.Text = "Incapacidades";
             // 
             // nóminaToolStripMenuItem
             // 

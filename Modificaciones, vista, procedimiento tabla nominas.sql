@@ -1,4 +1,16 @@
 use ERP2020
+
+--Justificaciones
+create view AusenciasJustificadas_Tabla as
+	select a.idAusencia 'ID', a.fechaSolicitud 'FechaSolicitud', a.fechaInicio 'FechaInicio', a.fechaFin 'FechaFin',
+	a.tipo 'Tipo', a.idEmpleadoS 'ID_EmpleadoS', es.nombre'Nombre_EmpleadoS', es.apaterno 'ApellidoP_ES',  a.idEmpleadoA 'ID_EmpleadoA', ea.nombre'Nombre_EmpleadoA', ea.apaterno 'ApellidoP_EA', a.estatus 'Estatus' from AusenciasJustificadas a 
+	join Empleados es on a.idEmpleadoS=es.idEmpleado join Empleados ea on a.idEmpleadoA=ea.idEmpleado where  a.estatus='A'
+	go
+
+alter table AusenciasJustificadas alter column fechaSolicitud varchar(20) not null
+alter table AusenciasJustificadas alter column fechaInicio varchar(20) not null
+alter table AusenciasJustificadas alter column fechaFin varchar(20) not null
+---
 select * from FormasPago
 insert into FormasPago values(1, 'Crédito','A')
 EXEC sp_RENAME 'FormasPago.estaus' , 'estatus', 'COLUMN'

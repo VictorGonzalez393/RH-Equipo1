@@ -63,11 +63,17 @@
     <Compile Include="Datos\Paginacion.cs" />
     <Compile Include="Datos\Sucursales_DAO.cs" />
     <Compile Include="Datos\UsuarioDAO.cs" />
-    <Compile Include="Interfaces\Ausencias_justificadas_editar.cs">
+    <Compile Include="Interfaces\Ausencias_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Ausencias_justificadas_editar.Designer.cs">
-      <DependentUpon>Ausencias_justificadas_editar.cs</DependentUpon>
+    <Compile Include="Interfaces\Ausencias_GUI.Designer.cs">
+      <DependentUpon>Ausencias_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Ausencias_nuevo.Designer.cs">
+      <DependentUpon>Ausencias_nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Departamentos_editar.cs">
       <SubType>Form</SubType>
@@ -128,18 +134,6 @@
     </Compile>
     <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
       <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Ausencias_justificadas_GUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Ausencias_justificadas_GUI.Designer.cs">
-      <DependentUpon>Ausencias_justificadas_GUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Ausencias_justificadas_nuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Ausencias_justificadas_nuevo.Designer.cs">
-      <DependentUpon>Ausencias_justificadas_nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Horarios_editar.cs">
       <SubType>Form</SubType>
@@ -293,14 +287,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Ausencias_justificadas_editar.resx">
-      <DependentUpon>Ausencias_justificadas_editar.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Ausencias_GUI.resx">
+      <DependentUpon>Ausencias_GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Ausencias_justificadas_GUI.resx">
-      <DependentUpon>Ausencias_justificadas_GUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Ausencias_justificadas_nuevo.resx">
-      <DependentUpon>Ausencias_justificadas_nuevo.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Ausencias_nuevo.resx">
+      <DependentUpon>Ausencias_nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Ciudades_editar.resx">
       <DependentUpon>Ciudades_editar.cs</DependentUpon>

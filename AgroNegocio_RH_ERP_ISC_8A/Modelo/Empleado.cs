@@ -147,6 +147,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public Empleado(int id, string nombre, string v)
         {
 
+        } 
+        override
+        public string ToString()
+        {
+            return this.Nombre+" "+this.Apaterno+" "+this.Amaterno;
         }
     }
 
