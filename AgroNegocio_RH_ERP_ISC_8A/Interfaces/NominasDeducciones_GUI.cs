@@ -173,6 +173,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void Actualizar()
         {
+            tablaNominasD.Rows.Clear();
             /* Llenar la tabla de deduccines agregadas a la nomina*/
             nd = nd_dao.consultaGeneral(" where idNomina=@idNomina",
                 new List<string>() { "@idNomina" },
