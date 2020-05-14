@@ -11,6 +11,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 
     public class Empleado
     {
+        public string NombreCompleto { get { return string.Format("{0} {1} {2}", Nombre, Apaterno, Amaterno); } }
         public int IdEmpleado { get; set; }
         public string Nombre { get; set; }
         public string Apaterno { get; set; }
@@ -139,6 +140,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 
         }
 
+        public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, char estatus) 
+        {
+            IdEmpleado = idEmpleado;
+            Nombre = nombre;
+            Apaterno = apaterno;
+            Amaterno = amaterno;
+            Estatus = estatus;
+        }
+
+
         /// <summary>
         /// Constructor empleado en pruebas de horarios
         /// </summary>
@@ -147,6 +158,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public Empleado(int id, string nombre, string v)
         {
 
+        } 
+        override
+        public string ToString()
+        {
+            return this.Nombre+" "+this.Apaterno+" "+this.Amaterno;
         }
     }
 

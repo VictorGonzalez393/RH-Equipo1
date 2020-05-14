@@ -64,6 +64,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return empleados;
         }
+        public List<Empleado> consultaGeneral2(string consulta_wh, List<string> parametros, List<object> valores)
+        {
+            List<Empleado> empleados = new List<Empleado>();
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idEmpleado,nombre, apaterno, amaterno,estatus from Empleados " + consulta_wh;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                for (int i = 0; i < parametros.Count; i++)
+                {
+                    comando.Parameters.AddWithValue(parametros[i], valores[i]);
+                }
+
+                conexion.Open();
+                SqlDataReader lector = comando.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+
+                        Empleado emp_temp = new Empleado(lector.GetInt32(0), lector.GetString(1),lector.GetString(2),lector.GetString(3),lector.GetString(4)[0]);
+
+                        empleados.Add(emp_temp);
+                    }
+                }
+                conexion.Close();
+            }
+            return empleados;
+        }
 
         /**
          * Registrar
@@ -278,6 +306,43 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 
         }
 
+        public double getSalario(int idEmp)
+        {
+            double salario=0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select salario from Empleados where idEmpleado="+idEmp;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var sa = comando.ExecuteScalar();
+                if (sa.GetType().Equals(typeof(DBNull)))
+                {
+                    salario = 0;
+                }
+                else
+                {
+                    salario = (double)sa;
+                }
+                conexion.Close();
+            }
+            return salario;
+        }
+
+        /**METODO PARA OBTENER EL NOMBRE DEL EMPLEADO MEDIANTE SU ID**/
+        public string getNombre(int idEmp)
+        {
+            string nombre = "";
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select nombre from Empleados where idEmpleado=" + idEmp;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                var no = comando.ExecuteScalar();
+                nombre = (string)no;
+                conexion.Close();
+            }
+            return nombre;
+        }
 
         public int getidSucursal(string sucursal)
         {

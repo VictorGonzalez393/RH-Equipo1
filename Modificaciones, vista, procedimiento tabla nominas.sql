@@ -1,6 +1,19 @@
 use ERP2020
+
+--Justificaciones
+create view AusenciasJustificadas_Tabla as
+	select a.idAusencia 'ID', a.fechaSolicitud 'FechaSolicitud', a.fechaInicio 'FechaInicio', a.fechaFin 'FechaFin',
+	a.tipo 'Tipo', a.idEmpleadoS 'ID_EmpleadoS', es.nombre'Nombre_EmpleadoS', es.apaterno 'ApellidoP_ES',  a.idEmpleadoA 'ID_EmpleadoA', ea.nombre'Nombre_EmpleadoA', ea.apaterno 'ApellidoP_EA', a.estatus 'Estatus' from AusenciasJustificadas a 
+	join Empleados es on a.idEmpleadoS=es.idEmpleado join Empleados ea on a.idEmpleadoA=ea.idEmpleado where  a.estatus='A'
+	go
+
+alter table AusenciasJustificadas alter column fechaSolicitud varchar(20) not null
+alter table AusenciasJustificadas alter column fechaInicio varchar(20) not null
+alter table AusenciasJustificadas alter column fechaFin varchar(20) not null
+---
 select * from FormasPago
 insert into FormasPago values(1, 'Crédito','A')
+EXEC sp_RENAME 'FormasPago.estaus' , 'estatus', 'COLUMN'
 insert into Nominas values(1,'4/15/2020',3500,1000,2500,15,0,'4/1/2020','4/15/2020',1,1,'A')
 select * from Nominas
 
@@ -37,7 +50,8 @@ alter procedure sp_agrega_nomina
 as
    declare @cantN float
    set @cantN=@tP-@tD
-	if not exists(select * from Nominas where fechaInicio=@fInicio and fechafin=@fFin and idEmpleado=@idEmp and fechaPago=@fPago and estatus='A')
+	if not exists(select * from Nominas where fechaInicio=@fInicio and fechafin=@fFin and idEmpleado=@idEmp 
+	and fechaPago=@fPago and estatus='A')
 	begin
 	if(@cantN>0)
 		begin
@@ -185,7 +199,7 @@ as
 	go 
 
 --Procedimiento agregar nómina deducción
-create procedure sp_agregar_nominaDeducción
+create procedure sp_agregar_nominaDeduccion
 	@idN int,
 	@idD int,
 	@importe float,
@@ -222,7 +236,7 @@ as
 	go  
 
 --Procedimiento editar nómina deducción
-create procedure sp_editar_nominaDeducción
+create procedure sp_editar_nominaDeduccion
 	@idN int,
 	@idD int,
 	@importe float,
