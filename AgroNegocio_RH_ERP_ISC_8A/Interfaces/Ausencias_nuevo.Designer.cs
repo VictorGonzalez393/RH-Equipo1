@@ -61,7 +61,7 @@
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(367, 294);
+            this.btn_cancelar.Location = new System.Drawing.Point(320, 294);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
             this.btn_cancelar.TabIndex = 18;
@@ -75,7 +75,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(199, 294);
+            this.btn_guardar.Location = new System.Drawing.Point(208, 294);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(94, 31);
             this.btn_guardar.TabIndex = 17;
@@ -111,7 +111,7 @@
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(641, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(592, 24);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -278,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 347);
+            this.ClientSize = new System.Drawing.Size(592, 347);
             this.Controls.Add(this.empleadoA_cm);
             this.Controls.Add(this.tipo_cm);
             this.Controls.Add(this.fechaFin);

@@ -201,7 +201,7 @@
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(307, 337);
+            this.btn_cancelar.Location = new System.Drawing.Point(284, 337);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
             this.btn_cancelar.TabIndex = 37;
@@ -214,7 +214,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(139, 337);
+            this.btn_guardar.Location = new System.Drawing.Point(172, 337);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(94, 31);
             this.btn_guardar.TabIndex = 36;
