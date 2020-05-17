@@ -166,9 +166,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (string)row.Cells[3].Value,
                     Convert.ToChar(row.Cells[4].Value),
                     (string)row.Cells[6].Value,
-                    (int)row.Cells[5].Value,
+                    (int) row.Cells[8].Value,
                     (string)row.Cells[9].Value,
-                    (int)row.Cells[8].Value,
+                    (int)row.Cells[5].Value,
                     Convert.ToChar(row.Cells[11].Value));
 
                 Ausencias_editar ae = new Ausencias_editar(aus, idEmpleado, txtEmpleado.Text);

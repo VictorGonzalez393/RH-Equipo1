@@ -94,14 +94,13 @@
             // 
             // fechaSol
             // 
-            this.fechaSol.Enabled = false;
             this.fechaSol.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaSol.Location = new System.Drawing.Point(186, 157);
             this.fechaSol.MinDate = new System.DateTime(2020, 5, 12, 0, 0, 0, 0);
             this.fechaSol.Name = "fechaSol";
             this.fechaSol.Size = new System.Drawing.Size(122, 20);
             this.fechaSol.TabIndex = 47;
-            this.fechaSol.Value = new System.DateTime(2020, 5, 12, 18, 39, 19, 0);
+            this.fechaSol.Value = new System.DateTime(2020, 5, 16, 0, 0, 0, 0);
             // 
             // label8
             // 

@@ -48,6 +48,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 tipo_cm.SelectedItem= "Asuntos familiares";
             }
+            
+            empleadoA_cm.SelectedValue = au.IdEmpleadoA;
          
         }
 
