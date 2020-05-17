@@ -102,7 +102,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "update AusenciasJustificadas set fechaSolicitud=@fechaSolicitud, fechaInicio=@fechaInicio, fechaFfin=@fechaFin, tipo=@tipo, idEmpleadoS=@idEmpleadoS, idEmpleadoA=@idEmpleadoA where idAusencia=@idAusencia";
+                    string consulta = "update AusenciasJustificadas set fechaSolicitud=@fechaSolicitud, fechaInicio=@fechaInicio, fechaFin=@fechaFin, tipo=@tipo, idEmpleadoS=@idEmpleadoS, idEmpleadoA=@idEmpleadoA where idAusencia=@idAusencia";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idAusencia", ausencia_Justificada.IdAusencia);

@@ -175,6 +175,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 SetVisibleCore(false);
                 ae.ShowDialog();
                 SetVisibleCore(true);
+                actualizar();
             }
             else
             {

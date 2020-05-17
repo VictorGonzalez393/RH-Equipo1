@@ -62,6 +62,7 @@
             this.empleadoA_cm.Name = "empleadoA_cm";
             this.empleadoA_cm.Size = new System.Drawing.Size(295, 21);
             this.empleadoA_cm.TabIndex = 51;
+            this.empleadoA_cm.SelectedIndexChanged += new System.EventHandler(this.empleadoA_cm_SelectedIndexChanged);
             // 
             // tipo_cm
             // 
@@ -207,6 +208,7 @@
             this.btn_cancelar.TabIndex = 37;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -220,6 +222,7 @@
             this.btn_guardar.TabIndex = 36;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // pictureBox1
             // 
@@ -260,6 +263,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // atrásToolStripMenuItem
             // 
@@ -268,6 +272,7 @@
             this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
             this.atrásToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.atrásToolStripMenuItem.Text = "Atrás";
+            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
             // Ausencias_editar
             // 

@@ -18,6 +18,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Nomina nom;
         Percepciones_DAO percepciones_dao = new Percepciones_DAO();
         Deducciones_DAO deducciones_dao = new Deducciones_DAO();
+        NominaDeduccion_DAO nd_dao = new NominaDeduccion_DAO();
+        NominaPercepcion_DAO np_dao = new NominaPercepcion_DAO();
         FormasPago_DAO fp_dao = new FormasPago_DAO();
         Nomina_DAO nomina_DAO = new Nomina_DAO();
         //NominasDeducciones_DAO nd_dao = new NominasDeducciones_DAO();
