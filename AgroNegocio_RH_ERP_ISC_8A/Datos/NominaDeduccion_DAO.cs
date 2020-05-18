@@ -125,6 +125,62 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return eliminar;
         }
+        public bool eliminar2(int idNomina, int idDeduccion)
+        {
+            bool eliminar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
 
+                    string consulta = "delete from NominasDeducciones where idNomina=@idnom and idDeduccion=@iddec";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idnom", idNomina);
+                    comando.Parameters.AddWithValue("@iddec", idDeduccion);
+
+                    if (comando.ExecuteNonQuery() != 0)
+                    {
+                        eliminar = true;
+                    }
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al eliminar Deduccion de Nomina." + ex.Message);
+            }
+            return eliminar;
+        }
+
+        public bool editar(int idNomina, int idDeduccion, double imp)
+        {
+            bool editar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+
+                    string consulta = "update NominasDeducciones set importe=@imp where idNomina=@idnom and idDeduccion=@iddec";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idnom", idNomina);
+                    comando.Parameters.AddWithValue("@iddec", idDeduccion);
+                    comando.Parameters.AddWithValue("@imp", imp);
+                    if (comando.ExecuteNonQuery() != 0)
+                    {
+                        editar = true;
+                    }
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al eliminar Deduccion de Nomina." + ex.Message);
+            }
+            return editar;
+        }
     }
 }

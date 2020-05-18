@@ -125,5 +125,62 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return eliminar;
         }
+        public bool eliminar2(int idNomina, int idPercepcion)
+        {
+            bool eliminar = false;
+            //Console.WriteLine(idNomina + " " + idPercepcion + " " + totalP + " " + cantNeta);
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+
+                    string consulta = "Delete from NominasPercepciones where idNomina=@idnom and idPercepcion=@idper";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idnom", idNomina);
+                    comando.Parameters.AddWithValue("@idper", idPercepcion);
+                    
+                    if (comando.ExecuteNonQuery() != 0)
+                    {                        
+                        eliminar = true;
+                    }
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al eliminar Percepcion de Nomina." + ex.Message);
+            }
+            return eliminar;
+        }
+        public bool editar(int idNomina, int idPercepcion, double imp)
+        {
+            bool editar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+
+                    string consulta = "update NominasPercepciones set importe=@imp where idNomina=@idnom and idPercepcion=@idper";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idnom", idNomina);
+                    comando.Parameters.AddWithValue("@idper", idPercepcion);
+                    comando.Parameters.AddWithValue("@imp", imp);
+                    if (comando.ExecuteNonQuery() != 0)
+                    {
+                        editar = true;
+                    }
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al eliminar Deduccion de Nomina." + ex.Message);
+            }
+            return editar;
+        }
     }
 }

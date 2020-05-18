@@ -22,11 +22,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         NominaPercepcion_DAO np_dao = new NominaPercepcion_DAO();
         FormasPago_DAO fp_dao = new FormasPago_DAO();
         Nomina_DAO nomina_DAO = new Nomina_DAO();
-        //NominasDeducciones_DAO nd_dao = new NominasDeducciones_DAO();
-        //NominasPercepciones_DAO np_dao = new NominasPercepciones_DAO();
         double salarioE = 0;
         double salarioMin = 0;
         double sueldoTotal = 0;
+        List<NominaDeduccion> ndeduccion;
+        List<NominaPercepcion> npercepcion;
         public Nomina_editar(string emp, Nomina nom, double salarioE, double salarioMin)
         {
             InitializeComponent();
@@ -78,18 +78,28 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 if(f.nombre.Equals(nom.formaPago))
                 formaPago_cm.SelectedItem=f;
             }
-
+            //Console.WriteLine("N: "+nom.idNomina);
+            consulta_where = " where idNomina=@id";
+            parametros = new List<string>();
+            parametros.Add("@id");
+            valores = new List<object>();
+            valores.Add(nom.idNomina);
+            ndeduccion = nd_dao.consultaGeneral(consulta_where, parametros, valores);
+            npercepcion = np_dao.consultaGeneral(consulta_where, parametros, valores);
+            for(int i=0; i < ndeduccion.Count; i++)
+            {
+                listDeducciones.SetSelected(listDeducciones.FindString(ndeduccion[i].nombre), true);
+            }
+            for(int i=0; i < npercepcion.Count; i++)
+            {
+                listPercepciones.SetSelected(listPercepciones.FindString(npercepcion[i].nombre), true);
+            }
             if (salarioE > salarioMin)
             {
-                listPercepciones.SetSelected(listPercepciones.FindString("Sueldo"), true);
-                listDeducciones.SetSelected(listDeducciones.FindString("ISR"), true);
-                listDeducciones.SetSelected(listDeducciones.FindString("IMSS"), true);
                 listPercepciones.Items.RemoveAt(listPercepciones.FindString("Subsidio"));
             }
             else
             {
-                listPercepciones.SetSelected(listPercepciones.FindString("Sueldo"), true);
-                listPercepciones.SetSelected(listPercepciones.FindString("Subsidio"), true);
                 listDeducciones.Items.Clear();
             }
         }
@@ -106,7 +116,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void cantidadNeta_ValueChanged(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void btnCalPer_Click(object sender, EventArgs e)
         {
@@ -140,6 +150,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         }
 
                     }
+                    
                 }
                 totalP.Text = Convert.ToString(tP);
                 if (tD <= tP)
@@ -201,8 +212,31 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
                                 double porcentaje = deducciones_dao.getPorcentaje(listDeducciones.Items[i].ToString()) / 100;
                                 imp = porcentaje * sueldoTotal;
-                                nomina_DAO.insertarND((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()), imp);
-                                Console.WriteLine("Deduccion:" + listDeducciones.Items[i].ToString() + " porcentaje: " + porcentaje + " imp:" + imp);
+                                for (int j = 0; j < ndeduccion.Count; j++)
+                                {
+                                    if (listDeducciones.Items[i].ToString().Equals(ndeduccion[j].nombre)) { 
+                                        if (nd_dao.editar((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()), imp) != true)
+                                        {
+                                            Mensajes.Error("Error al editar la nomina deducción");
+                                        }
+                                    }
+                                    else
+                                    {
+                                       nomina_DAO.insertarND((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()), imp);
+                                    }
+                                }
+                                
+                            }
+                            else
+                            {
+                                for (int j = 0; j < ndeduccion.Count; j++)
+                                {                                  
+                                    if (listDeducciones.Items[i].ToString().Equals(ndeduccion[j].nombre))
+                                    {
+                                        nd_dao.eliminar2((int)idNomina.Value, deducciones_dao.getIdD(listDeducciones.Items[i].ToString()));
+                                        
+                                    }
+                                }
                             }
                             
                         }
@@ -219,7 +253,32 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                                 {
                                     imp = percepciones_dao.getDias(listPercepciones.Items[i].ToString()) * salarioE;
                                 }
-                                nomina_DAO.insertarNP((int)idNomina.Value, percepciones_dao.getIdP(listPercepciones.Items[i].ToString()), imp);
+                                for (int j = 0; j < npercepcion.Count; j++)
+                                {
+                                    if (listPercepciones.Items[i].ToString().Equals(npercepcion[j].nombre))
+                                    {
+                                        if (np_dao.editar((int)idNomina.Value, percepciones_dao.getIdP(listPercepciones.Items[i].ToString()), imp) != true)
+                                        {
+                                            Mensajes.Error("Error al editar la nómina percepción");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        nomina_DAO.insertarNP((int)idNomina.Value, percepciones_dao.getIdP(listPercepciones.Items[i].ToString()), imp);  
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int j = 0; j < npercepcion.Count; j++) { 
+                                    if (listPercepciones.Items[i].ToString().Equals(npercepcion[j].nombre))
+                                    {
+                                       if( np_dao.eliminar2((int)idNomina.Value, percepciones_dao.getIdP(listPercepciones.Items[i].ToString())) != true)
+                                        {
+                                            Mensajes.Error("Error al eliminar la nómina percepcion");
+                                        }
+                                    }
+                                }
                             }
 
                         }
