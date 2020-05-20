@@ -52,6 +52,7 @@
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\FormasPago_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
+    <Compile Include="Datos\Incapcidades_DAO.cs" />
     <Compile Include="Datos\NominaDeduccion_DAO.cs" />
     <Compile Include="Datos\NominaPercepcion_DAO.cs" />
     <Compile Include="Datos\Nomina_DAO.cs" />
@@ -147,6 +148,24 @@
     <Compile Include="Interfaces\Horarios_editar.designer.cs">
       <DependentUpon>Horarios_editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Incapacidades_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_editar.Designer.cs">
+      <DependentUpon>Incapacidades_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Incapacidades_nuevo.Designer.cs">
+      <DependentUpon>Incapacidades_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Incapcidades_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Incapcidades_GUI.Designer.cs">
+      <DependentUpon>Incapcidades_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\NominasDeducciones_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +219,7 @@
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\FormasPago.cs" />
     <Compile Include="Modelo\Horario.cs" />
+    <Compile Include="Modelo\Incapacidad.cs" />
     <Compile Include="Modelo\Nomina.cs" />
     <Compile Include="Modelo\NominaDeduccion.cs" />
     <Compile Include="Modelo\NominaPercepcion.cs" />
@@ -353,6 +373,15 @@
     <EmbeddedResource Include="Interfaces\Horarios_editar.resx">
       <DependentUpon>Horarios_editar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Incapacidades_editar.resx">
+      <DependentUpon>Incapacidades_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Incapacidades_nuevo.resx">
+      <DependentUpon>Incapacidades_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Incapcidades_GUI.resx">
+      <DependentUpon>Incapcidades_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +470,7 @@
     <Content Include="Iconos\edit-validated256_25237.png" />
     <Content Include="Iconos\editar.png" />
     <None Include="Iconos\eliminar.png" />
+    <Content Include="Iconos\electronica.png" />
     <Content Include="Iconos\financiero.png" />
     <Content Include="Iconos\marcador-de-posicion %281%29.png" />
     <Content Include="Iconos\marcador-de-posicion.png" />
