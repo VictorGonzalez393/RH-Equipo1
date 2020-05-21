@@ -37,7 +37,7 @@
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.tablaIncapacidades = new System.Windows.Forms.DataGridView();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.buscarAutxt = new System.Windows.Forms.TextBox();
+            this.buscarIncTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +102,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(34, 34);
             this.btn_anterior.TabIndex = 30;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_siguiente
             // 
@@ -112,6 +113,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(32, 34);
             this.btn_siguiente.TabIndex = 29;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // tablaIncapacidades
             // 
@@ -133,15 +135,16 @@
             this.btn_buscar.Size = new System.Drawing.Size(33, 26);
             this.btn_buscar.TabIndex = 27;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // buscarAutxt
+            // buscarIncTxt
             // 
-            this.buscarAutxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarAutxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarAutxt.Location = new System.Drawing.Point(541, 80);
-            this.buscarAutxt.Name = "buscarAutxt";
-            this.buscarAutxt.Size = new System.Drawing.Size(196, 26);
-            this.buscarAutxt.TabIndex = 26;
+            this.buscarIncTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarIncTxt.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buscarIncTxt.Location = new System.Drawing.Point(541, 80);
+            this.buscarIncTxt.Name = "buscarIncTxt";
+            this.buscarIncTxt.Size = new System.Drawing.Size(196, 26);
+            this.buscarIncTxt.TabIndex = 26;
             // 
             // label1
             // 
@@ -178,6 +181,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // atrásToolStripMenuItem
             // 
@@ -185,6 +189,7 @@
             this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
             this.atrásToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.atrásToolStripMenuItem.Text = "Atrás";
+            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
@@ -193,6 +198,7 @@
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(162, 21);
             this.nuevoToolStripMenuItem.Text = "Agregar Incapacidad";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -200,6 +206,7 @@
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(149, 21);
             this.editarToolStripMenuItem.Text = "Editar Incapacidad";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
@@ -207,6 +214,7 @@
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -221,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 474);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtEmpleado);
             this.Controls.Add(this.label2);
@@ -231,12 +239,13 @@
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.tablaIncapacidades);
             this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.buscarAutxt);
+            this.Controls.Add(this.buscarIncTxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Incapcidades_GUI";
             this.Text = "Incapcidades";
+            this.Load += new System.EventHandler(this.Incapcidades_GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaIncapacidades)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -256,7 +265,7 @@
         private System.Windows.Forms.Button btn_siguiente;
         private System.Windows.Forms.DataGridView tablaIncapacidades;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.TextBox buscarAutxt;
+        private System.Windows.Forms.TextBox buscarIncTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;

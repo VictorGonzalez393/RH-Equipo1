@@ -267,6 +267,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Incapacidades_editar";
             this.Text = "Editar incapacidad";
+            this.Load += new System.EventHandler(this.Incapacidades_editar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.id_incap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

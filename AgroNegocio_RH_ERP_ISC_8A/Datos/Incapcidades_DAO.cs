@@ -38,7 +38,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                                lector.GetString(4),
                                                                lector.GetString(5),
                                                                lector.GetString(6),
-                                                               (byte[])lector[7]);
+                                                               lector.GetString(7),
+                                                               GetImage(lector.GetInt32(0)));
                         incapacidades.Add(inc_temp);
                     }
                 }

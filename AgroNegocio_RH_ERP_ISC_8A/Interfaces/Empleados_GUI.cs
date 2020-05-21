@@ -277,6 +277,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
         }
 
+        private void vacacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value;
+            int id = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
+            Incapcidades_GUI inc = new Incapcidades_GUI(nombreemp, id);
+            SetVisibleCore(false);
+            inc.ShowDialog();
+            SetVisibleCore(true);
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

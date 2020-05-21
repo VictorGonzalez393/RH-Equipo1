@@ -270,6 +270,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Incapacidades_nuevo";
             this.Text = "Agregar incapacidad";
+            this.Load += new System.EventHandler(this.Incapacidades_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.evd_1)).EndInit();
