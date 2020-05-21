@@ -39,14 +39,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             empleadoA_cm.ValueMember = "IdEmpleado";
             empleadoA_cm.DataSource = lista;
             tipo_cm.Items.Add("Vacaciones");
-            tipo_cm.Items.Add("Asuntos familiares");
+            tipo_cm.Items.Add("Permiso");
             if (au.Tipo.Equals('V'))
             {
                 tipo_cm.SelectedItem="Vacaciones";
             }
-            else if (au.Tipo.Equals('F'))
+            else if (au.Tipo.Equals('P'))
             {
-                tipo_cm.SelectedItem= "Asuntos familiares";
+                tipo_cm.SelectedItem= "Permiso";
             }
             
             empleadoA_cm.SelectedValue = au.IdEmpleadoA;
@@ -77,33 +77,26 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         }
         private bool validarDatos()
         {
-            if (fechaIn.Value < fechaFin.Value)
+            if (fechaIn.Value <= fechaFin.Value)
             {
                 if (tipo_cm.SelectedIndex != -1)
                 {
-                    if (fechaFin.Value != fechaSol.Value)
+                    if (fechaFin.Value >= fechaSol.Value)
                     {
-                        if (fechaIn.Value > fechaSol.Value)
+                        if (fechaIn.Value >= fechaSol.Value)
                         {
-                            if (fechaIn.Value != fechaSol.Value)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                Mensajes.Error("La fecha inicio debe ser diferente a la fecha de solicitud");
-                                return false;
-                            }
+                            return true;
                         }
                         else
                         {
-                            Mensajes.Error("La fecha inicio es menor a la fecha solicitud");
+                            Mensajes.Error("La fecha inicio debe ser mayor igual  a la fecha de solicitud");
                             return false;
                         }
+
                     }
                     else
                     {
-                        Mensajes.Error("La fecha fin no debe ser igual a la fecha de solicitud ");
+                        Mensajes.Error("La fecha fin no debe ser mayor igual a la fecha de solicitud ");
                         return false;
                     }
 
@@ -131,9 +124,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 {
                     tipo = 'V';
                 }
-                else if (tipo_cm.SelectedItem.ToString() == "Asuntos familiares")
+                else if (tipo_cm.SelectedItem.ToString() == "Permiso")
                 {
-                    tipo = 'F';
+                    tipo = 'P';
                 }
 
                 Ausencia_justificada au = new Ausencia_justificada(

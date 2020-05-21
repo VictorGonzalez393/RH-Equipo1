@@ -266,7 +266,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value;
                 int id = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
-                Ausencias_GUI a = new Ausencias_GUI(nombreemp, id);
+                int dV= (int)tablaEmpleados1.SelectedRows[0].Cells[10].Value;
+                int dP= (int)tablaEmpleados1.SelectedRows[0].Cells[11].Value;
+                Ausencias_GUI a = new Ausencias_GUI(nombreemp, id,dV,dP);
                 SetVisibleCore(false);
                 a.ShowDialog();
                 SetVisibleCore(true);

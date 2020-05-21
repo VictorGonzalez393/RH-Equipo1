@@ -69,7 +69,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Empleado> empleados = new List<Empleado>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select idEmpleado,nombre, apaterno, amaterno,estatus from Empleados " + consulta_wh;
+                string consulta = "select idEmpleado,nombre, apaterno, amaterno, estatus, diasVacaciones, diasPermiso from Empleados " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {

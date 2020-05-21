@@ -152,6 +152,30 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return eliminar;
         }
+        public bool estatus(int idA, char estatus)
+        {
+            bool eliminar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "update AusenciasJustificadas set estatus=@estatus where idAusencia=@idAusencia";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idAusencia", idA);
+                    comando.Parameters.AddWithValue("@estatus", estatus);
+                    if (comando.ExecuteNonQuery() != 0)
+                        eliminar = true;
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al eliminar la justificacion. Error: " + ex.Message);
+            }
+            return eliminar;
+        }
         /**
          * getMaxID
          * Método para obtener el último ID

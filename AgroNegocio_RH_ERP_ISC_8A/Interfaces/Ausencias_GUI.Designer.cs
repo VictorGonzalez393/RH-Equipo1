@@ -46,6 +46,7 @@
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.autorizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablaAusencias)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +93,8 @@
             this.atrásToolStripMenuItem,
             this.nuevoToolStripMenuItem,
             this.editarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.eliminarToolStripMenuItem,
+            this.autorizarToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
@@ -225,6 +227,14 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
+            // autorizarToolStripMenuItem
+            // 
+            this.autorizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("autorizarToolStripMenuItem.Image")));
+            this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(93, 21);
+            this.autorizarToolStripMenuItem.Text = "Autorizar";
+            this.autorizarToolStripMenuItem.Click += new System.EventHandler(this.autorizarToolStripMenuItem_Click);
+            // 
             // Ausencias_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,5 +284,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autorizarToolStripMenuItem;
     }
 }
