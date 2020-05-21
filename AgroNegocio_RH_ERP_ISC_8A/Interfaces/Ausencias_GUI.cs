@@ -29,6 +29,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 au_dao = new Ausencias_justificadas_DAO();
                 au_dao.table = "AusenciasJustificadas_Tabla";
                 au_dao.order_by = "ID";
+                au_dao.where = "ID_EmpleadoS=" + idEm;
                 au_dao.CalculaPaginas();
                 if (au_dao.actual_page == 1 || au_dao.actual_page == 0)
                 {

@@ -187,6 +187,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // atrasToolStripMenuItem
             // 
@@ -194,6 +195,7 @@
             this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
             this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // evd_1
             // 
@@ -215,6 +217,7 @@
             this.btn_evidencia.TabIndex = 54;
             this.btn_evidencia.Text = "Seleccionar evidencia...";
             this.btn_evidencia.UseVisualStyleBackColor = false;
+            this.btn_evidencia.Click += new System.EventHandler(this.btn_evidencia_Click);
             // 
             // btn_cancelar
             // 
@@ -228,6 +231,7 @@
             this.btn_cancelar.TabIndex = 57;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -241,6 +245,7 @@
             this.btn_guardar.TabIndex = 56;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // Incapacidades_editar
             // 

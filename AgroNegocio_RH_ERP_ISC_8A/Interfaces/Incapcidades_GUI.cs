@@ -28,6 +28,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 inc_dao = new Incapcidades_DAO();
                 inc_dao.table = "Incapacidades_Tabla";
                 inc_dao.order_by = "ID";
+                inc_dao.where = "idEmp= " + idEmp;
                 inc_dao.CalculaPaginas();
                 if(inc_dao.actual_page==1 || inc_dao.actual_page == 0)
                 {
@@ -62,6 +63,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             SetVisibleCore(false);
             incN.ShowDialog();
             SetVisibleCore(true);
+            actualizar();
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)

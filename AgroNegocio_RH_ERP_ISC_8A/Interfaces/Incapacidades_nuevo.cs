@@ -84,7 +84,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
                         if (fechaFi.Value >= DateTime.Today)
                         {
-                            if (evd_1.Image != null)
+                            if (evd_1.Image != null || imag != null)
                             {
                                 band = true;
                             }

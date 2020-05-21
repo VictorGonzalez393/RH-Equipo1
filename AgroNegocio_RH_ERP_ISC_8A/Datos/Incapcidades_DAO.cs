@@ -163,7 +163,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 f = (byte[])foto;
                 conexion.Close();
             }
-            img = new Bitmap(new Bitmap(new MemoryStream(f)), new Size(120, 134));
+            img = new Bitmap(new Bitmap(new MemoryStream(f)), new Size(244, 294));
             return img;
         }
 
