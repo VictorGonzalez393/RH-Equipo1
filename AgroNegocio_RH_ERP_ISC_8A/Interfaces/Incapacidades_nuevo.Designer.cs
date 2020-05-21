@@ -66,7 +66,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(707, 25);
             this.menuStrip1.TabIndex = 38;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inicioToolStripMenuItem
             // 
@@ -74,6 +73,7 @@
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // atrasToolStripMenuItem
             // 
@@ -81,6 +81,7 @@
             this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
             this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // evd_1
             // 
@@ -102,6 +103,7 @@
             this.btn_evidencia.TabIndex = 37;
             this.btn_evidencia.Text = "Seleccionar evidencia...";
             this.btn_evidencia.UseVisualStyleBackColor = false;
+            this.btn_evidencia.Click += new System.EventHandler(this.btn_evidencia_Click);
             // 
             // btn_cancelar
             // 
@@ -115,6 +117,7 @@
             this.btn_cancelar.TabIndex = 40;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -128,6 +131,7 @@
             this.btn_guardar.TabIndex = 39;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // pictureBox1
             // 
@@ -137,7 +141,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(38, 38);
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -149,7 +152,6 @@
             this.label1.Size = new System.Drawing.Size(229, 25);
             this.label1.TabIndex = 42;
             this.label1.Text = "Agregar Incapacidad";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // id_incap
             // 
@@ -236,6 +238,7 @@
             this.fechaIn.Name = "fechaIn";
             this.fechaIn.Size = new System.Drawing.Size(106, 20);
             this.fechaIn.TabIndex = 52;
+            this.fechaIn.Value = new System.DateTime(2020, 5, 21, 14, 29, 16, 0);
             // 
             // fechaFi
             // 
@@ -244,6 +247,7 @@
             this.fechaFi.Name = "fechaFi";
             this.fechaFi.Size = new System.Drawing.Size(106, 20);
             this.fechaFi.TabIndex = 53;
+            this.fechaFi.Value = new System.DateTime(2020, 5, 21, 14, 29, 41, 0);
             // 
             // Incapacidades_nuevo
             // 

@@ -68,6 +68,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if(tablaIncapacidades.SelectedRows.Count != -1)
             {
+                try {
                 DataGridViewRow row = tablaIncapacidades.SelectedRows[0];
                 Incapacidad i = new Incapacidad((int)row.Cells[0].Value,
                                                (int)row.Cells[1].Value,
@@ -83,6 +84,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 incE.ShowDialog();
                 this.SetVisibleCore(true);
                 actualizar();
+                } catch (Exception ex)
+                {
+                    Mensajes.Error("Error al acceder a la interfaz de editar");
+                    Console.WriteLine("Error al dar clic editar:"+ex.Message);
+                }
             }
             else
             {
