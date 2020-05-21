@@ -135,11 +135,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     if (comando.ExecuteNonQuery() != 0)
                     {
                         eliminar = true;
-                        consulta = "update NominasPercepciones set estatus='I' where idNomina=@id";
+                        consulta = "delete from NominasPercepciones where idNomina=@id";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@id", idNomina);
                         comando.ExecuteNonQuery();
-                        consulta = "update NominasDeducciones set estatus='I' where idNomina=@id";
+                        consulta = "delete from NominasDeducciones where idNomina=@id";
                         comando = new SqlCommand(consulta, conexion);
                         comando.Parameters.AddWithValue("@id", idNomina);
                         comando.ExecuteNonQuery();
@@ -314,6 +314,31 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             return nom;
         }
 
+        public bool estatus(int idNomina,char e)
+        {
+            bool eliminar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "update Nominas set estatus = @estatus where idNomina=@id";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@id", idNomina);
+                    comando.Parameters.AddWithValue("@estatus", e);
+                    if (comando.ExecuteNonQuery() != 0)
+                    {
+                        eliminar = true;
+                    }
+                    conexion.Close();
+                }
 
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al eliminar la nómina. Error: " + ex.Message);
+            }
+            return eliminar;
+        }
     }
 }

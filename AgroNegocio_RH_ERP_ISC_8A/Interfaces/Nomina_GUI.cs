@@ -76,6 +76,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void Nomina_GUI_Load(object sender, EventArgs e)
         {
+            if (salarioE > salarioMin)
+            {
+                nóminaDeduccionesToolStripMenuItem.Enabled = true;
+                
+            }
+            else
+            {
+                nóminaDeduccionesToolStripMenuItem.Enabled = false;
+            }
             try
             {
                 tablaNomina.DataSource = nominas_DAO.getSigPagina();
@@ -85,10 +94,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 lbl_pagina.Text = aux1 + " " + nominas_DAO.actual_page;
                 lbl_total.Text = aux2 + " " + nominas_DAO.pages;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
+
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)
@@ -156,7 +166,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
                         DataGridViewRow row = tablaNomina.SelectedRows[0];
                         int idNomina = (int)row.Cells[1].Value;
-                        nominas_DAO.eliminar(idNomina);
+                        if ((string)row.Cells[11].Value != "P")
+                        {
+                            nominas_DAO.eliminar(idNomina);
+                            Mensajes.Info("La nómino se elimino correctamente");
+                        }
+                        else
+                        {
+                            Mensajes.Error("La nómina ya ha sido pagada");
+                        }
 
                     }
                     actualizar();
@@ -224,6 +242,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void nóminaDeduccionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             if (tablaNomina.SelectedRows.Count == 1)
             {
                
@@ -283,13 +302,43 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             actualizar();
         }
 
-        private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buscarNominaTXT_TextChanged(object sender, EventArgs e)
         {
-            if (tablaNomina.SelectedRows.Count > 0)
+
+        }
+
+        private void autorizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaNomina.SelectedRows.Count == 1)
             {
                 DataGridViewRow row = tablaNomina.SelectedRows[0];
+                if ((string)row.Cells[11].Value != "P")
+                {
+                    int idNomina = (int)row.Cells[1].Value;
+                    nominas_DAO.estatus(idNomina, 'P');
+                    actualizar();
+                    Mensajes.Info("Se autorizo el pago de la nómina");
+                }
+                else
+                {
+                    Mensajes.Error("La nómina ya ha sido pagada");
+                }
 
-                Nomina nominas = new Nomina(
+            }
+            else
+            {
+                Mensajes.Error("Seleccione la nómina");
+            }
+        }
+
+        private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaNomina.SelectedRows.Count == 1)
+            {
+                DataGridViewRow row = tablaNomina.SelectedRows[0];
+                if ((string)row.Cells[11].Value != "P")
+                {
+                    Nomina nominas = new Nomina(
                     (int)row.Cells[1].Value,
                     (int)row.Cells[0].Value,
                     (string)row.Cells[2].Value,
@@ -302,9 +351,18 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (string)row.Cells[9].Value,
                     (string)row.Cells[10].Value,
                     Convert.ToChar(row.Cells[11].Value));
-                Nomina_editar ne = new Nomina_editar(nombre.Text, nominas,salarioE,salarioMin);
-                ne.ShowDialog();
-                actualizar();
+                    Nomina_editar ne = new Nomina_editar(nombre.Text, nominas, salarioE, salarioMin);
+                    ne.ShowDialog();
+                    actualizar();
+                }
+                else
+                {
+                    Mensajes.Error("La nómina ya ha sido pagada");
+                }
+            }
+            else
+            {
+                Mensajes.Error("Seleccione una nómina");
             }
         }
 

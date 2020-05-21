@@ -483,6 +483,7 @@
     <Content Include="Iconos\nomina-de-sueldos.png" />
     <Content Include="Iconos\obrero.png" />
     <Content Include="Iconos\organizacion.png" />
+    <Content Include="Iconos\pdf.png" />
     <Content Include="Iconos\Percepciones_.png" />
     <Content Include="Iconos\perdida.png" />
     <Content Include="Iconos\permiso %281%29.png" />
@@ -492,6 +493,7 @@
     <Content Include="Iconos\sello.png" />
     <Content Include="Iconos\siguiente-pista.png" />
     <Content Include="Iconos\Siguiente.png" />
+    <Content Include="Iconos\sobresalir.png" />
     <Content Include="Iconos\trabajo.png" />
     <Content Include="Iconos\usuario %281%29.png" />
     <Content Include="Iconos\usuario.png" />
