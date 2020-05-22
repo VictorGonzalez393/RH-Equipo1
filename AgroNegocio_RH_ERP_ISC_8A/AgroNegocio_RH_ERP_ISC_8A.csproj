@@ -51,6 +51,7 @@
     <Compile Include="Datos\DocumentacionEmpleado_DAO.cs" />
     <Compile Include="Datos\Empleados_DAO.cs" />
     <Compile Include="Datos\FormasPago_DAO.cs" />
+    <Compile Include="Datos\HistorialesPuestos_DAO.cs" />
     <Compile Include="Datos\Horarios_DAO.cs" />
     <Compile Include="Datos\Incapcidades_DAO.cs" />
     <Compile Include="Datos\NominaDeduccion_DAO.cs" />
@@ -142,6 +143,24 @@
     <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
       <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\HistorialPuestos_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\HistorialPuestos_Editar.Designer.cs">
+      <DependentUpon>HistorialPuestos_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\HistorialPuestos_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\HistorialPuestos_GUI.Designer.cs">
+      <DependentUpon>HistorialPuestos_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\HistorialPuestos_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\HistorialPuestos_Nuevo.Designer.cs">
+      <DependentUpon>HistorialPuestos_Nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Horarios_editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +237,7 @@
     <Compile Include="Modelo\DocumentacionEmpleado.cs" />
     <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Modelo\FormasPago.cs" />
+    <Compile Include="Modelo\HistorialPuesto.cs" />
     <Compile Include="Modelo\Horario.cs" />
     <Compile Include="Modelo\Incapacidad.cs" />
     <Compile Include="Modelo\Nomina.cs" />
@@ -370,6 +390,15 @@
     <EmbeddedResource Include="Interfaces\Estados_nuevo.resx">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\HistorialPuestos_Editar.resx">
+      <DependentUpon>HistorialPuestos_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\HistorialPuestos_GUI.resx">
+      <DependentUpon>HistorialPuestos_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\HistorialPuestos_Nuevo.resx">
+      <DependentUpon>HistorialPuestos_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Horarios_editar.resx">
       <DependentUpon>Horarios_editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +501,7 @@
     <None Include="Iconos\eliminar.png" />
     <Content Include="Iconos\electronica.png" />
     <Content Include="Iconos\financiero.png" />
+    <None Include="Iconos\Historial_puestos.png" />
     <Content Include="Iconos\marcador-de-posicion %281%29.png" />
     <Content Include="Iconos\marcador-de-posicion.png" />
     <Content Include="Iconos\material-de-oficina.png" />

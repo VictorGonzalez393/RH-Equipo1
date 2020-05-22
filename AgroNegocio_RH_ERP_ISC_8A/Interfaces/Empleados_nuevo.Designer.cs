@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados_nuevo));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -59,7 +57,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.img_1 = new System.Windows.Forms.PictureBox();
             this.sexo_empleado = new System.Windows.Forms.ComboBox();
             this.codigopostal_empleado = new System.Windows.Forms.NumericUpDown();
             this.estadocivil_empleado = new System.Windows.Forms.ComboBox();
@@ -84,6 +81,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.historialDePuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.img_1 = new System.Windows.Forms.PictureBox();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,10 +94,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleado)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,29 +106,14 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
-            this.atrasToolStripMenuItem});
+            this.atrasToolStripMenuItem,
+            this.historialDePuestosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
-            // 
-            // atrasToolStripMenuItem
-            // 
-            this.atrasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrasToolStripMenuItem.Image")));
-            this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
-            this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.atrasToolStripMenuItem.Text = "Atras";
-            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // btn_cancelar
             // 
@@ -478,14 +464,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales:";
             // 
-            // img_1
-            // 
-            this.img_1.Location = new System.Drawing.Point(28, 19);
-            this.img_1.Name = "img_1";
-            this.img_1.Size = new System.Drawing.Size(120, 134);
-            this.img_1.TabIndex = 36;
-            this.img_1.TabStop = false;
-            // 
             // sexo_empleado
             // 
             this.sexo_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -756,6 +734,37 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 511);
             this.tabControl1.TabIndex = 26;
             // 
+            // historialDePuestosToolStripMenuItem
+            // 
+            this.historialDePuestosToolStripMenuItem.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
+            this.historialDePuestosToolStripMenuItem.Name = "historialDePuestosToolStripMenuItem";
+            this.historialDePuestosToolStripMenuItem.Size = new System.Drawing.Size(160, 21);
+            this.historialDePuestosToolStripMenuItem.Text = "Historial de puestos";
+            // 
+            // img_1
+            // 
+            this.img_1.Location = new System.Drawing.Point(28, 19);
+            this.img_1.Name = "img_1";
+            this.img_1.Size = new System.Drawing.Size(120, 134);
+            this.img_1.TabIndex = 36;
+            this.img_1.TabStop = false;
+            // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
+            // 
+            // atrasToolStripMenuItem
+            // 
+            this.atrasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrasToolStripMenuItem.Image")));
+            this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
+            this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
+            // 
             // Empleados_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,10 +790,10 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id_empleado)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -861,5 +870,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.PictureBox img_1;
+        private System.Windows.Forms.ToolStripMenuItem historialDePuestosToolStripMenuItem;
     }
 }

@@ -117,29 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cliudadesch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\cliudadesch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ciudades2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\ciudades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ciudades" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\ciudades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dejar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\dejar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Historial_puestos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\Historial_puestos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJpSURBVFhH7ZTP
+        a9NgGMeD4PAk6M2LoFAQ/47dPXhTMHYRD4oncSfxB8yDd9GDCh4EPc/LZkMd67RjCO2E1aQ/1iZpt66d
+        bbcum8XNxzxxaZP3fd52bK0i8/AJeUPyfj/v+zxvJAAgWVptncstr63X7J9Q3+yAY71Y74nzrW1W7Rd5
+        gGPU/B7kQwzPLq9v4UT7FfAoVO2nVIYH98AfjhxUwNmJJpvhJzBgw5GDCiD+DJb2DRWO/BEBUThS84UP
+        TAC7nfowv9IMhA9MACflYIIHKkAFifgvcHgECpUNSJcaHDjhdCJLMpcyuXDEH8jiXigBY18CFheO+ANZ
+        3AslIOLw9MBfL8E/2wMLxVUYy0fgYuYlhLSHMBS9BtJUOCfFlDfS7OXjAxV4Z2pwXh8DKXWjw+QVkCZ2
+        Ua9+lz4pl/YkgCXILDU40qU6xJI5jlfzszCUuhUMZwUQHM8ock8B90fkrIpFt2pc7aOJNIQW7vPhlACi
+        yi1nJ052FRBBlQBrToU/KqugmlleAIkp430TwIajBPTm75NDCkyFS10FjKpN9oBRsTmBkNPt/uDH5Q9u
+        +LfNHbdndIeomQsKROTtrgKiHiisbHACZ7Vg/Z9V4lC2W+48roDzTtyyggLv5Z2uAiKoElzIPA8IeOjN
+        NXEJouFy3wQeLE6QArgT8SKzco/pkcm+CXwpVuGMdo+UII9hRP4hfb5+yi+QZINEUALIW2MejqRu7k0g
+        NnIbc9sCjS1QqDAKkQDy2kjAae2uWEB1Vv5RGfXC2wIOR3cleu5ENwEkaVVgdHEchrNPtk98vWPjccOG
+        w5p7294BpF/EOnWc2unpDgAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>
