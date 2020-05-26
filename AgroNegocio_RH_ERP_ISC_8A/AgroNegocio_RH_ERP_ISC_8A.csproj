@@ -36,6 +36,7 @@
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
@@ -475,6 +476,7 @@
     <None Include="Iconos\cliudadesch.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\familia_.png" />
     <None Include="Iconos\agregar.png" />
     <Content Include="Iconos\agricultura.ico" />
     <Content Include="Iconos\anadir%281%29.png" />

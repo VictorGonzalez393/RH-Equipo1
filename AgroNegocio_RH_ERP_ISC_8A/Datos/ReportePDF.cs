@@ -69,7 +69,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 doc.AddTitle("Nomina#" + num + "_Empleado_" + nom + "_Periodo_" + periodo);
                 doc.AddCreator("Equipo1_Agronegocio");
                 // Creamos la imagen y le ajustamos el tamaño
-                iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(@"..\\..\\Iconos\\logo.png");
+                iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(@"..\\..\\Iconos\\logo.png"); 
                 imagen.BorderWidth = 0;
                 imagen.Alignment = Element.ALIGN_LEFT;
                 float percentage = 0.0f;
@@ -268,6 +268,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 doc.Close();
                 writer.Close();
                 Mensajes.Info("EL PDF se guardo satisfactoriamente");
+
+                
             }
             catch(Exception ex)
             {

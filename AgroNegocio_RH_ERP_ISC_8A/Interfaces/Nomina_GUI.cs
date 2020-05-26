@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgroNegocio_RH_ERP_ISC_8A.Datos;
 using AgroNegocio_RH_ERP_ISC_8A.Modelo;
+using System.Diagnostics;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
@@ -22,6 +23,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Empleados_DAO em_dao = new Empleados_DAO();
         NominaDeduccion_DAO nd = new NominaDeduccion_DAO();
         NominaPercepcion_DAO np = new NominaPercepcion_DAO();
+        
         public Nomina_GUI()
         {
             InitializeComponent();
@@ -339,28 +341,47 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             List<Empleado> empleado;
             List<NominaDeduccion> nomD;
             List<NominaPercepcion> nomP;
+            Mensajes.Info("A continuación debe seleccionar la carpeta donde desea almacenar el archivo");
+            //var folder = new Storage.Pickers.FolderPicker();
+
+           
+                string ruta = "";
+                using (var fbd = new FolderBrowserDialog())
+                {
+                    DialogResult result = fbd.ShowDialog();
+
+                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                    {
+                        ruta = fbd.SelectedPath;
+                        Mensajes.Info("La ruta seleccionada es: "+ruta);
+                    if (tablaNomina.SelectedRows.Count == 1)
+                        {
+                            DataGridViewRow row = tablaNomina.SelectedRows[0];
+                            empleado = em_dao.consultaGeneral3("where id=" + (int)row.Cells[1].Value, new List<string>(), new List<object>());
+                            string consulta_where = " where idNomina=@id";
+                            List<string> parametros = new List<string>();
+                            parametros.Add("@id");
+                            List<object> valores = new List<object>();
+                            valores.Add((int)row.Cells[0].Value);
+                            nomD = nd.consultaGeneral(consulta_where, parametros, valores);
+                            nomP = np.consultaGeneral(consulta_where, parametros, valores);
+
+                            reporte = new ReportePDF((int)row.Cells[0].Value, empleado[0].NombreCompleto, (string)row.Cells[2].Value, empleado[0].Puesto, empleado[0].Nss, (string)row.Cells[8].Value
+                                , (string)row.Cells[9].Value, (int)row.Cells[6].Value, ruta, Convert.ToDouble(row.Cells[5].Value), nomD, nomP, Convert.ToDouble(row.Cells[3].Value), Convert.ToDouble(row.Cells[4].Value));
+                            reporte.generarPDF();
+                        }
+                        else
+                        {
+                            Mensajes.Error("Seleccione una nómina");
+                        }
+                    }
+                    else
+                    {
+                        //por favor, selecciona una carpeta
+                    }
+                
+            }
             
-            string ruta = "C:\\Users\\chela\\Downloads\\";
-            if (tablaNomina.SelectedRows.Count == 1)
-            {
-                DataGridViewRow row = tablaNomina.SelectedRows[0];
-                empleado = em_dao.consultaGeneral3("where id="+ (int)row.Cells[1].Value, new List<string>(), new List<object>());
-                string consulta_where = " where idNomina=@id";
-                List<string> parametros = new List<string>();
-                parametros.Add("@id");
-                List<object> valores = new List<object>();
-                valores.Add((int)row.Cells[0].Value);
-                nomD = nd.consultaGeneral(consulta_where, parametros, valores);
-                nomP =np.consultaGeneral(consulta_where, parametros, valores);
-               
-                reporte = new ReportePDF((int)row.Cells[0].Value, empleado[0].NombreCompleto, (string)row.Cells[2].Value, empleado[0].Puesto, empleado[0].Nss, (string)row.Cells[8].Value
-                    , (string)row.Cells[9].Value, (int)row.Cells[6].Value, ruta, Convert.ToDouble(row.Cells[5].Value), nomD, nomP, Convert.ToDouble(row.Cells[3].Value), Convert.ToDouble(row.Cells[4].Value));
-                reporte.generarPDF();
-            }
-            else
-            {
-                Mensajes.Error("Seleccione una nómina");
-            }
         }
 
         private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
