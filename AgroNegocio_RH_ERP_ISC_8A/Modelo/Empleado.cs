@@ -45,7 +45,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         public int IdPuesto { get; set; }
         public int IdCiudad { get; set; }
         public int IdSucursal { get; set; }
-
+        public string Puesto { get; set; }
         public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, string sexo, string fechaContratacion,
        string fechaNacimiento, double salario, string nss, string estadoCivil, int diasVacaciones, int diasPermiso, string direccion, string colonia, string codigoPostal, string escolaridad, double porcentajeComision, char estatus, int idDepartamento,
        int idPuesto, int idCiudad, int idSucursal)
@@ -147,6 +147,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             Apaterno = apaterno;
             Amaterno = amaterno;
             Estatus = estatus;
+        }
+        public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, string puesto, string nss)
+        {
+            IdEmpleado = idEmpleado;
+            Nombre = nombre;
+            Apaterno = apaterno;
+            Amaterno = amaterno;
+            Puesto = puesto;
+            Nss = nss;
         }
 
 
