@@ -17,3 +17,11 @@ where np.estatus='A'
 go
 
 select * from NominasPercepciones_Tabla
+
+create view HistorialPuestos_Tabla as
+select h.idEmpleado 'ID', h.idPuesto'Puesto', h.idDepartamento 'Departamento', h.fechaInicio 'F.Inicio', h.fechaFin'F.Fin',h.salario 'Salario',
+e.nombre 'NombreE', p.nombre'NombreP',d.Nombre'NombreD'
+from HistorialPuestos h join Empleados e on h.idEmpleado = e.idEmpleado join  Puestos p on p.idPuesto = h.idPuesto join Departamentos d on d.idDepartamento
+= h.idDepartamento
+
+select * from HistorialPuestos_Tabla

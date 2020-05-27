@@ -15,6 +15,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
     public partial class Nomina_GUI : Form
     {
         public int idEmp { get; set; }
+        
         Nomina_DAO nominas_DAO;
         string aux1, aux2;
         double salarioE = 0;

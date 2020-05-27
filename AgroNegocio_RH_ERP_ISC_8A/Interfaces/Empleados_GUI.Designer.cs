@@ -48,8 +48,12 @@
             this.btn_anterior = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.btn_buscarEmpleado = new System.Windows.Forms.Button();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialDePuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,7 +71,7 @@
             this.nóminaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(936, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1040, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -132,7 +136,7 @@
             // 
             this.ausenciasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ausenciasToolStripMenuItem.Image")));
             this.ausenciasToolStripMenuItem.Name = "ausenciasToolStripMenuItem";
-            this.ausenciasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ausenciasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.ausenciasToolStripMenuItem.Text = "Ausencias";
             this.ausenciasToolStripMenuItem.Click += new System.EventHandler(this.ausenciasToolStripMenuItem_Click);
             // 
@@ -140,7 +144,7 @@
             // 
             this.vacacionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vacacionesToolStripMenuItem.Image")));
             this.vacacionesToolStripMenuItem.Name = "vacacionesToolStripMenuItem";
-            this.vacacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vacacionesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.vacacionesToolStripMenuItem.Text = "Incapacidades";
             // 
             // nóminaToolStripMenuItem
@@ -155,7 +159,7 @@
             // 
             this.buscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarEmpleado.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarEmpleado.Location = new System.Drawing.Point(269, 47);
+            this.buscarEmpleado.Location = new System.Drawing.Point(267, 72);
             this.buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
             this.buscarEmpleado.Name = "buscarEmpleado";
             this.buscarEmpleado.Size = new System.Drawing.Size(259, 26);
@@ -166,7 +170,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(86, 45);
+            this.label1.Location = new System.Drawing.Point(84, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 31);
@@ -200,12 +204,13 @@
             this.tablaEmpleados1.AllowUserToAddRows = false;
             this.tablaEmpleados1.AllowUserToDeleteRows = false;
             this.tablaEmpleados1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaEmpleados1.Location = new System.Drawing.Point(107, 115);
+            this.tablaEmpleados1.Location = new System.Drawing.Point(105, 140);
             this.tablaEmpleados1.Name = "tablaEmpleados1";
             this.tablaEmpleados1.ReadOnly = true;
             this.tablaEmpleados1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaEmpleados1.Size = new System.Drawing.Size(765, 244);
             this.tablaEmpleados1.TabIndex = 19;
+            this.tablaEmpleados1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEmpleados1_CellContentClick_1);
             // 
             // btn_anterior
             // 
@@ -232,7 +237,7 @@
             // btn_buscarEmpleado
             // 
             this.btn_buscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscarEmpleado.Image")));
-            this.btn_buscarEmpleado.Location = new System.Drawing.Point(524, 45);
+            this.btn_buscarEmpleado.Location = new System.Drawing.Point(522, 70);
             this.btn_buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
             this.btn_buscarEmpleado.Name = "btn_buscarEmpleado";
             this.btn_buscarEmpleado.Size = new System.Drawing.Size(45, 31);
@@ -240,11 +245,41 @@
             this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
             this.btn_buscarEmpleado.Click += new System.EventHandler(this.btn_buscarEmpleado_Click);
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem11,
+            this.historialDePuestosToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 25);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1040, 25);
+            this.menuStrip2.TabIndex = 20;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(184, 21);
+            this.toolStripMenuItem11.Text = "Ver Historial de Puestos";
+            this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
+            // 
+            // historialDePuestosToolStripMenuItem
+            // 
+            this.historialDePuestosToolStripMenuItem.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
+            this.historialDePuestosToolStripMenuItem.Name = "historialDePuestosToolStripMenuItem";
+            this.historialDePuestosToolStripMenuItem.Size = new System.Drawing.Size(146, 21);
+            this.historialDePuestosToolStripMenuItem.Text = "Agregar  Historial";
+            this.historialDePuestosToolStripMenuItem.Click += new System.EventHandler(this.historialDePuestosToolStripMenuItem_Click_1);
+            // 
             // Empleados_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 443);
+            this.ClientSize = new System.Drawing.Size(1040, 443);
+            this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.tablaEmpleados1);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_pagina);
@@ -261,6 +296,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +324,8 @@
         private System.Windows.Forms.ToolStripMenuItem ausenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vacacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nóminaToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
+        private System.Windows.Forms.ToolStripMenuItem historialDePuestosToolStripMenuItem;
     }
 }

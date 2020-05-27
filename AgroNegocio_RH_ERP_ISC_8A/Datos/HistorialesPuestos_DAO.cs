@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
-    class HistorialesPuestos_DAO
+    class HistorialesPuestos_DAO : Paginacion
     {
         private string cadenaconexion = "SERVER=localhost" +
               ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
@@ -18,7 +18,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<HistorialPuesto> historial = new List<HistorialPuesto>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select * from HistorialesPuestos_Tabla" + consulta_wh;
+                string consulta = "select * from HistorialPuestos" + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -53,7 +53,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into HistorialesPuestos values (@idEmpleado, @idPuesto, @idDepartamento, @fechaInicio, @fechaFin, @salario)";
+                    string consulta = "insert into HistorialPuestos values (@idEmpleado, @idPuesto, @idDepartamento, @fechaInicio, @fechaFin, @salario)";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idEmpleado", empleado.idEmpleado);
@@ -70,9 +70,72 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al agregar Percepción a Nómina" + ex.Message);
+                Console.WriteLine("Error al Insertar" + ex.Message);
             }
             return insert;
+        }
+
+        public bool editar(int idEmpleado, int idPuesto, int idDepartamento, string fechaInicio, string fechaFin, double salario)
+        {
+            bool editar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+
+                    string consulta = "update HistorialPuestos set idPuesto=@idPues, idDepartamento=@idDep, fechaInicio=@fInicio," +
+                        " fechaFin=@fFin, salario=@salario where idEmpleado=@idEmp";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idEmp", idEmpleado);
+                    comando.Parameters.AddWithValue("@idPues", idPuesto);
+                    comando.Parameters.AddWithValue("@idDep", idDepartamento);
+                    comando.Parameters.AddWithValue("@fInicio",fechaInicio);
+                    comando.Parameters.AddWithValue("@fFin", fechaFin);
+                    comando.Parameters.AddWithValue("@salario", salario);
+                    if (comando.ExecuteNonQuery() != 0)
+                    {
+                        editar = true;
+                    }
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al editar el Historial." + ex.Message);
+            }
+            return editar;
+        }
+
+        public bool validarHistorial(HistorialPuesto hist)
+        {
+            bool validar = false;
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+                {
+                    string consulta = "select idPuesto from HistorialPuestos where idPuesto=@idPuesto";
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@idPuesto", hist.idPuesto);
+                    SqlDataReader lector = comando.ExecuteReader();
+                    if (lector.HasRows)
+                    {
+                        validar = false;
+                    }
+                    else
+                    {
+                        validar = true;
+                    }
+                    conexion.Close();
+                }
+            }
+            catch (SqlException)
+            {
+                Console.WriteLine("Error al validar el Historial.");
+            }
+            return validar;
         }
 
     }

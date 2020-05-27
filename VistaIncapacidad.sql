@@ -11,3 +11,7 @@ alter view Incapacidades_Tabla as
 	go
 select * from Incapacidades
 select * from Incapacidades_Tabla
+
+create view HistorialPuestos_Tabla as
+select e.idEmpleado 'ID', e.idPuesto'Puesto', e.idDepartamento 'Departamento', h.fechaInicio 'F.Inicio', h.fechaFin'F.Fin',e.salario 'Salario'
+from HistorialPuestos h join Empleados e on e.idEmpleado

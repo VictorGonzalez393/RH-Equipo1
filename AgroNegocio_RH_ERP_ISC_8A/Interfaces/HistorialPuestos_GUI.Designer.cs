@@ -32,7 +32,7 @@
             this.tablaHistorialpuestos = new System.Windows.Forms.DataGridView();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_pagina = new System.Windows.Forms.Label();
-            this.buscarEmpleado = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_anterior = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
@@ -75,15 +75,15 @@
             this.lbl_pagina.TabIndex = 25;
             this.lbl_pagina.Text = "Página ";
             // 
-            // buscarEmpleado
+            // nombre
             // 
-            this.buscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarEmpleado.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarEmpleado.Location = new System.Drawing.Point(190, 37);
-            this.buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
-            this.buscarEmpleado.Name = "buscarEmpleado";
-            this.buscarEmpleado.Size = new System.Drawing.Size(259, 26);
-            this.buscarEmpleado.TabIndex = 21;
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nombre.Location = new System.Drawing.Point(190, 37);
+            this.nombre.Margin = new System.Windows.Forms.Padding(5);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(259, 26);
+            this.nombre.TabIndex = 21;
             // 
             // label1
             // 
@@ -106,6 +106,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(34, 34);
             this.btn_anterior.TabIndex = 24;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_siguiente
             // 
@@ -116,6 +117,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(32, 34);
             this.btn_siguiente.TabIndex = 23;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // btn_buscarEmpleado
             // 
@@ -126,6 +128,7 @@
             this.btn_buscarEmpleado.Size = new System.Drawing.Size(45, 31);
             this.btn_buscarEmpleado.TabIndex = 22;
             this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
+            this.btn_buscarEmpleado.Click += new System.EventHandler(this.btn_buscarEmpleado_Click);
             // 
             // HistorialPuestos_GUI
             // 
@@ -138,10 +141,11 @@
             this.Controls.Add(this.btn_anterior);
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.btn_buscarEmpleado);
-            this.Controls.Add(this.buscarEmpleado);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.label1);
             this.Name = "HistorialPuestos_GUI";
             this.Text = "HistorialPuestos_GUI";
+            this.Load += new System.EventHandler(this.HistorialPuestos_GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaHistorialpuestos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,7 +160,7 @@
         private System.Windows.Forms.Button btn_anterior;
         private System.Windows.Forms.Button btn_siguiente;
         private System.Windows.Forms.Button btn_buscarEmpleado;
-        private System.Windows.Forms.TextBox buscarEmpleado;
+        private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.Label label1;
     }
 }
