@@ -134,9 +134,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(31, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.Size = new System.Drawing.Size(102, 16);
             this.label2.TabIndex = 39;
-            this.label2.Text = "ID:";
+            this.label2.Text = "ID Empleado:";
             // 
             // btn_cancelar
             // 
@@ -239,6 +239,7 @@
             // 
             // ID
             // 
+            this.ID.Enabled = false;
             this.ID.Location = new System.Drawing.Point(145, 118);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(215, 20);

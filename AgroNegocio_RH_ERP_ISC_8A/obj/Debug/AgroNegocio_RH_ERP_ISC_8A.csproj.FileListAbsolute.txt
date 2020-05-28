@@ -162,3 +162,9 @@ C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debu
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapacidades_editar.resources
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapacidades_nuevo.resources
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapcidades_GUI.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_Editar.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_GUI.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_Nuevo.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapacidades_editar.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapacidades_nuevo.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapcidades_GUI.resources

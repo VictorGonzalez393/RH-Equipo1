@@ -51,6 +51,7 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDePuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -251,7 +252,8 @@
             this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem11,
-            this.historialDePuestosToolStripMenuItem});
+            this.historialDePuestosToolStripMenuItem,
+            this.historialPuestoToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 25);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(1040, 25);
@@ -273,6 +275,12 @@
             this.historialDePuestosToolStripMenuItem.Size = new System.Drawing.Size(146, 21);
             this.historialDePuestosToolStripMenuItem.Text = "Agregar  Historial";
             this.historialDePuestosToolStripMenuItem.Click += new System.EventHandler(this.historialDePuestosToolStripMenuItem_Click_1);
+            // 
+            // historialPuestoToolStripMenuItem
+            // 
+            this.historialPuestoToolStripMenuItem.Name = "historialPuestoToolStripMenuItem";
+            this.historialPuestoToolStripMenuItem.Size = new System.Drawing.Size(119, 21);
+            this.historialPuestoToolStripMenuItem.Text = "Historial Puesto";
             // 
             // Empleados_GUI
             // 
@@ -327,5 +335,6 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem historialDePuestosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialPuestoToolStripMenuItem;
     }
 }

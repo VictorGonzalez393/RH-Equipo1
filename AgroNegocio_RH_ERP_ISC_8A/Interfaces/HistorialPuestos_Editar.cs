@@ -25,6 +25,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             InitializeComponent();
             this.historial = historial;
+            this.ID.Value= historial.idEmpleado;
         }
 
         public HistorialPuestos_Editar()
