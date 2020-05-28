@@ -203,7 +203,6 @@
             // 
             // salario
             // 
-            this.salario.DecimalPlaces = 4;
             this.salario.Location = new System.Drawing.Point(154, 353);
             this.salario.Maximum = new decimal(new int[] {
             99999999,

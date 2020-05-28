@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -112,6 +113,38 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaHistorialpuestos.SelectedRows.Count != -1)
+            {
+                DataGridViewRow row = tablaHistorialpuestos.SelectedRows[0];
+
+                HistorialPuesto historial_editar = new HistorialPuesto(
+                    (int)row.Cells[0].Value,
+                    hist_dao.getidPuesto((string)row.Cells[1].Value),
+                    hist_dao.getidDepartamento((string)row.Cells[2].Value),
+                    (string)row.Cells[3].Value,
+                    (string)row.Cells[4].Value,
+                    (double)row.Cells[5].Value
+                    );
+                HistorialPuestos_Editar historial_Editar = new HistorialPuestos_Editar(historial_editar);
+                this.SetVisibleCore(false);
+                historial_Editar.ShowDialog();
+                this.SetVisibleCore(true);
+                actualizar();
+
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona el Historial", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

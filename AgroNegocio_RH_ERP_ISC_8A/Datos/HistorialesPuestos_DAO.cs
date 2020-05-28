@@ -75,7 +75,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             return insert;
         }
 
-        public bool editar(int idEmpleado, int idPuesto, int idDepartamento, string fechaInicio, string fechaFin, double salario)
+        public bool editar(HistorialPuesto historial)
         {
             bool editar = false;
             try
@@ -83,16 +83,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
 
-                    string consulta = "update HistorialPuestos set idPuesto=@idPues, idDepartamento=@idDep, fechaInicio=@fInicio," +
-                        " fechaFin=@fFin, salario=@salario where idEmpleado=@idEmp";
+                    string consulta = "update HistorialPuestos set idPuesto=@idPuesto, idDepartamento=@idDepartamento, fechaInicio=@fechaInicio," +
+                        " fechaFin=@fechaFin, salario=@salario where idEmpleado=@idEmpleado";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@idEmp", idEmpleado);
-                    comando.Parameters.AddWithValue("@idPues", idPuesto);
-                    comando.Parameters.AddWithValue("@idDep", idDepartamento);
-                    comando.Parameters.AddWithValue("@fInicio",fechaInicio);
-                    comando.Parameters.AddWithValue("@fFin", fechaFin);
-                    comando.Parameters.AddWithValue("@salario", salario);
+                    comando.Parameters.AddWithValue("@idEmpleado", historial.idEmpleado);
+                    comando.Parameters.AddWithValue("@idPuesto", historial.idPuesto);
+                    comando.Parameters.AddWithValue("@idDepartamento", historial.idDepartamento);
+                    comando.Parameters.AddWithValue("@fechaInicio", historial.FechaInicio);
+                    comando.Parameters.AddWithValue("@fechaFin", historial.FechaFin);
+                    comando.Parameters.AddWithValue("@salario", historial.Salario);
                     if (comando.ExecuteNonQuery() != 0)
                     {
                         editar = true;
@@ -115,7 +115,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "select idPuesto from HistorialPuestos where idPuesto=@idPuesto";
+                    string consulta = "select idPuesto, idDepartamento from HistorialPuestos where idPuesto=@idPuesto and idDepartamento =@idDepartamento";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idPuesto", hist.idPuesto);
@@ -136,6 +136,40 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 Console.WriteLine("Error al validar el Historial.");
             }
             return validar;
+        }
+
+        public int getidPuesto(string puesto)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idPuesto from puestos where nombre='" + puesto + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
+        }
+
+        public int getidDepartamento(string departamento)
+        {
+            int id = 0;
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select idDepartamento from departamentos where nombre='" + departamento + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+
+                var ID = comando.ExecuteScalar();
+                id = (int)ID;
+                conexion.Close();
+            }
+            return id;
+
         }
 
     }

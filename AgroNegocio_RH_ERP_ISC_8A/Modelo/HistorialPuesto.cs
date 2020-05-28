@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 {
-    class HistorialPuesto
+    public class HistorialPuesto
     {
         public int idEmpleado { get; set; }
         public int idPuesto { get; set; }

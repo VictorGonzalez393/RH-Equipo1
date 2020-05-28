@@ -332,7 +332,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             if (tablaEmpleados1.SelectedRows.Count == 1)
             {
                 int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
-                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value;
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value /*+ " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value*/;
                 HistorialPuestos_GUI hp = new HistorialPuestos_GUI(idemp, nombreemp);
                 this.SetVisibleCore(false);
                 hp.ShowDialog();

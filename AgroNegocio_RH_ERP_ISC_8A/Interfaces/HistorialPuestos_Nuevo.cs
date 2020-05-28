@@ -14,7 +14,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
     public partial class HistorialPuestos_Nuevo : Form
     {
-        int idEmp;
+        public int idEmp { get; set; }
         Empleados_DAO em_dao;
         Puestos_DAO pues_dao;
         Departamentos_DAO dep_dao;
@@ -25,7 +25,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.idEmp = idEmpleado;
             //Mensajes.Info("Nomina: " + nom.idNomina + " f:" + nom.fechaPago);
             this.historialpuesto_id.Text = Convert.ToString(emp.IdEmpleado);
-            this.historialpuesto_nombre.Text = emp.Nombre +" "+emp.Amaterno+" "+emp.Apaterno;
+            this.historialpuesto_nombre.Text = emp.Nombre+" "+emp.Apaterno+" "+emp.Amaterno;
             this.historialpuesto_finicio.Text = emp.FechaContratacion;
             this.salario.Text = Convert.ToString(emp.Salario);
             em_dao = new Empleados_DAO();
@@ -40,17 +40,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
             if (validarCampos() == true)
             {
-                HistorialPuesto historial = new HistorialPuesto(0, ((Puesto)puesto.Items[puesto.SelectedIndex]).IdPuesto, ((Departamento)departamento.Items[departamento.SelectedIndex]).idDepto, historialpuesto_finicio.Text, historialpuesto_ffin.Text,
+                HistorialPuesto historial = new HistorialPuesto((int)historialpuesto_id.Value, ((Puesto)puesto.Items[puesto.SelectedIndex]).IdPuesto, ((Departamento)departamento.Items[departamento.SelectedIndex]).idDepto, historialpuesto_finicio.Text, historialpuesto_ffin.Text,
                     (double)salario.Value);
                 try
                 {
-                    
-
+                  
                         hist_dao.registrar(historial);
                         MessageBox.Show("Registro realizado exitosamente");
                         Close();
-                    
                    
+
                 }
                 catch (Exception)
                 {

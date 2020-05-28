@@ -37,7 +37,11 @@
             this.btn_anterior = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.btn_buscarEmpleado = new System.Windows.Forms.Button();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.tablaHistorialpuestos)).BeginInit();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablaHistorialpuestos
@@ -130,11 +134,43 @@
             this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
             this.btn_buscarEmpleado.Click += new System.EventHandler(this.btn_buscarEmpleado_Click);
             // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editarToolStripMenuItem.Image")));
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(129, 21);
+            this.editarToolStripMenuItem.Text = "Editar Historial";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // menu
+            // 
+            this.menu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem,
+            this.editarToolStripMenuItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
+            this.menu.Size = new System.Drawing.Size(800, 31);
+            this.menu.TabIndex = 28;
+            this.menu.Text = "menuStrip1";
+            // 
             // HistorialPuestos_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.tablaHistorialpuestos);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_pagina);
@@ -147,6 +183,8 @@
             this.Text = "HistorialPuestos_GUI";
             this.Load += new System.EventHandler(this.HistorialPuestos_GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaHistorialpuestos)).EndInit();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +200,8 @@
         private System.Windows.Forms.Button btn_buscarEmpleado;
         private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menu;
     }
 }
