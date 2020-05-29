@@ -94,6 +94,7 @@
             // 
             // fechaSol
             // 
+            this.fechaSol.Enabled = false;
             this.fechaSol.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaSol.Location = new System.Drawing.Point(186, 157);
             this.fechaSol.MinDate = new System.DateTime(2020, 5, 12, 0, 0, 0, 0);

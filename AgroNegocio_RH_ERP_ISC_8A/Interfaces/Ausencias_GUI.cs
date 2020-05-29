@@ -18,17 +18,21 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         int idEmpleado=0;
         Ausencias_justificadas_DAO au_dao;
         string aux1, aux2;
-        public Ausencias_GUI(String em, int idEm)
+        int dV, dP;
+        public Ausencias_GUI(String em, int idEm, int dVa,int dPe)
         {
             InitializeComponent();
             idEmpleado = idEm;
             nombreEmpleadoPermiso = em;
             txtEmpleado.Text = em;
+            dV = dVa;
+            dP = dPe;
             try
             {
                 au_dao = new Ausencias_justificadas_DAO();
                 au_dao.table = "AusenciasJustificadas_Tabla";
                 au_dao.order_by = "ID";
+                au_dao.where = "ID_EmpleadoS=" + idEm;
                 au_dao.CalculaPaginas();
                 if (au_dao.actual_page == 1 || au_dao.actual_page == 0)
                 {
@@ -127,29 +131,44 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             if (tablaAusencias.SelectedRows.Count != -1)
             {
-
                 try
                 {
                     DialogResult resultado = MessageBox.Show("¿Estás seguro que desea eliminar la ausencia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
                         DataGridViewRow row = tablaAusencias.SelectedRows[0];
-                        int idAu = (int)row.Cells[0].Value;
-                        au_dao.eliminar(idAu);
-
+                        
+                        if ((string) row.Cells[11].Value != "R" && (string)row.Cells[11].Value != "V")
+                        {
+                            int idAu = (int)row.Cells[0].Value;
+                            au_dao.eliminar(idAu);
+                            Mensajes.Info("La ausencia se elimino correctamente");
+                            
+                        }
+                        else
+                        {
+                            if ((string)row.Cells[11].Value == "V")
+                            {
+                                Mensajes.Error("La ausencia se encuentra aprobada");
+                            }
+                            else
+                            {
+                                Mensajes.Error("La ausencia se encuentra rechazada");
+                            }
+                        }
                     }
                     actualizar();
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la ausencia");
+                    Mensajes.Error("Error al intentar eliminar la ausencia");
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
             else
             {
-                DialogResult resultado = MessageBox.Show("Selecciona la ausencia", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Mensajes.Error("Selecciona la ausencia");
             }
         }
 
@@ -158,30 +177,116 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             if (tablaAusencias.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = tablaAusencias.SelectedRows[0];
-
-                Ausencia_justificada aus = new Ausencia_justificada(
+               
+                if ((string)row.Cells[11].Value != "R" && (string)row.Cells[11].Value != "V")
+                {
+                    Ausencia_justificada aus = new Ausencia_justificada(
                     (int)row.Cells[0].Value,
                     (string)row.Cells[1].Value,
                     (string)row.Cells[2].Value,
                     (string)row.Cells[3].Value,
                     Convert.ToChar(row.Cells[4].Value),
                     (string)row.Cells[6].Value,
-                    (int) row.Cells[8].Value,
+                    (int)row.Cells[8].Value,
                     (string)row.Cells[9].Value,
                     (int)row.Cells[5].Value,
                     Convert.ToChar(row.Cells[11].Value));
 
-                Ausencias_editar ae = new Ausencias_editar(aus, idEmpleado, txtEmpleado.Text);
-                SetVisibleCore(false);
-                ae.ShowDialog();
-                SetVisibleCore(true);
-                actualizar();
+                    Ausencias_editar ae = new Ausencias_editar(aus, idEmpleado, txtEmpleado.Text);
+                    SetVisibleCore(false);
+                    ae.ShowDialog();
+                    SetVisibleCore(true);
+                    actualizar();
+                }
+                else
+                {
+                    if ((string)row.Cells[11].Value == "V")
+                    {
+                        Mensajes.Error("La ausencia se encuentra aprobada");
+                    }
+                    else
+                    {
+                        Mensajes.Error("La ausencia se encuentra rechazada");
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Selecciona una ciudad");
+                Mensajes.Error("Selecciona una ciudad");
             }
         }
+
+        private void autorizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaAusencias.SelectedRows.Count != -1)
+            {
+                DateTime fechaI, fechaF;
+                TimeSpan tS;
+                int dias;
+                try
+                {
+                    DataGridViewRow row = tablaAusencias.SelectedRows[0];
+                    fechaI = Convert.ToDateTime(row.Cells[2].Value);
+                    fechaF = Convert.ToDateTime(row.Cells[3].Value);
+                    tS = fechaF - fechaI;
+                    dias = tS.Days;
+                    if ((string)row.Cells[11].Value != "R" && (string)row.Cells[11].Value != "V")
+                    {
+                        int idAu = (int)row.Cells[0].Value;
+                        if ((string)row.Cells[4].Value == "V")
+                        {
+                            if (dias <= dV)
+                            {
+                                au_dao.estatus(idAu, 'V');
+                                Mensajes.Info("La vacaciones se autorizon correctamente");
+                            }
+                            else
+                            {
+                                au_dao.estatus(idAu, 'R');
+                                Mensajes.Info("Las vacaciones se rechazon ya que excede los días de vacaciones permitidos");
+                            }
+
+                        }
+                        else if ((string)row.Cells[4].Value == "P")
+                        {
+                            if (dias <= dP)
+                            {
+                                au_dao.estatus(idAu, 'V');
+                                Mensajes.Info("El permiso se autorizo correctamente");
+                            }
+                            else
+                            {
+                                au_dao.estatus(idAu, 'R');
+                                Mensajes.Info("El permiso se rechazo ya que excede los días de vacaciones permitidos");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if((string)row.Cells[11].Value == "V")
+                        {
+                            Mensajes.Error("La ausencia se encuentra aprobada");
+                        }
+                        else
+                        {
+                            Mensajes.Error("La ausencia se encuentra rechazada");
+                        }
+                    }
+                    actualizar();
+
+                }
+                catch (Exception ex)
+                {
+                    Mensajes.Error("Error al intentar autorizar la ausencia");
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                Mensajes.Error("Selecciona la ausencia");
+            }
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

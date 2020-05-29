@@ -69,7 +69,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Empleado> empleados = new List<Empleado>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select idEmpleado,nombre, apaterno, amaterno,estatus from Empleados " + consulta_wh;
+                string consulta = "select idEmpleado,nombre, apaterno, amaterno, estatus, diasVacaciones, diasPermiso from Empleados " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -92,7 +92,34 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             }
             return empleados;
         }
+        public List<Empleado> consultaGeneral3(string consulta_wh, List<string> parametros, List<object> valores)
+        {
+            List<Empleado> empleados = new List<Empleado>();
+            using (SqlConnection conexion = new SqlConnection(cadenaconexion))
+            {
+                string consulta = "select id,nombre, apaterno, amaterno, puesto, nss from Empleados_Tabla " + consulta_wh;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                for (int i = 0; i < parametros.Count; i++)
+                {
+                    comando.Parameters.AddWithValue(parametros[i], valores[i]);
+                }
 
+                conexion.Open();
+                SqlDataReader lector = comando.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+
+                        Empleado emp_temp = new Empleado(lector.GetInt32(0), lector.GetString(1), lector.GetString(2), lector.GetString(3), lector.GetString(4),lector.GetString(5));
+
+                        empleados.Add(emp_temp);
+                    }
+                }
+                conexion.Close();
+            }
+            return empleados;
+        }
         /**
          * Registrar
          * Método para registrar los valores en la BD.

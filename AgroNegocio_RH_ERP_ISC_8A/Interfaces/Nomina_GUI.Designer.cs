@@ -39,7 +39,10 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autorizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_pagina = new System.Windows.Forms.Label();
             this.btn_anterior = new System.Windows.Forms.Button();
@@ -68,11 +71,12 @@
             this.eliminarToolStripMenuItem,
             this.nóminaPercepcionesToolStripMenuItem,
             this.nóminaDeduccionesToolStripMenuItem,
+            this.autorizarToolStripMenuItem,
             this.descargarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(911, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1072, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -132,18 +136,44 @@
             this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina deducciones";
             this.nóminaDeduccionesToolStripMenuItem.Click += new System.EventHandler(this.nóminaDeduccionesToolStripMenuItem_Click);
             // 
+            // autorizarToolStripMenuItem
+            // 
+            this.autorizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("autorizarToolStripMenuItem.Image")));
+            this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(81, 21);
+            this.autorizarToolStripMenuItem.Text = "Pagada";
+            this.autorizarToolStripMenuItem.Click += new System.EventHandler(this.autorizarToolStripMenuItem_Click);
+            // 
             // descargarToolStripMenuItem
             // 
+            this.descargarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pDFToolStripMenuItem,
+            this.excelToolStripMenuItem});
             this.descargarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("descargarToolStripMenuItem.Image")));
             this.descargarToolStripMenuItem.Name = "descargarToolStripMenuItem";
             this.descargarToolStripMenuItem.Size = new System.Drawing.Size(97, 21);
             this.descargarToolStripMenuItem.Text = "Descargar";
             // 
+            // pDFToolStripMenuItem
+            // 
+            this.pDFToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pDFToolStripMenuItem.Image")));
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click);
+            // 
+            // excelToolStripMenuItem
+            // 
+            this.excelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("excelToolStripMenuItem.Image")));
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excelToolStripMenuItem.Text = "Excel";
+            // 
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
             this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_total.Location = new System.Drawing.Point(469, 399);
+            this.lbl_total.Location = new System.Drawing.Point(572, 401);
             this.lbl_total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(34, 20);
@@ -154,7 +184,7 @@
             // 
             this.lbl_pagina.AutoSize = true;
             this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pagina.Location = new System.Drawing.Point(385, 399);
+            this.lbl_pagina.Location = new System.Drawing.Point(488, 401);
             this.lbl_pagina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pagina.Name = "lbl_pagina";
             this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
@@ -164,7 +194,7 @@
             // btn_anterior
             // 
             this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
-            this.btn_anterior.Location = new System.Drawing.Point(336, 392);
+            this.btn_anterior.Location = new System.Drawing.Point(439, 394);
             this.btn_anterior.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(29, 34);
@@ -175,7 +205,7 @@
             // btn_siguiente
             // 
             this.btn_siguiente.Image = ((System.Drawing.Image)(resources.GetObject("btn_siguiente.Image")));
-            this.btn_siguiente.Location = new System.Drawing.Point(526, 392);
+            this.btn_siguiente.Location = new System.Drawing.Point(629, 394);
             this.btn_siguiente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(27, 34);
@@ -186,7 +216,7 @@
             // btn_buscarNomina
             // 
             this.btn_buscarNomina.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscarNomina.Image")));
-            this.btn_buscarNomina.Location = new System.Drawing.Point(799, 88);
+            this.btn_buscarNomina.Location = new System.Drawing.Point(978, 88);
             this.btn_buscarNomina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_buscarNomina.Name = "btn_buscarNomina";
             this.btn_buscarNomina.Size = new System.Drawing.Size(37, 29);
@@ -198,11 +228,12 @@
             // 
             this.buscarNominaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarNominaTXT.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarNominaTXT.Location = new System.Drawing.Point(625, 90);
+            this.buscarNominaTXT.Location = new System.Drawing.Point(804, 90);
             this.buscarNominaTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buscarNominaTXT.Name = "buscarNominaTXT";
             this.buscarNominaTXT.Size = new System.Drawing.Size(176, 26);
             this.buscarNominaTXT.TabIndex = 20;
+            this.buscarNominaTXT.TextChanged += new System.EventHandler(this.buscarNominaTXT_TextChanged);
             // 
             // label1
             // 
@@ -241,7 +272,7 @@
             this.tablaNomina.Name = "tablaNomina";
             this.tablaNomina.ReadOnly = true;
             this.tablaNomina.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaNomina.Size = new System.Drawing.Size(779, 248);
+            this.tablaNomina.Size = new System.Drawing.Size(982, 248);
             this.tablaNomina.TabIndex = 26;
             // 
             // nombre
@@ -253,7 +284,6 @@
             this.nombre.ReadOnly = true;
             this.nombre.Size = new System.Drawing.Size(192, 26);
             this.nombre.TabIndex = 46;
-            this.nombre.TextChanged += new System.EventHandler(this.nombre_TextChanged);
             // 
             // label4
             // 
@@ -278,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 466);
+            this.ClientSize = new System.Drawing.Size(1072, 466);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.label4);
@@ -327,5 +357,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem descargarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autorizarToolStripMenuItem;
     }
 }

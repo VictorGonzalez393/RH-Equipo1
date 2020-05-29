@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 {
-    class Incapacidad
+   public class Incapacidad
     {
         public string NombreCompleto { get { return string.Format("{0} {1} {2}", Nombre, Apaterno, Amaterno); } }
         public int IdIncapacidad { get; set; } 
@@ -32,10 +32,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
         } 
         public byte[] bt { get; set; }
 
-        public Incapacidad(int idIncapacidad, int idEmpleado, string apaterno, string amaterno, string enfermedad, string fechaInicio, string fechaFin, byte[] bt)
+        public Incapacidad(int idIncapacidad, int idEmpleado, string nombre, string apaterno, string amaterno, string enfermedad, string fechaInicio, string fechaFin, byte[] bt)
         {
             IdIncapacidad = idIncapacidad;
             IdEmpleado = idEmpleado;
+            Nombre = nombre;
             Apaterno = apaterno;
             Amaterno = amaterno;
             Enfermedad = enfermedad;
@@ -45,10 +46,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
             Evidencia= new Bitmap(new Bitmap(new MemoryStream(bt)), new Size(120, 134));
         }
 
-        public Incapacidad(int idIncapacidad, int idEmpleado, string apaterno, string amaterno, string enfermedad, string fechaInicio, string fechaFin, Image evidencia)
+        public Incapacidad(int idIncapacidad, int idEmpleado,string nombre, string apaterno, string amaterno, string enfermedad, string fechaInicio, string fechaFin, Image evidencia)
         {
             IdIncapacidad = idIncapacidad;
             IdEmpleado = idEmpleado;
+            Nombre = nombre;
             Apaterno = apaterno;
             Amaterno = amaterno;
             Enfermedad = enfermedad;

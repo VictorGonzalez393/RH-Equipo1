@@ -38,7 +38,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                                                                lector.GetString(4),
                                                                lector.GetString(5),
                                                                lector.GetString(6),
-                                                               (byte[])lector[7]);
+                                                               lector.GetString(7),
+                                                               GetImage(lector.GetInt32(0)));
                         incapacidades.Add(inc_temp);
                     }
                 }
@@ -162,7 +163,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 f = (byte[])foto;
                 conexion.Close();
             }
-            img = new Bitmap(new Bitmap(new MemoryStream(f)), new Size(120, 134));
+            img = new Bitmap(new Bitmap(new MemoryStream(f)), new Size(244, 294));
             return img;
         }
 

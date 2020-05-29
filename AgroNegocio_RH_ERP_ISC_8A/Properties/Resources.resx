@@ -142,4 +142,7 @@
   <data name="Historial_puestos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Iconos\Historial_puestos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="familia_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\familia_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
