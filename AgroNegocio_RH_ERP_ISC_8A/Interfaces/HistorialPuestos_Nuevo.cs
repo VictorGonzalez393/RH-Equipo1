@@ -23,7 +23,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             InitializeComponent();
             this.idEmp = idEmpleado;
-            //Mensajes.Info("Nomina: " + nom.idNomina + " f:" + nom.fechaPago);
             this.historialpuesto_id.Text = Convert.ToString(emp.IdEmpleado);
             this.historialpuesto_nombre.Text = emp.Nombre+" "+emp.Apaterno+" "+emp.Amaterno;
             this.historialpuesto_finicio.Text = emp.FechaContratacion;

@@ -284,6 +284,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             actualizar();
         }
 
+        private void nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tablaNomina.SelectedRows.Count > 0)

@@ -350,6 +350,115 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         }
 
+        private void cambiarPuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //if (tablaEmpleados1.SelectedRows.Count == 1)
+            //{
+
+            //    DataGridViewRow row = tablaEmpleados1.SelectedRows[0];
+            //    Empleado emp = new Empleado(
+            //        (int)row.Cells[0].Value,
+            //        (string)row.Cells[1].Value,
+            //        (string)row.Cells[2].Value,
+            //        (string)row.Cells[3].Value,
+            //        (string)row.Cells[4].Value,
+            //        (string)row.Cells[5].Value,
+            //        (string)row.Cells[6].Value,
+            //        (double)row.Cells[7].Value,
+            //        (string)row.Cells[8].Value,
+            //        (string)row.Cells[9].Value,
+            //        (int)row.Cells[10].Value,
+            //        (int)row.Cells[11].Value,
+            //        (string)row.Cells[12].Value,
+            //        (string)row.Cells[13].Value,
+            //        (string)row.Cells[14].Value,
+            //        (string)row.Cells[15].Value,
+            //        (double)row.Cells[16].Value,
+            //        Convert.ToChar(row.Cells[17].Value),
+            //        empleadosDAO.getidDepartamento((string)row.Cells[18].Value),
+            //        empleadosDAO.getidPuesto((string)row.Cells[19].Value),
+            //        empleadosDAO.getidCiudad((string)row.Cells[20].Value),
+            //        empleadosDAO.getidSucursal((string)row.Cells[21].Value),
+            //        empleadosDAO.GetImage((int)row.Cells[0].Value));
+
+            //    HistorialPuestos_Nuevo hp = new HistorialPuestos_Nuevo(emp, this.idEmp); /*Mandar el GUI con esos valores*/
+            //    this.SetVisibleCore(false);
+            //    hp.ShowDialog();
+            //    this.SetVisibleCore(true);
+            //    actualizar();
+
+            //}
+            //else
+            //{
+            //    DialogResult resultado = MessageBox.Show("Selecciona a un Empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+
+            if (tablaEmpleados1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = tablaEmpleados1.SelectedRows[0];
+
+                Empleado empleado_editar = new Empleado(
+                    (int)row.Cells[0].Value,
+                    (string)row.Cells[1].Value,
+                    (string)row.Cells[2].Value,
+                    (string)row.Cells[3].Value,
+                    (string)row.Cells[4].Value,
+                    (string)row.Cells[5].Value,
+                    (string)row.Cells[6].Value,
+                    (double)row.Cells[7].Value,
+                    (string)row.Cells[8].Value,
+                    (string)row.Cells[9].Value,
+                    (int)row.Cells[10].Value,
+                    (int)row.Cells[11].Value,
+                    (string)row.Cells[12].Value,
+                    (string)row.Cells[13].Value,
+                    (string)row.Cells[14].Value,
+                    (string)row.Cells[15].Value,
+                    (double)row.Cells[16].Value,
+                    Convert.ToChar(row.Cells[17].Value),
+                    empleadosDAO.getidDepartamento((string)row.Cells[18].Value),
+                    empleadosDAO.getidPuesto((string)row.Cells[19].Value),
+                    empleadosDAO.getidCiudad((string)row.Cells[20].Value),
+                    empleadosDAO.getidSucursal((string)row.Cells[21].Value),
+                    empleadosDAO.GetImage((int)row.Cells[0].Value)
+                    );
+
+                Empleados_editarH empleados_Editar = new Empleados_editarH(empleado_editar);
+                this.SetVisibleCore(false);
+                empleados_Editar.ShowDialog();
+                this.SetVisibleCore(true);
+                actualizar();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un Empleado");
+            }
+        }
+
+        private void historialPuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verHistorialPuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados1.SelectedRows.Count == 1)
+            {
+                int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value /*+ " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value*/;
+                HistorialPuestos_GUI hp = new HistorialPuestos_GUI(idemp, nombreemp);
+                this.SetVisibleCore(false);
+                hp.ShowDialog();
+                this.SetVisibleCore(true);
+
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("Selecciona a un empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

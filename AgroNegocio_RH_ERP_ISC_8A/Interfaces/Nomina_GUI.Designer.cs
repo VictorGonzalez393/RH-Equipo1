@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nomina_GUI));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +39,7 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_pagina = new System.Windows.Forms.Label();
             this.btn_anterior = new System.Windows.Forms.Button();
@@ -48,7 +51,6 @@
             this.nombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.descargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,6 +131,13 @@
             this.nóminaDeduccionesToolStripMenuItem.Size = new System.Drawing.Size(165, 21);
             this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina deducciones";
             this.nóminaDeduccionesToolStripMenuItem.Click += new System.EventHandler(this.nóminaDeduccionesToolStripMenuItem_Click);
+            // 
+            // descargarToolStripMenuItem
+            // 
+            this.descargarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("descargarToolStripMenuItem.Image")));
+            this.descargarToolStripMenuItem.Name = "descargarToolStripMenuItem";
+            this.descargarToolStripMenuItem.Size = new System.Drawing.Size(97, 21);
+            this.descargarToolStripMenuItem.Text = "Descargar";
             // 
             // lbl_total
             // 
@@ -211,7 +220,23 @@
             // 
             this.tablaNomina.AllowUserToAddRows = false;
             this.tablaNomina.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaNomina.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaNomina.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaNomina.Location = new System.Drawing.Point(59, 125);
             this.tablaNomina.Name = "tablaNomina";
             this.tablaNomina.ReadOnly = true;
@@ -228,6 +253,7 @@
             this.nombre.ReadOnly = true;
             this.nombre.Size = new System.Drawing.Size(192, 26);
             this.nombre.TabIndex = 46;
+            this.nombre.TextChanged += new System.EventHandler(this.nombre_TextChanged);
             // 
             // label4
             // 
@@ -247,13 +273,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(36, 31);
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
-            // 
-            // descargarToolStripMenuItem
-            // 
-            this.descargarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("descargarToolStripMenuItem.Image")));
-            this.descargarToolStripMenuItem.Name = "descargarToolStripMenuItem";
-            this.descargarToolStripMenuItem.Size = new System.Drawing.Size(97, 21);
-            this.descargarToolStripMenuItem.Text = "Descargar";
             // 
             // Nomina_GUI
             // 

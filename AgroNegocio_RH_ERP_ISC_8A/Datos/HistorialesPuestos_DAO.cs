@@ -53,7 +53,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
-                    string consulta = "insert into HistorialPuestos values (@idEmpleado, @idPuesto, @idDepartamento, @fechaInicio, @fechaFin, @salario,@estatus)";
+                    string consulta = "insert into HistorialPuestos values (@idEmpleado, @idPuesto, @idDepartamento, @fechaInicio, @fechaFin, @salario)";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idEmpleado", empleado.idEmpleado);
@@ -62,7 +62,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     comando.Parameters.AddWithValue("@fechaInicio", empleado.FechaInicio);
                     comando.Parameters.AddWithValue("@fechaFin", empleado.FechaFin);
                     comando.Parameters.AddWithValue("@salario", empleado.Salario);
-                    comando.Parameters.AddWithValue("@estatus", 'A');
                     if (comando.ExecuteNonQuery() != 0)
                         insert = true;
                     conexion.Close();

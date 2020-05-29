@@ -21,7 +21,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         public HistorialPuestos_GUI(int idEmp, string empleado)
         {
             InitializeComponent();
-            nombre.Text = empleado;
+            //nombre.Text = empleado;
             this.idEmp = idEmp;
             try
             {

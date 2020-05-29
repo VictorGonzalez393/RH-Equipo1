@@ -45,13 +45,13 @@
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_pagina = new System.Windows.Forms.Label();
             this.tablaEmpleados1 = new System.Windows.Forms.DataGridView();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.historialPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verHistorialPuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_anterior = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.btn_buscarEmpleado = new System.Windows.Forms.Button();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
-            this.historialDePuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historialPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -72,7 +72,7 @@
             this.nóminaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1040, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(881, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -213,6 +213,45 @@
             this.tablaEmpleados1.TabIndex = 19;
             this.tablaEmpleados1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEmpleados1_CellContentClick_1);
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historialPuestoToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 25);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(881, 25);
+            this.menuStrip2.TabIndex = 20;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // historialPuestoToolStripMenuItem
+            // 
+            this.historialPuestoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cambiarPuestoToolStripMenuItem,
+            this.verHistorialPuestosToolStripMenuItem});
+            this.historialPuestoToolStripMenuItem.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
+            this.historialPuestoToolStripMenuItem.Name = "historialPuestoToolStripMenuItem";
+            this.historialPuestoToolStripMenuItem.Size = new System.Drawing.Size(135, 21);
+            this.historialPuestoToolStripMenuItem.Text = "Historial Puesto";
+            this.historialPuestoToolStripMenuItem.Click += new System.EventHandler(this.historialPuestoToolStripMenuItem_Click);
+            // 
+            // cambiarPuestoToolStripMenuItem
+            // 
+            this.cambiarPuestoToolStripMenuItem.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
+            this.cambiarPuestoToolStripMenuItem.Name = "cambiarPuestoToolStripMenuItem";
+            this.cambiarPuestoToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.cambiarPuestoToolStripMenuItem.Text = "Cambiar Puesto";
+            this.cambiarPuestoToolStripMenuItem.Click += new System.EventHandler(this.cambiarPuestoToolStripMenuItem_Click);
+            // 
+            // verHistorialPuestosToolStripMenuItem
+            // 
+            this.verHistorialPuestosToolStripMenuItem.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
+            this.verHistorialPuestosToolStripMenuItem.Name = "verHistorialPuestosToolStripMenuItem";
+            this.verHistorialPuestosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.verHistorialPuestosToolStripMenuItem.Text = "Ver Historial Puestos";
+            this.verHistorialPuestosToolStripMenuItem.Click += new System.EventHandler(this.verHistorialPuestosToolStripMenuItem_Click);
+            // 
             // btn_anterior
             // 
             this.btn_anterior.Image = ((System.Drawing.Image)(resources.GetObject("btn_anterior.Image")));
@@ -246,47 +285,11 @@
             this.btn_buscarEmpleado.UseVisualStyleBackColor = true;
             this.btn_buscarEmpleado.Click += new System.EventHandler(this.btn_buscarEmpleado_Click);
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem11,
-            this.historialDePuestosToolStripMenuItem,
-            this.historialPuestoToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 25);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1040, 25);
-            this.menuStrip2.TabIndex = 20;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // toolStripMenuItem11
-            // 
-            this.toolStripMenuItem11.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(184, 21);
-            this.toolStripMenuItem11.Text = "Ver Historial de Puestos";
-            this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
-            // 
-            // historialDePuestosToolStripMenuItem
-            // 
-            this.historialDePuestosToolStripMenuItem.Image = global::AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.Historial_puestos;
-            this.historialDePuestosToolStripMenuItem.Name = "historialDePuestosToolStripMenuItem";
-            this.historialDePuestosToolStripMenuItem.Size = new System.Drawing.Size(146, 21);
-            this.historialDePuestosToolStripMenuItem.Text = "Agregar  Historial";
-            this.historialDePuestosToolStripMenuItem.Click += new System.EventHandler(this.historialDePuestosToolStripMenuItem_Click_1);
-            // 
-            // historialPuestoToolStripMenuItem
-            // 
-            this.historialPuestoToolStripMenuItem.Name = "historialPuestoToolStripMenuItem";
-            this.historialPuestoToolStripMenuItem.Size = new System.Drawing.Size(119, 21);
-            this.historialPuestoToolStripMenuItem.Text = "Historial Puesto";
-            // 
             // Empleados_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 443);
+            this.ClientSize = new System.Drawing.Size(881, 443);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.tablaEmpleados1);
             this.Controls.Add(this.lbl_total);
@@ -333,8 +336,8 @@
         private System.Windows.Forms.ToolStripMenuItem vacacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nóminaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
-        private System.Windows.Forms.ToolStripMenuItem historialDePuestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialPuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarPuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verHistorialPuestosToolStripMenuItem;
     }
 }
