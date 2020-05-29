@@ -61,12 +61,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 Document doc = new Document(PageSize.LETTER);
                 // Indicamos donde vamos a guardar el documento
                 PdfWriter writer = PdfWriter.GetInstance(doc,
-                                            new FileStream(@"" + ruta + nomArch, FileMode.Create));
+                                            new FileStream(@"" + ruta +"\\"+nomArch, FileMode.Create));
 
 
                 // Le colocamos el título y el autor
                 // **Nota: Esto no será visible en el documento
-                doc.AddTitle("Nomina#" + num + "_Empleado_" + nom + "_Periodo_" + periodo);
+                doc.AddTitle(@"Nomina#" + num + "_Empleado_" + nom + "_Periodo_" + periodo);
                 doc.AddCreator("Equipo1_Agronegocio");
                 // Creamos la imagen y le ajustamos el tamaño
                 iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(@"..\\..\\Iconos\\logo.png"); 
