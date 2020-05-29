@@ -289,6 +289,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             SetVisibleCore(true);
         }
 
+        private void buscarEmpleado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;

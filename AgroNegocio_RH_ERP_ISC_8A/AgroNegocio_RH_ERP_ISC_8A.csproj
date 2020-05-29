@@ -548,6 +548,8 @@
     <None Include="Iconos\eliminar.png" />
     <Content Include="Iconos\electronica.png" />
     <Content Include="Iconos\financiero.png" />
+    <Content Include="Iconos\historia.png" />
+    <Content Include="Iconos\Historial_puestos.png" />
     <Content Include="Iconos\logo.png" />
     <Content Include="Iconos\marcador-de-posicion %281%29.png" />
     <Content Include="Iconos\marcador-de-posicion.png" />
@@ -565,6 +567,7 @@
     <Content Include="Iconos\perdida.png" />
     <Content Include="Iconos\permiso %281%29.png" />
     <Content Include="Iconos\permiso.png" />
+    <Content Include="Iconos\r.png" />
     <Content Include="Iconos\reloj %281%29.png" />
     <Content Include="Iconos\reloj.png" />
     <Content Include="Iconos\sello.png" />
