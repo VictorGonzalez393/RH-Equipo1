@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using AgroNegocio_RH_ERP_ISC_8A.Datos;
 using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 using System.Diagnostics;
+using SpreadsheetLight;
+using DocumentFormat;
+using DocumentFormat.OpenXml.Math;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
@@ -342,21 +345,20 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             List<NominaDeduccion> nomD;
             List<NominaPercepcion> nomP;
             Mensajes.Info("A continuación debe seleccionar la carpeta donde desea almacenar el archivo");
-            //var folder = new Storage.Pickers.FolderPicker();
-
-           
+            
                 string ruta = "";
                 using (var fbd = new FolderBrowserDialog())
                 {
                     DialogResult result = fbd.ShowDialog();
 
+                    
+                if (tablaNomina.SelectedRows.Count == 1)
+                {
                     if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                     {
                         ruta = fbd.SelectedPath;
-                        Mensajes.Info("La ruta seleccionada es: "+ruta);
-                    if (tablaNomina.SelectedRows.Count == 1)
-                        {
-                            DataGridViewRow row = tablaNomina.SelectedRows[0];
+                        Mensajes.Info("La ruta seleccionada es: " + ruta);
+                        DataGridViewRow row = tablaNomina.SelectedRows[0];
                             empleado = em_dao.consultaGeneral3("where id=" + (int)row.Cells[1].Value, new List<string>(), new List<object>());
                             string consulta_where = " where idNomina=@id";
                             List<string> parametros = new List<string>();
@@ -372,16 +374,108 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         }
                         else
                         {
-                            Mensajes.Error("Seleccione una nómina");
+                            Mensajes.Error("Seleccione una carpeta");
                         }
                     }
                     else
                     {
-                        //por favor, selecciona una carpeta
+                        Mensajes.Error("Seleccione una nómina");
                     }
                 
             }
             
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mensajes.Info("A continuación debe seleccionar la carpeta donde desea almacenar el archivo");
+            SLDocument sl = new SLDocument();
+            SLStyle style1 = new SLStyle();
+            SLStyle style2 = new SLStyle();
+            style1.Font.FontSize = 14;
+            style1.Font.Bold = true;
+            style2.Font.FontSize = 12;
+            
+            style2.SetTopBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium,SLThemeColorIndexValues.Accent1Color, -0.5);
+            style2.SetLeftBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+            style2.SetRightBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+            style2.SetBottomBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+            string ruta = "";
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    ruta = fbd.SelectedPath;
+                    Mensajes.Info("La ruta seleccionada es: " + ruta);
+                    try
+                    {
+                        string consulta_wh = "ID_Empleado=" + idEmp;
+                        tablaNomina.DataSource = nominas_DAO.buscar(consulta_wh);
+
+                        sl.SetCellValue(1, 1, "Tabla de nóminas del empleado: " + nombre.Text + "          Fecha de creación:" + DateTime.Today.ToShortDateString());
+                        sl.SetCellStyle(1, 1, style1);
+                        style1.Font.FontSize = 12;
+                        style1.SetTopBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+                        style1.SetLeftBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+                        style1.SetRightBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+                        style1.SetBottomBorder(DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Medium, SLThemeColorIndexValues.Accent1Color, -0.5);
+                        
+                        int c = 1;
+                        foreach (DataGridViewColumn col in tablaNomina.Columns)
+                        {
+                            sl.SetCellValue(2, c, col.HeaderText.ToString());
+                            sl.SetCellStyle(2, c, style1);
+                            c++;
+                        }
+
+                        int r = 3;
+                        foreach (DataGridViewRow row in tablaNomina.Rows)
+                        {
+
+                            sl.SetCellValue(r, 1, row.Cells[0].Value.ToString());
+                            sl.SetCellStyle(r, 1, style2);
+                            sl.SetCellValue(r, 2, row.Cells[1].Value.ToString());
+                            sl.SetCellStyle(r, 2, style2);
+                            sl.SetCellValue(r, 3, row.Cells[2].Value.ToString());
+                            sl.SetCellStyle(r, 3, style2);
+                            sl.SetCellValue(r, 4, row.Cells[3].Value.ToString());
+                            sl.SetCellStyle(r, 4, style2);
+                            sl.SetCellValue(r, 5, row.Cells[4].Value.ToString());
+                            sl.SetCellStyle(r, 5, style2);
+                            sl.SetCellValue(r, 6, row.Cells[5].Value.ToString());
+                            sl.SetCellStyle(r, 6, style2);
+                            sl.SetCellValue(r, 7, row.Cells[6].Value.ToString());
+                            sl.SetCellStyle(r, 7, style2);
+                            sl.SetCellValue(r, 8, row.Cells[7].Value.ToString());
+                            sl.SetCellStyle(r, 8, style2);
+                            sl.SetCellValue(r, 9, row.Cells[8].Value.ToString());
+                            sl.SetCellStyle(r, 9, style2);
+                            sl.SetCellValue(r, 10, row.Cells[9].Value.ToString());
+                            sl.SetCellStyle(r, 10, style2);
+                            sl.SetCellValue(r, 11, row.Cells[10].Value.ToString());
+                            sl.SetCellStyle(r, 11, style2);
+                            sl.SetCellValue(r, 12, row.Cells[11].Value.ToString());
+                            sl.SetCellStyle(r, 12, style2);
+
+
+                            r++;
+                        }
+                        //tablaNomina.DataSource = nominas_DAO.getSigPagina();
+                        actualizar();
+                        sl.SaveAs(ruta + "\\Nominas_Empleado_" + nombre.Text + ".xlsx");
+                        Mensajes.Info("El archivo de Excel se guardo satisfactoriamente");
+                    }catch(Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                        Mensajes.Error("Error al guardar archivo de excel");
+                    }
+                }
+                else
+                {
+                    Mensajes.Error("Seleccione una carpeta");
+                }
+            }
         }
 
         private void editarNóminaToolStripMenuItem_Click(object sender, EventArgs e)
