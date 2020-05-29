@@ -72,7 +72,7 @@
             this.nóminaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(909, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,7 +205,7 @@
             this.tablaEmpleados1.AllowUserToAddRows = false;
             this.tablaEmpleados1.AllowUserToDeleteRows = false;
             this.tablaEmpleados1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaEmpleados1.Location = new System.Drawing.Point(105, 140);
+            this.tablaEmpleados1.Location = new System.Drawing.Point(72, 127);
             this.tablaEmpleados1.Name = "tablaEmpleados1";
             this.tablaEmpleados1.ReadOnly = true;
             this.tablaEmpleados1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -221,7 +221,7 @@
             this.historialPuestoToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 25);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(881, 25);
+            this.menuStrip2.Size = new System.Drawing.Size(909, 25);
             this.menuStrip2.TabIndex = 20;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -289,7 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 443);
+            this.ClientSize = new System.Drawing.Size(909, 443);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.tablaEmpleados1);
             this.Controls.Add(this.lbl_total);

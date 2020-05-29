@@ -83,8 +83,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
                 {
 
-                    string consulta = "update HistorialPuestos set idPuesto=@idPuesto, idDepartamento=@idDepartamento, fechaInicio=@fechaInicio," +
-                        " fechaFin=@fechaFin, salario=@salario where idEmpleado=@idEmpleado";
+                    string consulta = "update HistorialPuestos set  fechaInicio=@fechaInicio," +
+                        " fechaFin=@fechaFin, salario=@salario where idEmpleado=@idEmpleado and idPuesto=@idPuesto and idDepartamento=@idDepartamento";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();
                     comando.Parameters.AddWithValue("@idEmpleado", historial.idEmpleado);

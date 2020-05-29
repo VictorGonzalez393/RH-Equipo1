@@ -169,3 +169,4 @@ C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debu
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapacidades_nuevo.resources
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Incapcidades_GUI.resources
 \\Mac\Home\Documents\GitHub\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_editarH.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_editarH.resources

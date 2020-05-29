@@ -74,14 +74,17 @@
             // 
             // historialpuesto_puesto
             // 
+            this.historialpuesto_puesto.Enabled = false;
             this.historialpuesto_puesto.FormattingEnabled = true;
             this.historialpuesto_puesto.Location = new System.Drawing.Point(145, 165);
             this.historialpuesto_puesto.Name = "historialpuesto_puesto";
             this.historialpuesto_puesto.Size = new System.Drawing.Size(215, 21);
             this.historialpuesto_puesto.TabIndex = 46;
+            this.historialpuesto_puesto.SelectedIndexChanged += new System.EventHandler(this.historialpuesto_puesto_SelectedIndexChanged);
             // 
             // historialpuesto_departamento
             // 
+            this.historialpuesto_departamento.Enabled = false;
             this.historialpuesto_departamento.FormattingEnabled = true;
             this.historialpuesto_departamento.Location = new System.Drawing.Point(145, 207);
             this.historialpuesto_departamento.Name = "historialpuesto_departamento";
@@ -244,6 +247,7 @@
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(215, 20);
             this.ID.TabIndex = 52;
+            this.ID.ValueChanged += new System.EventHandler(this.ID_ValueChanged);
             // 
             // HistorialPuestos_Editar
             // 
@@ -267,8 +271,9 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HistorialPuestos_Editar";
-            this.Text = "HistorialPuestos_Editar";
+            this.Text = "Editar Historial  Puesto";
             this.Load += new System.EventHandler(this.HistorialPuestos_Editar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

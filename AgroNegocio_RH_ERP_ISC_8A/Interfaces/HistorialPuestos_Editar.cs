@@ -166,5 +166,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             Close();
         }
+
+        private void ID_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void historialpuesto_puesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

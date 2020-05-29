@@ -21,14 +21,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         public HistorialPuestos_GUI(int idEmp, string empleado)
         {
             InitializeComponent();
-            //nombre.Text = empleado;
+            textBox1.Text = empleado;
             this.idEmp = idEmp;
+            
             try
             {
                 hist_dao = new HistorialesPuestos_DAO();
                 hist_dao.table = "HistorialPuestos_Tabla";
                 hist_dao.order_by = "ID";
+                hist_dao.where = "ID=" + idEmp;
                 hist_dao.CalculaPaginas();
+                
                 if (hist_dao.actual_page == 1 || hist_dao.actual_page == 0)
                 {
                     btn_anterior.Enabled = false;
@@ -56,15 +59,23 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void btn_buscarEmpleado_Click(object sender, EventArgs e)
         {
-            if (nombre.Text.Equals(" "))
+            if (buscar_TXT.Text.Equals(""))
             {
-                DialogResult resultado = MessageBox.Show("No hay datos para buscar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult resultado = MessageBox.Show("No hay datos para buscar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-                string consulta_wh = "nombre like '%'+'" + nombre.Text + "'+'%'";
-                tablaHistorialpuestos.DataSource = hist_dao.buscar(consulta_wh);
+                try
+                {
+                    string consulta_wh = "Puesto like '%'+'" + buscar_TXT.Text + "'+'%' and ID=" + idEmp;
+                    tablaHistorialpuestos.DataSource = hist_dao.buscar(consulta_wh);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR: " + ex.Message);
+                    MessageBox.Show("Error en la busqueda");
+                }
 
             }
         }
@@ -118,7 +129,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Principal p = new Principal();
+            this.SetVisibleCore(false);
+            p.ShowDialog();
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,6 +159,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 DialogResult resultado = MessageBox.Show("Selecciona el Historial", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void tablaHistorialpuestos_CellContentClick(object sender, DataGridViewCellEventArgs e)
