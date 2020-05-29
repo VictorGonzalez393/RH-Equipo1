@@ -39,9 +39,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.dETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dECUCCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pERCEPCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminaPercepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminaDeduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,9 +105,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.dETToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dECUCCIONESToolStripMenuItem,
             this.pERCEPCIONESToolStripMenuItem,
-            this.nóminaToolStripMenuItem,
-            this.nóminaPercepcionesToolStripMenuItem,
-            this.nóminaDeduccionesToolStripMenuItem,
             this.formasDePagoToolStripMenuItem});
             this.dETToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dETToolStripMenuItem.Image")));
             this.dETToolStripMenuItem.Name = "dETToolStripMenuItem";
@@ -121,7 +115,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.dECUCCIONESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dECUCCIONESToolStripMenuItem.Image")));
             this.dECUCCIONESToolStripMenuItem.Name = "dECUCCIONESToolStripMenuItem";
-            this.dECUCCIONESToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.dECUCCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dECUCCIONESToolStripMenuItem.Text = "Deducciones";
             this.dECUCCIONESToolStripMenuItem.Click += new System.EventHandler(this.dECUCCIONESToolStripMenuItem_Click);
             // 
@@ -129,37 +123,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.pERCEPCIONESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pERCEPCIONESToolStripMenuItem.Image")));
             this.pERCEPCIONESToolStripMenuItem.Name = "pERCEPCIONESToolStripMenuItem";
-            this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.pERCEPCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pERCEPCIONESToolStripMenuItem.Text = "Percepciones";
             this.pERCEPCIONESToolStripMenuItem.Click += new System.EventHandler(this.pERCEPCIONESToolStripMenuItem_Click);
-            // 
-            // nóminaToolStripMenuItem
-            // 
-            this.nóminaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaToolStripMenuItem.Image")));
-            this.nóminaToolStripMenuItem.Name = "nóminaToolStripMenuItem";
-            this.nóminaToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.nóminaToolStripMenuItem.Text = "Nómina";
-            this.nóminaToolStripMenuItem.Click += new System.EventHandler(this.nóminaToolStripMenuItem_Click);
-            // 
-            // nóminaPercepcionesToolStripMenuItem
-            // 
-            this.nóminaPercepcionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaPercepcionesToolStripMenuItem.Image")));
-            this.nóminaPercepcionesToolStripMenuItem.Name = "nóminaPercepcionesToolStripMenuItem";
-            this.nóminaPercepcionesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.nóminaPercepcionesToolStripMenuItem.Text = "Nómina Percepciones";
-            // 
-            // nóminaDeduccionesToolStripMenuItem
-            // 
-            this.nóminaDeduccionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nóminaDeduccionesToolStripMenuItem.Image")));
-            this.nóminaDeduccionesToolStripMenuItem.Name = "nóminaDeduccionesToolStripMenuItem";
-            this.nóminaDeduccionesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.nóminaDeduccionesToolStripMenuItem.Text = "Nómina Deducciones";
             // 
             // formasDePagoToolStripMenuItem
             // 
             this.formasDePagoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("formasDePagoToolStripMenuItem.Image")));
             this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
-            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
             // 
             // empleadosToolStripMenuItem
@@ -185,7 +157,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.puestosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("puestosToolStripMenuItem.Image")));
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
@@ -193,7 +165,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             // 
             this.departamentosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("departamentosToolStripMenuItem.Image")));
             this.departamentosToolStripMenuItem.Name = "departamentosToolStripMenuItem";
-            this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.departamentosToolStripMenuItem.Text = "Departamentos";
             this.departamentosToolStripMenuItem.Click += new System.EventHandler(this.departamentosToolStripMenuItem_Click);
             // 
@@ -314,9 +286,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departamentosToolStripMenuItem;
         private System.Windows.Forms.PictureBox imgUser;
-        private System.Windows.Forms.ToolStripMenuItem nóminaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nóminaPercepcionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nóminaDeduccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
     }
 }
