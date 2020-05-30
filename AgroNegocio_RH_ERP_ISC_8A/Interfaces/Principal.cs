@@ -136,5 +136,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             nominas.ShowDialog();
             this.SetVisibleCore(true);
         }
+
+        private void formasDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pago_GUI pago = new pago_GUI();
+            this.SetVisibleCore(false);
+            pago.ShowDialog();
+            this.SetVisibleCore(true);
+        }
+
+        
     }
 }

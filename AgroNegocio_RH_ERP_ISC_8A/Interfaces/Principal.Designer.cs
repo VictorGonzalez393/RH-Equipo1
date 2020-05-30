@@ -133,6 +133,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
             this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
+            this.formasDePagoToolStripMenuItem.Click += new System.EventHandler(this.formasDePagoToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 

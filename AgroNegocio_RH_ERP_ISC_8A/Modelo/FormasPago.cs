@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 {
-    class FormasPago
+    public class FormasPago
     { 
         public int idFormaPago { get; set; }
         public string nombre { get; set; } 

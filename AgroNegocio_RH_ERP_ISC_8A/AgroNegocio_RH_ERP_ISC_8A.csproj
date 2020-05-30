@@ -194,6 +194,24 @@
     <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
       <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\FormaPago_editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FormaPago_editar.designer.cs">
+      <DependentUpon>FormaPago_editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FormaPAgo_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FormaPAgo_GUI.designer.cs">
+      <DependentUpon>FormaPAgo_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FormaPAgo_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FormaPAgo_Nuevo.designer.cs">
+      <DependentUpon>FormaPAgo_Nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\HistorialPuestos_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,6 +461,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Estados_nuevo.resx">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FormaPago_editar.resx">
+      <DependentUpon>FormaPago_editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FormaPAgo_GUI.resx">
+      <DependentUpon>FormaPAgo_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FormaPAgo_Nuevo.resx">
+      <DependentUpon>FormaPAgo_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\HistorialPuestos_Editar.resx">
       <DependentUpon>HistorialPuestos_Editar.cs</DependentUpon>
