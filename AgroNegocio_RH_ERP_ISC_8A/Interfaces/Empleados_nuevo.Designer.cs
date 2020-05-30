@@ -126,7 +126,7 @@
             this.atrasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrasToolStripMenuItem.Image")));
             this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
             this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Text = "Atrás";
             this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // btn_cancelar
@@ -217,7 +217,7 @@
             this.ciudad_empleado.Name = "ciudad_empleado";
             this.ciudad_empleado.Size = new System.Drawing.Size(353, 21);
             this.ciudad_empleado.TabIndex = 59;
-            this.ciudad_empleado.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            //this.ciudad_empleado.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // sucursal_empleado
             // 

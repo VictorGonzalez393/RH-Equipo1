@@ -19,12 +19,15 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Ausencias_justificadas_DAO au_dao;
         string aux1, aux2;
         int dV, dP;
-        public Ausencias_GUI(String em, int idEm, int dVa,int dPe)
+        int idDepartamento;
+        public Ausencias_GUI(String em, int idEm, int dVa,int dPe,int idD)
         {
             InitializeComponent();
+            idDepartamento = idD;
             idEmpleado = idEm;
             nombreEmpleadoPermiso = em;
             txtEmpleado.Text = em;
+            
             dV = dVa;
             dP = dPe;
             try
@@ -54,10 +57,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Principal p = new Principal();
-            SetVisibleCore(false);
+            this.SetVisibleCore(false);
             p.ShowDialog();
-            this.Close();
-            actualizar();
+            
         }
 
         private void Ausencias_GUI_Load(object sender, EventArgs e)
@@ -120,7 +122,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ausencias_nuevo au = new Ausencias_nuevo(this.nombreEmpleadoPermiso, this.idEmpleado);
+            Ausencias_nuevo au = new Ausencias_nuevo(this.nombreEmpleadoPermiso, this.idEmpleado,idDepartamento);
             this.SetVisibleCore(false);
             au.ShowDialog();
             this.SetVisibleCore(true);
@@ -192,7 +194,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     (int)row.Cells[5].Value,
                     Convert.ToChar(row.Cells[11].Value));
 
-                    Ausencias_editar ae = new Ausencias_editar(aus, idEmpleado, txtEmpleado.Text);
+                    Ausencias_editar ae = new Ausencias_editar(aus, idEmpleado, txtEmpleado.Text,idDepartamento);
                     SetVisibleCore(false);
                     ae.ShowDialog();
                     SetVisibleCore(true);

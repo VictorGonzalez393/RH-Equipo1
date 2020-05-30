@@ -95,17 +95,18 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     if (percepciones_DAO.validarPercepcion(percepcion_new)) { 
 
                         percepciones_DAO.registrar(percepcion_new);
-                        MessageBox.Show("Registro realizado exitosamente");
+                        Mensajes.Info("Registro realizado exitosamente");
                         Close();
                     }
                     else
                     {
-                        MessageBox.Show("La percepción ya se encuentra registrada");
+                        Mensajes.Error("La percepción ya se encuentra registrada");
                     }
                 } 
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error al registrar la percepción");
+                    Mensajes.Error("Error al registrar la percepción");
+                    Console.WriteLine("Error: " + ex.Message);
                 }
 
             }

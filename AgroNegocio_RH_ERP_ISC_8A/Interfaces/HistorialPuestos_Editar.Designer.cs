@@ -215,7 +215,7 @@
             this.atrásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrásToolStripMenuItem.Image")));
             this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
             this.atrásToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.atrásToolStripMenuItem.Text = "Atras";
+            this.atrásToolStripMenuItem.Text = "Atrás";
             this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
             // label7

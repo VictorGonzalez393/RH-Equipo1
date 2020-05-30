@@ -53,7 +53,7 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_guardar.BackColor = System.Drawing.Color.OrangeRed;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;

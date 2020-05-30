@@ -77,17 +77,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
 
                         estados_DAO.registrar(nuevo_estado);
-                        MessageBox.Show("Registro realizado exitosamente");
+                        Mensajes.Info("Registro realizado exitosamente");
                         Close();
                     }
                     else
                     {
-                        MessageBox.Show("El estado ya se encuentra registrado");
+                        Mensajes.Error("El estado ya se encuentra registrado");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al registrar el estado");
+                   Mensajes.Error("Error al registrar el estado");
                 }
 
             }

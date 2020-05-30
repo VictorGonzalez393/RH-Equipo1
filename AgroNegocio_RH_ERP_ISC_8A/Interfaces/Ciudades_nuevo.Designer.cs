@@ -73,7 +73,8 @@
             this.atrásToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atrásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrásToolStripMenuItem.Image")));
             this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
-            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.atrásToolStripMenuItem.Text = "Atrás";
             this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
             // label1

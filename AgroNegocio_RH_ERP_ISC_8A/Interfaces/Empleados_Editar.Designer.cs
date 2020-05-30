@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.img_1 = new System.Windows.Forms.PictureBox();
             this.sexo_empleado = new System.Windows.Forms.ComboBox();
             this.codigopostal_empleado = new System.Windows.Forms.NumericUpDown();
             this.estadocivil_empleado = new System.Windows.Forms.ComboBox();
@@ -78,13 +79,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.img_1 = new System.Windows.Forms.PictureBox();
-            this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comision_empleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -150,6 +150,14 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales:";
+            // 
+            // img_1
+            // 
+            this.img_1.Location = new System.Drawing.Point(20, 19);
+            this.img_1.Name = "img_1";
+            this.img_1.Size = new System.Drawing.Size(120, 134);
+            this.img_1.TabIndex = 36;
+            this.img_1.TabStop = false;
             // 
             // sexo_empleado
             // 
@@ -679,6 +687,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
+//            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inicioToolStripMenuItem
             // 
@@ -687,6 +696,14 @@
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
+            // 
+            // atrásToolStripMenuItem
+            // 
+            this.atrásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrásToolStripMenuItem.Image")));
+            this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
+            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.atrásToolStripMenuItem.Text = "Atrás";
+            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
             // btn_cancelar
             // 
@@ -716,22 +733,6 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // img_1
-            // 
-            this.img_1.Location = new System.Drawing.Point(20, 19);
-            this.img_1.Name = "img_1";
-            this.img_1.Size = new System.Drawing.Size(120, 134);
-            this.img_1.TabIndex = 36;
-            this.img_1.TabStop = false;
-            // 
-            // atrásToolStripMenuItem
-            // 
-            this.atrásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrásToolStripMenuItem.Image")));
-            this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
-            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.atrásToolStripMenuItem.Text = "Atras";
-            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
-            // 
             // Empleados_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -749,6 +750,7 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigopostal_empleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -760,7 +762,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.salario_empleado)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

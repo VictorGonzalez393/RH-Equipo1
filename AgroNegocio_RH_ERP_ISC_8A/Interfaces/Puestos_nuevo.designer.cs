@@ -74,11 +74,11 @@
             // 
             // backToolStripMenuItem
             // 
-            this.backToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.backToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("backToolStripMenuItem.Image")));
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.backToolStripMenuItem.Text = "Atrás";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click_1);
             // 
             // btn_cancelar
@@ -257,7 +257,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Puestos_nuevo";
-            this.Text = "Puestos_nuevo";
+            this.Text = "Nuevo puesto";
             this.Load += new System.EventHandler(this.Puestos_nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

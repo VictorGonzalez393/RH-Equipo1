@@ -103,9 +103,10 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         actualizar();
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar el departamento.");
+                    Mensajes.Error("Error al intentar eliminar el departamento.");
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
             else

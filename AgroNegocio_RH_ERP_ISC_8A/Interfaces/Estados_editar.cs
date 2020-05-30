@@ -42,13 +42,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     }
                     else
                     {
-                        MessageBox.Show("Error al editar");
+                        Mensajes.Error("Error al editar");
                     }
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar el registro");
+                   Mensajes.Error("Error al editar el registro");
 
                 }
 

@@ -74,7 +74,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 catch (Exception ex)
                 {
                     Console.WriteLine("ERROR: " + ex.Message);
-                    MessageBox.Show("Error en la busqueda");
+                    Mensajes.Error("Error en la busqueda");
                 }
 
             }

@@ -44,12 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tablaDocumentacionEmpleado = new System.Windows.Forms.DataGridView();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDocumentacionEmpleado)).BeginInit();
@@ -209,32 +209,6 @@
             this.tablaDocumentacionEmpleado.Size = new System.Drawing.Size(448, 165);
             this.tablaDocumentacionEmpleado.TabIndex = 60;
             // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(371, 407);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
-            this.btn_cancelar.TabIndex = 62;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(53, 407);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(94, 31);
-            this.btn_guardar.TabIndex = 61;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = false;
-            // 
             // ID
             // 
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -262,6 +236,32 @@
             this.Empleado.HeaderText = "Empleado";
             this.Empleado.Name = "Empleado";
             this.Empleado.ReadOnly = true;
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelar.Location = new System.Drawing.Point(371, 407);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(94, 31);
+            this.btn_cancelar.TabIndex = 62;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.White;
+            this.btn_guardar.Location = new System.Drawing.Point(53, 407);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(94, 31);
+            this.btn_guardar.TabIndex = 61;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

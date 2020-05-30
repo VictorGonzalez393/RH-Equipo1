@@ -69,7 +69,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             List<Empleado> empleados = new List<Empleado>();
             using (SqlConnection conexion = new SqlConnection(cadenaconexion))
             {
-                string consulta = "select idEmpleado,nombre, apaterno, amaterno, estatus, diasVacaciones, diasPermiso from Empleados " + consulta_wh;
+                string consulta = "select idEmpleado,nombre, apaterno, amaterno, estatus, diasVacaciones, diasPermiso, idDepartamento from Empleados " + consulta_wh;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 for (int i = 0; i < parametros.Count; i++)
                 {
@@ -83,7 +83,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
                     while (lector.Read())
                     {
 
-                        Empleado emp_temp = new Empleado(lector.GetInt32(0), lector.GetString(1),lector.GetString(2),lector.GetString(3),lector.GetString(4)[0]);
+                        Empleado emp_temp = new Empleado(lector.GetInt32(0), lector.GetString(1),lector.GetString(2),lector.GetString(3),lector.GetString(4)[0],lector.GetInt32(5));
 
                         empleados.Add(emp_temp);
                     }

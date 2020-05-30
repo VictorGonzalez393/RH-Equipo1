@@ -52,9 +52,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).BeginInit();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,7 +163,7 @@
             // 
             this.buscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarEmpleado.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.buscarEmpleado.Location = new System.Drawing.Point(530, 94);
+            this.buscarEmpleado.Location = new System.Drawing.Point(558, 82);
             this.buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
             this.buscarEmpleado.Name = "buscarEmpleado";
             this.buscarEmpleado.Size = new System.Drawing.Size(259, 26);
@@ -171,12 +173,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(95, 86);
+            this.label1.Location = new System.Drawing.Point(95, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 31);
+            this.label1.Size = new System.Drawing.Size(186, 37);
             this.label1.TabIndex = 12;
             this.label1.Text = "Empleados";
             // 
@@ -207,11 +209,11 @@
             this.tablaEmpleados1.AllowUserToAddRows = false;
             this.tablaEmpleados1.AllowUserToDeleteRows = false;
             this.tablaEmpleados1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaEmpleados1.Location = new System.Drawing.Point(65, 131);
+            this.tablaEmpleados1.Location = new System.Drawing.Point(12, 131);
             this.tablaEmpleados1.Name = "tablaEmpleados1";
             this.tablaEmpleados1.ReadOnly = true;
             this.tablaEmpleados1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaEmpleados1.Size = new System.Drawing.Size(765, 244);
+            this.tablaEmpleados1.Size = new System.Drawing.Size(857, 244);
             this.tablaEmpleados1.TabIndex = 19;
             // 
             // btn_anterior
@@ -239,7 +241,7 @@
             // btn_buscarEmpleado
             // 
             this.btn_buscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscarEmpleado.Image")));
-            this.btn_buscarEmpleado.Location = new System.Drawing.Point(785, 92);
+            this.btn_buscarEmpleado.Location = new System.Drawing.Point(813, 80);
             this.btn_buscarEmpleado.Margin = new System.Windows.Forms.Padding(5);
             this.btn_buscarEmpleado.Name = "btn_buscarEmpleado";
             this.btn_buscarEmpleado.Size = new System.Drawing.Size(45, 31);
@@ -275,6 +277,7 @@
             this.verHistorialToolStripMenuItem.Name = "verHistorialToolStripMenuItem";
             this.verHistorialToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.verHistorialToolStripMenuItem.Text = "Ver Historial";
+            this.verHistorialToolStripMenuItem.Click += new System.EventHandler(this.verHistorialToolStripMenuItem_Click);
             // 
             // cambiarHistorialToolStripMenuItem
             // 
@@ -282,12 +285,23 @@
             this.cambiarHistorialToolStripMenuItem.Name = "cambiarHistorialToolStripMenuItem";
             this.cambiarHistorialToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.cambiarHistorialToolStripMenuItem.Text = "Cambiar Historial";
+            this.cambiarHistorialToolStripMenuItem.Click += new System.EventHandler(this.cambiarHistorialToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 64);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // Empleados_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 443);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.tablaEmpleados1);
             this.Controls.Add(this.lbl_total);
@@ -307,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados1)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +352,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem verHistorialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarHistorialToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -103,8 +103,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void IniciotoolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Principal p = new Principal();
+            this.SetVisibleCore(false);
             p.ShowDialog();
-            this.Close();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)

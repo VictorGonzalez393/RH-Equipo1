@@ -101,7 +101,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaconexion))
-                {
+                { 
+                    
                     string consulta = "update Departamentos set estatus='I' where idDepartamento=@idDepartamento";
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     conexion.Open();

@@ -56,18 +56,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
                         if (ciudadDAO.registrar(ciudad_nueva))
                         {
-                            MessageBox.Show("Registro exitoso");
+                            Mensajes.Info("Registro exitoso");
                             Close();
                         }
                         else
-                            MessageBox.Show("Error al registrar");
+                           Mensajes.Error("Error al registrar");
                     }
                     else
-                        MessageBox.Show("Error al registrar. La ciudad ya existe");
+                        Mensajes.Error("Error al registrar. La ciudad ya existe");
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error al registrar la ciudad");
+                    Mensajes.Error("Error al registrar la ciudad");
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
         }
@@ -80,13 +81,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     return true;
                 else
                 {
-                    MessageBox.Show("Falta el estado");
+                    Mensajes.Error("Falta el estado");
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Falta el nombre");
+                Mensajes.Error("Falta el nombre");
                 return false;
             }
 

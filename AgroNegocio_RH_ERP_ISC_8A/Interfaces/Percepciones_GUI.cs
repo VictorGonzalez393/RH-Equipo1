@@ -161,7 +161,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 catch(Exception ex)
                 {
                     Console.WriteLine("ERROR: " + ex.Message);
-                    MessageBox.Show("Error en la busqueda");
+                    Mensajes.Error("Error en la busqueda");
                 }
                 
             }
@@ -224,7 +224,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la percepción");
+                   Mensajes.Error("Error al intentar eliminar la percepción");
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }

@@ -67,17 +67,17 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
 
                         depto_DAO.registrar(depto);
-                        MessageBox.Show("Registro realizado exitosamente");
+                        Mensajes.Info("Registro realizado exitosamente");
                         Close();
                     }
                     else
                     {
-                        MessageBox.Show("El departamento ya se encuentra registrado.");
+                        Mensajes.Error("El departamento ya se encuentra registrado.");
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al registrar el departamento.");
+                    Mensajes.Error("Error al registrar el departamento.");
                 }
 
             }

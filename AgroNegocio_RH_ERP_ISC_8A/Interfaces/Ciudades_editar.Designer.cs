@@ -70,7 +70,8 @@
             this.atásToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atásToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atásToolStripMenuItem.Image")));
             this.atásToolStripMenuItem.Name = "atásToolStripMenuItem";
-            this.atásToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.atásToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.atásToolStripMenuItem.Text = "Atrás";
             this.atásToolStripMenuItem.Click += new System.EventHandler(this.atásToolStripMenuItem_Click);
             // 
             // estado_ciudad

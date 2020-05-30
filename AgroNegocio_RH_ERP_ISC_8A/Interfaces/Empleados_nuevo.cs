@@ -26,17 +26,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             InitializeComponent();
         }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private bool validarDatos()
         {
           
@@ -107,20 +96,20 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                MessageBox.Show("Falta la fotografía del empleado");
+                                                                                                Mensajes.Error("Falta la fotografía del empleado");
                                                                                                 return false;
                                                                                             }
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            MessageBox.Show("Falta seleccionar la sucursal");
+                                                                                            Mensajes.Error("Falta seleccionar la sucursal");
                                                                                             return false;
                                                                                         }
 
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        MessageBox.Show("Falta la Ciudad");
+                                                                                        Mensajes.Error("Falta la Ciudad");
                                                                                         return false;
 
                                                                                     }
@@ -130,113 +119,112 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    MessageBox.Show("Falta el Puesto");
+                                                                                    Mensajes.Error("Falta el Puesto");
                                                                                     return false;
                                                                                 }
                                                                             }
                                                                             else
                                                                             {
-                                                                                MessageBox.Show("Falta el Departamento");
+                                                                                Mensajes.Error("Falta el Departamento");
                                                                                 return false;
                                                                             }
                                                                         }
                                                                         else
                                                                         {
-                                                                            MessageBox.Show("Falta la Comision");
+                                                                            Mensajes.Error("Falta la Comision");
                                                                             return false;
                                                                         }
                                                                     }
                                                                     else
                                                                     {
-                                                                        MessageBox.Show("Falta la Escolaridad");
+                                                                        Mensajes.Error("Falta la Escolaridad");
                                                                         return false;
                                                                     }
                                                                 }
                                                                 else
                                                                 {
-                                                                    MessageBox.Show("Falta el C.P");
+                                                                    Mensajes.Error("Falta el C.P");
                                                                     return false;
                                                                 }
 
                                                             }
                                                             else
                                                             {
-                                                                MessageBox.Show("Falta la Colonia");
+                                                                Mensajes.Error("Falta la Colonia");
                                                                 return false;
                                                             }
                                                         }
                                                         else
                                                         {
-                                                            MessageBox.Show("Falta la Dirección");
+                                                            Mensajes.Error("Falta la Dirección");
                                                             return false;
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        MessageBox.Show("Falta los Dias de Permiso");
+                                                        Mensajes.Error("Falta los Dias de Permiso");
                                                         return false;
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("Faltan los dias de Vacaciones ");
+                                                    Mensajes.Error("Faltan los dias de Vacaciones ");
                                                     return false;
                                                 }
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Falta el estado Civi ");
+                                                Mensajes.Error("Falta el estado Civil ");
                                                 return false;
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Falta el NSS");
+                                            Mensajes.Error("Falta el NSS");
                                             return false;
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Falta el Salario");
+                                        Mensajes.Error("Falta el Salario");
                                         return false;
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Falta la Fecha de Nacimiento ");
+                                    Mensajes.Error("Falta la Fecha de Nacimiento ");
                                     return false;
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Falta la Fecha de Contratación ");
+                                Mensajes.Error("Falta la Fecha de Contratación ");
                                 return false;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Falta el sexo");
+                            Mensajes.Error("Falta el sexo");
                             return false;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Falta el Apellido Materno");
+                        Mensajes.Error("Falta el Apellido Materno");
                         return false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Falta el Apellido Paterno");
+                    Mensajes.Error("Falta el Apellido Paterno");
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Falta el Nombre");
+                Mensajes.Error("Falta el Nombre");
                 return false;
             }
-            return false;
         }
 
 
@@ -264,37 +252,48 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Departamento departamento = (Departamento)departamento_empleado.SelectedItem;
                 Puesto puesto = (Puesto)puesto_empleado.SelectedItem;
                 Sucursal sucursal = (Sucursal)sucursal_empleado.SelectedItem;
-                Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
-                    , fcontratacion_empleado.Text, fnacimiento_empleado.Text,(double) salario_empleado.Value, nss_empleado.Text, estadocivil_empleado.Text,
-                    (int)diasvacaciones_empleado.Value,(int) diaspermiso_empleado.Value, direccion_empleado.Text, colonia_empleado.Text, Convert.ToString(codigopostal_empleado.Value),
-                    escolaridad_empleado.Text,(double)comision_empleado.Value,'A', ((Departamento)departamento_empleado.Items[departamento_empleado.SelectedIndex]).idDepto,
-                    ((Puesto)puesto_empleado.Items[puesto_empleado.SelectedIndex]).IdPuesto, 
-                    ((Ciudad)ciudad_empleado.Items[ciudad_empleado.SelectedIndex]).ID, 
-                    ((Sucursal)sucursal_empleado.Items[sucursal_empleado.SelectedIndex]).IdSucursal, imag);
+                if (puesto.Samax <= salario_empleado.Value && puesto.Samin >= salario_empleado.Value) {
+                    Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
+                        , fcontratacion_empleado.Text, fnacimiento_empleado.Text, (double)salario_empleado.Value, nss_empleado.Text, estadocivil_empleado.Text,
+                        (int)diasvacaciones_empleado.Value, (int)diaspermiso_empleado.Value, direccion_empleado.Text, colonia_empleado.Text, Convert.ToString(codigopostal_empleado.Value),
+                        escolaridad_empleado.Text, (double)comision_empleado.Value, 'A', ((Departamento)departamento_empleado.Items[departamento_empleado.SelectedIndex]).idDepto,
+                        ((Puesto)puesto_empleado.Items[puesto_empleado.SelectedIndex]).IdPuesto,
+                        ((Ciudad)ciudad_empleado.Items[ciudad_empleado.SelectedIndex]).ID,
+                        ((Sucursal)sucursal_empleado.Items[sucursal_empleado.SelectedIndex]).IdSucursal, imag);
 
-   
-                try
-                {
-                    if (empleadodao.validarEmpleado(empleado_nuevo))
+
+                    try
                     {
-                        if (empleadodao.registrar(empleado_nuevo))
+                        if (empleadodao.validarEmpleado(empleado_nuevo))
                         {
-                            MessageBox.Show("Insercion exitosa. Favor de llenar su horario.");
-                            Horarios_editar horarios_Editar = new Horarios_editar(empleado_nuevo.IdEmpleado,
-                                empleado_nuevo.Nombre + " " + empleado_nuevo.Apaterno + " " + empleado_nuevo.Amaterno);
-                            horarios_Editar.ShowDialog();
-                            Close();
-                        }
+                            if (empleadodao.registrar(empleado_nuevo))
+                            {
+                                Mensajes.Info("Insercion exitosa. Favor de llenar su horario.");
+                                Horarios_editar horarios_Editar = new Horarios_editar(empleado_nuevo.IdEmpleado,
+                                    empleado_nuevo.Nombre + " " + empleado_nuevo.Apaterno + " " + empleado_nuevo.Amaterno);
+                                horarios_Editar.ShowDialog();
+                                Close();
+                            }
 
-                        else
-                            MessageBox.Show("Error al guardar");
+                            else
+                            {
+                                Mensajes.Error("Error al guardar el empleado");
+                            }
+                                
+                        }
+                        else {
+                            Mensajes.Error("Error al Insertar. El empleado ya existe");
+                            
+                        }
                     }
-                    else
-                        MessageBox.Show("Error al Insertar. El empleado ya existe");
+                    catch (Exception ex)
+                    {
+                        Mensajes.Error("Error al insertar al empleado" + ex.Message);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error al insertar al empleado" + ex.Message);
+                    Mensajes.Error("El salario del empleado es mayor o menor al salario del puesto");
                 }
 
             }
@@ -344,28 +343,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog abrir = new OpenFileDialog()

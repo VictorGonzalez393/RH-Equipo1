@@ -60,18 +60,19 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     {
                         if (ciudadDAO.editar(ciudad))
                         {
-                            MessageBox.Show("Edición exitosa");
+                           Mensajes.Info("Edición exitosa");
                             Close();
                         }
                         else
-                            MessageBox.Show("Error al editar");
+                            Mensajes.Error("Error al editar");
                     }
                     else
-                        MessageBox.Show("Error al editar. La ciudad ya existe");
+                        Mensajes.Error("Error al editar. La ciudad ya existe");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al editar el registro");
+                    Console.WriteLine("Error: " + ex.Message);
+                    Mensajes.Error("Error al editar el registro");
                 }
             }
         }
@@ -84,13 +85,13 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     return true;
                 else
                 {
-                    MessageBox.Show("Falta el estado");
+                    Mensajes.Error("Falta el estado");
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Falta el nombre");
+                Mensajes.Error("Falta el nombre");
                 return false;
             }
 
@@ -108,8 +109,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.SetVisibleCore(false);
             Principal p = new Principal();
+            this.SetVisibleCore(false);
             p.ShowDialog();
             //Application.Exit();
         }

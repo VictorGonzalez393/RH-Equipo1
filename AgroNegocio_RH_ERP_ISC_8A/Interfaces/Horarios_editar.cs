@@ -124,16 +124,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                             tablaHorario.Rows[index].Visible = false;
                            // actualizar();
                         }
-                        //Mensajes.Info("Día eliminado exitosamente");
+                        Mensajes.Info("Se elimino exitosamente");
                     }
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("Error al intentar eliminar el dia." + ex.Message);
                 //}
             }
             else
-                MessageBox.Show("Selecciona un día");
+                Mensajes.Error("Selecciona un día");
         }
 
         private void actualizar()

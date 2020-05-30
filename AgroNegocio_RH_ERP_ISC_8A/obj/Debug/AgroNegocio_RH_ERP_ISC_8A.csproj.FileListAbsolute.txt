@@ -180,3 +180,7 @@ C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debu
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\log4net.xml
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.IO.Packaging.xml
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_editarH.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_Editar.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_GUI.resources
+C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.HistorialPuestos_Nuevo.resources

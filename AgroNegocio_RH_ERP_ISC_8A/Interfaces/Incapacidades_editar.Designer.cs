@@ -194,7 +194,7 @@
             this.atrasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("atrasToolStripMenuItem.Image")));
             this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
             this.atrasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.atrasToolStripMenuItem.Text = "Atras";
+            this.atrasToolStripMenuItem.Text = "Atrás";
             this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
             // evd_1

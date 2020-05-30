@@ -132,7 +132,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la ciudad");
+                    Mensajes.Error("Error al intentar eliminar la ciudad");
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
             else
@@ -162,11 +163,12 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar la ciudad");
+                   Mensajes.Error("Error al intentar eliminar la ciudad");
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
             else
-                MessageBox.Show("Selecciona una ciudad");
+                Mensajes.Error("Selecciona una ciudad");
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)

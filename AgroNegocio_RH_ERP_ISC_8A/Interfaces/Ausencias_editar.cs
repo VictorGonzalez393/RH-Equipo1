@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgroNegocio_RH_ERP_ISC_8A.Modelo;
 using AgroNegocio_RH_ERP_ISC_8A.Datos;
+using DocumentFormat.OpenXml.Office2010.Excel;
 
 namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 {
@@ -18,13 +19,16 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Ausencias_justificadas_DAO au_dao;
         int idEmpl;
         string nombreE;
-        public Ausencias_editar(Ausencia_justificada a,int idEm, string nombre)
+        int idDepa;
+        public Ausencias_editar(Ausencia_justificada a,int idEm, string nombre, int idDep)
         {
             InitializeComponent();
             au = a;
             idEmpl = idEm;
             nombreE = nombre;
             au_dao = new Ausencias_justificadas_DAO();
+            idDepa = idDep;
+            
         }
 
         private void Ausencias_editar_Load(object sender, EventArgs e)
@@ -34,7 +38,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.fechaSol.Value = Convert.ToDateTime(au.FechaSolicitud);
             this.fechaIn.Value=  Convert.ToDateTime(au.FechaInicio);
             this.fechaFin.Value= Convert.ToDateTime(au.FechaFin);
-            var lista = new Datos.Empleados_DAO().consultaGeneral2("where estatus='A' and idEmpleado <> " + idEmpl, new List<string>(), new List<object>());
+            var lista = new Datos.Empleados_DAO().consultaGeneral2("where estatus='A' and idEmpleado <> " + idEmpl+" and idDepartamento="+idDepa, new List<string>(), new List<object>());
             empleadoA_cm.DisplayMember = "NombreCompleto";
             empleadoA_cm.ValueMember = "IdEmpleado";
             empleadoA_cm.DataSource = lista;
@@ -56,7 +60,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Principal p = new Principal();
-            SetVisibleCore(false);
+            this.SetVisibleCore(false);
             p.ShowDialog();
         }
 

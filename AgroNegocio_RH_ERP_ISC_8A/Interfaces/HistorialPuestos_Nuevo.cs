@@ -45,14 +45,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 {
                   
                         hist_dao.registrar(historial);
-                        MessageBox.Show("Registro realizado exitosamente");
+                        Mensajes.Info("Registro realizado exitosamente");
                         Close();
                    
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al registrar el Historial.");
+                    Mensajes.Error("Error al registrar el Historial.");
                 }
 
             }

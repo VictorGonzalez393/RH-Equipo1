@@ -105,22 +105,23 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         if (puestos_DAO.validarPuesto(puesto_new))
                         {
                             puestos_DAO.registrar(puesto_new);
-                            MessageBox.Show("Registro realizado exitosamente");
+                            Mensajes.Info("Registro realizado exitosamente");
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("El puesto ya se encuentra registrada");
+                            Mensajes.Error("El puesto ya se encuentra registrada");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No puede ser el salario minimo mayor al maximo");
+                        Mensajes.Error("No puede ser el salario minimo mayor al maximo");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    Mensajes.Error("Error al registrar el puesto");
+                    Console.WriteLine("Error: " + ex.Message);
                 }
 
             }
@@ -138,7 +139,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
 
         private void IniciotoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Close();
+            Principal p = new Principal();
+            this.SetVisibleCore(false);
+            p.ShowDialog();
         }
     }
 }

@@ -140,13 +140,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 
         }
 
-        public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, char estatus) 
+        public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, char estatus,int departamento) 
         {
             IdEmpleado = idEmpleado;
             Nombre = nombre;
             Apaterno = apaterno;
             Amaterno = amaterno;
             Estatus = estatus;
+            IdDepartamento = departamento;
         }
         public Empleado(int idEmpleado, string nombre, string apaterno, string amaterno, string puesto, string nss)
         {

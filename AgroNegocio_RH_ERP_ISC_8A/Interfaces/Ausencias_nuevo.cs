@@ -16,7 +16,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         Empleados_DAO em_dao;
         Ausencias_justificadas_DAO au_dao;
         int idEs = 0;
-        public Ausencias_nuevo(string nombre, int idES)
+        int idDep;
+        public Ausencias_nuevo(string nombre, int idES,int idDepartamento)
         {
             InitializeComponent();
             au_dao = new Ausencias_justificadas_DAO();
@@ -24,11 +25,14 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             empleadoS.Text = nombre;
             idEs = idES;
             fechaSol.Value = DateTime.Today;
+            fechaIn.Value= DateTime.Today;
+            fechaFin.Value = DateTime.Today;
+            idDep = idDepartamento;
         }
 
         private void Ausencias_nuevo_Load(object sender, EventArgs e)
         {
-            var lista = new Datos.Empleados_DAO().consultaGeneral2("where estatus='A' and idEmpleado <> "+idEs, new List<string>(), new List<object>());
+            var lista = new Datos.Empleados_DAO().consultaGeneral2("where estatus='A' and idEmpleado <> "+idEs+" and idDepartamento="+idDep, new List<string>(), new List<object>());
             empleadoA_cm.DisplayMember = "NombreCompleto";
             empleadoA_cm.ValueMember = "IdEmpleado";
             empleadoA_cm.DataSource = lista;
@@ -46,7 +50,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             Principal p = new Principal();
             SetVisibleCore(false);
             p.ShowDialog();
-            Close();
+           
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)

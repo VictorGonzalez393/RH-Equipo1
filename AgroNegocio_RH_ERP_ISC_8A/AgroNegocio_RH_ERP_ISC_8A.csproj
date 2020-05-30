@@ -152,6 +152,12 @@
     <Compile Include="Interfaces\Empleados_Editar.Designer.cs">
       <DependentUpon>Empleados_Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Empleados_editarH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Empleados_editarH.designer.cs">
+      <DependentUpon>Empleados_editarH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Empleados_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,6 +426,9 @@
     <EmbeddedResource Include="Interfaces\Empleados_Editar.resx">
       <DependentUpon>Empleados_Editar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Empleados_editarH.resx">
+      <DependentUpon>Empleados_editarH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Empleados_GUI.resx">
       <DependentUpon>Empleados_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,6 +556,7 @@
     <Content Include="Iconos\editar.png" />
     <None Include="Iconos\eliminar.png" />
     <Content Include="Iconos\electronica.png" />
+    <Content Include="Iconos\empleados_0.png" />
     <Content Include="Iconos\financiero.png" />
     <Content Include="Iconos\historia.png" />
     <Content Include="Iconos\Historial_puestos.png" />
@@ -570,6 +580,7 @@
     <Content Include="Iconos\r.png" />
     <Content Include="Iconos\reloj %281%29.png" />
     <Content Include="Iconos\reloj.png" />
+    <Content Include="Iconos\rotacion.png" />
     <Content Include="Iconos\sello.png" />
     <Content Include="Iconos\siguiente-pista.png" />
     <Content Include="Iconos\Siguiente.png" />

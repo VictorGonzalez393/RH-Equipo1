@@ -180,17 +180,18 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         }
                         else
                         {
-                            MessageBox.Show("Error al editar");
+                            Mensajes.Error("Error al editar");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No puede ser el salario minimo mayor al maximo");
+                        Mensajes.Error("No puede ser el salario minimo mayor al maximo");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    Mensajes.Error("Error al editar el registro");
+                    Console.WriteLine("Error: " + ex.Message);
 
                 }
 
