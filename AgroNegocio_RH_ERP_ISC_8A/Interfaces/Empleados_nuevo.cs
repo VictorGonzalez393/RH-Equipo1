@@ -251,8 +251,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 Ciudad ciudad = (Ciudad)ciudad_empleado.SelectedItem;
                 Departamento departamento = (Departamento)departamento_empleado.SelectedItem;
                 Puesto puesto = (Puesto)puesto_empleado.SelectedItem;
+               
                 Sucursal sucursal = (Sucursal)sucursal_empleado.SelectedItem;
-                if (puesto.Samax <= salario_empleado.Value && puesto.Samin >= salario_empleado.Value) {
+                if (salario_empleado.Value <= puesto.Samax && salario_empleado.Value >= puesto.Samin) {
                     Empleado empleado_nuevo = new Empleado(0, nombre_empleado.Text, apaterno_empleado.Text, amaterno_empleado.Text, sexo_empleado.Text
                         , fcontratacion_empleado.Text, fnacimiento_empleado.Text, (double)salario_empleado.Value, nss_empleado.Text, estadocivil_empleado.Text,
                         (int)diasvacaciones_empleado.Value, (int)diaspermiso_empleado.Value, direccion_empleado.Text, colonia_empleado.Text, Convert.ToString(codigopostal_empleado.Value),
@@ -272,6 +273,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                                 Horarios_editar horarios_Editar = new Horarios_editar(empleado_nuevo.IdEmpleado,
                                     empleado_nuevo.Nombre + " " + empleado_nuevo.Apaterno + " " + empleado_nuevo.Amaterno);
                                 horarios_Editar.ShowDialog();
+                                HistorialesPuestos_DAO hp = new HistorialesPuestos_DAO();
+                                HistorialPuesto his = new HistorialPuesto(empleado_nuevo.IdEmpleado, puesto.IdPuesto, departamento.idDepto, DateTime.Today.ToShortDateString(), "05/10/2021",(double) salario_empleado.Value);
+                                hp.registrar(his);
                                 Close();
                             }
 

@@ -156,7 +156,8 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                                 {
                                     Close();
                                 }
-                            }
+                            
+                        }
                             else
                             {
                                 MessageBox.Show("Error al editar");
@@ -426,6 +427,9 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             Close();
         }
 
-        
+        private void puesto_empleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

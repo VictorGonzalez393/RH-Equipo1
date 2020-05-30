@@ -61,6 +61,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             this.SetVisibleCore(false);
             empleadosnuevo.ShowDialog();
             this.SetVisibleCore(true);
+            actualizar();
         }
 
         private void tablaEmpleados1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -93,6 +93,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         {
             horai.Value = new DateTime(1998, 01, 13);
             horaf.Value = new DateTime(1998, 01, 13);
+           
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -169,6 +170,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 renglon.Cells["Inicio"].Value = horai.Value.TimeOfDay;
                 renglon.Cells["Fin"].Value = horaf.Value.TimeOfDay;
+               
             }
             else
             {
@@ -276,6 +278,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             {
                 this.Close();
             }
+        }
+
+        private void horai_FormatChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

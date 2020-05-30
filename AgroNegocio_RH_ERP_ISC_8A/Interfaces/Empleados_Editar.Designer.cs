@@ -511,12 +511,14 @@
             // 
             // puesto_empleado
             // 
+            this.puesto_empleado.Enabled = false;
             this.puesto_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.puesto_empleado.FormattingEnabled = true;
             this.puesto_empleado.Location = new System.Drawing.Point(154, 305);
             this.puesto_empleado.Name = "puesto_empleado";
             this.puesto_empleado.Size = new System.Drawing.Size(353, 24);
             this.puesto_empleado.TabIndex = 51;
+            this.puesto_empleado.SelectedIndexChanged += new System.EventHandler(this.puesto_empleado_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -575,6 +577,7 @@
             // 
             // departamento_empleado
             // 
+            this.departamento_empleado.Enabled = false;
             this.departamento_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departamento_empleado.FormattingEnabled = true;
             this.departamento_empleado.Location = new System.Drawing.Point(154, 264);
@@ -687,7 +690,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
-//            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inicioToolStripMenuItem
             // 

@@ -212,6 +212,7 @@
             this.horai.ShowUpDown = true;
             this.horai.Size = new System.Drawing.Size(93, 20);
             this.horai.TabIndex = 37;
+            this.horai.FormatChanged += new System.EventHandler(this.horai_FormatChanged);
             // 
             // horaf
             // 
