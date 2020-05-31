@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props" Condition="Exists('packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,8 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Nicolas GL\Desktop\Publicaciones\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +48,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6315C2C76ED3B974CF05E6A1F2D2626FB8FD0A3A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AgroNegocio_RH_ERP_ISC_8A_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -49,9 +80,6 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
-      <HintPath>packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
     </Reference>
     <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
       <HintPath>packages\SpreadsheetLight.3.4.11\lib\net40\SpreadsheetLight.dll</HintPath>
@@ -152,18 +180,6 @@
     <Compile Include="Interfaces\Departamentos_nuevo.Designer.cs">
       <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\DocumentacionEmpleado_GUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\DocumentacionEmpleado_GUI.Designer.cs">
-      <DependentUpon>DocumentacionEmpleado_GUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\DocumentacionEmpleado_Ver.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\DocumentacionEmpleado_Ver.Designer.cs">
-      <DependentUpon>DocumentacionEmpleado_Ver.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Empleados_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +221,12 @@
     </Compile>
     <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
+      <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\FormaPago_editar.cs">
       <SubType>Form</SubType>
@@ -450,11 +472,8 @@
     <EmbeddedResource Include="Interfaces\Departamentos_nuevo.resx">
       <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado_GUI.resx">
-      <DependentUpon>DocumentacionEmpleado_GUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado_Ver.resx">
-      <DependentUpon>DocumentacionEmpleado_Ver.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado.resx">
+      <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Empleados_Editar.resx">
       <DependentUpon>Empleados_Editar.cs</DependentUpon>
@@ -551,7 +570,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="AgroNegocio_RH_ERP_ISC_8A_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -632,11 +653,17 @@
     <Content Include="Iconos\usuario.png" />
     <Content Include="Iconos\equipo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props'))" />
-  </Target>
 </Project>

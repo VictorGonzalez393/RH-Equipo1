@@ -70,21 +70,43 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                     renglon.Cells[4].Value = 'A';
                     tablaHorario.Rows.Add(renglon);
                 }
+
             }
             else
                 MessageBox.Show("Selecciona un dia", "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private bool buscarDiaenTabla(string dia)
+        {
+            bool bandera = false;
+            foreach (DataGridViewRow renglon in tablaHorario.Rows)
+            {
+                if (renglon.Cells["Dia"].Value.ToString().Equals(dia))
+                {
+                    bandera = true;
+                    break;
+                }
+            }
+            return bandera;
         }
 
         private void Horarios_editar_Load(object sender, EventArgs e)
         {
             horai.Value = new DateTime(1998, 01, 13);
             horaf.Value = new DateTime(1998, 01, 13);
+           
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void eliminar_Click(object sender, EventArgs e)
         {
             if (tablaHorario.SelectedRows.Count == 1)
             {
+                //try
+                //{
                     DialogResult resultado = MessageBox.Show("Seguro que desea eliminar el horario?", "alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
                     {
@@ -105,6 +127,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         }
                         Mensajes.Info("Se elimino exitosamente");
                     }
+                //}
             }
             else
                 Mensajes.Error("Selecciona un día");
@@ -260,34 +283,6 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
         private void horai_FormatChanged(object sender, EventArgs e)
         {
           
-        }
-
-        private void tablaHorario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
-            {
-                ShortFormDateFormat(e);
-            }
-        }
-
-        private void ShortFormDateFormat(DataGridViewCellFormattingEventArgs formatting)
-        {
-            if (formatting.Value != null)
-            {
-                try
-                {
-                    DateTime theDate = DateTime.Parse(formatting.Value.ToString());
-                    string dateString = theDate.ToString("hh:mm tt");
-                    formatting.Value = dateString;
-                    formatting.FormattingApplied = true;
-                }
-                catch (FormatException)
-                {
-                    // Set to false in case there are other handlers interested trying to
-                    // format this DataGridViewCellFormattingEventArgs instance.
-                    formatting.FormattingApplied = false;
-                }
-            }
         }
     }
 }

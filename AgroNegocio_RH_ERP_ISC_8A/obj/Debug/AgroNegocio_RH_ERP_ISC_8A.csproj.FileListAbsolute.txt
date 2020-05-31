@@ -187,14 +187,14 @@ C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debu
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.FormaPago_editar.resources
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.pago_GUI.resources
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.FormaPago_Nuevo.resources
-C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\x86\pdfium.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.config
+C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.manifest
+C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.application
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\itextsharp.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\log4net.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\PdfiumViewer.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\SpreadsheetLight.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.IO.Packaging.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.Web.Helpers.dll
@@ -206,7 +206,6 @@ C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\itextsharp.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\log4net.xml
-C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\PdfiumViewer.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\SpreadsheetLight.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.IO.Packaging.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.Web.Helpers.xml
@@ -215,7 +214,6 @@ C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.Web.WebPages.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Debug\nl\PdfiumViewer.resources.dll
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ausencias_editar.resources
@@ -230,8 +228,7 @@ C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_editar.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_GUI.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Departamentos_nuevo.resources
-C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.DocumentacionEmpleado_GUI.resources
-C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.DocumentacionEmpleado_Ver.resources
+C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Form1.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_Editar.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_editarH.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Empleados_GUI.resources
@@ -264,6 +261,9 @@ C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Puestos_nuevo.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.Properties.Resources.resources
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.GenerateResource.cache
+C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.TrustInfo.xml
+C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe.manifest
+C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.application
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.csproj.CopyComplete
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.exe
 C:\Users\Nicolas GL\source\repos\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Debug\AgroNegocio_RH_ERP_ISC_8A.pdb
