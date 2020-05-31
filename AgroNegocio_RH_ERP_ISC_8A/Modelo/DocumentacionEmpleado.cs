@@ -8,21 +8,33 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Modelo
 {
     public class DocumentacionEmpleado
     {
-        public int ID { get; set; }
-        public string nombreDocumento { get; set; }
-        public TimeSpan fechaEntrega { get; set; }
-        public byte[] Documento { get; set; }
+        internal int IDDoc { get; set; }
+        internal int IDDocTmp { get; set; }
+        public string ID { get { return IDDoc == 0 ? "No asignado" : IDDoc.ToString(); } }
+        public string NombreDocumento { get; set; }
+        public DateTime Fecha { get; set; }
+        internal byte[] Documento { get; set; }
         public char Estatus { get; set; }
-        public int idEmpleado { get; set; }
-        public DocumentacionEmpleado(int id, string nombredocumento, TimeSpan fechaentrega, 
-            byte [] documento,char estatus, int idempleado)
+        internal int IDEmpleado { get; set; }
+        public DocumentacionEmpleado(int iddoc, string nombredocumento, DateTime fechaentrega, byte[] documento, char estatus, int idempleado)
         {
-            ID = id;
-            nombreDocumento = nombredocumento;
-            fechaEntrega = fechaentrega;
+            IDDoc = iddoc;
+            NombreDocumento = nombredocumento;
+            Fecha = fechaentrega;
             Documento = documento;
             Estatus = estatus;
-            idEmpleado = idempleado;
+            IDEmpleado = idempleado;
         }
+
+        public DocumentacionEmpleado(string nombredocumento, byte[] documento, int idempleado)
+        {
+            IDDoc = 0;
+            Estatus = 'A';
+            Fecha = DateTime.Now;
+
+            IDEmpleado = idempleado;
+            NombreDocumento = nombredocumento;
+            Documento = documento;
         }
+    }
 }

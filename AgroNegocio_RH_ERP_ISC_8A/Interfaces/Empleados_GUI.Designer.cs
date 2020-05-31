@@ -124,6 +124,7 @@
             this.documentaciónToolStripMenuItem.Name = "documentaciónToolStripMenuItem";
             this.documentaciónToolStripMenuItem.Size = new System.Drawing.Size(133, 21);
             this.documentaciónToolStripMenuItem.Text = "Documentación";
+            this.documentaciónToolStripMenuItem.Click += new System.EventHandler(this.documentaciónToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 

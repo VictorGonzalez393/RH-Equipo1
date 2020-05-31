@@ -85,7 +85,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar al Empleado");
+                    MessageBox.Show("Error al intentar eliminar al Empleado. \n"+ex.Message);
                 }
             }
             else
@@ -163,7 +163,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar eliminar al empleado");
+                    MessageBox.Show("Error al intentar eliminar al empleado"+ex.Message);
                 }
             }
             else
@@ -379,6 +379,24 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             else
             {
                 DialogResult resultado = MessageBox.Show("Selecciona a un empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void documentaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados1.SelectedRows.Count == 1)
+            {
+                int idemp = (int)tablaEmpleados1.SelectedRows[0].Cells[0].Value;
+                string nombreemp = (string)tablaEmpleados1.SelectedRows[0].Cells[1].Value /*+ " " + tablaEmpleados1.SelectedRows[0].Cells[2].Value + " " + tablaEmpleados1.SelectedRows[0].Cells[3].Value*/;
+                DocumentacionEmpleado_GUI hp = new DocumentacionEmpleado_GUI(idemp, nombreemp);
+                SetVisibleCore(false);
+                hp.ShowDialog();
+                SetVisibleCore(true);
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona a un empleado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

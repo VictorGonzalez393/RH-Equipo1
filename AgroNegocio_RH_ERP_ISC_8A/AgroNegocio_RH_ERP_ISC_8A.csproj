@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props" Condition="Exists('packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +49,9 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
     </Reference>
     <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
       <HintPath>packages\SpreadsheetLight.3.4.11\lib\net40\SpreadsheetLight.dll</HintPath>
@@ -146,6 +152,18 @@
     <Compile Include="Interfaces\Departamentos_nuevo.Designer.cs">
       <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado_GUI.Designer.cs">
+      <DependentUpon>DocumentacionEmpleado_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado_Ver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DocumentacionEmpleado_Ver.Designer.cs">
+      <DependentUpon>DocumentacionEmpleado_Ver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Empleados_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,12 +205,6 @@
     </Compile>
     <Compile Include="Interfaces\Estados_nuevo.Designer.cs">
       <DependentUpon>Estados_nuevo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\DocumentacionEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\DocumentacionEmpleado.Designer.cs">
-      <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\FormaPago_editar.cs">
       <SubType>Form</SubType>
@@ -438,8 +450,11 @@
     <EmbeddedResource Include="Interfaces\Departamentos_nuevo.resx">
       <DependentUpon>Departamentos_nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado.resx">
-      <DependentUpon>DocumentacionEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado_GUI.resx">
+      <DependentUpon>DocumentacionEmpleado_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DocumentacionEmpleado_Ver.resx">
+      <DependentUpon>DocumentacionEmpleado_Ver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Empleados_Editar.resx">
       <DependentUpon>Empleados_Editar.cs</DependentUpon>
@@ -618,4 +633,10 @@
     <Content Include="Iconos\equipo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props'))" />
+  </Target>
 </Project>
