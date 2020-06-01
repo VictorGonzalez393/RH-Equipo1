@@ -47,7 +47,6 @@
             this.historialpuesto_nombre = new System.Windows.Forms.TextBox();
             this.puesto = new System.Windows.Forms.ComboBox();
             this.departamento = new System.Windows.Forms.ComboBox();
-            this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -238,15 +237,6 @@
             this.departamento.Size = new System.Drawing.Size(215, 21);
             this.departamento.TabIndex = 43;
             // 
-            // IniciotoolStripMenuItem1
-            // 
-            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
-            this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
-            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
-            this.IniciotoolStripMenuItem1.Text = "Inicio";
-            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
-            // 
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,7 +250,6 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.IniciotoolStripMenuItem1,
             this.backToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -326,7 +315,6 @@
         private System.Windows.Forms.TextBox historialpuesto_nombre;
         private System.Windows.Forms.ComboBox puesto;
         private System.Windows.Forms.ComboBox departamento;
-        private System.Windows.Forms.ToolStripMenuItem IniciotoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
     }

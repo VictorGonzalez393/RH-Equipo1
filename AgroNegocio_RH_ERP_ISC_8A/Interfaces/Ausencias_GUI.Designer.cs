@@ -33,11 +33,11 @@
             this.buscarAutxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autorizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_pagina = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +46,6 @@
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.autorizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablaAusencias)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,7 +88,6 @@
             this.menu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
             this.atrásToolStripMenuItem,
             this.nuevoToolStripMenuItem,
             this.editarToolStripMenuItem,
@@ -101,15 +99,6 @@
             this.menu.Size = new System.Drawing.Size(832, 27);
             this.menu.TabIndex = 11;
             this.menu.Text = "menuStrip1";
-            // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // atrásToolStripMenuItem
             // 
@@ -143,6 +132,14 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // autorizarToolStripMenuItem
+            // 
+            this.autorizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("autorizarToolStripMenuItem.Image")));
+            this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(93, 21);
+            this.autorizarToolStripMenuItem.Text = "Autorizar";
+            this.autorizarToolStripMenuItem.Click += new System.EventHandler(this.autorizarToolStripMenuItem_Click);
             // 
             // lbl_total
             // 
@@ -227,14 +224,6 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // autorizarToolStripMenuItem
-            // 
-            this.autorizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("autorizarToolStripMenuItem.Image")));
-            this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
-            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(93, 21);
-            this.autorizarToolStripMenuItem.Text = "Autorizar";
-            this.autorizarToolStripMenuItem.Click += new System.EventHandler(this.autorizarToolStripMenuItem_Click);
-            // 
             // Ausencias_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,7 +261,6 @@
         private System.Windows.Forms.TextBox buscarAutxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;

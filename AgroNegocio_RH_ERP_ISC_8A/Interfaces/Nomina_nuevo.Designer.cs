@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nomina_nuevo));
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.IniciotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -57,15 +56,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cantNeta = new System.Windows.Forms.TextBox();
+            this.totalD = new System.Windows.Forms.TextBox();
+            this.totalP = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.cantNeta = new System.Windows.Forms.TextBox();
-            this.totalD = new System.Windows.Forms.TextBox();
-            this.totalP = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -91,7 +90,6 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.IniciotoolStripMenuItem1,
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -99,15 +97,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(748, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // IniciotoolStripMenuItem1
-            // 
-            this.IniciotoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IniciotoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("IniciotoolStripMenuItem1.Image")));
-            this.IniciotoolStripMenuItem1.Name = "IniciotoolStripMenuItem1";
-            this.IniciotoolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
-            this.IniciotoolStripMenuItem1.Text = "Inicio";
-            this.IniciotoolStripMenuItem1.Click += new System.EventHandler(this.IniciotoolStripMenuItem1_Click);
             // 
             // atrásToolStripMenuItem
             // 
@@ -410,6 +399,30 @@
             this.tabPage2.Text = "Calcular nómina";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cantNeta
+            // 
+            this.cantNeta.Enabled = false;
+            this.cantNeta.Location = new System.Drawing.Point(160, 120);
+            this.cantNeta.Name = "cantNeta";
+            this.cantNeta.Size = new System.Drawing.Size(100, 20);
+            this.cantNeta.TabIndex = 76;
+            // 
+            // totalD
+            // 
+            this.totalD.Enabled = false;
+            this.totalD.Location = new System.Drawing.Point(239, 78);
+            this.totalD.Name = "totalD";
+            this.totalD.Size = new System.Drawing.Size(100, 20);
+            this.totalD.TabIndex = 75;
+            // 
+            // totalP
+            // 
+            this.totalP.Enabled = false;
+            this.totalP.Location = new System.Drawing.Point(239, 39);
+            this.totalP.Name = "totalP";
+            this.totalP.Size = new System.Drawing.Size(100, 20);
+            this.totalP.TabIndex = 74;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -485,30 +498,6 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // cantNeta
-            // 
-            this.cantNeta.Enabled = false;
-            this.cantNeta.Location = new System.Drawing.Point(160, 120);
-            this.cantNeta.Name = "cantNeta";
-            this.cantNeta.Size = new System.Drawing.Size(100, 20);
-            this.cantNeta.TabIndex = 76;
-            // 
-            // totalD
-            // 
-            this.totalD.Enabled = false;
-            this.totalD.Location = new System.Drawing.Point(239, 78);
-            this.totalD.Name = "totalD";
-            this.totalD.Size = new System.Drawing.Size(100, 20);
-            this.totalD.TabIndex = 75;
-            // 
-            // totalP
-            // 
-            this.totalP.Enabled = false;
-            this.totalP.Location = new System.Drawing.Point(239, 39);
-            this.totalP.Name = "totalP";
-            this.totalP.Size = new System.Drawing.Size(100, 20);
-            this.totalP.TabIndex = 74;
-            // 
             // Nomina_nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,7 +534,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem IniciotoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;

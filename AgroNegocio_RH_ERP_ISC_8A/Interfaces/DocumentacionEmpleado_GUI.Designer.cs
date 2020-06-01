@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(3, 4);
@@ -282,9 +282,10 @@
             this.Controls.Add(this.editar);
             this.Controls.Add(this.agregar);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DocumentacionEmpleado_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "Documentos del empleado";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DocumentacionEmpleado_GUI_FormClosing);
             this.Load += new System.EventHandler(this.DocumentacionEmpleado_GUI_Load);
             this.panel1.ResumeLayout(false);

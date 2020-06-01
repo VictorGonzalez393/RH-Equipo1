@@ -41,6 +41,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
                         this.SetVisibleCore(false);
                         Principal p = new Principal(txtUsuario.Text);
                         p.ShowDialog();
+                        this.SetVisibleCore(true);
 
                     }
                     else

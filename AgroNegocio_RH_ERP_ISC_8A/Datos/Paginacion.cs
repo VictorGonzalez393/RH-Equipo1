@@ -16,7 +16,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
         public string order_by;            //Especifica el nombre por el cual se ordenarán los registros
         public int pages;                  //Numero total de páginas
         public int actual_page = 0;        //Página actual
-        public int rows_per_page = 2;     //Cantidad de registros por página
+        public int rows_per_page = 5;     //Cantidad de registros por página
         private string cadenaconexion = "SERVER=localhost; DATABASE=ERP2020; USER ID=sa; Password=Hola.123";
         public string where;
         public void CalculaPaginas()

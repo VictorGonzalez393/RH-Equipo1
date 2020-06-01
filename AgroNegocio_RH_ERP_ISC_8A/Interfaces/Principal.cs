@@ -74,7 +74,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             Login l = new Login();
             l.ShowDialog();
 
-            //Application.Exit();
+            Application.Exit();
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)

@@ -154,10 +154,10 @@
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total.Location = new System.Drawing.Point(329, 354);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(31, 20);
+            this.lbl_total.Size = new System.Drawing.Size(34, 20);
             this.lbl_total.TabIndex = 20;
             this.lbl_total.Text = "de ";
             this.lbl_total.Click += new System.EventHandler(this.lbl_total_Click);
@@ -165,10 +165,10 @@
             // lbl_pagina
             // 
             this.lbl_pagina.AutoSize = true;
-            this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_pagina.Location = new System.Drawing.Point(229, 354);
             this.lbl_pagina.Name = "lbl_pagina";
-            this.lbl_pagina.Size = new System.Drawing.Size(62, 20);
+            this.lbl_pagina.Size = new System.Drawing.Size(69, 20);
             this.lbl_pagina.TabIndex = 19;
             this.lbl_pagina.Text = "Página ";
             this.lbl_pagina.Click += new System.EventHandler(this.lbl_pagina_Click);
