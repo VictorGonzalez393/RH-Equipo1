@@ -43,7 +43,6 @@ C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Rele
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Release\System.Web.WebPages.Razor.xml
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\bin\Release\nl\PdfiumViewer.resources.dll
-C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.csprojAssemblyReference.cache
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Form1.resources
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ausencias_editar.resources
 C:\Users\chela\OneDrive\Escritorio\RH-Equipo1\AgroNegocio_RH_ERP_ISC_8A\obj\Release\AgroNegocio_RH_ERP_ISC_8A.Interfaces.Ausencias_GUI.resources
