@@ -382,6 +382,11 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Interfaces
             }
         }
 
+        private void documentaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void actualizar()
         {
             btn_anterior.Enabled = false;
