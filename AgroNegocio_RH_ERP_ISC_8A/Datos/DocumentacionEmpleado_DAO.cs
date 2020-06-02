@@ -10,7 +10,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
     class DocumentacionEmpleado_DAO
     {
-        private string cadenaconexion = "SERVER=localhost" +
+        private string cadenaconexion = "SERVER=189.135.27.179" +
                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
 
         public List<DocumentacionEmpleado> consultaGeneral(string consulta_where_h, List<string> parametros, List<object> valores)

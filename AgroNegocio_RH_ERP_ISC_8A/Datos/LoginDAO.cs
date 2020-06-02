@@ -19,7 +19,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
  
             try
             {
-                SqlConnection conexion = new SqlConnection("SERVER =localhost ; DATABASE=ERP2020; USER ID=" + usuario + "; Password=" + password + ";");
+                SqlConnection conexion = new SqlConnection("SERVER =189.135.27.179 ; DATABASE=ERP2020; USER ID=" + usuario + "; Password=" + password + ";");
                 conexion.Open();
                 return true;
 

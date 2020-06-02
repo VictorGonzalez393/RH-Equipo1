@@ -10,7 +10,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
     class Estados_DAO : Paginacion
     {
-        private readonly string cadenaconexion = "SERVER=localhost" +
+        private readonly string cadenaconexion = "SERVER=189.135.27.179" +
                 ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
 
         /*

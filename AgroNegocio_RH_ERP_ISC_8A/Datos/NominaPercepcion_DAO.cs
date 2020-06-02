@@ -10,7 +10,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
     class NominaPercepcion_DAO
     {
-        private string cadenaconexion = "SERVER=localhost" +
+        private string cadenaconexion = "SERVER=189.135.27.179" +
                ";DATABASE=ERP2020;USER ID=sa ;Password=Hola.123";
 
         public List<NominaPercepcion> consultaGeneral(string consulta_wh, List<string> parametros, List<object> valores)

@@ -11,7 +11,7 @@ namespace AgroNegocio_RH_ERP_ISC_8A.Datos
 {
     class Horarios_DAO
     {
-        private string cadenaconexion = "SERVER=localhost" +
+        private string cadenaconexion = "SERVER=189.135.27.179" +
                 ";DATABASE=ERP2020;Persist Security Info=True;USER ID=sa ;Password=Hola.123";
         public List<Horario> consultaGeneral(string consulta_where_h, List<string> parametros, List<object> valores)
         {

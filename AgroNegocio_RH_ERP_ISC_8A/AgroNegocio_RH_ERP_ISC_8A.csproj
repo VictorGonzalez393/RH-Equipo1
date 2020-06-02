@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>agricultura.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -577,6 +580,7 @@
   <ItemGroup>
     <None Include="Resources\familia_.png" />
     <None Include="Iconos\agregar.png" />
+    <Content Include="agricultura.ico" />
     <Content Include="Iconos\agricultura.ico" />
     <Content Include="Iconos\anadir%281%29.png" />
     <Content Include="Iconos\anadir.png" />
